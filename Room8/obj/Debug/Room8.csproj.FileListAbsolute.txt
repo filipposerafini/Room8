@@ -1,0 +1,15 @@
+C:\Users\Nicola\Desktop\Progetto_Ingegneria_del_Software\Progetto_Ingegneria_del_Software\bin\Debug\Progetto_Ingegneria_del_Software.exe.config
+C:\Users\Nicola\Desktop\Progetto_Ingegneria_del_Software\Progetto_Ingegneria_del_Software\obj\Debug\Progetto_Ingegneria_del_Software.exe
+C:\Users\Nicola\Desktop\Progetto_Ingegneria_del_Software\Progetto_Ingegneria_del_Software\obj\Debug\Progetto_Ingegneria_del_Software.pdb
+C:\Users\Nicola\Desktop\Room8\Progetto_Ingegneria_del_Software\bin\Debug\Progetto_Ingegneria_del_Software.exe.config
+C:\Users\Nicola\Desktop\Room8\Progetto_Ingegneria_del_Software\obj\Debug\Progetto_Ingegneria_del_Software.exe
+C:\Users\Nicola\Desktop\Room8\Progetto_Ingegneria_del_Software\obj\Debug\Progetto_Ingegneria_del_Software.pdb
+C:\Users\Nicola\Desktop\Room8\Room8\obj\Debug\Room8.csprojResolveAssemblyReference.cache
+C:\Users\Nicola\Desktop\Room8\Room8\obj\Debug\Room8.csproj.GenerateResource.Cache
+C:\Users\Nicola\Desktop\Room8\Room8\obj\Debug\Room8.Form1.resources
+C:\Users\Nicola\Desktop\Room8\Room8\bin\Debug\Room8.exe.config
+C:\Users\Nicola\Desktop\Room8\Room8\bin\Debug\Room8.exe
+C:\Users\Nicola\Desktop\Room8\Room8\bin\Debug\Room8.pdb
+C:\Users\Nicola\Desktop\Room8\Room8\obj\Debug\Room8.Properties.Resources.resources
+C:\Users\Nicola\Desktop\Room8\Room8\obj\Debug\Room8.exe
+C:\Users\Nicola\Desktop\Room8\Room8\obj\Debug\Room8.pdb
