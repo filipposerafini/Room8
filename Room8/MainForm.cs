@@ -36,6 +36,5 @@ namespace Room8
         {
             tabControl.SelectTab(tabPageRiepilogo);
         }
-
     }
 }

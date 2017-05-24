@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +68,7 @@
             this.createGroupToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.disconnectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.listBoxAmici = new System.Windows.Forms.ListBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.listBoxGruppi = new System.Windows.Forms.ListBox();
@@ -74,10 +77,17 @@
             this.buttonRiepilogo = new System.Windows.Forms.Button();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageRiepilogo = new System.Windows.Forms.TabPage();
+            this.tabControlRiepilogo = new System.Windows.Forms.TabControl();
+            this.tabPageRiepilogoLista = new System.Windows.Forms.TabPage();
+            this.tabPageRiepilogoGrafico = new System.Windows.Forms.TabPage();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.label3 = new System.Windows.Forms.Label();
             this.tabPageAttivita = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPageSpese = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -86,8 +96,12 @@
             this.splitContainer1.SuspendLayout();
             this.tabControl.SuspendLayout();
             this.tabPageRiepilogo.SuspendLayout();
+            this.tabControlRiepilogo.SuspendLayout();
+            this.tabPageRiepilogoGrafico.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.tabPageAttivita.SuspendLayout();
             this.tabPageSpese.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -373,7 +387,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.listBox1);
+            this.splitContainer1.Panel1.Controls.Add(this.listBoxAmici);
             this.splitContainer1.Panel1.Controls.Add(this.label5);
             this.splitContainer1.Panel1.Controls.Add(this.label4);
             this.splitContainer1.Panel1.Controls.Add(this.listBoxGruppi);
@@ -388,19 +402,20 @@
             this.splitContainer1.SplitterDistance = 179;
             this.splitContainer1.TabIndex = 2;
             // 
-            // listBox1
+            // listBoxAmici
             // 
-            this.listBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.listBoxAmici.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Items.AddRange(new object[] {
+            this.listBoxAmici.BackColor = System.Drawing.SystemColors.Control;
+            this.listBoxAmici.FormattingEnabled = true;
+            this.listBoxAmici.Items.AddRange(new object[] {
             "Amici1",
             "Amici2",
             "Amici3"});
-            this.listBox1.Location = new System.Drawing.Point(37, 342);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(112, 95);
-            this.listBox1.TabIndex = 9;
+            this.listBoxAmici.Location = new System.Drawing.Point(37, 342);
+            this.listBoxAmici.Name = "listBoxAmici";
+            this.listBoxAmici.Size = new System.Drawing.Size(112, 95);
+            this.listBoxAmici.TabIndex = 9;
             // 
             // label5
             // 
@@ -424,6 +439,7 @@
             // 
             this.listBoxGruppi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.listBoxGruppi.BackColor = System.Drawing.SystemColors.Control;
             this.listBoxGruppi.FormattingEnabled = true;
             this.listBoxGruppi.Items.AddRange(new object[] {
             "Gruppo1",
@@ -489,6 +505,7 @@
             // 
             // tabPageRiepilogo
             // 
+            this.tabPageRiepilogo.Controls.Add(this.tabControlRiepilogo);
             this.tabPageRiepilogo.Controls.Add(this.label3);
             this.tabPageRiepilogo.Location = new System.Drawing.Point(4, 5);
             this.tabPageRiepilogo.Name = "tabPageRiepilogo";
@@ -498,12 +515,62 @@
             this.tabPageRiepilogo.Text = "tabPage1";
             this.tabPageRiepilogo.UseVisualStyleBackColor = true;
             // 
+            // tabControlRiepilogo
+            // 
+            this.tabControlRiepilogo.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+            this.tabControlRiepilogo.Controls.Add(this.tabPageRiepilogoLista);
+            this.tabControlRiepilogo.Controls.Add(this.tabPageRiepilogoGrafico);
+            this.tabControlRiepilogo.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.tabControlRiepilogo.Location = new System.Drawing.Point(3, 102);
+            this.tabControlRiepilogo.Name = "tabControlRiepilogo";
+            this.tabControlRiepilogo.SelectedIndex = 0;
+            this.tabControlRiepilogo.Size = new System.Drawing.Size(573, 390);
+            this.tabControlRiepilogo.TabIndex = 1;
+            // 
+            // tabPageRiepilogoLista
+            // 
+            this.tabPageRiepilogoLista.Location = new System.Drawing.Point(4, 25);
+            this.tabPageRiepilogoLista.Name = "tabPageRiepilogoLista";
+            this.tabPageRiepilogoLista.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageRiepilogoLista.Size = new System.Drawing.Size(565, 361);
+            this.tabPageRiepilogoLista.TabIndex = 0;
+            this.tabPageRiepilogoLista.Text = "Lista";
+            this.tabPageRiepilogoLista.UseVisualStyleBackColor = true;
+            // 
+            // tabPageRiepilogoGrafico
+            // 
+            this.tabPageRiepilogoGrafico.Controls.Add(this.chart1);
+            this.tabPageRiepilogoGrafico.Location = new System.Drawing.Point(4, 25);
+            this.tabPageRiepilogoGrafico.Name = "tabPageRiepilogoGrafico";
+            this.tabPageRiepilogoGrafico.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPageRiepilogoGrafico.Size = new System.Drawing.Size(565, 361);
+            this.tabPageRiepilogoGrafico.TabIndex = 1;
+            this.tabPageRiepilogoGrafico.Text = "Grafico";
+            this.tabPageRiepilogoGrafico.UseVisualStyleBackColor = true;
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(49, 51);
+            this.chart1.Name = "chart1";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chart1.Series.Add(series1);
+            this.chart1.Size = new System.Drawing.Size(300, 300);
+            this.chart1.TabIndex = 0;
+            this.chart1.Text = "chart1";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(54, 69);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(34, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.Size = new System.Drawing.Size(90, 24);
             this.label3.TabIndex = 0;
             this.label3.Text = "Riepilogo";
             // 
@@ -521,14 +588,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 32);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(27, 29);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 13);
+            this.label2.Size = new System.Drawing.Size(124, 24);
             this.label2.TabIndex = 0;
             this.label2.Text = "Attività recenti";
             // 
             // tabPageSpese
             // 
+            this.tabPageSpese.Controls.Add(this.tabControl1);
             this.tabPageSpese.Controls.Add(this.label1);
             this.tabPageSpese.Location = new System.Drawing.Point(4, 5);
             this.tabPageSpese.Name = "tabPageSpese";
@@ -538,12 +607,45 @@
             this.tabPageSpese.Text = "tabPage3";
             this.tabPageSpese.UseVisualStyleBackColor = true;
             // 
+            // tabControl1
+            // 
+            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.Buttons;
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Location = new System.Drawing.Point(376, 29);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(200, 239);
+            this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(192, 210);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(192, 210);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(58, 39);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(31, 29);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 13);
+            this.label1.Size = new System.Drawing.Size(128, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tutte le spese";
             // 
@@ -570,10 +672,14 @@
             this.tabControl.ResumeLayout(false);
             this.tabPageRiepilogo.ResumeLayout(false);
             this.tabPageRiepilogo.PerformLayout();
+            this.tabControlRiepilogo.ResumeLayout(false);
+            this.tabPageRiepilogoGrafico.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
             this.tabPageAttivita.ResumeLayout(false);
             this.tabPageAttivita.PerformLayout();
             this.tabPageSpese.ResumeLayout(false);
             this.tabPageSpese.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -628,9 +734,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ListBox listBoxGruppi;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox listBoxAmici;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabControl tabControlRiepilogo;
+        private System.Windows.Forms.TabPage tabPageRiepilogoLista;
+        private System.Windows.Forms.TabPage tabPageRiepilogoGrafico;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.TabPage tabPage2;
     }
 }
 
