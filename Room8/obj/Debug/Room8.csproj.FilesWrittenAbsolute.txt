@@ -1,0 +1,8 @@
+/home/filippo/Documents/University/Room8/Room8/obj/Debug/.NETFramework,Version=v4.5.2.AssemblyAttribute.cs
+/home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.Form1.resources
+/home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.Properties.Resources.resources
+/home/filippo/Documents/University/Room8/Room8/bin/Debug/Room8.exe.config
+/home/filippo/Documents/University/Room8/Room8/bin/Debug/Room8.pdb
+/home/filippo/Documents/University/Room8/Room8/bin/Debug/Room8.exe
+/home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.exe
+/home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.pdb

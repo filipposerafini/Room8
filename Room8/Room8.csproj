@@ -78,9 +78,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Model\Utente.cs" />
+    <Compile Include="Model\Gruppo.cs" />
+    <Compile Include="Model\MovimentoDiDenaro.cs" />
+    <Compile Include="Model\IMetodoDiDivisione.cs" />
+    <Compile Include="Model\MetodoDiDivisioneFactory.cs" />
+    <Compile Include="Model\Spesa.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
