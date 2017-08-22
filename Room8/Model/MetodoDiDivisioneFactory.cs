@@ -18,25 +18,25 @@ namespace Room8
 		public static IMetodoDiDivisione getMetodoDiDivisione(string nome)
 		{
 			if (!_dictionary.ContainsKey(nome))
-				throw new ArgumentException(nome);
+					throw new ArgumentException(nome);
 			return _dictionary[nome];
 		}
 
 		private abstract class MetodoDiDivisione : IMetodoDiDivisione
 		{
-			public Dictionary<Utente, decimal> DividiSpesa(decimal totale, Dictionary<Utente, int> parti)
+			public Dictionary<Utente, decimal> DividiSpesa(decimal totale, Parti parti)
 			{
 				Dictionary<Utente, decimal> divisione = new Dictionary<Utente, decimal>();
 				decimal tot = 0;
-				foreach (Utente utente in parti.Keys)
+				foreach (Utente utente in parti.Divisione.Keys)
 				{
-					divisione[utente] = Dividi(totale, utente, parti);
+					divisione[utente] = Dividi(totale, utente, parti.Divisione);
 					tot += divisione[utente];
 				}
 
-				if (totale != tot) {
-					throw new ApplicationException();
-				}
+				//if (totale != tot) {
+				//	throw new ApplicationException();
+				//}
 
 				return divisione;
 			}
@@ -56,7 +56,7 @@ namespace Room8
 		{
 			protected override decimal Dividi(decimal totale, Utente utente, Dictionary<Utente, int> parti)
 			{
-				return totale * (parti[utente] / 100);
+				return totale * ((decimal) parti[utente] / 100);
 			}
 		}
 

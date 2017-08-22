@@ -84,12 +84,21 @@
     <Compile Include="Model\IMetodoDiDivisione.cs" />
     <Compile Include="Model\MetodoDiDivisioneFactory.cs" />
     <Compile Include="Model\Spesa.cs" />
+    <Compile Include="Model\Saldo.cs" />
+    <Compile Include="Model\MembriGruppo.cs" />
+    <Compile Include="Model\Prodotto.cs" />
+    <Compile Include="Model\Movimento.cs" />
+    <Compile Include="Model\SpeseGruppo.cs" />
+    <Compile Include="Test\MainModel.cs" />
+    <Compile Include="Model\GestorePagamento.cs" />
+    <Compile Include="Model\Parti.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
+    <Folder Include="Test\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -5,6 +5,6 @@ namespace Room8
 {
 	public interface IMetodoDiDivisione
 	{
-		Dictionary<Utente, decimal> DividiSpesa(decimal totale, Dictionary<Utente, int> parti);
+		Dictionary<Utente, decimal> DividiSpesa(decimal totale, Parti parti);
 	}
 }
