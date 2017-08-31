@@ -6,3 +6,13 @@
 /home/filippo/Documents/University/Room8/Room8/bin/Debug/Room8.exe
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.exe
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.pdb
+/home/gloria/Room8/Room8/obj/Debug/.NETFramework,Version=v4.5.2.AssemblyAttribute.cs
+/home/gloria/Room8/Room8/obj/Debug/Room8.Form1.resources
+/home/gloria/Room8/Room8/obj/Debug/Room8.Properties.Resources.resources
+/home/gloria/Room8/Room8/bin/Debug/Room8.exe.config
+/home/gloria/Room8/Room8/bin/Debug/Room8.exe.mdb
+/home/gloria/Room8/Room8/bin/Debug/Room8.pdb
+/home/gloria/Room8/Room8/bin/Debug/Room8.exe
+/home/gloria/Room8/Room8/obj/Debug/Room8.exe
+/home/gloria/Room8/Room8/obj/Debug/Room8.exe.mdb
+/home/gloria/Room8/Room8/obj/Debug/Room8.pdb

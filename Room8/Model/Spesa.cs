@@ -28,6 +28,11 @@ namespace Room8
 			this._metodoDivisione = MetodoDiDivisioneFactory.getMetodoDiDivisione(nomeMetodo);
 			this._parti = new Parti(gruppo.MembriGruppo);
 			this._data = data;
+
+			if (!gruppo.MembriGruppo.Utenti.Contains(pagante)) 
+			{
+				throw new Exception ("Il pagante non fa parte del gruppo");
+			}
 		}
 
 		public Spesa(Gruppo gruppo, string descrizione, decimal importo, Utente pagante, string nomeMetodo, DateTime data, string note)
@@ -112,9 +117,6 @@ namespace Room8
 			get { return _data; }
 			set
 			{
-				if (value == null)
-					throw new ArgumentException("data null");
-
 				_data = value;
 			}
 		}
