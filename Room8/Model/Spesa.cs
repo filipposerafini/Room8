@@ -31,7 +31,7 @@ namespace Room8
 			this._data = data;
 
 			if (!gruppo.MembriGruppo.Utenti.Contains (pagante)) {
-				throw new Exception ("Il pagante non fa parte del gruppo");
+				throw new ArgumentException("Il pagante non fa parte del gruppo");
 			}
 		}
 

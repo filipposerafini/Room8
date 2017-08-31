@@ -29,6 +29,7 @@ namespace Room8
 		{
 			if (spesa == null)
 				throw new ArgumentException("Spesa null");
+			
 			try 
 			{
 				spesa.generaMovimenti();
