@@ -37,6 +37,7 @@ namespace Room8Tests
 		}
 
 		[Test ()]
+		[ExpectedException(typeof(ArgumentException))]
 		public void TestPercentuale ()
 		{
 			Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1");
@@ -57,16 +58,10 @@ namespace Room8Tests
 			spesa.Parti.ImpostaParte(utente2, 50);
 			spesa.Parti.ImpostaParte(utente3, 30);
 
-			//under 100
-			Assert.Throws<ArgumentException>(() => spesa.generaMovimenti());
+			//under 100, spesa errata
+			gruppo1.SpeseGruppo.AggiungiSpesa(spesa);
+			gruppo1.SpeseGruppo.RimuoviSpesa(spesa);
 
-			//over 100
-			spesa.Parti.ImpostaParte (utente1, 20);
-			spesa.Parti.ImpostaParte (utente2, 50);
-			spesa.Parti.ImpostaParte (utente3, 30);
-
-			Assert.Throws<ArgumentException>(() => spesa.generaMovimenti());
-	
 		}
 
 	}

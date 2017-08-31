@@ -1,4 +1,5 @@
 using System;
+
 namespace Room8
 {
 	public class Spesa
@@ -13,146 +14,121 @@ namespace Room8
 		private DateTime _data;
 		private string _note;
 
-		private string GenerateId()
+		private string GenerateId ()
 		{
-			return Guid.NewGuid().ToString();
+			return Guid.NewGuid ().ToString ();
 		}
 
-		public Spesa(Gruppo gruppo, string descrizione, decimal importo, Utente pagante, string nomeMetodo, DateTime data)
+		public Spesa (Gruppo gruppo, string descrizione, decimal importo, Utente pagante, string nomeMetodo, DateTime data)
 		{
-			this._id = GenerateId();
+			this._id = GenerateId ();
 			this._gruppo = gruppo;
 			this._descrizione = descrizione;
 			this._importo = importo;
 			this._pagante = pagante;
-			this._metodoDivisione = MetodoDiDivisioneFactory.getMetodoDiDivisione(nomeMetodo);
-			this._parti = new Parti(gruppo.MembriGruppo);
+			this._metodoDivisione = MetodoDiDivisioneFactory.getMetodoDiDivisione (nomeMetodo);
+			this._parti = new Parti (gruppo.MembriGruppo);
 			this._data = data;
 
-			if (!gruppo.MembriGruppo.Utenti.Contains(pagante)) 
-			{
+			if (!gruppo.MembriGruppo.Utenti.Contains (pagante)) {
 				throw new Exception ("Il pagante non fa parte del gruppo");
 			}
 		}
 
-		public Spesa(Gruppo gruppo, string descrizione, decimal importo, Utente pagante, string nomeMetodo, DateTime data, string note)
-			: this(gruppo, descrizione, importo, pagante, nomeMetodo, data)
+		public Spesa (Gruppo gruppo, string descrizione, decimal importo, Utente pagante, string nomeMetodo, DateTime data, string note)
+			: this (gruppo, descrizione, importo, pagante, nomeMetodo, data)
 		{
-			if (!String.IsNullOrEmpty(note))
+			if (!String.IsNullOrEmpty (note))
 				this._note = note;		
 		}
 
-		public string Id
-		{
+		public string Id {
 			get { return _id; }
 		}
 
-		public Gruppo Gruppo
-		{
+		public Gruppo Gruppo {
 			get { return _gruppo; }
 		}
 
-		public string Descrizione
-		{
+		public string Descrizione {
 			get { return _descrizione; }
-			set
-			{
-				if (String.IsNullOrEmpty(value))
-					throw new ArgumentException("descrizione null or empty");
+			set {
+				if (String.IsNullOrEmpty (value))
+					throw new ArgumentException ("descrizione null or empty");
 
 				_descrizione = value;
 			}
 		}
 
-		public decimal Importo
-		{
+		public decimal Importo {
 			get { return _importo; }
-			set
-			{
+			set {
 				if (value <= 0)
-					throw new ArgumentException("importo minore di zero");
+					throw new ArgumentException ("importo minore di zero");
 
 				_importo = value;
 			}
 		}
 
-		public Utente Pagante
-		{
+		public Utente Pagante {
 			get { return _pagante; }
 
-			set
-			{
+			set {
 				if (value == null)
-					throw new ArgumentException("Pagante null");
+					throw new ArgumentException ("Pagante null");
 				_pagante = value;
 			}
 		}
 
-		public IMetodoDiDivisione MetodoDivisione
-		{
+		public IMetodoDiDivisione MetodoDivisione {
 			get { return _metodoDivisione; }
 
-			set
-			{
+			set {
 				if (value == null)
-					throw new ArgumentException("MetodoDivisione null");
+					throw new ArgumentException ("MetodoDivisione null");
 				_metodoDivisione = value;
 			}
 		}
 
-		public Parti Parti
-		{
+		public Parti Parti {
 			get { return _parti; }
 
-			set
-			{
+			set {
 				if (value == null)
-					throw new ArgumentException("Parti null");
+					throw new ArgumentException ("Parti null");
 				_parti = value;
 			}
 		}
 
-		public DateTime Data
-		{
+		public DateTime Data {
 			get { return _data; }
-			set
-			{
+			set {
 				_data = value;
 			}
 		}
 
-		public string Note
-		{
+		public string Note {
 			get { return _note; }
-			set
-			{
-				if (String.IsNullOrEmpty(value))
-					throw new ArgumentException("note null or empty");
+			set {
+				if (String.IsNullOrEmpty (value))
+					throw new ArgumentException ("note null or empty");
 
 				_note = value;
 			}
 		}
 
-		public void generaMovimenti()
+		public void generaMovimenti ()
 		{
-			try
-			{
-				foreach (var item in MetodoDivisione.DividiSpesa(Importo, Parti))
-				{
-					if (item.Key.Equals(Pagante))
-						continue;
-					else
-					{
-						Movimento movimento = new Movimento(Pagante, item.Key, item.Value, this);
-						movimento.Sorgente.AggiungiMovimentoDiDenaro(movimento);
-						movimento.Destinazione.AggiungiMovimentoDiDenaro(movimento);
-					}
+			foreach (var item in MetodoDivisione.DividiSpesa(Importo, Parti)) {
+				if (item.Key.Equals (Pagante))
+					continue;
+				else {
+					Movimento movimento = new Movimento (Pagante, item.Key, item.Value, this);
+					movimento.Sorgente.AggiungiMovimentoDiDenaro (movimento);
+					movimento.Destinazione.AggiungiMovimentoDiDenaro (movimento);
 				}
 			}
-			catch (ArgumentException)
-			{
-				Console.WriteLine("Errore");
-			}
+
 		}
 	}
 }

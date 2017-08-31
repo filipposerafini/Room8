@@ -25,13 +25,19 @@ namespace Room8
 			get { return _spese.AsReadOnly(); }
 		}
 
-		public void AggiungiSpesa(Spesa spesa)
+		public void AggiungiSpesa(Spesa spesa) 
 		{
 			if (spesa == null)
 				throw new ArgumentException("Spesa null");
-
-			_spese.Add(spesa);
-			spesa.generaMovimenti();
+			try 
+			{
+				spesa.generaMovimenti();
+				_spese.Add(spesa);
+			}
+			catch (ArgumentException)
+			{
+				Console.WriteLine ("Spesa non è stata inserita");
+			}
 		}
 
 		public void RimuoviSpesa(Spesa spesa)

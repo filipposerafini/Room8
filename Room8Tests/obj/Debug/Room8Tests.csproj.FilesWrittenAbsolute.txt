@@ -1,9 +1,8 @@
-/home/gloria/Room8/Room8Tests/obj/Debug/.NETFramework,Version=v4.5.2.AssemblyAttribute.cs
-/home/gloria/Room8/Room8Tests/bin/Debug/nunit.framework.dll
-/home/gloria/Room8/Room8Tests/bin/Debug/Room8.exe
-/home/gloria/Room8/Room8Tests/bin/Debug/Room8.exe.mdb
-/home/gloria/Room8/Room8Tests/bin/Debug/Room8.pdb
+/home/gloria/Room8/Room8Tests/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
 /home/gloria/Room8/Room8Tests/bin/Debug/Room8Tests.dll.mdb
 /home/gloria/Room8/Room8Tests/bin/Debug/Room8Tests.dll
 /home/gloria/Room8/Room8Tests/obj/Debug/Room8Tests.dll
 /home/gloria/Room8/Room8Tests/obj/Debug/Room8Tests.dll.mdb
+/home/gloria/Room8/Room8Tests/bin/Debug/nunit.framework.dll
+/home/gloria/Room8/Room8Tests/bin/Debug/Room8.exe
+/home/gloria/Room8/Room8Tests/bin/Debug/Room8.exe.mdb
