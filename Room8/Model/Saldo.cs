@@ -11,7 +11,6 @@ namespace Room8
 			this._data = data;
 		}
 
-
 		public DateTime Data
 		{
 			get { return _data; }

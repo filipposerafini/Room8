@@ -90,7 +90,6 @@
     <Compile Include="Model\Movimento.cs" />
     <Compile Include="Model\SpeseGruppo.cs" />
     <Compile Include="Test\MainModel.cs" />
-    <Compile Include="Model\GestorePagamento.cs" />
     <Compile Include="Model\Parti.cs" />
   </ItemGroup>
   <ItemGroup>

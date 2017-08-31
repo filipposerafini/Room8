@@ -144,6 +144,10 @@ namespace Room8
 				else if (movimento.Sorgente.Equals(this) && movimento.Destinazione.Equals(amico))
 					res -= movimento.Importo;
 			}
+
+			// Risultato negativo --> Credito
+			// Risultato positivo --> Debito
+
 			return res;
 		}
 	}

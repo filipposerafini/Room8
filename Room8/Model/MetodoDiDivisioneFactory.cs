@@ -34,10 +34,6 @@ namespace Room8
 					tot += divisione[utente];
 				}
 
-				//if (totale != tot) {
-				//	throw new ApplicationException();
-				//}
-
 				return divisione;
 			}
 
@@ -56,7 +52,14 @@ namespace Room8
 		{
 			protected override decimal Dividi(decimal totale, Utente utente, Dictionary<Utente, int> parti)
 			{
-				return totale * ((decimal) parti[utente] / 100);
+				int tot = 0;
+				foreach (int perc in parti.Values)
+					tot += perc;
+				
+				if (tot != 100)
+					throw new ArgumentException("Percentuale diversa da 100");
+				
+				return totale * ((decimal) parti[utente] / tot);
 			}
 		}
 

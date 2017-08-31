@@ -30,6 +30,20 @@ namespace Room8
 				throw new ArgumentException("Spesa null");
 
 			_spese.Add(spesa);
+			spesa.generaMovimenti();
+		}
+
+		public void RimuoviSpesa(Spesa spesa)
+		{
+			if (spesa == null)
+				throw new ArgumentException("Spesa null");
+
+			if (_spese.Remove(spesa))
+			{
+				// TODO Forse qui rimuoverei anche tutti i movimenti generati dalla spesa stessa
+			}
+			else
+				throw new ArgumentException("Spesa non trovata");
 		}
 	}
 }

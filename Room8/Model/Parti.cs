@@ -5,27 +5,34 @@ namespace Room8
 {
 	public class Parti
 	{
-		// Parti verrà generato tramire la view
-		// Per ogni utente che sta insereno la spesa
-		// prendo l'utente e la sua parte
-		// genero quest'oggetto
+		private readonly Dictionary<Utente, int> _divisione;
 
-		private Dictionary<Utente, int> _divisione;
-
-		public Parti(Dictionary<Utente, int> divisione)
+		public Parti(MembriGruppo membriGruppo)
 		{
-			if (divisione == null)
-				throw new ArgumentException("parti null");
+			if (membriGruppo == null)
+				throw new ArgumentException("membriGruppo null");
 			
-			_divisione = divisione;
+			_divisione = new Dictionary<Utente, int>();
+			foreach (var utente in membriGruppo.Utenti)
+			{
+				_divisione.Add(utente, 0);
+			}
 		}
 
 		public Dictionary<Utente, int> Divisione
 		{
 			get { return _divisione; }
-
-			set { _divisione = value; }
 		}
 
+		public void ImpostaParte(Utente utente, int parte) 
+		{
+			if (utente == null)
+				throw new ArgumentException("utente null");
+
+			if (Divisione.ContainsKey(utente))
+				Divisione[utente] = parte;
+			else
+				throw new ArgumentException("utente non presente");
+		}
 	}
 }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Room8
 {
@@ -89,40 +90,33 @@ namespace Room8
 		{
 			if (prodotto == null)
 				throw new ArgumentException("Prodotto null");
-			
-			bool trovato = false;
-			foreach (Prodotto p in _daComprare)
-			{
-				if (p.Nome.Equals(prodotto.Nome))
-				{
-					p.Quantita += prodotto.Quantita;
-					trovato = true;
-					break;
-				}
-			}
 
-			if (!trovato)
+			// Versione Linq
+			try
+			{
+				Prodotto p = DaComprare.Single(s => prodotto.Nome.Equals(s.Nome));
+				p.Quantita += prodotto.Quantita;
+			}
+			catch (InvalidOperationException) 
+			{
 				_daComprare.Add(prodotto);
+			}
 		}
 
-		public void RimuoviProdotto(Prodotto prodotto)
+		public void RimuoviProdotto(string nome) 
 		{
-			if (prodotto == null)
-				throw new ArgumentException("Prodotto null");
+		if (nome == null)
+				throw new ArgumentException("Nome prodotto null");
 			
-			bool trovato = false;
-			foreach (Prodotto p in _daComprare)
+			try
 			{
-				if (p.Nome.Equals(prodotto.Nome))
-				{
-					trovato = true;
-					_daComprare.Remove(p);
-					break;
-				}
+				Prodotto p = DaComprare.Single(s => nome.Equals(s.Nome));
+				_daComprare.Remove(p);
 			}
-
-			if (!trovato)
+			catch (InvalidOperationException)
+			{
 				throw new ArgumentException("Prodotto non presente");
+			}
 		}
 	}
 }

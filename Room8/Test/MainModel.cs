@@ -17,19 +17,23 @@ namespace Room8
 			gruppo1.MembriGruppo.AggiungiMembro(utente2);
 			gruppo1.MembriGruppo.AggiungiMembro(utente3);
 
-			Spesa spesa = new Spesa(gruppo1.SpeseGruppo, "Spesa1", 60, DateTime.Now);
+			Spesa spesa = new Spesa(gruppo1.SpeseGruppo, "Spesa1", 100, utente1, "Equa", DateTime.Now);
 
-			Dictionary<Utente, int> div = new Dictionary<Utente, int>();
-			div.Add(utente1, 33);
-			div.Add(utente2, 33);
-			div.Add(utente3, 33);
-			Parti parti = new Parti(div);
+			//pagamento.Parti.ImpostaParte(utente1, 20);
+			//pagamento.Parti.ImpostaParte(utente2, 40);
+			//pagamento.Parti.ImpostaParte(utente3, 40);
 
-			GestorePagamento g = new GestorePagamento(spesa, utente1, "Percentuale");
+			gruppo1.SpeseGruppo.AggiungiSpesa(spesa);
+			var prodotto = new Prodotto("Prova", 3);
 
-			g.generaMovimenti(parti);
+			Console.WriteLine(utente1.calcolaSituazione(utente2));
 
-			Console.WriteLine(utente1.Nome + " deve ricevere " + utente1.calcolaSituazione(utente2) + " euro da " + utente2.Nome);
+			Saldo saldo = new Saldo(utente2, utente1, 66, DateTime.Now);
+			utente1.AggiungiMovimentoDiDenaro(saldo);
+			utente2.AggiungiMovimentoDiDenaro(saldo);
+
+			Console.WriteLine(utente1.calcolaSituazione(utente2));
+			Console.WriteLine(utente1.calcolaSituazione(utente3));
 		}
 	}
 }
