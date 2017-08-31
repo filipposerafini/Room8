@@ -17,20 +17,24 @@ namespace Room8
 			gruppo1.MembriGruppo.AggiungiMembro(utente2);
 			gruppo1.MembriGruppo.AggiungiMembro(utente3);
 
-			Spesa spesa = new Spesa(gruppo1.SpeseGruppo, "Spesa1", 100, utente1, "Equa", DateTime.Now);
+			Spesa spesa = new Spesa(gruppo1, "Spesa1", 60, utente1, "Equa", DateTime.Now);
 
 			//pagamento.Parti.ImpostaParte(utente1, 20);
 			//pagamento.Parti.ImpostaParte(utente2, 40);
 			//pagamento.Parti.ImpostaParte(utente3, 40);
 
 			gruppo1.SpeseGruppo.AggiungiSpesa(spesa);
-			var prodotto = new Prodotto("Prova", 3);
 
 			Console.WriteLine(utente1.calcolaSituazione(utente2));
 
-			Saldo saldo = new Saldo(utente2, utente1, 66, DateTime.Now);
+			Saldo saldo = new Saldo(utente2, utente1, 20, DateTime.Now);
 			utente1.AggiungiMovimentoDiDenaro(saldo);
 			utente2.AggiungiMovimentoDiDenaro(saldo);
+
+			Console.WriteLine(utente1.calcolaSituazione(utente2));
+			Console.WriteLine(utente1.calcolaSituazione(utente3));
+
+			gruppo1.SpeseGruppo.RimuoviSpesa(spesa);
 
 			Console.WriteLine(utente1.calcolaSituazione(utente2));
 			Console.WriteLine(utente1.calcolaSituazione(utente3));

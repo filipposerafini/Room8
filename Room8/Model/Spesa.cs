@@ -4,7 +4,7 @@ namespace Room8
 	public class Spesa
 	{
 		private readonly string _id;
-		private readonly SpeseGruppo _speseGruppo;
+		private readonly Gruppo _gruppo;
 		private string _descrizione;
 		private decimal _importo;
 		private Utente _pagante;
@@ -18,20 +18,20 @@ namespace Room8
 			return Guid.NewGuid().ToString();
 		}
 
-		public Spesa(SpeseGruppo speseGruppo, string descrizione, decimal importo, Utente pagante, string nomeMetodo, DateTime data)
+		public Spesa(Gruppo gruppo, string descrizione, decimal importo, Utente pagante, string nomeMetodo, DateTime data)
 		{
 			this._id = GenerateId();
-			this._speseGruppo = speseGruppo;
+			this._gruppo = gruppo;
 			this._descrizione = descrizione;
 			this._importo = importo;
 			this._pagante = pagante;
 			this._metodoDivisione = MetodoDiDivisioneFactory.getMetodoDiDivisione(nomeMetodo);
-			this._parti = new Parti(speseGruppo.Gruppo.MembriGruppo);
+			this._parti = new Parti(gruppo.MembriGruppo);
 			this._data = data;
 		}
 
-		public Spesa(SpeseGruppo speseGruppo, string descrizione, decimal importo, Utente pagante, string nomeMetodo, DateTime data, string note)
-			: this(speseGruppo, descrizione, importo, pagante, nomeMetodo, data)
+		public Spesa(Gruppo gruppo, string descrizione, decimal importo, Utente pagante, string nomeMetodo, DateTime data, string note)
+			: this(gruppo, descrizione, importo, pagante, nomeMetodo, data)
 		{
 			if (!String.IsNullOrEmpty(note))
 				this._note = note;		
@@ -42,9 +42,9 @@ namespace Room8
 			get { return _id; }
 		}
 
-		public SpeseGruppo SpeseGruppo
+		public Gruppo Gruppo
 		{
-			get { return _speseGruppo; }
+			get { return _gruppo; }
 		}
 
 		public string Descrizione
