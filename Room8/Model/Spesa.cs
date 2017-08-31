@@ -6,13 +6,13 @@ namespace Room8
 	{
 		private readonly string _id;
 		private readonly Gruppo _gruppo;
-		private string _descrizione;
-		private decimal _importo;
-		private Utente _pagante;
-		private IMetodoDiDivisione _metodoDivisione;
-		private Parti _parti;
-		private DateTime _data;
-		private string _note;
+		private readonly string _descrizione;
+		private readonly decimal _importo;
+		private readonly Utente _pagante;
+		private readonly IMetodoDiDivisione _metodoDivisione;
+		private readonly Parti _parti;
+		private readonly DateTime _data;
+		private readonly string _note;
 
 		private string GenerateId ()
 		{
@@ -52,69 +52,30 @@ namespace Room8
 
 		public string Descrizione {
 			get { return _descrizione; }
-			set {
-				if (String.IsNullOrEmpty (value))
-					throw new ArgumentException ("descrizione null or empty");
-
-				_descrizione = value;
-			}
 		}
 
 		public decimal Importo {
 			get { return _importo; }
-			set {
-				if (value <= 0)
-					throw new ArgumentException ("importo minore di zero");
-
-				_importo = value;
-			}
 		}
 
 		public Utente Pagante {
 			get { return _pagante; }
-
-			set {
-				if (value == null)
-					throw new ArgumentException ("Pagante null");
-				_pagante = value;
-			}
 		}
 
 		public IMetodoDiDivisione MetodoDivisione {
 			get { return _metodoDivisione; }
-
-			set {
-				if (value == null)
-					throw new ArgumentException ("MetodoDivisione null");
-				_metodoDivisione = value;
-			}
 		}
 
 		public Parti Parti {
 			get { return _parti; }
-
-			set {
-				if (value == null)
-					throw new ArgumentException ("Parti null");
-				_parti = value;
-			}
 		}
 
 		public DateTime Data {
 			get { return _data; }
-			set {
-				_data = value;
-			}
 		}
 
 		public string Note {
 			get { return _note; }
-			set {
-				if (String.IsNullOrEmpty (value))
-					throw new ArgumentException ("note null or empty");
-
-				_note = value;
-			}
 		}
 
 		public void generaMovimenti ()

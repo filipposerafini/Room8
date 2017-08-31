@@ -111,19 +111,6 @@ namespace Room8
 			_movimentiDiDenaro.Add(movimento);
 		}
 
-		public void ModificaMovimentoDiDenaro(MovimentoDiDenaro daModificare, MovimentoDiDenaro nuovo)
-		{
-			if (daModificare == null)
-				throw new ArgumentException("daModificare null");
-			if (nuovo == null)
-				throw new ArgumentException("nuovo null");
-
-			if (_movimentiDiDenaro.Remove(daModificare))
-				_movimentiDiDenaro.Add(nuovo);
-			else
-				throw new ArgumentException("daModificare non presente");
-		}
-
 		public void RimuoviMovimentoDiDenaro(MovimentoDiDenaro movimento)
 		{
 			if (movimento == null)
@@ -131,6 +118,37 @@ namespace Room8
 
 			if (!_movimentiDiDenaro.Remove(movimento))
 				throw new ArgumentException("movimento non presente");
+		}
+
+		public void AggiungiSaldo(Saldo saldo)
+		{
+			if (saldo == null)
+				throw new ArgumentException("saldo null");
+			if (!saldo.Sorgente.Equals(this))
+				throw new ArgumentException("sorgente del saldo sbagliata");
+			
+			this.AggiungiMovimentoDiDenaro(saldo);
+			saldo.Destinazione.AggiungiMovimentoDiDenaro(saldo);
+		}
+
+		public void ModificaSaldo(Saldo daModificare, Saldo nuovo)
+		{
+			if (daModificare == null)
+				throw new ArgumentException("daModificare null");
+			if (nuovo == null)
+				throw new ArgumentException("nuovo null");
+
+			RimuoviSaldo(daModificare);
+			AggiungiSaldo(nuovo);
+		}
+
+		public void RimuoviSaldo(Saldo saldo)
+		{
+			if (saldo == null)
+				throw new ArgumentException("saldo null");
+
+			saldo.Sorgente.RimuoviMovimentoDiDenaro(saldo);
+			saldo.Destinazione.RimuoviMovimentoDiDenaro(saldo);
 		}
 
 		public decimal calcolaSituazione(Utente amico)

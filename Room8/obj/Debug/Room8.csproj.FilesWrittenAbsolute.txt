@@ -14,3 +14,5 @@
 /home/filippo/Documents/University/Room8/Room8/bin/Debug/Room8.exe
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.exe
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.exe.mdb
+/home/filippo/Documents/University/Room8/Room8/bin/Debug/Room8.pdb
+/home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.pdb
