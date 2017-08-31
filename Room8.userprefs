@@ -1,8 +1,7 @@
 ﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Room8/Test/MainModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Room8/Model/Utente.cs">
     <Files>
       <File FileName="Room8/Model/Parti.cs" Line="27" Column="27" />
-      <File FileName="Room8/Test/MainModel.cs" Line="38" Column="4" />
       <File FileName="Room8/Model/Utente.cs" Line="134" Column="1" />
       <File FileName="Room8/Model/Gruppo.cs" Line="97" Column="28" />
       <File FileName="Room8/Model/IMetodoDiDivisione.cs" Line="8" Column="52" />
@@ -13,8 +12,20 @@
       <File FileName="Room8/Model/MovimentoDiDenaro.cs" Line="7" Column="1" />
       <File FileName="Room8/Model/Movimento.cs" Line="18" Column="3" />
       <File FileName="Room8/Model/SpeseGruppo.cs" Line="51" Column="6" />
-      <File FileName="Room8/Model/Spesa.cs" Line="134" Column="31" />
+      <File FileName="Room8/Model/Spesa.cs" Line="134" Column="2" />
+      <File FileName="Room8Tests/Test.cs" Line="14" Column="35" />
     </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="Room8" expanded="True" selected="True">
+            <Node name="Room8Tests" expanded="True">
+              <Node name="Room8Tests" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Room8 PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
