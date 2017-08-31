@@ -1,0 +1,24 @@
+﻿<Properties StartupItem="Room8.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Test/MainModel.cs">
+    <Files>
+      <File FileName="Test/MainModel.cs" Line="14" Column="28" />
+    </Files>
+    <Pads>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="Room8" expanded="True">
+            <Node name="Room8Tests" selected="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/home/gloria/Room8/Room8/Test/MainModel.cs" line="10" column="1" />
+      <Breakpoint file="/home/gloria/Room8/Room8/Test/MainModel.cs" line="14" column="28" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
