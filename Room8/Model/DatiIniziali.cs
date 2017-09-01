@@ -39,6 +39,14 @@ namespace Room8
 			_gruppi.Add (gruppo1);
 			_gruppi.Add (gruppo2);
 			_gruppi.Add (gruppo3);
+
+			_utenti = new List<Utente> ();
+			_utenti.Add (utente1);
+			_utenti.Add (utente2);
+			_utenti.Add (utente3);
+			_utenti.Add (utente4);
+			_utenti.Add (utente5);
+			_utenti.Add (utente6);
 		}
 
 		public static DatiIniziali Istanza

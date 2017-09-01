@@ -208,9 +208,10 @@ namespace Room8
 
 			decimal result = 0;
 
-			foreach (var utente in gruppo.MembriGruppo.Utenti)
-				result += this.calcolaSituazioneGruppo(utente, gruppo);
-
+			result = gruppo.MembriGruppo.Utenti.Sum(u => this.calcolaSituazioneGruppo(u,gruppo));
+//			foreach (var utente in gruppo.MembriGruppo.Utenti)
+//				result += this.calcolaSituazioneGruppo(utente, gruppo);
+//
 			return result;
 		}
 	}

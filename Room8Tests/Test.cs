@@ -152,7 +152,7 @@ namespace Room8Tests
 			Assert.AreEqual(bilancio, 20);
 
 			Spesa spesa2 = new Spesa(gruppo1, "Spesa2", 60, utente2, "Equa", DateTime.Now);
-			gruppo1.SpeseGruppo.AggiungiSpesa(spesa1);
+			gruppo1.SpeseGruppo.AggiungiSpesa(spesa2);
 
 			bilancio = utente1.calcolaBilancio(gruppo1);
 			Assert.AreEqual(bilancio, -20);
@@ -161,8 +161,8 @@ namespace Room8Tests
 			bilancio = utente3.calcolaBilancio(gruppo1);
 			Assert.AreEqual(bilancio, 40);
 
-			Spesa spess3 = new Spesa(gruppo1, "Spesa3", 60, utente3, "Equa", DateTime.Now);
-			gruppo1.SpeseGruppo.AggiungiSpesa(spesa1);
+			Spesa spesa3 = new Spesa(gruppo1, "Spesa3", 60, utente3, "Equa", DateTime.Now);
+			gruppo1.SpeseGruppo.AggiungiSpesa(spesa3);
 
 			bilancio = utente1.calcolaBilancio(gruppo1);
 			Assert.AreEqual(bilancio, 0);
