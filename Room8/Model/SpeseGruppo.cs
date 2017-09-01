@@ -41,6 +41,17 @@ namespace Room8
 			}
 		}
 
+		public void ModificaSpesa(Spesa daModificare, Spesa nuova)
+		{
+			if (daModificare == null)
+				throw new ArgumentException("daModificare null");
+			if (nuova == null)
+				throw new ArgumentException("nuova null");
+
+			RimuoviSpesa(daModificare);
+			AggiungiSpesa(nuova);
+		}
+
 		public void RimuoviSpesa(Spesa spesa)
 		{
 			if (spesa == null)
