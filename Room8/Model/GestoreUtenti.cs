@@ -3,12 +3,12 @@ using System.Collections.Generic;
 
 namespace Room8
 {
-	public class GestioreUtenti
+	public class GestoreUtenti
 	{
 		private List<Gruppo> _gruppi;
 		private List<Utente> _utenti;
 
-		public GestioreUtenti ()
+		public GestoreUtenti ()
 		{
 			Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1");
 			Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2");

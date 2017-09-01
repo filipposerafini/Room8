@@ -88,7 +88,7 @@ namespace Room8Tests
 		[Test ()]
 		public void TestMovimenti ()
 		{
-			GestioreUtenti dati = new GestioreUtenti();
+			GestoreUtenti dati = new GestoreUtenti();
 
 			Gruppo gruppo1 = dati.Gruppi[0];
 			Utente utente1 = gruppo1.MembriGruppo.Utenti[0];
@@ -131,7 +131,7 @@ namespace Room8Tests
 		[ExpectedException(typeof(ArgumentException))]
 		public void TestBilancio()
 		{
-			GestioreUtenti dati = new GestioreUtenti();
+			GestoreUtenti dati = new GestoreUtenti();
 
 			Gruppo gruppo1 = dati.Gruppi[0];
 			Utente utente1 = gruppo1.MembriGruppo.Utenti[0];
@@ -175,7 +175,7 @@ namespace Room8Tests
 		[Test()]
 		public void TestGestoreUtenti()
 		{
-			GestioreUtenti dati = new GestioreUtenti();
+			GestoreUtenti dati = new GestoreUtenti();
 		
 			Utente utenteDoppio = new Utente ("user1@mail.com", "abc", "xxx", "xxx");
 			Assert.Throws<ArgumentException>(() => dati.AggiugniUtnete (utenteDoppio));
