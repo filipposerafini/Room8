@@ -88,15 +88,12 @@ namespace Room8Tests
 		[Test ()]
 		public void TestMovimenti ()
 		{
-			Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1");
-			Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2");
-			Utente utente3 = new Utente("user3@mail.com", "password3", "nome3", "cognome3");
+			DatiIniziali dati = DatiIniziali.Istanza;
 
-			Gruppo gruppo1 = new Gruppo("Gruppo1");
-
-			gruppo1.MembriGruppo.AggiungiMembro(utente1);
-			gruppo1.MembriGruppo.AggiungiMembro(utente2);
-			gruppo1.MembriGruppo.AggiungiMembro(utente3);
+			Gruppo gruppo1 = dati.Gruppi[0];
+			Utente utente1 = gruppo1.MembriGruppo.Utenti[0];
+			Utente utente2 = gruppo1.MembriGruppo.Utenti[1];
+			Utente utente3 = gruppo1.MembriGruppo.Utenti[2];
 
 			Spesa spesa1 = new Spesa(gruppo1, "Spesa1", 60, utente3, "Per quote", DateTime.Now);
 			spesa1.Parti.ImpostaParte(utente1, 1);
@@ -112,15 +109,24 @@ namespace Room8Tests
 
 			gruppo1.SpeseGruppo.AggiungiSpesa (spesa2);
 
-			decimal result = utente1.calcolaSituazione (utente3);
+			decimal result = (utente1).calcolaSituazione (utente3);
 			Assert.AreEqual(result, -10);
 
 			gruppo1.SpeseGruppo.RimuoviSpesa (spesa2);
 			result = utente1.calcolaSituazione (utente3);
 			Assert.AreEqual(result, 10);
 
+			utente1.AggiungiSaldo(utente3,10,DateTime.Now);
+			result = utente1.calcolaSituazione (utente3);
+			Assert.AreEqual(result, 0);
+
+			Saldo saldo = (Saldo) utente1.MovimentiDiDenaro.Find(x => x is Saldo);
+			utente1.ModificaSaldo(saldo,utente3,20,DateTime.Now);
+			result = utente1.calcolaSituazione(utente3);
+			Assert.AreEqual(result, -10);
 
 		}
+
 	}
 }
 

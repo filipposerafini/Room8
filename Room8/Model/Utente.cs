@@ -77,14 +77,14 @@ namespace Room8
 			}
 		}
 
-		public IList<MembriGruppo> MembriGruppo
+		public List<MembriGruppo> MembriGruppo
 		{
-			get { return _membriGruppo.AsReadOnly(); }
+			get { return _membriGruppo; }
 		}
 
-		public IList<MovimentoDiDenaro> MovimentiDiDenaro
+		public List<MovimentoDiDenaro> MovimentiDiDenaro
 		{
-			get { return _movimentiDiDenaro.AsReadOnly(); }
+			get { return _movimentiDiDenaro; }
 		}
 
 		public void AggiungiMembriGruppo(MembriGruppo membriGruppo)
@@ -111,19 +111,6 @@ namespace Room8
 			_movimentiDiDenaro.Add(movimento);
 		}
 
-		public void ModificaMovimentoDiDenaro(MovimentoDiDenaro daModificare, MovimentoDiDenaro nuovo)
-		{
-			if (daModificare == null)
-				throw new ArgumentException("daModificare null");
-			if (nuovo == null)
-				throw new ArgumentException("nuovo null");
-
-			if (_movimentiDiDenaro.Remove(daModificare))
-				_movimentiDiDenaro.Add(nuovo);
-			else
-				throw new ArgumentException("daModificare non presente");
-		}
-
 		public void RimuoviMovimentoDiDenaro(MovimentoDiDenaro movimento)
 		{
 			if (movimento == null)
@@ -131,6 +118,38 @@ namespace Room8
 
 			if (!_movimentiDiDenaro.Remove(movimento))
 				throw new ArgumentException("movimento non presente");
+		}
+
+		public void AggiungiSaldo(Utente destinazione, decimal importo, DateTime data)
+		{
+
+			if (destinazione == null || importo == null || data == DateTime.MinValue)
+				throw new ArgumentException("saldo null");
+			Saldo saldo = new Saldo (this, destinazione, importo, data);
+
+			this.AggiungiMovimentoDiDenaro(saldo);
+			saldo.Destinazione.AggiungiMovimentoDiDenaro(saldo);
+		}
+
+
+		public void ModificaSaldo(Saldo daModificare, Utente destinazione, decimal importo, DateTime data)
+		{
+			if (daModificare == null)
+				throw new ArgumentException("daModificare null");
+			if (destinazione == null || importo == null || data == DateTime.MinValue)
+				throw new ArgumentException("saldo null");
+			
+			RimuoviSaldo(daModificare);
+			AggiungiSaldo(destinazione, importo, data);
+		}
+
+		public void RimuoviSaldo(Saldo saldo)
+		{
+			if (saldo == null)
+				throw new ArgumentException("saldo null");
+
+			saldo.Sorgente.RimuoviMovimentoDiDenaro(saldo);
+			saldo.Destinazione.RimuoviMovimentoDiDenaro(saldo);
 		}
 
 		public decimal calcolaSituazione(Utente amico)

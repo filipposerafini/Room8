@@ -90,6 +90,7 @@
     <Compile Include="Model\SpeseGruppo.cs" />
     <Compile Include="Test\MainModel.cs" />
     <Compile Include="Model\Parti.cs" />
+    <Compile Include="Model\DatiIniziali.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
