@@ -9,7 +9,7 @@ namespace Room8
 		private List<Gruppo> _gruppi;
 		private List<Utente> _utenti;
 
-		private DatiIniziali ()
+		public DatiIniziali ()
 		{
 			Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1");
 			Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2");
@@ -39,19 +39,16 @@ namespace Room8
 			_gruppi.Add (gruppo1);
 			_gruppi.Add (gruppo2);
 			_gruppi.Add (gruppo3);
-		}
 
-		public static DatiIniziali Istanza
-		{
-			get
-			{
-				if(datiIniziali == null)
-				{
-					datiIniziali = new DatiIniziali();
-				}
-				return datiIniziali;
-			}
+			_utenti = new List<Utente> ();
+			_utenti.Add (utente1);
+			_utenti.Add (utente2);
+			_utenti.Add (utente3);
+			_utenti.Add (utente4);
+			_utenti.Add (utente5);
+			_utenti.Add (utente6);
 		}
+			
 		public List<Gruppo> Gruppi
 		{
 			get

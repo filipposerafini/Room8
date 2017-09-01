@@ -88,28 +88,28 @@ namespace Room8Tests
 		[Test ()]
 		public void TestMovimenti ()
 		{
-			DatiIniziali dati = DatiIniziali.Istanza;
+			DatiIniziali dati = new DatiIniziali();
 
 			Gruppo gruppo1 = dati.Gruppi[0];
 			Utente utente1 = gruppo1.MembriGruppo.Utenti[0];
 			Utente utente2 = gruppo1.MembriGruppo.Utenti[1];
 			Utente utente3 = gruppo1.MembriGruppo.Utenti[2];
 
-			Spesa spesa1 = new Spesa(gruppo1, "Spesa1", 60, utente3, "Per quote", DateTime.Now);
+			Spesa spesa1 = new Spesa(gruppo1, "1Spesa", 80, utente3, "Per quote", DateTime.Now);
 			spesa1.Parti.ImpostaParte(utente1, 1);
 			spesa1.Parti.ImpostaParte(utente2, 2);
-			spesa1.Parti.ImpostaParte(utente3, 3);
+			spesa1.Parti.ImpostaParte(utente3, 5);
 
 			gruppo1.SpeseGruppo.AggiungiSpesa (spesa1);
 
-			Spesa spesa2 = new Spesa(gruppo1, "Spesa2", 100, utente1, "Percentuale", DateTime.Now);
+			Spesa spesa2 = new Spesa(gruppo1, "2Spesa", 100, utente1, "Percentuale", DateTime.Now);
 			spesa2.Parti.ImpostaParte (utente1, 60);
 			spesa2.Parti.ImpostaParte (utente2, 20);
 			spesa2.Parti.ImpostaParte (utente3, 20);
 
 			gruppo1.SpeseGruppo.AggiungiSpesa (spesa2);
 
-			decimal result = (utente1).calcolaSituazione (utente3);
+			decimal result = utente1.calcolaSituazione (utente3);
 			Assert.AreEqual(result, -10);
 
 			gruppo1.SpeseGruppo.RimuoviSpesa (spesa2);
@@ -131,7 +131,7 @@ namespace Room8Tests
 		[ExpectedException(typeof(ArgumentException))]
 		public void TestBilancio()
 		{
-			DatiIniziali dati = DatiIniziali.Istanza;
+			DatiIniziali dati = new DatiIniziali();
 
 			Gruppo gruppo1 = dati.Gruppi[0];
 			Utente utente1 = gruppo1.MembriGruppo.Utenti[0];
@@ -152,7 +152,7 @@ namespace Room8Tests
 			Assert.AreEqual(bilancio, 20);
 
 			Spesa spesa2 = new Spesa(gruppo1, "Spesa2", 60, utente2, "Equa", DateTime.Now);
-			gruppo1.SpeseGruppo.AggiungiSpesa(spesa1);
+			gruppo1.SpeseGruppo.AggiungiSpesa(spesa2);
 
 			bilancio = utente1.calcolaBilancio(gruppo1);
 			Assert.AreEqual(bilancio, -20);
@@ -161,8 +161,8 @@ namespace Room8Tests
 			bilancio = utente3.calcolaBilancio(gruppo1);
 			Assert.AreEqual(bilancio, 40);
 
-			Spesa spess3 = new Spesa(gruppo1, "Spesa3", 60, utente3, "Equa", DateTime.Now);
-			gruppo1.SpeseGruppo.AggiungiSpesa(spesa1);
+			Spesa spesa3 = new Spesa(gruppo1, "Spesa3", 60, utente3, "Equa", DateTime.Now);
+			gruppo1.SpeseGruppo.AggiungiSpesa(spesa3);
 
 			bilancio = utente1.calcolaBilancio(gruppo1);
 			Assert.AreEqual(bilancio, 0);
