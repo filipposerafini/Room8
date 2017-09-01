@@ -89,7 +89,7 @@
     <Compile Include="Model\Movimento.cs" />
     <Compile Include="Model\SpeseGruppo.cs" />
     <Compile Include="Model\Parti.cs" />
-    <Compile Include="Model\DatiIniziali.cs" />
+    <Compile Include="Model\GestoreUtenti.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

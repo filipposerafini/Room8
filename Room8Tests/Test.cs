@@ -88,7 +88,7 @@ namespace Room8Tests
 		[Test ()]
 		public void TestMovimenti ()
 		{
-			DatiIniziali dati = new DatiIniziali();
+			GestioreUtenti dati = new GestioreUtenti();
 
 			Gruppo gruppo1 = dati.Gruppi[0];
 			Utente utente1 = gruppo1.MembriGruppo.Utenti[0];
@@ -131,7 +131,7 @@ namespace Room8Tests
 		[ExpectedException(typeof(ArgumentException))]
 		public void TestBilancio()
 		{
-			DatiIniziali dati = new DatiIniziali();
+			GestioreUtenti dati = new GestioreUtenti();
 
 			Gruppo gruppo1 = dati.Gruppi[0];
 			Utente utente1 = gruppo1.MembriGruppo.Utenti[0];
@@ -170,6 +170,29 @@ namespace Room8Tests
 			Assert.AreEqual(bilancio, 0);
 			bilancio = utente3.calcolaBilancio(gruppo1);
 			Assert.AreEqual(bilancio, 0);
+		}
+
+		[Test()]
+		public void TestGestoreUtenti()
+		{
+			GestioreUtenti dati = new GestioreUtenti();
+		
+			Utente utenteDoppio = new Utente ("user1@mail.com", "abc", "xxx", "xxx");
+			Assert.Throws<ArgumentException>(() => dati.AggiugniUtnete (utenteDoppio));
+
+			Utente utenteOk = new Utente ("utneteOK@mail.com", "abc", "yyy", "yyy");
+			dati.AggiugniUtnete (utenteOk);
+
+			dati.RimuoviUtnete (utenteOk);
+			Gruppo gruppoConNuovi = new Gruppo("GruppoN");
+			gruppoConNuovi.MembriGruppo.AggiungiMembro (utenteOk);
+			dati.AggiungiGruppo (gruppoConNuovi);
+
+			Assert.True(dati.VerificaPassword ("utneteOK@mail.com", "abc"));
+			Assert.False(dati.VerificaPassword ("utneteOK@mail.com", "abcd"));
+
+			Assert.Throws<ArgumentException>(() => dati.VerificaPassword ("emialCheNonEsiste","aloha"));
+
 		}
 	}
 }
