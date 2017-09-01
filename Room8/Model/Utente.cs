@@ -123,7 +123,7 @@ namespace Room8
 		public void AggiungiSaldo(Utente destinazione, decimal importo, DateTime data)
 		{
 
-			if (destinazione == null || importo == null || data == DateTime.MinValue)
+			if (destinazione == null || importo <= 0 || data == DateTime.MinValue)
 				throw new ArgumentException("saldo null");
 			Saldo saldo = new Saldo (this, destinazione, importo, data);
 
@@ -131,12 +131,11 @@ namespace Room8
 			saldo.Destinazione.AggiungiMovimentoDiDenaro(saldo);
 		}
 
-
 		public void ModificaSaldo(Saldo daModificare, Utente destinazione, decimal importo, DateTime data)
 		{
 			if (daModificare == null)
 				throw new ArgumentException("daModificare null");
-			if (destinazione == null || importo == null || data == DateTime.MinValue)
+			if (destinazione == null || importo <= 0 || data == DateTime.MinValue)
 				throw new ArgumentException("saldo null");
 			
 			RimuoviSaldo(daModificare);
@@ -154,20 +153,65 @@ namespace Room8
 
 		public decimal calcolaSituazione(Utente amico)
 		{
-			decimal res = 0;
+			if (amico == null)
+				throw new ArgumentException("amico null");
+			decimal result = 0;
 			foreach (var movimento in MovimentiDiDenaro.Where(
 				mov => mov.Destinazione.Equals(amico) || mov.Sorgente.Equals(amico)))
 			{
 				if (movimento.Sorgente.Equals(amico) && movimento.Destinazione.Equals(this))
-					res += movimento.Importo;
+					result += movimento.Importo;
 				else if (movimento.Sorgente.Equals(this) && movimento.Destinazione.Equals(amico))
-					res -= movimento.Importo;
+					result -= movimento.Importo;
 			}
 
 			// Risultato negativo --> Credito
 			// Risultato positivo --> Debito
 
-			return res;
+			return result;
+		}
+
+		public decimal calcolaSituazioneGruppo(Utente amico, Gruppo gruppo)
+		{
+			if (amico == null)
+				throw new ArgumentException("amico null");
+			if (gruppo == null)
+				throw new ArgumentException("amico null");
+			
+			decimal result = 0;
+			foreach (var movimento in MovimentiDiDenaro.Where(
+				mov => mov.Destinazione.Equals(amico) || mov.Sorgente.Equals(amico)))
+			{
+				if (movimento is Movimento && (movimento as Movimento).Spesa.Gruppo.Equals(gruppo))
+				{
+					if (movimento.Sorgente.Equals(amico) && movimento.Destinazione.Equals(this))
+						result += movimento.Importo;
+					else if (movimento.Sorgente.Equals(this) && movimento.Destinazione.Equals(amico))
+						result -= movimento.Importo;
+				}
+				else
+					continue;
+			}
+
+			// Risultato negativo --> Credito
+			// Risultato positivo --> Debito
+
+			return result;
+		}
+
+		public decimal calcolaBilancio(Gruppo gruppo)
+		{
+			if (gruppo == null)
+				throw new ArgumentException("gruppo null");
+			if (!gruppo.MembriGruppo.Utenti.Contains(this))
+				throw new ArgumentException("utente non appartenente al gruppo");
+
+			decimal result = 0;
+
+			foreach (var utente in gruppo.MembriGruppo.Utenti)
+				result += this.calcolaSituazioneGruppo(utente, gruppo);
+
+			return result;
 		}
 	}
 }

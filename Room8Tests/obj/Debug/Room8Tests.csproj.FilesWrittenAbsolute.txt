@@ -14,3 +14,6 @@
 /home/filippo/Documents/University/Room8/Room8Tests/bin/Debug/nunit.framework.dll
 /home/filippo/Documents/University/Room8/Room8Tests/bin/Debug/Room8.exe
 /home/filippo/Documents/University/Room8/Room8Tests/bin/Debug/Room8.exe.mdb
+/home/filippo/Documents/University/Room8/Room8Tests/bin/Debug/Room8Tests.pdb
+/home/filippo/Documents/University/Room8/Room8Tests/obj/Debug/Room8Tests.pdb
+/home/filippo/Documents/University/Room8/Room8Tests/bin/Debug/Room8.pdb

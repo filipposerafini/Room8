@@ -127,6 +127,49 @@ namespace Room8Tests
 
 		}
 
+		[Test()]
+		[ExpectedException(typeof(ArgumentException))]
+		public void TestBilancio()
+		{
+			DatiIniziali dati = DatiIniziali.Istanza;
+
+			Gruppo gruppo1 = dati.Gruppi[0];
+			Utente utente1 = gruppo1.MembriGruppo.Utenti[0];
+			Utente utente2 = gruppo1.MembriGruppo.Utenti[1];
+			Utente utente3 = gruppo1.MembriGruppo.Utenti[2];
+			Utente utente4 = dati.Gruppi[1].MembriGruppo.Utenti[0];
+
+			Spesa spesa1 = new Spesa(gruppo1, "Spesa1", 60, utente1, "Equa", DateTime.Now);
+			gruppo1.SpeseGruppo.AggiungiSpesa(spesa1);
+
+			decimal bilancio = utente4.calcolaBilancio(gruppo1);
+
+			bilancio = utente1.calcolaBilancio(gruppo1);
+			Assert.AreEqual(bilancio, -40);
+			bilancio = utente2.calcolaBilancio(gruppo1);
+			Assert.AreEqual(bilancio, 20);
+			bilancio = utente3.calcolaBilancio(gruppo1);
+			Assert.AreEqual(bilancio, 20);
+
+			Spesa spesa2 = new Spesa(gruppo1, "Spesa2", 60, utente2, "Equa", DateTime.Now);
+			gruppo1.SpeseGruppo.AggiungiSpesa(spesa1);
+
+			bilancio = utente1.calcolaBilancio(gruppo1);
+			Assert.AreEqual(bilancio, -20);
+			bilancio = utente2.calcolaBilancio(gruppo1);
+			Assert.AreEqual(bilancio, -20);
+			bilancio = utente3.calcolaBilancio(gruppo1);
+			Assert.AreEqual(bilancio, 40);
+
+			Spesa spess3 = new Spesa(gruppo1, "Spesa3", 60, utente3, "Equa", DateTime.Now);
+			gruppo1.SpeseGruppo.AggiungiSpesa(spesa1);
+
+			bilancio = utente1.calcolaBilancio(gruppo1);
+			Assert.AreEqual(bilancio, 0);
+			bilancio = utente2.calcolaBilancio(gruppo1);
+			Assert.AreEqual(bilancio, 0);
+			bilancio = utente3.calcolaBilancio(gruppo1);
+			Assert.AreEqual(bilancio, 0);
+		}
 	}
 }
-

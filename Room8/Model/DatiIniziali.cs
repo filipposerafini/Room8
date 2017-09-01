@@ -35,11 +35,10 @@ namespace Room8
 			gruppo3.MembriGruppo.AggiungiMembro (utente4);
 			gruppo3.MembriGruppo.AggiungiMembro (utente5);
 
-			_gruppi = new List<Gruppo> ();
+			_gruppi = new List<Gruppo>();
 			_gruppi.Add (gruppo1);
 			_gruppi.Add (gruppo2);
 			_gruppi.Add (gruppo3);
-
 		}
 
 		public static DatiIniziali Istanza
