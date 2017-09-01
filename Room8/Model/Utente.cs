@@ -77,14 +77,14 @@ namespace Room8
 			}
 		}
 
-		public IList<MembriGruppo> MembriGruppo
+		public List<MembriGruppo> MembriGruppo
 		{
-			get { return _membriGruppo.AsReadOnly(); }
+			get { return _membriGruppo; }
 		}
 
-		public IList<MovimentoDiDenaro> MovimentiDiDenaro
+		public List<MovimentoDiDenaro> MovimentiDiDenaro
 		{
-			get { return _movimentiDiDenaro.AsReadOnly(); }
+			get { return _movimentiDiDenaro; }
 		}
 
 		public void AggiungiMembriGruppo(MembriGruppo membriGruppo)
@@ -120,26 +120,27 @@ namespace Room8
 				throw new ArgumentException("movimento non presente");
 		}
 
-		public void AggiungiSaldo(Saldo saldo)
+		public void AggiungiSaldo(Utente destinazione, decimal importo, DateTime data)
 		{
-			if (saldo == null)
+
+			if (destinazione == null || importo == null || data == DateTime.MinValue)
 				throw new ArgumentException("saldo null");
-			if (!saldo.Sorgente.Equals(this))
-				throw new ArgumentException("sorgente del saldo sbagliata");
-			
+			Saldo saldo = new Saldo (this, destinazione, importo, data);
+
 			this.AggiungiMovimentoDiDenaro(saldo);
 			saldo.Destinazione.AggiungiMovimentoDiDenaro(saldo);
 		}
 
-		public void ModificaSaldo(Saldo daModificare, Saldo nuovo)
+
+		public void ModificaSaldo(Saldo daModificare, Utente destinazione, decimal importo, DateTime data)
 		{
 			if (daModificare == null)
 				throw new ArgumentException("daModificare null");
-			if (nuovo == null)
-				throw new ArgumentException("nuovo null");
-
+			if (destinazione == null || importo == null || data == DateTime.MinValue)
+				throw new ArgumentException("saldo null");
+			
 			RimuoviSaldo(daModificare);
-			AggiungiSaldo(nuovo);
+			AggiungiSaldo(destinazione, importo, data);
 		}
 
 		public void RimuoviSaldo(Saldo saldo)
