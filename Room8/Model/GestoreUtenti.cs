@@ -3,13 +3,12 @@ using System.Collections.Generic;
 
 namespace Room8
 {
-	public class DatiIniziali
+	public class GestoreUtenti
 	{
-		private static DatiIniziali datiIniziali;
 		private List<Gruppo> _gruppi;
 		private List<Utente> _utenti;
 
-		public DatiIniziali ()
+		public GestoreUtenti ()
 		{
 			Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1");
 			Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2");
@@ -56,12 +55,72 @@ namespace Room8
 				return _gruppi;
 			}
 		}
+
 		public List<Utente> Utenti
 		{
 			get
 			{
 				return _utenti;
 			}
+		}
+
+		public void AggiugniUtnete(Utente utente)
+		{
+			if( this.Utenti.Exists( x => x.Email.Equals(utente.Email)))
+			{
+				throw new ArgumentException ("Utente già presente");
+			}
+			this.Utenti.Add (utente);
+		}
+
+		public void RimuoviUtnete(Utente utente)
+		{
+			if(!this.Utenti.Contains(utente))
+			{
+				throw new ArgumentException ("Utente non presente, eliminazione fallita");
+			}
+			this.Utenti.Remove (utente);
+		}
+
+		public void AggiungiGruppo(Gruppo gruppo)
+		{
+			if( this.Gruppi.Exists( x => x.Id.Equals(gruppo.Id)))
+			{
+				throw new ArgumentException ("Utente già presente");
+			}
+
+			foreach (var utente in gruppo.MembriGruppo.Utenti) 
+			{
+				if (!this.Utenti.Exists( x => x.Email.Equals(utente.Email)))
+				{
+					this.Utenti.Add (utente);
+				}
+			}
+			this.Gruppi.Add (gruppo);
+		}
+
+		public void RimuoviGruppo(Gruppo gruppo)
+		{
+			if(!this.Gruppi.Contains(gruppo))
+			{
+				throw new ArgumentException ("Gruppo non presente, eliminazione fallita");
+			}
+			this.Gruppi.Remove (gruppo);
+		}
+
+		public bool VerificaPassword(string email, string password)
+		{
+			Utente utente = this.Utenti.Find (x => x.Email.Equals (email));
+
+			if (utente == null) 
+			{
+				throw new ArgumentException ("Utente non presente, verifica fallita");
+			}
+
+			if (utente.Password.Equals (password))
+				return true;
+			else
+				return false;
 		}
 	}
 }
