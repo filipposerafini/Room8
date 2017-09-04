@@ -108,7 +108,7 @@ namespace Room8
 			this.Gruppi.Remove(gruppo);
 		}
 
-		public bool VerificaPassword(string email, string password)
+        public Utente VerificaPassword(string email, string password)
 		{
 			Utente utente = _utenti.Find(x => x.Email.Equals(email));
 
@@ -118,9 +118,9 @@ namespace Room8
 			}
 
 			if (utente.Password.Equals(password))
-				return true;
+                return utente;
 			else
-				return false;
+				return null;
 		}
 	}
 }

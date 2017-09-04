@@ -189,8 +189,8 @@ namespace Room8Tests
 			gruppoConNuovi.AggiungiMembro(utenteOk);
 			dati.AggiungiGruppo(gruppoConNuovi);
 
-			Assert.True(dati.VerificaPassword("utneteOK@mail.com", "abc"));
-			Assert.False(dati.VerificaPassword("utneteOK@mail.com", "abcd"));
+            Assert.IsNotNull(dati.VerificaPassword("utneteOK@mail.com", "abc"));
+            Assert.IsNull(dati.VerificaPassword("utneteOK@mail.com", "abcd"));
 
 			Assert.Throws<ArgumentException>(() => dati.VerificaPassword("emailCheNonEsiste", "aloha"));
 		}
