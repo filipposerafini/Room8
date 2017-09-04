@@ -123,7 +123,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerSpese)).BeginInit();
             this.splitContainerSpese.Panel2.SuspendLayout();
             this.splitContainerSpese.SuspendLayout();
-            this.tabControlSpese.SuspendLayout();
             this.tabPageSpeseBilancio.SuspendLayout();
             this.tabPageSpeseStatistiche.SuspendLayout();
             this.tabPageGruppo.SuspendLayout();
