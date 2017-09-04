@@ -15,7 +15,7 @@ namespace Room8
 		private readonly DateTime _dataCreazione;
 		private string _foto;
 
-		private string GenerateId() 
+		private string GenerateId()
 		{
 			return Guid.NewGuid().ToString();
 		}
@@ -37,7 +37,7 @@ namespace Room8
 		public Gruppo(string nome, string foto)
 			: this(nome)
 		{
-			if (String.IsNullOrEmpty(foto)) 
+			if (String.IsNullOrEmpty(foto))
 				throw new ArgumentException("foto is null or empty");
 
 			this._foto = foto;
@@ -77,7 +77,7 @@ namespace Room8
 		{
 			get { return _foto; }
 
-			set 
+			set
 			{
 				if (String.IsNullOrEmpty(value))
 					throw new ArgumentException("foto is null or empty");
@@ -97,17 +97,17 @@ namespace Room8
 				Prodotto p = DaComprare.Single(s => prodotto.Nome.Equals(s.Nome));
 				p.Quantita += prodotto.Quantita;
 			}
-			catch (InvalidOperationException) 
+			catch (InvalidOperationException)
 			{
 				_daComprare.Add(prodotto);
 			}
 		}
 
-		public void RimuoviProdotto(string nome) 
+		public void RimuoviProdotto(string nome)
 		{
-		if (nome == null)
+			if (nome == null)
 				throw new ArgumentException("Nome prodotto null");
-			
+
 			try
 			{
 				Prodotto p = DaComprare.Single(s => nome.Equals(s.Nome));

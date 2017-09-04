@@ -6,7 +6,7 @@ namespace Room8
 		private readonly DateTime _data;
 
 		public Saldo(Utente sorgente, Utente destinazione, decimal importo, DateTime data)
-			: base(sorgente, destinazione, importo) 
+			: base(sorgente, destinazione, importo)
 		{
 			this._data = data;
 		}

@@ -18,7 +18,7 @@ namespace Room8
 		public static IMetodoDiDivisione getMetodoDiDivisione(string nome)
 		{
 			if (!_dictionary.ContainsKey(nome))
-					throw new ArgumentException("Metodo di divisione inesistente: "+nome);
+				throw new ArgumentException("Metodo di divisione inesistente: " + nome);
 			return _dictionary[nome];
 		}
 
@@ -55,11 +55,11 @@ namespace Room8
 				int tot = 0;
 				foreach (int perc in parti.Values)
 					tot += perc;
-				
+
 				if (tot != 100)
 					throw new ArgumentException("Percentuale totale diversa da 100");
-				
-				return totale * ((decimal) parti[utente] / tot);
+
+				return totale * ((decimal)parti[utente] / tot);
 			}
 		}
 
@@ -70,10 +70,10 @@ namespace Room8
 				int quote = 0;
 				foreach (int quota in parti.Values)
 					quote += quota;
-				
+
 				if (quote == 0)
 					throw new ArgumentException("Quote tutte nulle");
-				
+
 				return (totale / quote) * parti[utente];
 			}
 		}

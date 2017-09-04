@@ -10,32 +10,32 @@ using System.Windows.Forms;
 
 namespace Room8
 {
-    public partial class Form1 : Form
-    {
-        public Form1()
-        {
-            InitializeComponent();
-        }
+	public partial class Form1 : Form
+	{
+		public Form1()
+		{
+			InitializeComponent();
+		}
 
-        private void buttonRiepilogo_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab(tabPageRiepilogo);
-        }
+		private void buttonRiepilogo_Click(object sender, EventArgs e)
+		{
+			tabControl.SelectTab(tabPageRiepilogo);
+		}
 
-        private void buttonAttivita_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab(tabPageAttivita);
-        }
+		private void buttonAttivita_Click(object sender, EventArgs e)
+		{
+			tabControl.SelectTab(tabPageAttivita);
+		}
 
-        private void buttonSpese_Click(object sender, EventArgs e)
-        {
-            tabControl.SelectTab(tabPageSpese);
-        }
+		private void buttonSpese_Click(object sender, EventArgs e)
+		{
+			tabControl.SelectTab(tabPageSpese);
+		}
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            tabControl.SelectTab(tabPageRiepilogo);
-        }
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			tabControl.SelectTab(tabPageRiepilogo);
+		}
 
-    }
+	}
 }

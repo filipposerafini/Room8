@@ -105,38 +105,6 @@ namespace Room8
 			_gruppi.Remove(gruppo);
 		}
 
-		public void AggiungiMovimentoDiDenaro(MovimentoDiDenaro movimento)
-		{
-			if (movimento == null)
-				throw new ArgumentException("movimento null");
-
-			_movimentiDiDenaro.Add(movimento);
-			movimento.Destinazione.AggiungiMovimentoDiDenaro (movimento);
-		}
-
-		public void RimuoviMovimentoDiDenaro(MovimentoDiDenaro movimento)
-		{
-			if (movimento == null)
-				throw new ArgumentException("movimento null");
-
-			if (!_movimentiDiDenaro.Remove(movimento))
-				throw new ArgumentException("movimento non presente");
-			if (!movimento.Destinazione.MovimentiDiDenaro.Remove(movimento))
-				throw new ArgumentException("movimento non presente");
-		}
-
-		public void ModificaMovimentoDiDenaro(MovimentoDiDenaro daModificare, MovimentoDiDenaro nuovoMovimento)
-		{
-			if (daModificare == null)
-				throw new ArgumentException("daModificare null");
-			if (nuovoMovimento == null)
-				throw new ArgumentException("saldo null");
-			
-			RimuoviMovimentoDiDenaro(daModificare);
-			AggiungiMovimentoDiDenaro(nuovoMovimento);
-		}
-			
-
 		public decimal calcolaSituazione(Utente amico)
 		{
 			// ritorna l'ammontare totale a Credito/debito con utente 'amico'
@@ -165,7 +133,7 @@ namespace Room8
 				throw new ArgumentException("amico null");
 			if (gruppo == null)
 				throw new ArgumentException("amico null");
-			
+
 			decimal result = 0;
 			foreach (var movimento in MovimentiDiDenaro.Where(
 				mov => mov.Destinazione.Equals(amico) || mov.Sorgente.Equals(amico)))
@@ -197,7 +165,7 @@ namespace Room8
 
 			decimal result = 0;
 
-			result = gruppo.MembriGruppo.Sum(u => this.calcolaSituazioneGruppo(u,gruppo));
+			result = gruppo.MembriGruppo.Sum(u => this.calcolaSituazioneGruppo(u, gruppo));
 			return result;
 		}
 

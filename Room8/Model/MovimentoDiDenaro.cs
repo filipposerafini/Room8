@@ -40,5 +40,29 @@ namespace Room8
 		{
 			get { return _importo; }
 		}
+
+
+		public void AggiungiMovimentoDiDenaro()
+		{
+			Sorgente.MovimentiDiDenaro.Add(this);
+			Destinazione.MovimentiDiDenaro.Add(this);
+		}
+
+		public void RimuoviMovimentoDiDenaro()
+		{
+			if (!Sorgente.MovimentiDiDenaro.Remove(this))
+				throw new ArgumentException("movimento non presente");
+			if (!Destinazione.MovimentiDiDenaro.Remove(this))
+				throw new ArgumentException("movimento non presente");
+		}
+
+		public void ModificaMovimentoDiDenaro(MovimentoDiDenaro nuovoMovimento)
+		{
+			if (nuovoMovimento == null)
+				throw new ArgumentException("saldo null");
+
+			this.RimuoviMovimentoDiDenaro();
+			nuovoMovimento.AggiungiMovimentoDiDenaro();
+		}
 	}
 }

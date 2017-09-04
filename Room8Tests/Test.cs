@@ -6,12 +6,12 @@ using System.Collections.Generic;
 namespace Room8Tests
 {
 	//Spese gruppo
-	[TestFixture ()]
-	public class TestSpesa	
+	[TestFixture()]
+	public class TestSpesa
 	{
-		[Test ()]
+		[Test()]
 		[ExpectedException(typeof(ArgumentException))]
-		public void TestUtentePagante ()
+		public void TestUtentePagante()
 		{
 			Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1");
 			Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2");
@@ -31,14 +31,14 @@ namespace Room8Tests
 
 			Saldo saldo = new Saldo(utente2, utente1, 66, DateTime.Now);
 
-			utente1.AggiungiMovimentoDiDenaro(saldo);
-			utente2.AggiungiMovimentoDiDenaro(saldo);
+			saldo.AggiungiMovimentoDiDenaro();
+			saldo.AggiungiMovimentoDiDenaro();
 
 		}
 
-		[Test ()]
+		[Test()]
 		[ExpectedException(typeof(ArgumentException))]
-		public void TestPercentuale ()
+		public void TestPercentuale()
 		{
 			Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1");
 			Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2");
@@ -64,9 +64,9 @@ namespace Room8Tests
 
 		}
 
-		[Test ()]
+		[Test()]
 		[ExpectedException(typeof(ArgumentException))]
-		public void TestQuote ()
+		public void TestQuote()
 		{
 			Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1");
 			Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2");
@@ -85,8 +85,8 @@ namespace Room8Tests
 
 		}
 
-		[Test ()]
-		public void TestMovimenti ()
+		[Test()]
+		public void TestMovimenti()
 		{
 			GestoreUtenti dati = new GestoreUtenti();
 
@@ -100,28 +100,29 @@ namespace Room8Tests
 			spesa1.Parti.ImpostaParte(utente2, 2);
 			spesa1.Parti.ImpostaParte(utente3, 5);
 
-			gruppo1.SpeseGruppo.AggiungiSpesa (spesa1);
+			gruppo1.SpeseGruppo.AggiungiSpesa(spesa1);
 
 			Spesa spesa2 = new Spesa(gruppo1, "2Spesa", 100, utente1, "Percentuale", DateTime.Now);
-			spesa2.Parti.ImpostaParte (utente1, 60);
-			spesa2.Parti.ImpostaParte (utente2, 20);
-			spesa2.Parti.ImpostaParte (utente3, 20);
+			spesa2.Parti.ImpostaParte(utente1, 60);
+			spesa2.Parti.ImpostaParte(utente2, 20);
+			spesa2.Parti.ImpostaParte(utente3, 20);
 
-			gruppo1.SpeseGruppo.AggiungiSpesa (spesa2);
+			gruppo1.SpeseGruppo.AggiungiSpesa(spesa2);
 
-			decimal result = utente1.calcolaSituazione (utente3);
+			decimal result = utente1.calcolaSituazione(utente3);
 			Assert.AreEqual(result, -10);
 
-			gruppo1.SpeseGruppo.RimuoviSpesa (spesa2);
-			result = utente1.calcolaSituazione (utente3);
+			gruppo1.SpeseGruppo.RimuoviSpesa(spesa2);
+			result = utente1.calcolaSituazione(utente3);
 			Assert.AreEqual(result, 10);
 
-			utente1.AggiungiMovimentoDiDenaro(new Saldo(utente1,utente3,10,DateTime.Now));
-			result = utente1.calcolaSituazione (utente3);
+			Saldo saldo = new Saldo(utente1, utente3, 10, DateTime.Now);
+			saldo.AggiungiMovimentoDiDenaro();
+			result = utente1.calcolaSituazione(utente3);
 			Assert.AreEqual(result, 0);
 
-			Saldo saldo = (Saldo) utente1.MovimentiDiDenaro.Find(x => x is Saldo);
-			utente1.ModificaMovimentoDiDenaro(saldo,new Saldo(utente1,utente3,20,DateTime.Now));
+			saldo = (Saldo)utente1.MovimentiDiDenaro.Find(x => x is Saldo);
+			saldo.ModificaMovimentoDiDenaro(new Saldo(utente1, utente3, 20, DateTime.Now));
 			result = utente1.calcolaSituazione(utente3);
 			Assert.AreEqual(result, -10);
 
@@ -176,22 +177,22 @@ namespace Room8Tests
 		public void TestGestoreUtenti()
 		{
 			GestoreUtenti dati = new GestoreUtenti();
-		
-			Utente utenteDoppio = new Utente ("user1@mail.com", "abc", "xxx", "xxx");
-			Assert.Throws<ArgumentException>(() => dati.AggiugniUtnete (utenteDoppio));
 
-			Utente utenteOk = new Utente ("utneteOK@mail.com", "abc", "yyy", "yyy");
-			dati.AggiugniUtnete (utenteOk);
+			Utente utenteDoppio = new Utente("user1@mail.com", "abc", "xxx", "xxx");
+			Assert.Throws<ArgumentException>(() => dati.AggiugniUtnete(utenteDoppio));
 
-			dati.RimuoviUtnete (utenteOk);
+			Utente utenteOk = new Utente("utneteOK@mail.com", "abc", "yyy", "yyy");
+			dati.AggiugniUtnete(utenteOk);
+
+			dati.RimuoviUtnete(utenteOk);
 			Gruppo gruppoConNuovi = new Gruppo("GruppoN");
-			gruppoConNuovi.AggiungiMembro (utenteOk);
-			dati.AggiungiGruppo (gruppoConNuovi);
+			gruppoConNuovi.AggiungiMembro(utenteOk);
+			dati.AggiungiGruppo(gruppoConNuovi);
 
-			Assert.True(dati.VerificaPassword ("utneteOK@mail.com", "abc"));
-			Assert.False(dati.VerificaPassword ("utneteOK@mail.com", "abcd"));
+			Assert.True(dati.VerificaPassword("utneteOK@mail.com", "abc"));
+			Assert.False(dati.VerificaPassword("utneteOK@mail.com", "abcd"));
 
-			Assert.Throws<ArgumentException>(() => dati.VerificaPassword ("emailCheNonEsiste","aloha"));
+			Assert.Throws<ArgumentException>(() => dati.VerificaPassword("emailCheNonEsiste", "aloha"));
 		}
 	}
 }

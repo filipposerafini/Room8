@@ -11,7 +11,7 @@ namespace Room8
 		{
 			if (gruppo == null)
 				throw new ArgumentException("gruppo null");
-			
+
 			_divisione = new Dictionary<Utente, int>();
 			foreach (var utente in gruppo.MembriGruppo)
 			{
@@ -24,7 +24,7 @@ namespace Room8
 			get { return _divisione; }
 		}
 
-		public void ImpostaParte(Utente utente, int parte) 
+		public void ImpostaParte(Utente utente, int parte)
 		{
 			if (utente == null)
 				throw new ArgumentException("utente null");
