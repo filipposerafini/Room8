@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -66,8 +63,11 @@
             this.toolStripMenuItemUtente = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemAccount = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemCreaGruppo = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItemAggiungiAmico = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItemEsci = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainerMain = new System.Windows.Forms.SplitContainer();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.linkLabelAggiungiAmici = new System.Windows.Forms.LinkLabel();
             this.listBoxAmici = new System.Windows.Forms.ListBox();
             this.labelAmiciMenu = new System.Windows.Forms.Label();
             this.labelGruppiMenu = new System.Windows.Forms.Label();
@@ -86,7 +86,6 @@
             this.tabControlRiepilogo = new System.Windows.Forms.TabControl();
             this.tabPageRiepilogoLista = new System.Windows.Forms.TabPage();
             this.tabPageRiepilogoGrafico = new System.Windows.Forms.TabPage();
-            this.chartRiepilogo = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelRiepilogoTitolo = new System.Windows.Forms.Label();
             this.tabPageAttivita = new System.Windows.Forms.TabPage();
             this.buttonAttivitaSalda = new System.Windows.Forms.Button();
@@ -98,7 +97,9 @@
             this.splitContainerSpese = new System.Windows.Forms.SplitContainer();
             this.tabControlSpese = new System.Windows.Forms.TabControl();
             this.tabPageSpeseBilancio = new System.Windows.Forms.TabPage();
+            this.labelSpeseBilancio = new System.Windows.Forms.Label();
             this.tabPageSpeseStatistiche = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.labelSpeseTitolo = new System.Windows.Forms.Label();
             this.tabPageGruppo = new System.Windows.Forms.TabPage();
             this.buttonGruppoSalda = new System.Windows.Forms.Button();
@@ -108,11 +109,6 @@
             this.buttonAmicoSalda = new System.Windows.Forms.Button();
             this.buttonAmicoAggiungi = new System.Windows.Forms.Button();
             this.labelAmicoTitolo = new System.Windows.Forms.Label();
-            this.labelSpeseBilancio = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.linkLabelAggiungiAmici = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.toolStripMenuItemAggiungiAmico = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerMain)).BeginInit();
             this.splitContainerMain.Panel1.SuspendLayout();
@@ -122,8 +118,6 @@
             this.tabPageRiepilogo.SuspendLayout();
             this.tableLayoutPanelRiepilogo.SuspendLayout();
             this.tabControlRiepilogo.SuspendLayout();
-            this.tabPageRiepilogoGrafico.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRiepilogo)).BeginInit();
             this.tabPageAttivita.SuspendLayout();
             this.tabPageSpese.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainerSpese)).BeginInit();
@@ -266,20 +260,20 @@
             // 
             this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
             this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.undoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.undoToolStripMenuItem.Text = "&Undo";
             // 
             // redoToolStripMenuItem
             // 
             this.redoToolStripMenuItem.Name = "redoToolStripMenuItem";
             this.redoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.redoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.redoToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.redoToolStripMenuItem.Text = "&Redo";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(141, 6);
             // 
             // cutToolStripMenuItem
             // 
@@ -287,7 +281,7 @@
             this.cutToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             this.cutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.cutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.cutToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.cutToolStripMenuItem.Text = "Cu&t";
             // 
             // copyToolStripMenuItem
@@ -296,7 +290,7 @@
             this.copyToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             this.copyToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.copyToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.copyToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.copyToolStripMenuItem.Text = "&Copy";
             // 
             // pasteToolStripMenuItem
@@ -305,18 +299,18 @@
             this.pasteToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             this.pasteToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.pasteToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.pasteToolStripMenuItem.Text = "&Paste";
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(141, 6);
             // 
             // selectAllToolStripMenuItem
             // 
             this.selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.selectAllToolStripMenuItem.Size = new System.Drawing.Size(144, 22);
             this.selectAllToolStripMenuItem.Text = "Select &All";
             // 
             // toolsToolStripMenuItem
@@ -331,13 +325,13 @@
             // customizeToolStripMenuItem
             // 
             this.customizeToolStripMenuItem.Name = "customizeToolStripMenuItem";
-            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.customizeToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.customizeToolStripMenuItem.Text = "&Customize";
             // 
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(130, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // helpToolStripMenuItem
@@ -355,30 +349,30 @@
             // contentsToolStripMenuItem
             // 
             this.contentsToolStripMenuItem.Name = "contentsToolStripMenuItem";
-            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.contentsToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.contentsToolStripMenuItem.Text = "&Contents";
             // 
             // indexToolStripMenuItem
             // 
             this.indexToolStripMenuItem.Name = "indexToolStripMenuItem";
-            this.indexToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.indexToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.indexToolStripMenuItem.Text = "&Index";
             // 
             // searchToolStripMenuItem
             // 
             this.searchToolStripMenuItem.Name = "searchToolStripMenuItem";
-            this.searchToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.searchToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.searchToolStripMenuItem.Text = "&Search";
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(119, 6);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(122, 22);
             this.aboutToolStripMenuItem.Text = "&About...";
             // 
             // toolStripMenuItemUtente
@@ -405,6 +399,12 @@
             this.toolStripMenuItemCreaGruppo.Name = "toolStripMenuItemCreaGruppo";
             this.toolStripMenuItemCreaGruppo.Size = new System.Drawing.Size(217, 30);
             this.toolStripMenuItemCreaGruppo.Text = "Crea gruppo";
+            // 
+            // toolStripMenuItemAggiungiAmico
+            // 
+            this.toolStripMenuItemAggiungiAmico.Name = "toolStripMenuItemAggiungiAmico";
+            this.toolStripMenuItemAggiungiAmico.Size = new System.Drawing.Size(217, 30);
+            this.toolStripMenuItemAggiungiAmico.Text = "Aggiungi amico";
             // 
             // toolStripMenuItemEsci
             // 
@@ -437,9 +437,36 @@
             this.splitContainerMain.SplitterDistance = 179;
             this.splitContainerMain.TabIndex = 2;
             // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabel2.LinkColor = System.Drawing.Color.Blue;
+            this.linkLabel2.Location = new System.Drawing.Point(94, 162);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(33, 15);
+            this.linkLabel2.TabIndex = 11;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Crea";
+            this.linkLabel2.VisitedLinkColor = System.Drawing.Color.Blue;
+            // 
+            // linkLabelAggiungiAmici
+            // 
+            this.linkLabelAggiungiAmici.AutoSize = true;
+            this.linkLabelAggiungiAmici.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabelAggiungiAmici.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.linkLabelAggiungiAmici.Location = new System.Drawing.Point(86, 299);
+            this.linkLabelAggiungiAmici.Name = "linkLabelAggiungiAmici";
+            this.linkLabelAggiungiAmici.Size = new System.Drawing.Size(55, 15);
+            this.linkLabelAggiungiAmici.TabIndex = 10;
+            this.linkLabelAggiungiAmici.TabStop = true;
+            this.linkLabelAggiungiAmici.Text = "Aggiungi";
+            this.linkLabelAggiungiAmici.VisitedLinkColor = System.Drawing.Color.Blue;
+            // 
             // listBoxAmici
             // 
-            this.listBoxAmici.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.listBoxAmici.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxAmici.BackColor = System.Drawing.SystemColors.Control;
             this.listBoxAmici.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -477,7 +504,7 @@
             // 
             // listBoxGruppi
             // 
-            this.listBoxGruppi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.listBoxGruppi.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listBoxGruppi.BackColor = System.Drawing.SystemColors.Control;
             this.listBoxGruppi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -495,7 +522,7 @@
             // 
             // buttonSpese
             // 
-            this.buttonSpese.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.buttonSpese.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonSpese.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonSpese.Location = new System.Drawing.Point(35, 103);
@@ -508,7 +535,7 @@
             // 
             // buttonAttivita
             // 
-            this.buttonAttivita.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.buttonAttivita.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonAttivita.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAttivita.Location = new System.Drawing.Point(35, 54);
@@ -521,7 +548,7 @@
             // 
             // buttonRiepilogo
             // 
-            this.buttonRiepilogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.buttonRiepilogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonRiepilogo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonRiepilogo.Location = new System.Drawing.Point(35, 8);
@@ -561,14 +588,14 @@
             this.tabPageRiepilogo.Location = new System.Drawing.Point(4, 5);
             this.tabPageRiepilogo.Name = "tabPageRiepilogo";
             this.tabPageRiepilogo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageRiepilogo.Size = new System.Drawing.Size(579, 495);
+            this.tabPageRiepilogo.Size = new System.Drawing.Size(579, 423);
             this.tabPageRiepilogo.TabIndex = 0;
             this.tabPageRiepilogo.Text = "tabPage1";
             this.tabPageRiepilogo.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanelRiepilogo
             // 
-            this.tableLayoutPanelRiepilogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+            this.tableLayoutPanelRiepilogo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanelRiepilogo.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tableLayoutPanelRiepilogo.ColumnCount = 3;
@@ -647,8 +674,8 @@
             // 
             // tabControlRiepilogo
             // 
-            this.tabControlRiepilogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.tabControlRiepilogo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControlRiepilogo.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControlRiepilogo.Controls.Add(this.tabPageRiepilogoLista);
@@ -674,7 +701,6 @@
             // tabPageRiepilogoGrafico
             // 
             this.tabPageRiepilogoGrafico.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tabPageRiepilogoGrafico.Controls.Add(this.chartRiepilogo);
             this.tabPageRiepilogoGrafico.Location = new System.Drawing.Point(4, 28);
             this.tabPageRiepilogoGrafico.Name = "tabPageRiepilogoGrafico";
             this.tabPageRiepilogoGrafico.Padding = new System.Windows.Forms.Padding(3);
@@ -682,23 +708,6 @@
             this.tabPageRiepilogoGrafico.TabIndex = 1;
             this.tabPageRiepilogoGrafico.Text = "Grafico";
             this.tabPageRiepilogoGrafico.UseVisualStyleBackColor = true;
-            // 
-            // chartRiepilogo
-            // 
-            chartArea1.Name = "ChartArea1";
-            this.chartRiepilogo.ChartAreas.Add(chartArea1);
-            this.chartRiepilogo.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartRiepilogo.Legends.Add(legend1);
-            this.chartRiepilogo.Location = new System.Drawing.Point(3, 3);
-            this.chartRiepilogo.Name = "chartRiepilogo";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartRiepilogo.Series.Add(series1);
-            this.chartRiepilogo.Size = new System.Drawing.Size(557, 309);
-            this.chartRiepilogo.TabIndex = 0;
-            this.chartRiepilogo.Text = "chart1";
             // 
             // labelRiepilogoTitolo
             // 
@@ -718,7 +727,7 @@
             this.tabPageAttivita.Location = new System.Drawing.Point(4, 5);
             this.tabPageAttivita.Name = "tabPageAttivita";
             this.tabPageAttivita.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAttivita.Size = new System.Drawing.Size(579, 495);
+            this.tabPageAttivita.Size = new System.Drawing.Size(579, 423);
             this.tabPageAttivita.TabIndex = 1;
             this.tabPageAttivita.Text = "tabPage2";
             this.tabPageAttivita.UseVisualStyleBackColor = true;
@@ -804,8 +813,8 @@
             // 
             // splitContainerSpese
             // 
-            this.splitContainerSpese.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.splitContainerSpese.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.splitContainerSpese.IsSplitterFixed = true;
             this.splitContainerSpese.Location = new System.Drawing.Point(0, 65);
@@ -838,10 +847,22 @@
             this.tabPageSpeseBilancio.Location = new System.Drawing.Point(4, 28);
             this.tabPageSpeseBilancio.Name = "tabPageSpeseBilancio";
             this.tabPageSpeseBilancio.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSpeseBilancio.Size = new System.Drawing.Size(203, 398);
+            this.tabPageSpeseBilancio.Size = new System.Drawing.Size(203, 326);
             this.tabPageSpeseBilancio.TabIndex = 0;
             this.tabPageSpeseBilancio.Text = "Bilancio";
             this.tabPageSpeseBilancio.UseVisualStyleBackColor = true;
+            // 
+            // labelSpeseBilancio
+            // 
+            this.labelSpeseBilancio.Dock = System.Windows.Forms.DockStyle.Top;
+            this.labelSpeseBilancio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSpeseBilancio.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.labelSpeseBilancio.Location = new System.Drawing.Point(3, 3);
+            this.labelSpeseBilancio.Name = "labelSpeseBilancio";
+            this.labelSpeseBilancio.Size = new System.Drawing.Size(195, 24);
+            this.labelSpeseBilancio.TabIndex = 0;
+            this.labelSpeseBilancio.Text = "Il tuo bilancio totale";
+            this.labelSpeseBilancio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // tabPageSpeseStatistiche
             // 
@@ -854,6 +875,18 @@
             this.tabPageSpeseStatistiche.TabIndex = 1;
             this.tabPageSpeseStatistiche.Text = "Statistiche";
             this.tabPageSpeseStatistiche.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(195, 24);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Statistiche";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // labelSpeseTitolo
             // 
@@ -873,7 +906,7 @@
             this.tabPageGruppo.Location = new System.Drawing.Point(4, 5);
             this.tabPageGruppo.Name = "tabPageGruppo";
             this.tabPageGruppo.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGruppo.Size = new System.Drawing.Size(579, 495);
+            this.tabPageGruppo.Size = new System.Drawing.Size(579, 423);
             this.tabPageGruppo.TabIndex = 3;
             this.tabPageGruppo.Text = "tabPage3";
             this.tabPageGruppo.UseVisualStyleBackColor = true;
@@ -923,7 +956,7 @@
             this.tabPageAmico.Location = new System.Drawing.Point(4, 5);
             this.tabPageAmico.Name = "tabPageAmico";
             this.tabPageAmico.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageAmico.Size = new System.Drawing.Size(579, 495);
+            this.tabPageAmico.Size = new System.Drawing.Size(579, 423);
             this.tabPageAmico.TabIndex = 4;
             this.tabPageAmico.Text = "tabPage4";
             this.tabPageAmico.UseVisualStyleBackColor = true;
@@ -965,64 +998,7 @@
             this.labelAmicoTitolo.TabIndex = 1;
             this.labelAmicoTitolo.Text = "Amico";
             // 
-            // labelSpeseBilancio
-            // 
-            this.labelSpeseBilancio.Dock = System.Windows.Forms.DockStyle.Top;
-            this.labelSpeseBilancio.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSpeseBilancio.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.labelSpeseBilancio.Location = new System.Drawing.Point(3, 3);
-            this.labelSpeseBilancio.Name = "labelSpeseBilancio";
-            this.labelSpeseBilancio.Size = new System.Drawing.Size(195, 24);
-            this.labelSpeseBilancio.TabIndex = 0;
-            this.labelSpeseBilancio.Text = "Il tuo bilancio totale";
-            this.labelSpeseBilancio.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // label1
-            // 
-            this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(3, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Statistiche";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // linkLabelAggiungiAmici
-            // 
-            this.linkLabelAggiungiAmici.AutoSize = true;
-            this.linkLabelAggiungiAmici.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabelAggiungiAmici.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabelAggiungiAmici.Location = new System.Drawing.Point(86, 299);
-            this.linkLabelAggiungiAmici.Name = "linkLabelAggiungiAmici";
-            this.linkLabelAggiungiAmici.Size = new System.Drawing.Size(55, 15);
-            this.linkLabelAggiungiAmici.TabIndex = 10;
-            this.linkLabelAggiungiAmici.TabStop = true;
-            this.linkLabelAggiungiAmici.Text = "Aggiungi";
-            this.linkLabelAggiungiAmici.VisitedLinkColor = System.Drawing.Color.Blue;
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel2.LinkColor = System.Drawing.Color.Blue;
-            this.linkLabel2.Location = new System.Drawing.Point(94, 162);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(33, 15);
-            this.linkLabel2.TabIndex = 11;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Crea";
-            this.linkLabel2.VisitedLinkColor = System.Drawing.Color.Blue;
-            // 
-            // toolStripMenuItemAggiungiAmico
-            // 
-            this.toolStripMenuItemAggiungiAmico.Name = "toolStripMenuItemAggiungiAmico";
-            this.toolStripMenuItemAggiungiAmico.Size = new System.Drawing.Size(217, 30);
-            this.toolStripMenuItemAggiungiAmico.Text = "Aggiungi amico";
-            // 
-            // Form1
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -1032,7 +1008,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.MinimumSize = new System.Drawing.Size(786, 525);
-            this.Name = "Form1";
+            this.Name = "FormMain";
             this.Text = "Room8";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1048,8 +1024,6 @@
             this.tabPageRiepilogo.PerformLayout();
             this.tableLayoutPanelRiepilogo.ResumeLayout(false);
             this.tabControlRiepilogo.ResumeLayout(false);
-            this.tabPageRiepilogoGrafico.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartRiepilogo)).EndInit();
             this.tabPageAttivita.ResumeLayout(false);
             this.tabPageAttivita.PerformLayout();
             this.tabPageSpese.ResumeLayout(false);
@@ -1124,7 +1098,6 @@
         private System.Windows.Forms.TabControl tabControlRiepilogo;
         private System.Windows.Forms.TabPage tabPageRiepilogoLista;
         private System.Windows.Forms.TabPage tabPageRiepilogoGrafico;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartRiepilogo;
         private System.Windows.Forms.TabControl tabControlSpese;
         private System.Windows.Forms.TabPage tabPageSpeseBilancio;
         private System.Windows.Forms.TabPage tabPageSpeseStatistiche;
