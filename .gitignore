@@ -21,3 +21,4 @@ test-results
 packages
 .*csproj
 *.DS_Store
+*.Cache
