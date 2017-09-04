@@ -7,13 +7,13 @@ namespace Room8
 	{
 		private readonly Dictionary<Utente, int> _divisione;
 
-		public Parti(MembriGruppo membriGruppo)
+		public Parti(Gruppo gruppo)
 		{
-			if (membriGruppo == null)
-				throw new ArgumentException("membriGruppo null");
+			if (gruppo == null)
+				throw new ArgumentException("gruppo null");
 			
 			_divisione = new Dictionary<Utente, int>();
-			foreach (var utente in membriGruppo.Utenti)
+			foreach (var utente in gruppo.MembriGruppo)
 			{
 				_divisione.Add(utente, 0);
 			}

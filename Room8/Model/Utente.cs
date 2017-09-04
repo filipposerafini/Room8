@@ -13,7 +13,8 @@ namespace Room8
 		private readonly string _nome;
 		private readonly string _cognome;
 		private string _foto;
-		private readonly List<MembriGruppo> _membriGruppo;
+		// lista di gruppi di cui l'utente fa parte
+		private readonly List<Gruppo> _gruppi;
 		private readonly List<MovimentoDiDenaro> _movimentiDiDenaro;
 
 		public Utente(string email, string password, string nome, string cognome)
@@ -32,7 +33,7 @@ namespace Room8
 			this._nome = nome;
 			this._cognome = cognome;
 			this._foto = FOTODEFAULT;
-			this._membriGruppo = new List<MembriGruppo>();
+			this._gruppi = new List<Gruppo>();
 			this._movimentiDiDenaro = new List<MovimentoDiDenaro>();
 		}
 
@@ -77,9 +78,9 @@ namespace Room8
 			}
 		}
 
-		public List<MembriGruppo> MembriGruppo
+		public List<Gruppo> Gruppi
 		{
-			get { return _membriGruppo; }
+			get { return _gruppi; }
 		}
 
 		public List<MovimentoDiDenaro> MovimentiDiDenaro
@@ -87,20 +88,21 @@ namespace Room8
 			get { return _movimentiDiDenaro; }
 		}
 
-		public void AggiungiMembriGruppo(MembriGruppo membriGruppo)
+		// Aggiungi e Rimuovi membri dovrebbe essere possibile solo da Gruppo
+		public void AggiungiGruppo(Gruppo gruppo)
 		{
-			if (membriGruppo == null)
+			if (gruppo == null)
 				throw new ArgumentException("membriGruppo null");
 
-			_membriGruppo.Add(membriGruppo);
+			_gruppi.Add(gruppo);
 		}
 
-		public void RimuoviMembriGruppo(MembriGruppo membriGruppo)
+		public void RimuoviGruppo(Gruppo gruppo)
 		{
-			if (membriGruppo == null)
+			if (gruppo == null)
 				throw new ArgumentException("membriGruppo null");
 
-			_membriGruppo.Remove(membriGruppo);
+			_gruppi.Remove(gruppo);
 		}
 
 		public void AggiungiMovimentoDiDenaro(MovimentoDiDenaro movimento)
@@ -109,6 +111,7 @@ namespace Room8
 				throw new ArgumentException("movimento null");
 
 			_movimentiDiDenaro.Add(movimento);
+			movimento.Destinazione.AggiungiMovimentoDiDenaro (movimento);
 		}
 
 		public void RimuoviMovimentoDiDenaro(MovimentoDiDenaro movimento)
@@ -118,41 +121,25 @@ namespace Room8
 
 			if (!_movimentiDiDenaro.Remove(movimento))
 				throw new ArgumentException("movimento non presente");
+			if (!movimento.Destinazione.MovimentiDiDenaro.Remove(movimento))
+				throw new ArgumentException("movimento non presente");
 		}
 
-		public void AggiungiSaldo(Utente destinazione, decimal importo, DateTime data)
-		{
-
-			if (destinazione == null || importo <= 0 || data == DateTime.MinValue)
-				throw new ArgumentException("saldo null");
-			Saldo saldo = new Saldo (this, destinazione, importo, data);
-
-			this.AggiungiMovimentoDiDenaro(saldo);
-			saldo.Destinazione.AggiungiMovimentoDiDenaro(saldo);
-		}
-
-		public void ModificaSaldo(Saldo daModificare, Utente destinazione, decimal importo, DateTime data)
+		public void ModificaMovimentoDiDenaro(MovimentoDiDenaro daModificare, MovimentoDiDenaro nuovoMovimento)
 		{
 			if (daModificare == null)
 				throw new ArgumentException("daModificare null");
-			if (destinazione == null || importo <= 0 || data == DateTime.MinValue)
+			if (nuovoMovimento == null)
 				throw new ArgumentException("saldo null");
 			
-			RimuoviSaldo(daModificare);
-			AggiungiSaldo(destinazione, importo, data);
+			RimuoviMovimentoDiDenaro(daModificare);
+			AggiungiMovimentoDiDenaro(nuovoMovimento);
 		}
-
-		public void RimuoviSaldo(Saldo saldo)
-		{
-			if (saldo == null)
-				throw new ArgumentException("saldo null");
-
-			saldo.Sorgente.RimuoviMovimentoDiDenaro(saldo);
-			saldo.Destinazione.RimuoviMovimentoDiDenaro(saldo);
-		}
+			
 
 		public decimal calcolaSituazione(Utente amico)
 		{
+			// ritorna l'ammontare totale a Credito/debito con utente 'amico'
 			if (amico == null)
 				throw new ArgumentException("amico null");
 			decimal result = 0;
@@ -173,6 +160,7 @@ namespace Room8
 
 		public decimal calcolaSituazioneGruppo(Utente amico, Gruppo gruppo)
 		{
+			// come calcolaSituazione ma limitato ai movimenti nel gruppo 'gruppo' 
 			if (amico == null)
 				throw new ArgumentException("amico null");
 			if (gruppo == null)
@@ -201,15 +189,18 @@ namespace Room8
 
 		public decimal calcolaBilancio(Gruppo gruppo)
 		{
+			// ritorna l'ammontare totale a credito/debito con l'intero gruppo
 			if (gruppo == null)
 				throw new ArgumentException("gruppo null");
-			if (!gruppo.MembriGruppo.Utenti.Contains(this))
+			if (!gruppo.MembriGruppo.Contains(this))
 				throw new ArgumentException("utente non appartenente al gruppo");
 
 			decimal result = 0;
 
-			result = gruppo.MembriGruppo.Utenti.Sum(u => this.calcolaSituazioneGruppo(u,gruppo));
+			result = gruppo.MembriGruppo.Sum(u => this.calcolaSituazioneGruppo(u,gruppo));
 			return result;
 		}
+
+
 	}
 }

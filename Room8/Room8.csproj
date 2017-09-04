@@ -84,7 +84,6 @@
     <Compile Include="Model\MetodoDiDivisioneFactory.cs" />
     <Compile Include="Model\Spesa.cs" />
     <Compile Include="Model\Saldo.cs" />
-    <Compile Include="Model\MembriGruppo.cs" />
     <Compile Include="Model\Prodotto.cs" />
     <Compile Include="Model\Movimento.cs" />
     <Compile Include="Model\SpeseGruppo.cs" />

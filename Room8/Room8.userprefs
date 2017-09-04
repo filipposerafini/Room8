@@ -1,6 +1,11 @@
 ﻿<Properties StartupItem="Room8.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Model/Gruppo.cs">
+    <Files>
+      <File FileName="Model/Utente.cs" Line="91" Column="66" />
+      <File FileName="Model/Gruppo.cs" Line="144" Column="68" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint file="/home/gloria/Room8/Room8/Test/MainModel.cs" line="10" column="1" />

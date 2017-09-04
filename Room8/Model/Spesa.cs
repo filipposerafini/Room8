@@ -27,10 +27,10 @@ namespace Room8
 			this._importo = importo;
 			this._pagante = pagante;
 			this._metodoDivisione = MetodoDiDivisioneFactory.getMetodoDiDivisione (nomeMetodo);
-			this._parti = new Parti (gruppo.MembriGruppo);
+			this._parti = new Parti (gruppo);
 			this._data = data;
 
-			if (!gruppo.MembriGruppo.Utenti.Contains (pagante)) {
+			if (!gruppo.MembriGruppo.Contains (pagante)) {
 				throw new ArgumentException("Il pagante non fa parte del gruppo");
 			}
 		}

@@ -19,8 +19,8 @@ namespace Room8Tests
 
 			Gruppo gruppo1 = new Gruppo("Gruppo1");
 
-			gruppo1.MembriGruppo.AggiungiMembro(utente1);
-			gruppo1.MembriGruppo.AggiungiMembro(utente2);
+			gruppo1.AggiungiMembro(utente1);
+			gruppo1.AggiungiMembro(utente2);
 
 			// Se utente pagante non è nel gruppo devo lanciare un eccezione
 			Spesa spesa = new Spesa(gruppo1, "Spesa1", 100, utente3, "Equa", DateTime.Now);
@@ -46,9 +46,9 @@ namespace Room8Tests
 
 			Gruppo gruppo1 = new Gruppo("Gruppo1");
 
-			gruppo1.MembriGruppo.AggiungiMembro(utente1);
-			gruppo1.MembriGruppo.AggiungiMembro(utente2);
-			gruppo1.MembriGruppo.AggiungiMembro(utente3);
+			gruppo1.AggiungiMembro(utente1);
+			gruppo1.AggiungiMembro(utente2);
+			gruppo1.AggiungiMembro(utente3);
 
 			Spesa spesa = new Spesa(gruppo1, "Spesa1", 100, utente3, "Percentuale", DateTime.Now);
 
@@ -74,9 +74,9 @@ namespace Room8Tests
 
 			Gruppo gruppo1 = new Gruppo("Gruppo1");
 
-			gruppo1.MembriGruppo.AggiungiMembro(utente1);
-			gruppo1.MembriGruppo.AggiungiMembro(utente2);
-			gruppo1.MembriGruppo.AggiungiMembro(utente3);
+			gruppo1.AggiungiMembro(utente1);
+			gruppo1.AggiungiMembro(utente2);
+			gruppo1.AggiungiMembro(utente3);
 
 			Spesa spesa = new Spesa(gruppo1, "Spesa1", 100, utente3, "Per quote", DateTime.Now);
 
@@ -91,9 +91,9 @@ namespace Room8Tests
 			GestoreUtenti dati = new GestoreUtenti();
 
 			Gruppo gruppo1 = dati.Gruppi[0];
-			Utente utente1 = gruppo1.MembriGruppo.Utenti[0];
-			Utente utente2 = gruppo1.MembriGruppo.Utenti[1];
-			Utente utente3 = gruppo1.MembriGruppo.Utenti[2];
+			Utente utente1 = gruppo1.MembriGruppo[0];
+			Utente utente2 = gruppo1.MembriGruppo[1];
+			Utente utente3 = gruppo1.MembriGruppo[2];
 
 			Spesa spesa1 = new Spesa(gruppo1, "1Spesa", 80, utente3, "Per quote", DateTime.Now);
 			spesa1.Parti.ImpostaParte(utente1, 1);
@@ -116,12 +116,12 @@ namespace Room8Tests
 			result = utente1.calcolaSituazione (utente3);
 			Assert.AreEqual(result, 10);
 
-			utente1.AggiungiSaldo(utente3,10,DateTime.Now);
+			utente1.AggiungiMovimentoDiDenaro(new Saldo(utente1,utente3,10,DateTime.Now));
 			result = utente1.calcolaSituazione (utente3);
 			Assert.AreEqual(result, 0);
 
 			Saldo saldo = (Saldo) utente1.MovimentiDiDenaro.Find(x => x is Saldo);
-			utente1.ModificaSaldo(saldo,utente3,20,DateTime.Now);
+			utente1.ModificaMovimentoDiDenaro(saldo,new Saldo(utente1,utente3,20,DateTime.Now));
 			result = utente1.calcolaSituazione(utente3);
 			Assert.AreEqual(result, -10);
 
@@ -134,10 +134,10 @@ namespace Room8Tests
 			GestoreUtenti dati = new GestoreUtenti();
 
 			Gruppo gruppo1 = dati.Gruppi[0];
-			Utente utente1 = gruppo1.MembriGruppo.Utenti[0];
-			Utente utente2 = gruppo1.MembriGruppo.Utenti[1];
-			Utente utente3 = gruppo1.MembriGruppo.Utenti[2];
-			Utente utente4 = dati.Gruppi[1].MembriGruppo.Utenti[0];
+			Utente utente1 = gruppo1.MembriGruppo[0];
+			Utente utente2 = gruppo1.MembriGruppo[1];
+			Utente utente3 = gruppo1.MembriGruppo[2];
+			Utente utente4 = dati.Gruppi[1].MembriGruppo[0];
 
 			Spesa spesa1 = new Spesa(gruppo1, "Spesa1", 60, utente1, "Equa", DateTime.Now);
 			gruppo1.SpeseGruppo.AggiungiSpesa(spesa1);
@@ -185,14 +185,13 @@ namespace Room8Tests
 
 			dati.RimuoviUtnete (utenteOk);
 			Gruppo gruppoConNuovi = new Gruppo("GruppoN");
-			gruppoConNuovi.MembriGruppo.AggiungiMembro (utenteOk);
+			gruppoConNuovi.AggiungiMembro (utenteOk);
 			dati.AggiungiGruppo (gruppoConNuovi);
 
 			Assert.True(dati.VerificaPassword ("utneteOK@mail.com", "abc"));
 			Assert.False(dati.VerificaPassword ("utneteOK@mail.com", "abcd"));
 
-			Assert.Throws<ArgumentException>(() => dati.VerificaPassword ("emialCheNonEsiste","aloha"));
-
+			Assert.Throws<ArgumentException>(() => dati.VerificaPassword ("emailCheNonEsiste","aloha"));
 		}
 	}
 }

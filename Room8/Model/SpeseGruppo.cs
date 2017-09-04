@@ -60,7 +60,7 @@ namespace Room8
 			if (_spese.Remove(spesa))
 			{
 				List<MovimentoDiDenaro> daEliminare;
-				foreach (var utente in Gruppo.MembriGruppo.Utenti)
+				foreach (var utente in Gruppo.MembriGruppo)
 				{
 					daEliminare = new List<MovimentoDiDenaro>();
 					foreach (var movimento in utente.MovimentiDiDenaro)

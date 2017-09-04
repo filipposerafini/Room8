@@ -6,3 +6,11 @@
 /home/gloria/Documenti/IngegneriaSoftwere/Room8/Room8/bin/Debug/Room8.exe
 /home/gloria/Documenti/IngegneriaSoftwere/Room8/Room8/obj/Debug/Room8.exe
 /home/gloria/Documenti/IngegneriaSoftwere/Room8/Room8/obj/Debug/Room8.exe.mdb
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/obj/Debug/Room8.Form1.resources
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/obj/Debug/Room8.Properties.Resources.resources
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/obj/Debug/Room8.exe
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/obj/Debug/Room8.exe.mdb
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/bin/Debug/Room8.exe.config
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/bin/Debug/Room8.exe.mdb
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/bin/Debug/Room8.exe

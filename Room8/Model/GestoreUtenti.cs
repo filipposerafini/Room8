@@ -21,18 +21,18 @@ namespace Room8
 			Gruppo gruppo2 = new Gruppo("Gruppo2");
 			Gruppo gruppo3 = new Gruppo("Gruppo3");
 
-			gruppo1.MembriGruppo.AggiungiMembro (utente1);
-			gruppo1.MembriGruppo.AggiungiMembro (utente2);
-			gruppo1.MembriGruppo.AggiungiMembro (utente3);
+			gruppo1.AggiungiMembro (utente1);
+			gruppo1.AggiungiMembro (utente2);
+			gruppo1.AggiungiMembro (utente3);
 
-			gruppo2.MembriGruppo.AggiungiMembro (utente4);
-			gruppo2.MembriGruppo.AggiungiMembro (utente5);
+			gruppo2.AggiungiMembro (utente4);
+			gruppo2.AggiungiMembro (utente5);
 
-			gruppo3.MembriGruppo.AggiungiMembro (utente1);
-			gruppo3.MembriGruppo.AggiungiMembro (utente2);
-			gruppo3.MembriGruppo.AggiungiMembro (utente3);
-			gruppo3.MembriGruppo.AggiungiMembro (utente4);
-			gruppo3.MembriGruppo.AggiungiMembro (utente5);
+			gruppo3.AggiungiMembro (utente1);
+			gruppo3.AggiungiMembro (utente2);
+			gruppo3.AggiungiMembro (utente3);
+			gruppo3.AggiungiMembro (utente4);
+			gruppo3.AggiungiMembro (utente5);
 
 			_gruppi = new List<Gruppo>();
 			_gruppi.Add (gruppo1);
@@ -66,20 +66,20 @@ namespace Room8
 
 		public void AggiugniUtnete(Utente utente)
 		{
-			if( this.Utenti.Exists( x => x.Email.Equals(utente.Email)))
+			if( _utenti.Exists( x => x.Email.Equals(utente.Email)))
 			{
 				throw new ArgumentException ("Utente già presente");
 			}
-			this.Utenti.Add (utente);
+			_utenti.Add (utente);
 		}
 
 		public void RimuoviUtnete(Utente utente)
 		{
-			if(!this.Utenti.Contains(utente))
+			if(!_utenti.Contains(utente))
 			{
 				throw new ArgumentException ("Utente non presente, eliminazione fallita");
 			}
-			this.Utenti.Remove (utente);
+			_utenti.Remove (utente);
 		}
 
 		public void AggiungiGruppo(Gruppo gruppo)
@@ -89,11 +89,11 @@ namespace Room8
 				throw new ArgumentException ("Utente già presente");
 			}
 
-			foreach (var utente in gruppo.MembriGruppo.Utenti) 
+			foreach (var utente in gruppo.MembriGruppo) 
 			{
-				if (!this.Utenti.Exists( x => x.Email.Equals(utente.Email)))
+				if (!_utenti.Exists( x => x.Email.Equals(utente.Email)))
 				{
-					this.Utenti.Add (utente);
+					_utenti.Add (utente);
 				}
 			}
 			this.Gruppi.Add (gruppo);
@@ -110,7 +110,7 @@ namespace Room8
 
 		public bool VerificaPassword(string email, string password)
 		{
-			Utente utente = this.Utenti.Find (x => x.Email.Equals (email));
+			Utente utente = _utenti.Find (x => x.Email.Equals (email));
 
 			if (utente == null) 
 			{
