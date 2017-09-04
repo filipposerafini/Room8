@@ -13,3 +13,13 @@ C:\Users\Nicola\Desktop\Room8\Room8\bin\Debug\Room8.pdb
 C:\Users\Nicola\Desktop\Room8\Room8\obj\Debug\Room8.Properties.Resources.resources
 C:\Users\Nicola\Desktop\Room8\Room8\obj\Debug\Room8.exe
 C:\Users\Nicola\Desktop\Room8\Room8\obj\Debug\Room8.pdb
+E:\Progetto\Room8\Room8\bin\Debug\Room8.exe.config
+E:\Progetto\Room8\Room8\obj\Debug\Room8.exe
+E:\Progetto\Room8\Room8\bin\Debug\Room8.exe
+E:\Progetto\Room8\Room8\bin\Debug\Room8.pdb
+E:\Progetto\Room8\Room8\obj\Debug\Room8.csprojResolveAssemblyReference.cache
+E:\Progetto\Room8\Room8\obj\Debug\Room8.Properties.Resources.resources
+E:\Progetto\Room8\Room8\obj\Debug\Room8.FormLogin.resources
+E:\Progetto\Room8\Room8\obj\Debug\Room8.FormMain.resources
+E:\Progetto\Room8\Room8\obj\Debug\Room8.csproj.GenerateResource.Cache
+E:\Progetto\Room8\Room8\obj\Debug\Room8.pdb

@@ -21,3 +21,4 @@ test-results
 *.userprefs
 packages
 .*csproj
+*.DS_Store
