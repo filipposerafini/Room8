@@ -17,7 +17,6 @@ test-results
 *.txt
 *.sln
 *.cd
-*.resx
 *.userprefs
 packages
 .*csproj
