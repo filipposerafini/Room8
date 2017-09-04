@@ -12,7 +12,7 @@ namespace Room8
 {
     public partial class MainForm : Form
     {
-        public MainForm()
+        public MainForm(Utente utente)
         {
             InitializeComponent();
         }

@@ -1,9 +1,14 @@
 ﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Room8/View/FormMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Room8/Program.cs">
     <Files>
-      <File FileName="Room8/Model/Spesa.cs" Line="8" Column="26" />
-      <File FileName="Room8/View/FormMain.designer.cs" Line="126" Column="50" />
-      <File FileName="Room8/View/FormMain.cs" Line="17" Column="6" />
+      <File FileName="Room8/Presenter/LoginFormPresenter.cs" Line="42" Column="27" />
+      <File FileName="Room8/Model/GestoreUtenti.cs" Line="117" Column="4" />
+      <File FileName="Room8/View/LoginForm.Designer.cs" Line="38" Column="23" />
+      <File FileName="Room8/View/LoginForm.cs" Line="22" Column="33" />
+      <File FileName="Room8/View/MainForm.cs" Line="10" Column="1" />
+      <File FileName="Room8/Presenter/RegistratiFormPresenter.cs" Line="10" Column="6" />
+      <File FileName="Room8/Presenter/MainFormPresenter.cs" Line="6" Column="28" />
+      <File FileName="Room8/Program.cs" Line="21" Column="29" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Room8 PreferredExecutionTarget="MonoDevelop.Default" />

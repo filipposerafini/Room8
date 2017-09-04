@@ -5,10 +5,11 @@ namespace Room8
 {
 	public class GestoreUtenti
 	{
-		private List<Gruppo> _gruppi;
-		private List<Utente> _utenti;
+		private static GestoreUtenti _instance;
+		private readonly List<Gruppo> _gruppi;
+		private readonly List<Utente> _utenti;
 
-		public GestoreUtenti()
+		private GestoreUtenti()
 		{
 			Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1");
 			Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2");
@@ -48,19 +49,29 @@ namespace Room8
 			_utenti.Add(utente6);
 		}
 
-		public List<Gruppo> Gruppi
+		public static GestoreUtenti Instance
 		{
 			get
 			{
-				return _gruppi;
+				if (_instance == null)
+					return new GestoreUtenti();
+				return _instance;
 			}
 		}
 
-		public List<Utente> Utenti
+		public IList<Gruppo> Gruppi
 		{
 			get
 			{
-				return _utenti;
+				return _gruppi.AsReadOnly();
+			}
+		}
+
+		public IList<Utente> Utenti
+		{
+			get
+			{
+				return _utenti.AsReadOnly();
 			}
 		}
 
@@ -84,7 +95,7 @@ namespace Room8
 
 		public void AggiungiGruppo(Gruppo gruppo)
 		{
-			if (this.Gruppi.Exists(x => x.Id.Equals(gruppo.Id)))
+			if ((this.Gruppi as List<Gruppo>).Exists(x => x.Id.Equals(gruppo.Id)))
 			{
 				throw new ArgumentException("Utente già presente");
 			}
@@ -110,17 +121,20 @@ namespace Room8
 
         public Utente VerificaPassword(string email, string password)
 		{
+			if (string.IsNullOrEmpty(email))
+				throw new ArgumentException("Inserisci un indirizzo email");
+			if (string.IsNullOrEmpty(password))
+				throw new ArgumentException("Inserisci la password");
+			
 			Utente utente = _utenti.Find(x => x.Email.Equals(email));
 
 			if (utente == null)
-			{
-				throw new ArgumentException("Utente non presente, verifica fallita");
-			}
+				throw new ArgumentException("Utente non presente");
 
 			if (utente.Password.Equals(password))
                 return utente;
 			else
-				return null;
+				throw new ArgumentException("Password errata");
 		}
 	}
 }

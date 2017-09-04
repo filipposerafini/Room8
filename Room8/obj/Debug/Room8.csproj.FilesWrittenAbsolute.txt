@@ -26,3 +26,5 @@
 /home/filippo/Documents/University/Room8/Room8/bin/Debug/Room8.exe
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.FormLogin.resources
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.FormMain.resources
+/home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.LoginForm.resources
+/home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.MainForm.resources

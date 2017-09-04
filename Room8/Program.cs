@@ -16,7 +16,9 @@ namespace Room8
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new FormLogin());
+			LoginForm loginForm = new LoginForm();
+			new LoginFormPresenter(loginForm);
+			Application.Run(loginForm);
 		}
 	}
 }

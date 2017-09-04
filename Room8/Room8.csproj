@@ -48,17 +48,17 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\FormLogin.cs">
+    <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\FormLogin.Designer.cs">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+    <Compile Include="View\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\FormMain.cs">
+    <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\FormMain.designer.cs">
-      <DependentUpon>FormMain.cs</DependentUpon>
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -71,10 +71,10 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\FormLogin.resx">
-      <DependentUpon>FormLogin.cs</DependentUpon>
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\FormMain.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassDiagram1.cd" />
     <None Include="Properties\Settings.settings">
@@ -98,11 +98,17 @@
     <Compile Include="Model\SpeseGruppo.cs" />
     <Compile Include="Model\Parti.cs" />
     <Compile Include="Model\GestoreUtenti.cs" />
+    <Compile Include="Presenter\LoginFormPresenter.cs" />
+    <Compile Include="Presenter\MainFormPresenter.cs" />
+    <Compile Include="Presenter\RegistratiFormPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Presenter\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
