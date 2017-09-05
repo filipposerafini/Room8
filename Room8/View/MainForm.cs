@@ -63,5 +63,11 @@ namespace Room8
             SpesaForm spesaForm = new SpesaForm();
             spesaForm.Show();
         }
+
+        private void _saldaToolStripButton_Click(object sender, EventArgs e)
+        {
+            SaldoForm saldoForm = new SaldoForm();
+            saldoForm.Show();
+        }
     }
 }

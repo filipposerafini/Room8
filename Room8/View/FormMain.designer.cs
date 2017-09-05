@@ -153,6 +153,7 @@
             this._saldaToolStripButton.Name = "_saldaToolStripButton";
             this._saldaToolStripButton.Size = new System.Drawing.Size(48, 32);
             this._saldaToolStripButton.Text = "Salda";
+            this._saldaToolStripButton.Click += new System.EventHandler(this._saldaToolStripButton_Click);
             // 
             // _aggiungiSpesaToolStripButton
             // 

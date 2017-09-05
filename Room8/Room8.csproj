@@ -66,6 +66,12 @@
     <Compile Include="View\RegistratiForm.Designer.cs">
       <DependentUpon>RegistratiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\SaldoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\SaldoForm.Designer.cs">
+      <DependentUpon>SaldoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\SpesaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\RegistratiForm.resx">
       <DependentUpon>RegistratiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\SaldoForm.resx">
+      <DependentUpon>SaldoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\SpesaForm.resx">
       <DependentUpon>SpesaForm.cs</DependentUpon>
