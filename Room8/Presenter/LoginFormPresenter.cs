@@ -61,7 +61,7 @@ namespace Room8
 						control = LoginForm.AccediButton;
 						break;
 				}
-				LoginForm.ErrorProvider.SetError(LoginForm.AccediButton, ae.Message);
+				LoginForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
 			}
 		}
 

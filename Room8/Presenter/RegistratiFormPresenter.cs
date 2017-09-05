@@ -67,6 +67,7 @@ namespace Room8
 
 		private void ConfermaButton_Click(object sender, EventArgs e)
 		{
+			RegistratiForm.ErrorProvider.Clear();
 			try 
 			{
 				if (!RegistratiForm.ConfermaPasswordTextBox.Text.Equals(RegistratiForm.PasswordTextBox.Text))
