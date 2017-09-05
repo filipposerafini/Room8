@@ -224,6 +224,7 @@
             "Amico3"});
             this._amiciListBox.Location = new System.Drawing.Point(35, 322);
             this._amiciListBox.Name = "_amiciListBox";
+            this._amiciListBox.ScrollAlwaysVisible = true;
             this._amiciListBox.Size = new System.Drawing.Size(112, 94);
             this._amiciListBox.TabIndex = 9;
             this._amiciListBox.SelectedIndexChanged += new System.EventHandler(this.listBoxAmici_SelectedIndexChanged);
@@ -262,6 +263,7 @@
             "Gruppo3"});
             this._gruppiListBox.Location = new System.Drawing.Point(35, 186);
             this._gruppiListBox.Name = "_gruppiListBox";
+            this._gruppiListBox.ScrollAlwaysVisible = true;
             this._gruppiListBox.Size = new System.Drawing.Size(112, 94);
             this._gruppiListBox.TabIndex = 6;
             this._gruppiListBox.SelectedIndexChanged += new System.EventHandler(this.listBoxGruppi_SelectedIndexChanged);
