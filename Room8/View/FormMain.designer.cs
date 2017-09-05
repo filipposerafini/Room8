@@ -33,10 +33,10 @@
             this._utenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._creaGruppoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._aggiungiAmicoToolButton = new System.Windows.Forms.ToolStripButton();
+            this._aggiungiAmicoStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._saldaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._aggiungiSpesaToolButton = new System.Windows.Forms.ToolStripButton();
+            this._saldaToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this._aggiungiSpesaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this._mainSplitContainer = new System.Windows.Forms.SplitContainer();
             this._linkLabelCrea = new System.Windows.Forms.LinkLabel();
             this._aggiungiAmiciLinkLabel = new System.Windows.Forms.LinkLabel();
@@ -107,8 +107,8 @@
             this._mainMenuStrip.GripMargin = new System.Windows.Forms.Padding(2);
             this._mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._utenteToolStripMenuItem,
-            this._saldaToolStripMenuItem,
-            this._aggiungiSpesaToolButton});
+            this._saldaToolStripButton,
+            this._aggiungiSpesaToolStripButton});
             this._mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this._mainMenuStrip.Name = "_mainMenuStrip";
             this._mainMenuStrip.Size = new System.Drawing.Size(770, 43);
@@ -120,7 +120,7 @@
             this._utenteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._accountToolStripMenuItem,
             this._creaGruppoToolStripMenuItem,
-            this._aggiungiAmicoToolButton,
+            this._aggiungiAmicoStripMenuItem,
             this._esciToolStripMenuItem});
             this._utenteToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._utenteToolStripMenuItem.Name = "_utenteToolStripMenuItem";
@@ -141,9 +141,9 @@
             // 
             // _aggiungiAmicoToolStripMenuItem
             // 
-            this._aggiungiAmicoToolButton.Name = "_aggiungiAmicoToolStripMenuItem";
-            this._aggiungiAmicoToolButton.Size = new System.Drawing.Size(196, 28);
-            this._aggiungiAmicoToolButton.Text = "Aggiungi amico";
+            this._aggiungiAmicoStripMenuItem.Name = "_aggiungiAmicoToolStripMenuItem";
+            this._aggiungiAmicoStripMenuItem.Size = new System.Drawing.Size(196, 28);
+            this._aggiungiAmicoStripMenuItem.Text = "Aggiungi amico";
             // 
             // _esciToolStripMenuItem
             // 
@@ -153,23 +153,23 @@
             // 
             // _saldaToolStripMenuItem
             // 
-            this._saldaToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this._saldaToolStripMenuItem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this._saldaToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._saldaToolStripMenuItem.Margin = new System.Windows.Forms.Padding(2, 2, 4, 2);
-            this._saldaToolStripMenuItem.Name = "_saldaToolStripMenuItem";
-            this._saldaToolStripMenuItem.Size = new System.Drawing.Size(63, 35);
-            this._saldaToolStripMenuItem.Text = "Salda";
+            this._saldaToolStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this._saldaToolStripButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this._saldaToolStripButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._saldaToolStripButton.Margin = new System.Windows.Forms.Padding(2, 2, 4, 2);
+            this._saldaToolStripButton.Name = "_saldaToolStripMenuItem";
+            this._saldaToolStripButton.Size = new System.Drawing.Size(63, 35);
+            this._saldaToolStripButton.Text = "Salda";
             // 
             // _aggiungiSpesaToolStripMenuItem
             // 
-            this._aggiungiSpesaToolButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this._aggiungiSpesaToolButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this._aggiungiSpesaToolButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._aggiungiSpesaToolButton.Margin = new System.Windows.Forms.Padding(4, 2, 2, 2);
-            this._aggiungiSpesaToolButton.Name = "_aggiungiSpesaToolStripMenuItem";
-            this._aggiungiSpesaToolButton.Size = new System.Drawing.Size(137, 35);
-            this._aggiungiSpesaToolButton.Text = "Aggiungi Spesa";
+            this._aggiungiSpesaToolStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this._aggiungiSpesaToolStripButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this._aggiungiSpesaToolStripButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._aggiungiSpesaToolStripButton.Margin = new System.Windows.Forms.Padding(4, 2, 2, 2);
+            this._aggiungiSpesaToolStripButton.Name = "_aggiungiSpesaToolStripMenuItem";
+            this._aggiungiSpesaToolStripButton.Size = new System.Drawing.Size(137, 35);
+            this._aggiungiSpesaToolStripButton.Text = "Aggiungi Spesa";
             // 
             // _mainSplitContainer
             // 
@@ -699,9 +699,9 @@
         private System.Windows.Forms.Label _labelSpeseStatistiche;
         private System.Windows.Forms.LinkLabel _linkLabelCrea;
         private System.Windows.Forms.LinkLabel _aggiungiAmiciLinkLabel;
-        private System.Windows.Forms.ToolStripButton _aggiungiAmicoToolButton;
-        private System.Windows.Forms.ToolStripButton _aggiungiSpesaToolButton;
-        private System.Windows.Forms.ToolStripMenuItem _saldaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem _aggiungiAmicoStripMenuItem;
+        private System.Windows.Forms.ToolStripButton _aggiungiSpesaToolStripButton;
+        private System.Windows.Forms.ToolStripButton _saldaToolStripButton;
     }
 }
 
