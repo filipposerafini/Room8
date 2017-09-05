@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\CreaGruppoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CreaGruppoForm.Designer.cs">
+      <DependentUpon>CreaGruppoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,6 +65,12 @@
     </Compile>
     <Compile Include="View\FormMain.designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\PartiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\PartiForm.Designer.cs">
+      <DependentUpon>PartiForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\RegistratiForm.cs">
       <SubType>Form</SubType>
@@ -88,6 +100,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\CreaGruppoForm.resx">
+      <DependentUpon>CreaGruppoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -133,7 +148,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Images\default.png" />
+  </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

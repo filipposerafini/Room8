@@ -61,13 +61,25 @@ namespace Room8
         private void _aggiungiSpesaToolStripButton_Click(object sender, EventArgs e)
         {
             SpesaForm spesaForm = new SpesaForm();
-            spesaForm.Show();
+            spesaForm.ShowDialog();
         }
 
         private void _saldaToolStripButton_Click(object sender, EventArgs e)
         {
             SaldoForm saldoForm = new SaldoForm();
-            saldoForm.Show();
+            saldoForm.ShowDialog();
+        }
+
+        private void _linkLabelCrea_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            CreaGruppoForm gruppoForm = new CreaGruppoForm();
+            gruppoForm.ShowDialog();
+        }
+
+        private void _creaGruppoToolStripButton_Click(object sender, EventArgs e)
+        {
+            CreaGruppoForm gruppoForm = new CreaGruppoForm();
+            gruppoForm.ShowDialog();
         }
     }
 }

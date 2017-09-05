@@ -172,6 +172,7 @@
             this._creaGruppoToolStripButton.Name = "_creaGruppoToolStripButton";
             this._creaGruppoToolStripButton.Size = new System.Drawing.Size(87, 33);
             this._creaGruppoToolStripButton.Text = "Crea gruppo";
+            this._creaGruppoToolStripButton.Click += new System.EventHandler(this._creaGruppoToolStripButton_Click);
             // 
             // _mainSplitContainer
             // 
@@ -210,6 +211,7 @@
             this._linkLabelCrea.TabStop = true;
             this._linkLabelCrea.Text = "Crea";
             this._linkLabelCrea.VisitedLinkColor = System.Drawing.Color.Blue;
+            this._linkLabelCrea.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this._linkLabelCrea_LinkClicked);
             // 
             // _amiciListBox
             // 
