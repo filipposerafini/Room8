@@ -1,5 +1,7 @@
 ﻿using Room8.View;
 using System;
+using System.Windows.Forms;
+
 namespace Room8
 {
 	public class LoginFormPresenter
@@ -44,9 +46,22 @@ namespace Room8
 				new MainFormPresenter(mainForm);
 				mainForm.Show();
 			}
-			catch (ArgumentException ex)
+			catch (ArgumentException ae)
 			{
-				LoginForm.ErrorProvider.SetError(LoginForm.AccediButton, ex.Message);
+				Control control;
+				switch (ae.ParamName)
+				{
+					case "mail" :
+						control = LoginForm.MailTextBox;
+						break;
+					case "password" :
+						control = LoginForm.PasswordTextBox;
+						break;
+					default:
+						control = LoginForm.AccediButton;
+						break;
+				}
+				LoginForm.ErrorProvider.SetError(LoginForm.AccediButton, ae.Message);
 			}
 		}
 

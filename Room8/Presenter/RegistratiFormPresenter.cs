@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Windows.Forms;
 using Room8.View;
 
 namespace Room8
@@ -38,11 +39,7 @@ namespace Room8
 		public string Foto
 		{
 			get { return _foto; }
-			set
-			{
-				if (string.IsNullOrEmpty(value))
-					throw new ArgumentException("filename");
-			}
+			set { _foto = value; }
 		}
 
 		private void InitializeEvents()
@@ -70,43 +67,49 @@ namespace Room8
 
 		private void ConfermaButton_Click(object sender, EventArgs e)
 		{
-			RegistratiForm.ErrorProvider.Clear();
-			if (string.IsNullOrEmpty(RegistratiForm.NomeTextBox.Text))
-				RegistratiForm.ErrorProvider.SetError(RegistratiForm.NomeTextBox, "Campo necessario");
-			else if (!Regex.IsMatch(RegistratiForm.NomeTextBox.Text, @"[A-z]{1,}"))
-				RegistratiForm.ErrorProvider.SetError(RegistratiForm.NomeTextBox, "Inserisci un nome valido");
-			else if (string.IsNullOrEmpty(RegistratiForm.CognomeTextBox.Text))
-				RegistratiForm.ErrorProvider.SetError(RegistratiForm.CognomeTextBox, "Campo necessario");
-			else if (!Regex.IsMatch(RegistratiForm.CognomeTextBox.Text, @"[A-z]{1,}"))
-				RegistratiForm.ErrorProvider.SetError(RegistratiForm.CognomeTextBox, "Inserisci un cognome valido");
-			else if (string.IsNullOrEmpty(RegistratiForm.MailTextBox.Text))
-				RegistratiForm.ErrorProvider.SetError(RegistratiForm.MailTextBox, "Campo necessario");
-			else if (!Regex.IsMatch(RegistratiForm.MailTextBox.Text, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
-				RegistratiForm.ErrorProvider.SetError(RegistratiForm.MailTextBox, "Inserisci una mail valida");
-			else if (string.IsNullOrEmpty(RegistratiForm.PasswordTextBox.Text))
-				RegistratiForm.ErrorProvider.SetError(RegistratiForm.PasswordTextBox, "Campo necessario");
-			else if (!Regex.IsMatch(RegistratiForm.PasswordTextBox.Text, @".{8,}"))
-				RegistratiForm.ErrorProvider.SetError(RegistratiForm.PasswordTextBox, "La password deve contenere almano di 8 caratteri");
-			else if (string.IsNullOrEmpty(RegistratiForm.ConfermaPasswordTextBox.Text))
-				RegistratiForm.ErrorProvider.SetError(RegistratiForm.ConfermaPasswordTextBox, "Campo necessario");
-			else if (!RegistratiForm.ConfermaPasswordTextBox.Text.Equals(RegistratiForm.PasswordTextBox.Text))
-				RegistratiForm.ErrorProvider.SetError(RegistratiForm.ConfermaPasswordTextBox, "Le password non corrispondono");
-			else if (string.IsNullOrEmpty(RegistratiForm.TelefonoTextBox.Text))
-				RegistratiForm.ErrorProvider.SetError(RegistratiForm.TelefonoTextBox, "Campo necessario");
-			else if (!Regex.IsMatch(RegistratiForm.TelefonoTextBox.Text,@"\+?[0-9]{8,}"))
-				RegistratiForm.ErrorProvider.SetError(RegistratiForm.TelefonoTextBox, "Inserisci un telefono valido");
-			else
+			try 
 			{
+				if (!RegistratiForm.ConfermaPasswordTextBox.Text.Equals(RegistratiForm.PasswordTextBox.Text))
+					throw new ArgumentException("Le password non corrispondono", "conferma");
 				Utente utente = new Utente(RegistratiForm.MailTextBox.Text,
-				                           RegistratiForm.PasswordTextBox.Text,
-				                           RegistratiForm.NomeTextBox.Text,
-				                           RegistratiForm.CognomeTextBox.Text,
-				                           Foto);
+				                    	   RegistratiForm.PasswordTextBox.Text,
+				                    	   RegistratiForm.NomeTextBox.Text,
+				                    	   RegistratiForm.CognomeTextBox.Text,
+				                           RegistratiForm.TelefonoTextBox.Text,
+				                    	   Foto);
 				GestoreUtenti.AggiugniUtente(utente);
 				RegistratiForm.Hide();
 				LoginForm.Show();
 			}
-			
+			catch (ArgumentException ae)
+			{
+				Control control;
+				switch (ae.ParamName)
+				{
+					case "mail" :
+						control = RegistratiForm.MailTextBox;
+						break;
+					case "password":
+						control = RegistratiForm.PasswordTextBox;
+						break;
+					case "conferma":
+						control = RegistratiForm.ConfermaPasswordTextBox;
+						break;
+					case "nome":
+						control = RegistratiForm.NomeTextBox;
+						break;
+					case "cognome":
+						control = RegistratiForm.CognomeTextBox;
+						break;
+					case "telefono":
+						control = RegistratiForm.TelefonoTextBox;
+						break;
+					default:
+						control = RegistratiForm.ConfermaButton;
+						break;
+				}
+				RegistratiForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
+			}
 		}
 
 		private void AnnullaButton_Click(object sender, EventArgs e)

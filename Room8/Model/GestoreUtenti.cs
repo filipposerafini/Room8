@@ -72,7 +72,7 @@ namespace Room8
 
         public void AggiugniUtente(Utente utente)
         {
-            if (_utenti.Exists(x => x.Email.Equals(utente.Email)))
+            if (_utenti.Exists(x => x.Mail.Equals(utente.Mail)))
             {
                 throw new ArgumentException("Utente già presente");
             }
@@ -97,7 +97,7 @@ namespace Room8
 
             foreach (var utente in gruppo.MembriGruppo)
             {
-                if (!_utenti.Exists(x => x.Email.Equals(utente.Email)))
+                if (!_utenti.Exists(x => x.Mail.Equals(utente.Mail)))
                 {
                     _utenti.Add(utente);
                 }
@@ -114,22 +114,22 @@ namespace Room8
             this.Gruppi.Remove(gruppo);
         }
 
-        public Utente VerificaPassword(string email, string password)
+        public Utente VerificaPassword(string mail, string password)
         {
-            if (string.IsNullOrEmpty(email))
-                throw new ArgumentException("Inserisci un indirizzo email");
+            if (string.IsNullOrEmpty(mail))
+                throw new ArgumentException("Inserisci un indirizzo email", "mail");
             if (string.IsNullOrEmpty(password))
-                throw new ArgumentException("Inserisci la password");
+                throw new ArgumentException("Inserisci la password", "password");
 			
-            Utente utente = _utenti.Find(x => x.Email.Equals(email));
+            Utente utente = _utenti.Find(x => x.Mail.Equals(mail));
 
             if (utente == null)
-                throw new ArgumentException("Utente non presente");
+                throw new ArgumentException("Utente non presente", "mail");
 
             if (utente.Password.Equals(password))
                 return utente;
             else
-                throw new ArgumentException("Password errata");
+                throw new ArgumentException("Password errata", "password");
         }
     }
 }

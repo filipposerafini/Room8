@@ -13,9 +13,12 @@ namespace Room8
 {
     public partial class MainForm : Form
     {
+		private readonly Utente _utente;
+
         public MainForm(Utente utente)
         {
             InitializeComponent();
+			this._utente = utente;
         }
 
         private void buttonRiepilogo_Click(object sender, EventArgs e)
@@ -61,7 +64,8 @@ namespace Room8
         private void _aggiungiSpesaToolStripButton_Click(object sender, EventArgs e)
         {
             SpesaForm spesaForm = new SpesaForm();
-            spesaForm.ShowDialog();
+			new SpesaFormPresenter(spesaForm, _utente);
+			spesaForm.ShowDialog(this);
         }
 
         private void _saldaToolStripButton_Click(object sender, EventArgs e)

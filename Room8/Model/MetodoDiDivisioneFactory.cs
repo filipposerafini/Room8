@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Room8
 {
@@ -20,6 +21,11 @@ namespace Room8
 			if (!_dictionary.ContainsKey(nome))
 				throw new ArgumentException("Metodo di divisione inesistente: " + nome);
 			return _dictionary[nome];
+		}
+
+		public static string getNomeMetodo(IMetodoDiDivisione metodo)
+		{
+			return _dictionary.FirstOrDefault(x => x.Value == metodo).Key;
 		}
 
 		private abstract class MetodoDiDivisione : IMetodoDiDivisione

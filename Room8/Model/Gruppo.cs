@@ -15,17 +15,12 @@ namespace Room8
 		private readonly DateTime _dataCreazione;
 		private string _foto;
 
-		private string GenerateId()
-		{
-			return Guid.NewGuid().ToString();
-		}
-
 		public Gruppo(string nome)
 		{
 			if (String.IsNullOrEmpty(nome))
 				throw new ArgumentException("nome is null or empty");
 
-			this._id = GenerateId();
+			this._id = Guid.NewGuid().ToString();
 			this._nome = nome;
 			this._membriGruppo = new List<Utente>();
 			this._speseGruppo = new SpeseGruppo(this);

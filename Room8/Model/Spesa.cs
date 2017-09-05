@@ -5,42 +5,18 @@ namespace Room8
 	public class Spesa
 	{
 		private readonly string _id;
-		private readonly Gruppo _gruppo;
-		private readonly string _descrizione;
-		private readonly decimal _importo;
-		private readonly Utente _pagante;
-		private readonly IMetodoDiDivisione _metodoDivisione;
-		private readonly Parti _parti;
-		private readonly DateTime _data;
-		private readonly string _note;
+		private Gruppo _gruppo;
+		private string _descrizione;
+		private decimal _importo;
+		private Utente _pagante;
+		private IMetodoDiDivisione _metodoDivisione;
+		private Parti _parti;
+		private DateTime _data;
+		private string _note;
 
-		private string GenerateId()
+		public Spesa()
 		{
-			return Guid.NewGuid().ToString();
-		}
-
-		public Spesa(Gruppo gruppo, string descrizione, decimal importo, Utente pagante, string nomeMetodo, DateTime data)
-		{
-			this._id = GenerateId();
-			this._gruppo = gruppo;
-			this._descrizione = descrizione;
-			this._importo = importo;
-			this._pagante = pagante;
-			this._metodoDivisione = MetodoDiDivisioneFactory.getMetodoDiDivisione(nomeMetodo);
-			this._parti = new Parti(gruppo);
-			this._data = data;
-
-			if (!gruppo.MembriGruppo.Contains(pagante))
-			{
-				throw new ArgumentException("Il pagante non fa parte del gruppo");
-			}
-		}
-
-		public Spesa(Gruppo gruppo, string descrizione, decimal importo, Utente pagante, string nomeMetodo, DateTime data, string note)
-			: this(gruppo, descrizione, importo, pagante, nomeMetodo, data)
-		{
-			if (!String.IsNullOrEmpty(note))
-				this._note = note;
+			this._id = Guid.NewGuid().ToString();
 		}
 
 		public string Id
@@ -51,46 +27,96 @@ namespace Room8
 		public Gruppo Gruppo
 		{
 			get { return _gruppo; }
+			set
+			{
+				if (value == null)
+					throw new ArgumentNullException("gruppo");
+				_gruppo = value;
+				Parti = new Parti(value);
+			}
 		}
 
 		public string Descrizione
 		{
 			get { return _descrizione; }
+			set
+			{
+				if (string.IsNullOrEmpty(value))
+					throw new ArgumentException("La descrizione non può essere vuota", "descrizione");
+				_descrizione = value;
+			}
 		}
 
 		public decimal Importo
 		{
 			get { return _importo; }
+			set
+			{
+				if (value <= 0)
+					throw new ArgumentException("L'importo deve essere maggiore di 0", "importo");
+				_importo = value;
+			}
 		}
 
 		public Utente Pagante
 		{
 			get { return _pagante; }
+			set
+			{
+				if (value == null)
+					throw new ArgumentNullException("pagante");
+				if (!Gruppo.MembriGruppo.Contains(value))
+					throw new ArgumentException("Il pagante deve essere un membro del gruppo", "pagante");
+				
+				_pagante = value;
+			}
 		}
 
 		public IMetodoDiDivisione MetodoDivisione
 		{
 			get { return _metodoDivisione; }
+			set
+			{
+				if (value == null)
+					throw new ArgumentNullException("metodo di divisione");
+				_metodoDivisione = value;
+			}
 		}
 
 		public Parti Parti
 		{
 			get { return _parti; }
+			set
+			{
+				if (value == null)
+					throw new ArgumentNullException("parti");
+				_parti = value;
+			}
 		}
 
 		public DateTime Data
 		{
 			get { return _data; }
+			set
+			{
+				if (value == null)
+					throw new ArgumentNullException("data");
+				_data = value;
+			}
 		}
 
 		public string Note
 		{
 			get { return _note; }
+			set
+			{
+				_note = value;
+			}
 		}
 
 		public void generaMovimenti()
 		{
-			foreach (var item in MetodoDivisione.DividiSpesa(Importo, Parti))
+			foreach (var item in _metodoDivisione.DividiSpesa(Importo, Parti))
 			{
 				if (item.Key.Equals(Pagante))
 					continue;
