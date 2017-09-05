@@ -33,13 +33,12 @@
             this._utenteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._accountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._creaGruppoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._aggiungiAmicoStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this._saldaToolStripButton = new System.Windows.Forms.ToolStripButton();
             this._aggiungiSpesaToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this._creaGruppoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this._mainSplitContainer = new System.Windows.Forms.SplitContainer();
             this._linkLabelCrea = new System.Windows.Forms.LinkLabel();
-            this._aggiungiAmiciLinkLabel = new System.Windows.Forms.LinkLabel();
             this._amiciListBox = new System.Windows.Forms.ListBox();
             this._amiciMenuLabel = new System.Windows.Forms.Label();
             this._gruppiMenuLabel = new System.Windows.Forms.Label();
@@ -108,10 +107,11 @@
             this._mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._utenteToolStripMenuItem,
             this._saldaToolStripButton,
-            this._aggiungiSpesaToolStripButton});
+            this._aggiungiSpesaToolStripButton,
+            this._creaGruppoToolStripButton});
             this._mainMenuStrip.Location = new System.Drawing.Point(0, 0);
             this._mainMenuStrip.Name = "_mainMenuStrip";
-            this._mainMenuStrip.Size = new System.Drawing.Size(770, 43);
+            this._mainMenuStrip.Size = new System.Drawing.Size(770, 40);
             this._mainMenuStrip.TabIndex = 1;
             this._mainMenuStrip.Text = "menuStrip1";
             // 
@@ -120,67 +120,66 @@
             this._utenteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this._accountToolStripMenuItem,
             this._creaGruppoToolStripMenuItem,
-            this._aggiungiAmicoStripMenuItem,
             this._esciToolStripMenuItem});
-            this._utenteToolStripMenuItem.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._utenteToolStripMenuItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._utenteToolStripMenuItem.Name = "_utenteToolStripMenuItem";
-            this._utenteToolStripMenuItem.Size = new System.Drawing.Size(74, 39);
+            this._utenteToolStripMenuItem.Size = new System.Drawing.Size(59, 36);
             this._utenteToolStripMenuItem.Text = "Utente";
             // 
             // _accountToolStripMenuItem
             // 
             this._accountToolStripMenuItem.Name = "_accountToolStripMenuItem";
-            this._accountToolStripMenuItem.Size = new System.Drawing.Size(196, 28);
+            this._accountToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this._accountToolStripMenuItem.Text = "Il tuo account";
             // 
             // _creaGruppoToolStripMenuItem
             // 
             this._creaGruppoToolStripMenuItem.Name = "_creaGruppoToolStripMenuItem";
-            this._creaGruppoToolStripMenuItem.Size = new System.Drawing.Size(196, 28);
+            this._creaGruppoToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this._creaGruppoToolStripMenuItem.Text = "Crea gruppo";
-            // 
-            // _aggiungiAmicoToolStripMenuItem
-            // 
-            this._aggiungiAmicoStripMenuItem.Name = "_aggiungiAmicoToolStripMenuItem";
-            this._aggiungiAmicoStripMenuItem.Size = new System.Drawing.Size(196, 28);
-            this._aggiungiAmicoStripMenuItem.Text = "Aggiungi amico";
             // 
             // _esciToolStripMenuItem
             // 
             this._esciToolStripMenuItem.Name = "_esciToolStripMenuItem";
-            this._esciToolStripMenuItem.Size = new System.Drawing.Size(196, 28);
+            this._esciToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this._esciToolStripMenuItem.Text = "Esci";
             // 
-            // _saldaToolStripMenuItem
+            // _saldaToolStripButton
             // 
             this._saldaToolStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this._saldaToolStripButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this._saldaToolStripButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._saldaToolStripButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._saldaToolStripButton.Margin = new System.Windows.Forms.Padding(2, 2, 4, 2);
-            this._saldaToolStripButton.Name = "_saldaToolStripMenuItem";
-            this._saldaToolStripButton.Size = new System.Drawing.Size(63, 35);
+            this._saldaToolStripButton.Name = "_saldaToolStripButton";
+            this._saldaToolStripButton.Size = new System.Drawing.Size(48, 32);
             this._saldaToolStripButton.Text = "Salda";
             // 
-            // _aggiungiSpesaToolStripMenuItem
+            // _aggiungiSpesaToolStripButton
             // 
             this._aggiungiSpesaToolStripButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this._aggiungiSpesaToolStripButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this._aggiungiSpesaToolStripButton.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._aggiungiSpesaToolStripButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._aggiungiSpesaToolStripButton.Margin = new System.Windows.Forms.Padding(4, 2, 2, 2);
-            this._aggiungiSpesaToolStripButton.Name = "_aggiungiSpesaToolStripMenuItem";
-            this._aggiungiSpesaToolStripButton.Size = new System.Drawing.Size(137, 35);
+            this._aggiungiSpesaToolStripButton.Name = "_aggiungiSpesaToolStripButton";
+            this._aggiungiSpesaToolStripButton.Size = new System.Drawing.Size(108, 32);
             this._aggiungiSpesaToolStripButton.Text = "Aggiungi Spesa";
+            // 
+            // _creaGruppoToolStripButton
+            // 
+            this._creaGruppoToolStripButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._creaGruppoToolStripButton.Name = "_creaGruppoToolStripButton";
+            this._creaGruppoToolStripButton.Size = new System.Drawing.Size(87, 33);
+            this._creaGruppoToolStripButton.Text = "Crea gruppo";
             // 
             // _mainSplitContainer
             // 
             this._mainSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._mainSplitContainer.Location = new System.Drawing.Point(0, 43);
+            this._mainSplitContainer.Location = new System.Drawing.Point(0, 40);
             this._mainSplitContainer.Name = "_mainSplitContainer";
             // 
             // _mainSplitContainer.Panel1
             // 
             this._mainSplitContainer.Panel1.Controls.Add(this._linkLabelCrea);
-            this._mainSplitContainer.Panel1.Controls.Add(this._aggiungiAmiciLinkLabel);
             this._mainSplitContainer.Panel1.Controls.Add(this._amiciListBox);
             this._mainSplitContainer.Panel1.Controls.Add(this._amiciMenuLabel);
             this._mainSplitContainer.Panel1.Controls.Add(this._gruppiMenuLabel);
@@ -192,7 +191,7 @@
             // _mainSplitContainer.Panel2
             // 
             this._mainSplitContainer.Panel2.Controls.Add(this._mainTabControl);
-            this._mainSplitContainer.Size = new System.Drawing.Size(770, 431);
+            this._mainSplitContainer.Size = new System.Drawing.Size(770, 434);
             this._mainSplitContainer.SplitterDistance = 179;
             this._mainSplitContainer.TabIndex = 2;
             // 
@@ -209,19 +208,6 @@
             this._linkLabelCrea.TabStop = true;
             this._linkLabelCrea.Text = "Crea";
             this._linkLabelCrea.VisitedLinkColor = System.Drawing.Color.Blue;
-            // 
-            // _aggiungiAmiciLinkLabel
-            // 
-            this._aggiungiAmiciLinkLabel.AutoSize = true;
-            this._aggiungiAmiciLinkLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._aggiungiAmiciLinkLabel.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this._aggiungiAmiciLinkLabel.Location = new System.Drawing.Point(86, 299);
-            this._aggiungiAmiciLinkLabel.Name = "_aggiungiAmiciLinkLabel";
-            this._aggiungiAmiciLinkLabel.Size = new System.Drawing.Size(55, 15);
-            this._aggiungiAmiciLinkLabel.TabIndex = 10;
-            this._aggiungiAmiciLinkLabel.TabStop = true;
-            this._aggiungiAmiciLinkLabel.Text = "Aggiungi";
-            this._aggiungiAmiciLinkLabel.VisitedLinkColor = System.Drawing.Color.Blue;
             // 
             // _amiciListBox
             // 
@@ -333,7 +319,7 @@
             this._mainTabControl.Name = "_mainTabControl";
             this._mainTabControl.Padding = new System.Drawing.Point(6, 6);
             this._mainTabControl.SelectedIndex = 0;
-            this._mainTabControl.Size = new System.Drawing.Size(587, 431);
+            this._mainTabControl.Size = new System.Drawing.Size(587, 434);
             this._mainTabControl.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this._mainTabControl.TabIndex = 0;
             // 
@@ -345,7 +331,7 @@
             this._riepilogoTabPage.Location = new System.Drawing.Point(4, 5);
             this._riepilogoTabPage.Name = "_riepilogoTabPage";
             this._riepilogoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._riepilogoTabPage.Size = new System.Drawing.Size(579, 422);
+            this._riepilogoTabPage.Size = new System.Drawing.Size(579, 425);
             this._riepilogoTabPage.TabIndex = 0;
             this._riepilogoTabPage.Text = "tabPage1";
             this._riepilogoTabPage.UseVisualStyleBackColor = true;
@@ -414,7 +400,7 @@
             this._riepilogoTabControl.Location = new System.Drawing.Point(3, 116);
             this._riepilogoTabControl.Name = "_riepilogoTabControl";
             this._riepilogoTabControl.SelectedIndex = 0;
-            this._riepilogoTabControl.Size = new System.Drawing.Size(573, 300);
+            this._riepilogoTabControl.Size = new System.Drawing.Size(573, 303);
             this._riepilogoTabControl.TabIndex = 1;
             // 
             // _riepilogoListaTabPage
@@ -423,7 +409,7 @@
             this._riepilogoListaTabPage.Location = new System.Drawing.Point(4, 28);
             this._riepilogoListaTabPage.Name = "_riepilogoListaTabPage";
             this._riepilogoListaTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._riepilogoListaTabPage.Size = new System.Drawing.Size(565, 268);
+            this._riepilogoListaTabPage.Size = new System.Drawing.Size(565, 271);
             this._riepilogoListaTabPage.TabIndex = 0;
             this._riepilogoListaTabPage.Text = "Lista";
             this._riepilogoListaTabPage.UseVisualStyleBackColor = true;
@@ -434,7 +420,7 @@
             this._riepilogoGraficoTabPage.Location = new System.Drawing.Point(4, 28);
             this._riepilogoGraficoTabPage.Name = "_riepilogoGraficoTabPage";
             this._riepilogoGraficoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._riepilogoGraficoTabPage.Size = new System.Drawing.Size(565, 268);
+            this._riepilogoGraficoTabPage.Size = new System.Drawing.Size(565, 271);
             this._riepilogoGraficoTabPage.TabIndex = 1;
             this._riepilogoGraficoTabPage.Text = "Grafico";
             this._riepilogoGraficoTabPage.UseVisualStyleBackColor = true;
@@ -455,7 +441,7 @@
             this._attivitaTabPage.Location = new System.Drawing.Point(4, 5);
             this._attivitaTabPage.Name = "_attivitaTabPage";
             this._attivitaTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._attivitaTabPage.Size = new System.Drawing.Size(579, 422);
+            this._attivitaTabPage.Size = new System.Drawing.Size(579, 425);
             this._attivitaTabPage.TabIndex = 1;
             this._attivitaTabPage.Text = "tabPage2";
             this._attivitaTabPage.UseVisualStyleBackColor = true;
@@ -478,7 +464,7 @@
             this._speseTabPage.Location = new System.Drawing.Point(4, 5);
             this._speseTabPage.Name = "_speseTabPage";
             this._speseTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._speseTabPage.Size = new System.Drawing.Size(579, 422);
+            this._speseTabPage.Size = new System.Drawing.Size(579, 425);
             this._speseTabPage.TabIndex = 2;
             this._speseTabPage.Text = "tabPage3";
             this._speseTabPage.UseVisualStyleBackColor = true;
@@ -576,7 +562,7 @@
             this._gruppoTabPage.Location = new System.Drawing.Point(4, 5);
             this._gruppoTabPage.Name = "_gruppoTabPage";
             this._gruppoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._gruppoTabPage.Size = new System.Drawing.Size(579, 422);
+            this._gruppoTabPage.Size = new System.Drawing.Size(579, 425);
             this._gruppoTabPage.TabIndex = 3;
             this._gruppoTabPage.Text = "tabPage3";
             this._gruppoTabPage.UseVisualStyleBackColor = true;
@@ -597,7 +583,7 @@
             this._amicoTabPage.Location = new System.Drawing.Point(4, 5);
             this._amicoTabPage.Name = "_amicoTabPage";
             this._amicoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._amicoTabPage.Size = new System.Drawing.Size(579, 422);
+            this._amicoTabPage.Size = new System.Drawing.Size(579, 425);
             this._amicoTabPage.TabIndex = 4;
             this._amicoTabPage.Text = "tabPage4";
             this._amicoTabPage.UseVisualStyleBackColor = true;
@@ -624,8 +610,7 @@
             this.MinimumSize = new System.Drawing.Size(786, 534);
             this.Name = "MainForm";
             this.Text = "Room8";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.MainForm_Load);
             this._mainMenuStrip.ResumeLayout(false);
             this._mainMenuStrip.PerformLayout();
             this._mainSplitContainer.Panel1.ResumeLayout(false);
@@ -698,10 +683,9 @@
         private System.Windows.Forms.Label _speseBilancioLabel;
         private System.Windows.Forms.Label _labelSpeseStatistiche;
         private System.Windows.Forms.LinkLabel _linkLabelCrea;
-        private System.Windows.Forms.LinkLabel _aggiungiAmiciLinkLabel;
-        private System.Windows.Forms.ToolStripMenuItem _aggiungiAmicoStripMenuItem;
         private System.Windows.Forms.ToolStripButton _aggiungiSpesaToolStripButton;
         private System.Windows.Forms.ToolStripButton _saldaToolStripButton;
+        private System.Windows.Forms.ToolStripButton _creaGruppoToolStripButton;
     }
 }
 
