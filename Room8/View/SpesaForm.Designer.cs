@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._aggiungiSpesaLabel = new System.Windows.Forms.Label();
             this._confirmPanel = new System.Windows.Forms.Panel();
@@ -51,11 +52,13 @@
             this._dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this._noteTextBox = new System.Windows.Forms.TextBox();
             this._numericUpDown = new System.Windows.Forms.NumericUpDown();
+            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
             this._radioPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._numericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainTableLayoutPanel
@@ -72,7 +75,7 @@
             this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.94727F));
             this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.05274F));
-            this._mainTableLayoutPanel.Size = new System.Drawing.Size(553, 388);
+            this._mainTableLayoutPanel.Size = new System.Drawing.Size(472, 388);
             this._mainTableLayoutPanel.TabIndex = 0;
             // 
             // _aggiungiSpesaLabel
@@ -83,9 +86,9 @@
             this._aggiungiSpesaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._aggiungiSpesaLabel.Location = new System.Drawing.Point(3, 0);
             this._aggiungiSpesaLabel.Name = "_aggiungiSpesaLabel";
-            this._aggiungiSpesaLabel.Size = new System.Drawing.Size(547, 34);
+            this._aggiungiSpesaLabel.Size = new System.Drawing.Size(466, 34);
             this._aggiungiSpesaLabel.TabIndex = 0;
-            this._aggiungiSpesaLabel.Text = "Aggiungi spesa";
+            this._aggiungiSpesaLabel.Text = "Spesa";
             this._aggiungiSpesaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _confirmPanel
@@ -93,14 +96,15 @@
             this._confirmPanel.Controls.Add(this._aggiungiButton);
             this._confirmPanel.Controls.Add(this._annullaButton);
             this._confirmPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._confirmPanel.Location = new System.Drawing.Point(3, 341);
+            this._confirmPanel.Location = new System.Drawing.Point(0, 338);
+            this._confirmPanel.Margin = new System.Windows.Forms.Padding(0);
             this._confirmPanel.Name = "_confirmPanel";
-            this._confirmPanel.Size = new System.Drawing.Size(547, 44);
+            this._confirmPanel.Size = new System.Drawing.Size(472, 50);
             this._confirmPanel.TabIndex = 1;
             // 
             // _aggiungiButton
             // 
-            this._aggiungiButton.Location = new System.Drawing.Point(382, 12);
+            this._aggiungiButton.Location = new System.Drawing.Point(303, 15);
             this._aggiungiButton.Name = "_aggiungiButton";
             this._aggiungiButton.Size = new System.Drawing.Size(75, 23);
             this._aggiungiButton.TabIndex = 1;
@@ -109,7 +113,7 @@
             // 
             // _annullaButton
             // 
-            this._annullaButton.Location = new System.Drawing.Point(463, 12);
+            this._annullaButton.Location = new System.Drawing.Point(384, 15);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
             this._annullaButton.TabIndex = 0;
@@ -146,7 +150,7 @@
             this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._formTableLayoutPanel.Size = new System.Drawing.Size(547, 298);
+            this._formTableLayoutPanel.Size = new System.Drawing.Size(466, 298);
             this._formTableLayoutPanel.TabIndex = 2;
             // 
             // _gruppoLabel
@@ -188,14 +192,14 @@
             // _gruppoComboBox
             // 
             this._gruppoComboBox.FormattingEnabled = true;
-            this._gruppoComboBox.Location = new System.Drawing.Point(170, 3);
+            this._gruppoComboBox.Location = new System.Drawing.Point(145, 3);
             this._gruppoComboBox.Name = "_gruppoComboBox";
             this._gruppoComboBox.Size = new System.Drawing.Size(121, 21);
             this._gruppoComboBox.TabIndex = 4;
             // 
             // _descrizioneTextBox
             // 
-            this._descrizioneTextBox.Location = new System.Drawing.Point(170, 30);
+            this._descrizioneTextBox.Location = new System.Drawing.Point(145, 30);
             this._descrizioneTextBox.Name = "_descrizioneTextBox";
             this._descrizioneTextBox.Size = new System.Drawing.Size(100, 20);
             this._descrizioneTextBox.TabIndex = 6;
@@ -206,50 +210,51 @@
             this._radioPanel.Controls.Add(this._percentualiRadioButton);
             this._radioPanel.Controls.Add(this._equoRadioButton);
             this._radioPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._radioPanel.Location = new System.Drawing.Point(170, 109);
+            this._radioPanel.Location = new System.Drawing.Point(142, 106);
+            this._radioPanel.Margin = new System.Windows.Forms.Padding(0);
             this._radioPanel.Name = "_radioPanel";
-            this._radioPanel.Size = new System.Drawing.Size(374, 100);
+            this._radioPanel.Size = new System.Drawing.Size(324, 100);
             this._radioPanel.TabIndex = 8;
             // 
             // _quoteRadioButton
             // 
             this._quoteRadioButton.AutoSize = true;
-            this._quoteRadioButton.Location = new System.Drawing.Point(228, 8);
+            this._quoteRadioButton.Location = new System.Drawing.Point(147, 8);
             this._quoteRadioButton.Name = "_quoteRadioButton";
-            this._quoteRadioButton.Size = new System.Drawing.Size(85, 17);
+            this._quoteRadioButton.Size = new System.Drawing.Size(71, 17);
             this._quoteRadioButton.TabIndex = 2;
             this._quoteRadioButton.Tag = "Per quote";
-            this._quoteRadioButton.Text = "radioButton3";
+            this._quoteRadioButton.Text = "Per quote";
             this._quoteRadioButton.UseVisualStyleBackColor = true;
             // 
             // _percentualiRadioButton
             // 
             this._percentualiRadioButton.AutoSize = true;
-            this._percentualiRadioButton.Location = new System.Drawing.Point(115, 8);
+            this._percentualiRadioButton.Location = new System.Drawing.Point(59, 8);
             this._percentualiRadioButton.Name = "_percentualiRadioButton";
-            this._percentualiRadioButton.Size = new System.Drawing.Size(85, 17);
+            this._percentualiRadioButton.Size = new System.Drawing.Size(82, 17);
             this._percentualiRadioButton.TabIndex = 1;
             this._percentualiRadioButton.Tag = "Percentuale";
-            this._percentualiRadioButton.Text = "radioButton2";
+            this._percentualiRadioButton.Text = "Percentuale";
             this._percentualiRadioButton.UseVisualStyleBackColor = true;
             // 
             // _equoRadioButton
             // 
             this._equoRadioButton.AutoSize = true;
             this._equoRadioButton.Checked = true;
-            this._equoRadioButton.Location = new System.Drawing.Point(21, 8);
+            this._equoRadioButton.Location = new System.Drawing.Point(3, 8);
             this._equoRadioButton.Name = "_equoRadioButton";
-            this._equoRadioButton.Size = new System.Drawing.Size(79, 17);
+            this._equoRadioButton.Size = new System.Drawing.Size(50, 17);
             this._equoRadioButton.TabIndex = 0;
             this._equoRadioButton.TabStop = true;
             this._equoRadioButton.Tag = "Equa";
-            this._equoRadioButton.Text = "radioButton";
+            this._equoRadioButton.Text = "Equo";
             this._equoRadioButton.UseVisualStyleBackColor = true;
             // 
             // _paganteComboBox
             // 
             this._paganteComboBox.FormattingEnabled = true;
-            this._paganteComboBox.Location = new System.Drawing.Point(170, 82);
+            this._paganteComboBox.Location = new System.Drawing.Point(145, 82);
             this._paganteComboBox.Name = "_paganteComboBox";
             this._paganteComboBox.Size = new System.Drawing.Size(121, 21);
             this._paganteComboBox.TabIndex = 9;
@@ -267,7 +272,7 @@
             // _dataLabel
             // 
             this._dataLabel.AutoSize = true;
-            this._dataLabel.Location = new System.Drawing.Point(3, 212);
+            this._dataLabel.Location = new System.Drawing.Point(3, 206);
             this._dataLabel.Name = "_dataLabel";
             this._dataLabel.Size = new System.Drawing.Size(30, 13);
             this._dataLabel.TabIndex = 11;
@@ -276,7 +281,7 @@
             // _noteLabel
             // 
             this._noteLabel.AutoSize = true;
-            this._noteLabel.Location = new System.Drawing.Point(3, 238);
+            this._noteLabel.Location = new System.Drawing.Point(3, 232);
             this._noteLabel.Name = "_noteLabel";
             this._noteLabel.Size = new System.Drawing.Size(30, 13);
             this._noteLabel.TabIndex = 12;
@@ -284,32 +289,36 @@
             // 
             // _dateTimePicker
             // 
-            this._dateTimePicker.Location = new System.Drawing.Point(170, 215);
+            this._dateTimePicker.Location = new System.Drawing.Point(145, 209);
             this._dateTimePicker.Name = "_dateTimePicker";
             this._dateTimePicker.Size = new System.Drawing.Size(200, 20);
             this._dateTimePicker.TabIndex = 13;
             // 
             // _noteTextBox
             // 
-            this._noteTextBox.Location = new System.Drawing.Point(170, 241);
+            this._noteTextBox.Location = new System.Drawing.Point(145, 235);
             this._noteTextBox.Multiline = true;
             this._noteTextBox.Name = "_noteTextBox";
-            this._noteTextBox.Size = new System.Drawing.Size(228, 81);
+            this._noteTextBox.Size = new System.Drawing.Size(228, 57);
             this._noteTextBox.TabIndex = 14;
             // 
             // _numericUpDown
             // 
             this._numericUpDown.DecimalPlaces = 2;
-            this._numericUpDown.Location = new System.Drawing.Point(170, 56);
+            this._numericUpDown.Location = new System.Drawing.Point(145, 56);
             this._numericUpDown.Name = "_numericUpDown";
             this._numericUpDown.Size = new System.Drawing.Size(120, 20);
             this._numericUpDown.TabIndex = 15;
+            // 
+            // _errorProvider
+            // 
+            this._errorProvider.ContainerControl = this;
             // 
             // SpesaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(553, 388);
+            this.ClientSize = new System.Drawing.Size(472, 388);
             this.Controls.Add(this._mainTableLayoutPanel);
             this.Name = "SpesaForm";
             this.Text = "SpesaForm";
@@ -320,6 +329,7 @@
             this._radioPanel.ResumeLayout(false);
             this._radioPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._numericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,5 +359,6 @@
         private System.Windows.Forms.NumericUpDown _numericUpDown;
         private System.Windows.Forms.RadioButton _quoteRadioButton;
         private System.Windows.Forms.RadioButton _percentualiRadioButton;
+        private System.Windows.Forms.ErrorProvider _errorProvider;
     }
 }
