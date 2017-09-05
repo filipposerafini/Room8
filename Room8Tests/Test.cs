@@ -13,9 +13,9 @@ namespace Room8Tests
 		[ExpectedException(typeof(ArgumentException))]
 		public void TestUtentePagante()
 		{
-			Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1");
-			Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2");
-			Utente utente3 = new Utente("user3@mail.com", "password3", "nome3", "cognome3");
+            Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1", null);
+            Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2", null);
+			Utente utente3 = new Utente("user3@mail.com", "password3", "nome3", "cognome3", null);
 
 			Gruppo gruppo1 = new Gruppo("Gruppo1");
 
@@ -32,17 +32,16 @@ namespace Room8Tests
 			Saldo saldo = new Saldo(utente2, utente1, 66, DateTime.Now);
 
 			saldo.AggiungiMovimentoDiDenaro();
-			saldo.AggiungiMovimentoDiDenaro();
 
 		}
 
 		[Test()]
 		[ExpectedException(typeof(ArgumentException))]
 		public void TestPercentuale()
-		{
-			Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1");
-			Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2");
-			Utente utente3 = new Utente("user3@mail.com", "password3", "nome3", "cognome3");
+        {
+            Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1", null);
+            Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2", null);
+            Utente utente3 = new Utente("user3@mail.com", "password3", "nome3", "cognome3", null);
 
 			Gruppo gruppo1 = new Gruppo("Gruppo1");
 
@@ -68,9 +67,9 @@ namespace Room8Tests
 		[ExpectedException(typeof(ArgumentException))]
 		public void TestQuote()
 		{
-			Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1");
-			Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2");
-			Utente utente3 = new Utente("user3@mail.com", "password3", "nome3", "cognome3");
+            Utente utente1 = new Utente("user1@mail.com", "password1", "nome1", "cognome1", null);
+            Utente utente2 = new Utente("user2@mail.com", "password2", "nome2", "cognome2", null);
+            Utente utente3 = new Utente("user3@mail.com", "password3", "nome3", "cognome3", null);
 
 			Gruppo gruppo1 = new Gruppo("Gruppo1");
 
@@ -88,7 +87,7 @@ namespace Room8Tests
 		[Test()]
 		public void TestMovimenti()
 		{
-			GestoreUtenti dati = new GestoreUtenti();
+            GestoreUtenti dati = GestoreUtenti.Instance;
 
 			Gruppo gruppo1 = dati.Gruppi[0];
 			Utente utente1 = gruppo1.MembriGruppo[0];
@@ -132,7 +131,7 @@ namespace Room8Tests
 		[ExpectedException(typeof(ArgumentException))]
 		public void TestBilancio()
 		{
-			GestoreUtenti dati = new GestoreUtenti();
+            GestoreUtenti dati = GestoreUtenti.Instance;
 
 			Gruppo gruppo1 = dati.Gruppi[0];
 			Utente utente1 = gruppo1.MembriGruppo[0];
@@ -176,15 +175,15 @@ namespace Room8Tests
 		[Test()]
 		public void TestGestoreUtenti()
 		{
-			GestoreUtenti dati = new GestoreUtenti();
+            GestoreUtenti dati = GestoreUtenti.Instance;
 
-			Utente utenteDoppio = new Utente("user1@mail.com", "abc", "xxx", "xxx");
-			Assert.Throws<ArgumentException>(() => dati.AggiugniUtnete(utenteDoppio));
+			Utente utenteDoppio = new Utente("user1@mail.com", "abc", "xxx", "xxx",null);
+            Assert.Throws<ArgumentException>(() => dati.AggiugniUtente(utenteDoppio));
 
-			Utente utenteOk = new Utente("utneteOK@mail.com", "abc", "yyy", "yyy");
-			dati.AggiugniUtnete(utenteOk);
+			Utente utenteOk = new Utente("utneteOK@mail.com", "abc", "yyy", "yyy",null);
+            dati.AggiugniUtente(utenteOk);
 
-			dati.RimuoviUtnete(utenteOk);
+            dati.AggiugniUtente(utenteOk);
 			Gruppo gruppoConNuovi = new Gruppo("GruppoN");
 			gruppoConNuovi.AggiungiMembro(utenteOk);
 			dati.AggiungiGruppo(gruppoConNuovi);
