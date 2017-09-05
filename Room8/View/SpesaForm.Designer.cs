@@ -32,7 +32,7 @@
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._spesaLabel = new System.Windows.Forms.Label();
             this._confirmPanel = new System.Windows.Forms.Panel();
-            this._aggiungiButton = new System.Windows.Forms.Button();
+            this._confermaButton = new System.Windows.Forms.Button();
             this._annullaButton = new System.Windows.Forms.Button();
             this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._gruppoLabel = new System.Windows.Forms.Label();
@@ -93,7 +93,7 @@
             // 
             // _confirmPanel
             // 
-            this._confirmPanel.Controls.Add(this._aggiungiButton);
+            this._confirmPanel.Controls.Add(this._confermaButton);
             this._confirmPanel.Controls.Add(this._annullaButton);
             this._confirmPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._confirmPanel.Location = new System.Drawing.Point(0, 338);
@@ -102,15 +102,15 @@
             this._confirmPanel.Size = new System.Drawing.Size(472, 50);
             this._confirmPanel.TabIndex = 1;
             // 
-            // _aggiungiButton
+            // _confermaButton
             // 
-            this._aggiungiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._aggiungiButton.Location = new System.Drawing.Point(303, 15);
-            this._aggiungiButton.Name = "_aggiungiButton";
-            this._aggiungiButton.Size = new System.Drawing.Size(75, 23);
-            this._aggiungiButton.TabIndex = 1;
-            this._aggiungiButton.Text = "Aggiungi";
-            this._aggiungiButton.UseVisualStyleBackColor = true;
+            this._confermaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._confermaButton.Location = new System.Drawing.Point(303, 15);
+            this._confermaButton.Name = "_confermaButton";
+            this._confermaButton.Size = new System.Drawing.Size(75, 23);
+            this._confermaButton.TabIndex = 1;
+            this._confermaButton.Text = "Conferma";
+            this._confermaButton.UseVisualStyleBackColor = true;
             // 
             // _annullaButton
             // 
@@ -341,7 +341,7 @@
         private System.Windows.Forms.TableLayoutPanel _mainTableLayoutPanel;
         private System.Windows.Forms.Label _spesaLabel;
         private System.Windows.Forms.Panel _confirmPanel;
-        private System.Windows.Forms.Button _aggiungiButton;
+        private System.Windows.Forms.Button _confermaButton;
         private System.Windows.Forms.Button _annullaButton;
         private System.Windows.Forms.TableLayoutPanel _formTableLayoutPanel;
         private System.Windows.Forms.Label _gruppoLabel;
