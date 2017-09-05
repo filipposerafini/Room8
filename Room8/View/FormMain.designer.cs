@@ -163,6 +163,7 @@
             this._aggiungiSpesaToolStripButton.Name = "_aggiungiSpesaToolStripButton";
             this._aggiungiSpesaToolStripButton.Size = new System.Drawing.Size(108, 32);
             this._aggiungiSpesaToolStripButton.Text = "Aggiungi Spesa";
+            this._aggiungiSpesaToolStripButton.Click += new System.EventHandler(this._aggiungiSpesaToolStripButton_Click);
             // 
             // _creaGruppoToolStripButton
             // 

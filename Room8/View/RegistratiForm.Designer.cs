@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this._tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._fotoLabel = new System.Windows.Forms.Label();
             this._nomeLabel = new System.Windows.Forms.Label();
             this._cognomeLabel = new System.Windows.Forms.Label();
@@ -46,52 +46,52 @@
             this._fotoPanel = new System.Windows.Forms.Panel();
             this._fileLabel = new System.Windows.Forms.Label();
             this._fotoButton = new System.Windows.Forms.Button();
-            this.Confpanel = new System.Windows.Forms.Panel();
+            this._confermaPanel = new System.Windows.Forms.Panel();
             this._annullaButton = new System.Windows.Forms.Button();
             this._confermaButton = new System.Windows.Forms.Button();
             this._registratiLabel = new System.Windows.Forms.Label();
             this._openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this._tableLayoutPanel.SuspendLayout();
+            this._tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._formTableLayoutPanel.SuspendLayout();
             this._fotoPanel.SuspendLayout();
-            this.Confpanel.SuspendLayout();
+            this._confermaPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            this._tableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
-            // _tableLayoutPanel
+            // _formTableLayoutPanel
             // 
-            this._tableLayoutPanel.ColumnCount = 2;
-            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.30664F));
-            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.69336F));
-            this._tableLayoutPanel.Controls.Add(this._fotoLabel, 0, 6);
-            this._tableLayoutPanel.Controls.Add(this._nomeLabel, 0, 0);
-            this._tableLayoutPanel.Controls.Add(this._cognomeLabel, 0, 1);
-            this._tableLayoutPanel.Controls.Add(this._mailLabel, 0, 2);
-            this._tableLayoutPanel.Controls.Add(this._passwordLabel, 0, 3);
-            this._tableLayoutPanel.Controls.Add(this._confermaPasswordLabel, 0, 4);
-            this._tableLayoutPanel.Controls.Add(this._telefonoLabel, 0, 5);
-            this._tableLayoutPanel.Controls.Add(this._nomeTextBox, 1, 0);
-            this._tableLayoutPanel.Controls.Add(this._mailTextBox, 1, 2);
-            this._tableLayoutPanel.Controls.Add(this._passwordTextBox, 1, 3);
-            this._tableLayoutPanel.Controls.Add(this._confermaPasswordTextBox, 1, 4);
-            this._tableLayoutPanel.Controls.Add(this._telefonoTextBox, 1, 5);
-            this._tableLayoutPanel.Controls.Add(this._cognomeTextBox, 1, 1);
-            this._tableLayoutPanel.Controls.Add(this._fotoPanel, 1, 6);
-            this._tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._tableLayoutPanel.Location = new System.Drawing.Point(3, 36);
-            this._tableLayoutPanel.Name = "_tableLayoutPanel";
-            this._tableLayoutPanel.RowCount = 7;
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
-            this._tableLayoutPanel.Size = new System.Drawing.Size(344, 192);
-            this._tableLayoutPanel.TabIndex = 0;
+            this._formTableLayoutPanel.ColumnCount = 2;
+            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.30664F));
+            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.69336F));
+            this._formTableLayoutPanel.Controls.Add(this._fotoLabel, 0, 6);
+            this._formTableLayoutPanel.Controls.Add(this._nomeLabel, 0, 0);
+            this._formTableLayoutPanel.Controls.Add(this._cognomeLabel, 0, 1);
+            this._formTableLayoutPanel.Controls.Add(this._mailLabel, 0, 2);
+            this._formTableLayoutPanel.Controls.Add(this._passwordLabel, 0, 3);
+            this._formTableLayoutPanel.Controls.Add(this._confermaPasswordLabel, 0, 4);
+            this._formTableLayoutPanel.Controls.Add(this._telefonoLabel, 0, 5);
+            this._formTableLayoutPanel.Controls.Add(this._nomeTextBox, 1, 0);
+            this._formTableLayoutPanel.Controls.Add(this._mailTextBox, 1, 2);
+            this._formTableLayoutPanel.Controls.Add(this._passwordTextBox, 1, 3);
+            this._formTableLayoutPanel.Controls.Add(this._confermaPasswordTextBox, 1, 4);
+            this._formTableLayoutPanel.Controls.Add(this._telefonoTextBox, 1, 5);
+            this._formTableLayoutPanel.Controls.Add(this._cognomeTextBox, 1, 1);
+            this._formTableLayoutPanel.Controls.Add(this._fotoPanel, 1, 6);
+            this._formTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._formTableLayoutPanel.Location = new System.Drawing.Point(3, 36);
+            this._formTableLayoutPanel.Name = "_formTableLayoutPanel";
+            this._formTableLayoutPanel.RowCount = 7;
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.5F));
+            this._formTableLayoutPanel.Size = new System.Drawing.Size(344, 192);
+            this._formTableLayoutPanel.TabIndex = 0;
             // 
             // _fotoLabel
             // 
@@ -251,16 +251,16 @@
             this._fotoButton.Text = "Carica foto";
             this._fotoButton.UseVisualStyleBackColor = true;
             // 
-            // Confpanel
+            // _confermaPanel
             // 
-            this.Confpanel.Controls.Add(this._annullaButton);
-            this.Confpanel.Controls.Add(this._confermaButton);
-            this.Confpanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.Confpanel.Location = new System.Drawing.Point(0, 231);
-            this.Confpanel.Margin = new System.Windows.Forms.Padding(0);
-            this.Confpanel.Name = "Confpanel";
-            this.Confpanel.Size = new System.Drawing.Size(350, 40);
-            this.Confpanel.TabIndex = 14;
+            this._confermaPanel.Controls.Add(this._annullaButton);
+            this._confermaPanel.Controls.Add(this._confermaButton);
+            this._confermaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._confermaPanel.Location = new System.Drawing.Point(0, 231);
+            this._confermaPanel.Margin = new System.Windows.Forms.Padding(0);
+            this._confermaPanel.Name = "_confermaPanel";
+            this._confermaPanel.Size = new System.Drawing.Size(350, 40);
+            this._confermaPanel.TabIndex = 14;
             // 
             // _annullaButton
             // 
@@ -305,46 +305,46 @@
             // 
             this._errorProvider.ContainerControl = this;
             // 
-            // tableLayoutPanel1
+            // _tableLayoutPanel
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this._tableLayoutPanel, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this._registratiLabel, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.Confpanel, 0, 2);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.33334F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(350, 271);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this._tableLayoutPanel.ColumnCount = 1;
+            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._tableLayoutPanel.Controls.Add(this._formTableLayoutPanel, 0, 1);
+            this._tableLayoutPanel.Controls.Add(this._registratiLabel, 0, 0);
+            this._tableLayoutPanel.Controls.Add(this._confermaPanel, 0, 2);
+            this._tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this._tableLayoutPanel.Name = "_tableLayoutPanel";
+            this._tableLayoutPanel.RowCount = 3;
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.33334F));
+            this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this._tableLayoutPanel.Size = new System.Drawing.Size(350, 271);
+            this._tableLayoutPanel.TabIndex = 1;
             // 
             // RegistratiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 271);
-            this.Controls.Add(this.tableLayoutPanel1);
+            this.Controls.Add(this._tableLayoutPanel);
             this.MinimumSize = new System.Drawing.Size(366, 309);
             this.Name = "RegistratiForm";
             this.Text = "Room8 - Registrazione";
-            this._tableLayoutPanel.ResumeLayout(false);
-            this._tableLayoutPanel.PerformLayout();
+            this._formTableLayoutPanel.ResumeLayout(false);
+            this._formTableLayoutPanel.PerformLayout();
             this._fotoPanel.ResumeLayout(false);
             this._fotoPanel.PerformLayout();
-            this.Confpanel.ResumeLayout(false);
+            this._confermaPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
+            this._tableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TableLayoutPanel _tableLayoutPanel;
+        private System.Windows.Forms.TableLayoutPanel _formTableLayoutPanel;
         private System.Windows.Forms.Label _nomeLabel;
         private System.Windows.Forms.Label _cognomeLabel;
         private System.Windows.Forms.Label _mailLabel;
@@ -365,8 +365,8 @@
         private System.Windows.Forms.Label _fileLabel;
         private System.Windows.Forms.Button _fotoButton;
         private System.Windows.Forms.OpenFileDialog _openFileDialog;
-        private System.Windows.Forms.Panel Confpanel;
+        private System.Windows.Forms.Panel _confermaPanel;
         private System.Windows.Forms.ErrorProvider _errorProvider;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel _tableLayoutPanel;
     }
 }

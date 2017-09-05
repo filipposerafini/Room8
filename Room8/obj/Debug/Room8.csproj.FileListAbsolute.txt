@@ -24,3 +24,4 @@ E:\Progetto\Room8\Room8\obj\Debug\Room8.pdb
 E:\Progetto\Room8\Room8\obj\Debug\Room8.MainForm.resources
 E:\Progetto\Room8\Room8\obj\Debug\Room8.LoginForm.resources
 E:\Progetto\Room8\Room8\obj\Debug\Room8.View.RegistratiForm.resources
+E:\Progetto\Room8\Room8\obj\Debug\Room8.View.SpesaForm.resources

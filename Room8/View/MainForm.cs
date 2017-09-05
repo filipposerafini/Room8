@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Room8.View;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,6 +56,12 @@ namespace Room8
                 _amicoTitoloLabel.Text = _amiciListBox.Items[_amiciListBox.SelectedIndex].ToString();
                 _mainTabControl.SelectTab(_amicoTabPage);
             }
+        }
+
+        private void _aggiungiSpesaToolStripButton_Click(object sender, EventArgs e)
+        {
+            SpesaForm spesaForm = new SpesaForm();
+            spesaForm.Show();
         }
     }
 }
