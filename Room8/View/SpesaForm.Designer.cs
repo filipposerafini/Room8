@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._aggiungiSpesaLabel = new System.Windows.Forms.Label();
+            this._spesaLabel = new System.Windows.Forms.Label();
             this._confirmPanel = new System.Windows.Forms.Panel();
             this._aggiungiButton = new System.Windows.Forms.Button();
             this._annullaButton = new System.Windows.Forms.Button();
@@ -65,7 +65,7 @@
             // 
             this._mainTableLayoutPanel.ColumnCount = 1;
             this._mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._mainTableLayoutPanel.Controls.Add(this._aggiungiSpesaLabel, 0, 0);
+            this._mainTableLayoutPanel.Controls.Add(this._spesaLabel, 0, 0);
             this._mainTableLayoutPanel.Controls.Add(this._confirmPanel, 0, 2);
             this._mainTableLayoutPanel.Controls.Add(this._formTableLayoutPanel, 0, 1);
             this._mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -78,18 +78,18 @@
             this._mainTableLayoutPanel.Size = new System.Drawing.Size(472, 388);
             this._mainTableLayoutPanel.TabIndex = 0;
             // 
-            // _aggiungiSpesaLabel
+            // _spesaLabel
             // 
-            this._aggiungiSpesaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this._spesaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._aggiungiSpesaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._aggiungiSpesaLabel.Location = new System.Drawing.Point(3, 0);
-            this._aggiungiSpesaLabel.Name = "_aggiungiSpesaLabel";
-            this._aggiungiSpesaLabel.Size = new System.Drawing.Size(466, 34);
-            this._aggiungiSpesaLabel.TabIndex = 0;
-            this._aggiungiSpesaLabel.Text = "Spesa";
-            this._aggiungiSpesaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._spesaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._spesaLabel.Location = new System.Drawing.Point(3, 0);
+            this._spesaLabel.Name = "_spesaLabel";
+            this._spesaLabel.Size = new System.Drawing.Size(466, 34);
+            this._spesaLabel.TabIndex = 0;
+            this._spesaLabel.Text = "Spesa";
+            this._spesaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _confirmPanel
             // 
@@ -104,6 +104,7 @@
             // 
             // _aggiungiButton
             // 
+            this._aggiungiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._aggiungiButton.Location = new System.Drawing.Point(303, 15);
             this._aggiungiButton.Name = "_aggiungiButton";
             this._aggiungiButton.Size = new System.Drawing.Size(75, 23);
@@ -113,6 +114,7 @@
             // 
             // _annullaButton
             // 
+            this._annullaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._annullaButton.Location = new System.Drawing.Point(384, 15);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
@@ -194,14 +196,14 @@
             this._gruppoComboBox.FormattingEnabled = true;
             this._gruppoComboBox.Location = new System.Drawing.Point(145, 3);
             this._gruppoComboBox.Name = "_gruppoComboBox";
-            this._gruppoComboBox.Size = new System.Drawing.Size(121, 21);
+            this._gruppoComboBox.Size = new System.Drawing.Size(200, 21);
             this._gruppoComboBox.TabIndex = 4;
             // 
             // _descrizioneTextBox
             // 
             this._descrizioneTextBox.Location = new System.Drawing.Point(145, 30);
             this._descrizioneTextBox.Name = "_descrizioneTextBox";
-            this._descrizioneTextBox.Size = new System.Drawing.Size(100, 20);
+            this._descrizioneTextBox.Size = new System.Drawing.Size(200, 20);
             this._descrizioneTextBox.TabIndex = 6;
             // 
             // _radioPanel
@@ -256,7 +258,7 @@
             this._paganteComboBox.FormattingEnabled = true;
             this._paganteComboBox.Location = new System.Drawing.Point(145, 82);
             this._paganteComboBox.Name = "_paganteComboBox";
-            this._paganteComboBox.Size = new System.Drawing.Size(121, 21);
+            this._paganteComboBox.Size = new System.Drawing.Size(200, 21);
             this._paganteComboBox.TabIndex = 9;
             // 
             // _divisioneLabel
@@ -299,7 +301,7 @@
             this._noteTextBox.Location = new System.Drawing.Point(145, 235);
             this._noteTextBox.Multiline = true;
             this._noteTextBox.Name = "_noteTextBox";
-            this._noteTextBox.Size = new System.Drawing.Size(228, 57);
+            this._noteTextBox.Size = new System.Drawing.Size(200, 57);
             this._noteTextBox.TabIndex = 14;
             // 
             // _numericUpDown
@@ -307,7 +309,7 @@
             this._numericUpDown.DecimalPlaces = 2;
             this._numericUpDown.Location = new System.Drawing.Point(145, 56);
             this._numericUpDown.Name = "_numericUpDown";
-            this._numericUpDown.Size = new System.Drawing.Size(120, 20);
+            this._numericUpDown.Size = new System.Drawing.Size(200, 20);
             this._numericUpDown.TabIndex = 15;
             // 
             // _errorProvider
@@ -321,7 +323,7 @@
             this.ClientSize = new System.Drawing.Size(472, 388);
             this.Controls.Add(this._mainTableLayoutPanel);
             this.Name = "SpesaForm";
-            this.Text = "SpesaForm";
+            this.Text = "Room8 - Spesa";
             this._mainTableLayoutPanel.ResumeLayout(false);
             this._confirmPanel.ResumeLayout(false);
             this._formTableLayoutPanel.ResumeLayout(false);
@@ -337,7 +339,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel _mainTableLayoutPanel;
-        private System.Windows.Forms.Label _aggiungiSpesaLabel;
+        private System.Windows.Forms.Label _spesaLabel;
         private System.Windows.Forms.Panel _confirmPanel;
         private System.Windows.Forms.Button _aggiungiButton;
         private System.Windows.Forms.Button _annullaButton;
