@@ -35,6 +35,7 @@ namespace Room8
 
 		private void AccediButton_Click(object sender, EventArgs e)
 		{
+			LoginForm.ErrorProvider.Clear();
 			try
 			{
 				Utente utente = GestoreUtenti.VerificaPassword(LoginForm.MailTextBox.Text, LoginForm.PasswordTextBox.Text);

@@ -1,14 +1,9 @@
 ﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="View/LoginForm.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="View/RegistratiForm.cs">
     <Files>
-      <File FileName="Model/Utente.cs" Line="26" Column="35" />
-      <File FileName="Model/Gruppo.cs" Line="144" Column="68" />
-      <File FileName="Program.cs" Line="1" Column="1" />
-      <File FileName="Presenter/LoginFormPresenter.cs" Line="48" Column="65" />
-      <File FileName="Presenter/RegistratiFormPresenter.cs" Line="39" Column="80" />
-      <File FileName="View/RegistratiForm.cs" Line="67" Column="4" />
-      <File FileName="Model/GestoreUtenti.cs" Line="56" Column="16" />
-      <File FileName="View/LoginForm.cs" Line="15" Column="27" />
+      <File FileName="Presenter/SpesaFormPresenter.cs" Line="8" Column="4" />
+      <File FileName="Presenter/RegistratiFormPresenter.cs" Line="82" Column="67" />
+      <File FileName="View/RegistratiForm.cs" Line="56" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Room8 PreferredExecutionTarget="MonoDevelop.Default" />

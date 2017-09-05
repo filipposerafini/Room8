@@ -51,6 +51,21 @@ namespace Room8.View
 			get { return _telefonoTextBox; }
 		}
 
+		public Label FileLabel
+		{
+			get { return _fileLabel; }
+		}
+
+		public Button FotoButton
+		{
+			get { return _fotoButton; }
+		}
+
+		public OpenFileDialog OpenFileDialog
+		{
+			get { return _openFileDialog; }
+		}
+
 		public Button AnnullaButton
 		{
 			get { return _annullaButton; }
@@ -59,11 +74,6 @@ namespace Room8.View
 		public Button ConfermaButton
 		{
 			get { return _confermaButton; }
-		}
-
-		public TableLayoutPanel TableLayoutPanle
-		{
-			get { return _tableLayoutPanel; }
 		}
 	}
 }

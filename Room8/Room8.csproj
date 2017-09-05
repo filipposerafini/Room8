@@ -110,6 +110,7 @@
     <Compile Include="Presenter\LoginFormPresenter.cs" />
     <Compile Include="Presenter\MainFormPresenter.cs" />
     <Compile Include="Presenter\RegistratiFormPresenter.cs" />
+    <Compile Include="Presenter\SpesaFormPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
