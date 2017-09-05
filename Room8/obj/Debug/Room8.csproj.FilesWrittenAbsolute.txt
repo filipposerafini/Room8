@@ -28,3 +28,4 @@
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.FormMain.resources
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.LoginForm.resources
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.MainForm.resources
+/home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.View.RegistratiForm.resources

@@ -40,7 +40,7 @@ namespace Room8
 				Utente utente = GestoreUtenti.VerificaPassword(LoginForm.MailTextBox.Text, LoginForm.PasswordTextBox.Text);
 				LoginForm.Hide();
 				MainForm mainForm = new MainForm(utente);
-				new MainFormPresenter();
+				new MainFormPresenter(mainForm);
 				mainForm.Show();
 			}
 			catch (ArgumentException ex)
@@ -51,8 +51,9 @@ namespace Room8
 
 		private void RegistratiButton_Click(object sender, EventArgs e)
 		{
+			LoginForm.Hide();
 			RegistratiForm registratiForm = new RegistratiForm();
-			new RegistratiFormPresenter();
+			new RegistratiFormPresenter(registratiForm, LoginForm);
 			registratiForm.Show();
 		}
 	}

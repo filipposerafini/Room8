@@ -54,7 +54,7 @@ namespace Room8
 			get
 			{
 				if (_instance == null)
-					return new GestoreUtenti();
+					_instance =  new GestoreUtenti();
 				return _instance;
 			}
 		}
@@ -75,7 +75,7 @@ namespace Room8
 			}
 		}
 
-		public void AggiugniUtnete(Utente utente)
+		public void AggiugniUtente(Utente utente)
 		{
 			if (_utenti.Exists(x => x.Email.Equals(utente.Email)))
 			{
@@ -84,7 +84,7 @@ namespace Room8
 			_utenti.Add(utente);
 		}
 
-		public void RimuoviUtnete(Utente utente)
+		public void RimuoviUtente(Utente utente)
 		{
 			if (!_utenti.Contains(utente))
 			{
