@@ -28,104 +28,170 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this._titoloLabel = new System.Windows.Forms.Label();
-			this._mailTextBox = new System.Windows.Forms.TextBox();
-			this._passwordTextBox = new System.Windows.Forms.TextBox();
-			this._accediButton = new System.Windows.Forms.Button();
-			this._registratiButton = new System.Windows.Forms.Button();
-			this._mailLabel = new System.Windows.Forms.Label();
-			this._passwordLabel = new System.Windows.Forms.Label();
-			this._errorProvider = new System.Windows.Forms.ErrorProvider();
+            this.components = new System.ComponentModel.Container();
+            this._titoloLabel = new System.Windows.Forms.Label();
+            this._mailTextBox = new System.Windows.Forms.TextBox();
+            this._passwordTextBox = new System.Windows.Forms.TextBox();
+            this._accediButton = new System.Windows.Forms.Button();
+            this._registratiButton = new System.Windows.Forms.Button();
+            this._mailLabel = new System.Windows.Forms.Label();
+            this._passwordLabel = new System.Windows.Forms.Label();
+            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
-			// 
-            // _errorProvider
             // 
-            this._errorProvider.ContainerControl = this;
+            // _titoloLabel
             // 
-            // labelTitolo
-            // 
+            this._titoloLabel.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._titoloLabel.AutoSize = true;
             this._titoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._titoloLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this._titoloLabel.Location = new System.Drawing.Point(88, 24);
-            this._titoloLabel.Name = "labelTitolo";
+            this._titoloLabel.Location = new System.Drawing.Point(85, 18);
+            this._titoloLabel.Name = "_titoloLabel";
             this._titoloLabel.Size = new System.Drawing.Size(143, 42);
             this._titoloLabel.TabIndex = 0;
             this._titoloLabel.Text = "Room8";
             // 
-            // textBoxMail
+            // _mailTextBox
             // 
-            this._mailTextBox.Location = new System.Drawing.Point(68, 117);
-            this._mailTextBox.Name = "textBoxMail";
-            this._mailTextBox.Size = new System.Drawing.Size(175, 20);
+            this._mailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._mailTextBox.Location = new System.Drawing.Point(70, 44);
+            this._mailTextBox.Name = "_mailTextBox";
+            this._mailTextBox.Size = new System.Drawing.Size(181, 20);
             this._mailTextBox.TabIndex = 1;
             // 
-            // textBoxPassword
+            // _passwordTextBox
             // 
-            this._passwordTextBox.Location = new System.Drawing.Point(68, 170);
-            this._passwordTextBox.Name = "textBoxPassword";
+            this._passwordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._passwordTextBox.Location = new System.Drawing.Point(70, 28);
+            this._passwordTextBox.Name = "_passwordTextBox";
             this._passwordTextBox.PasswordChar = '•';
-            this._passwordTextBox.Size = new System.Drawing.Size(175, 20);
+            this._passwordTextBox.Size = new System.Drawing.Size(181, 20);
             this._passwordTextBox.TabIndex = 2;
             // 
-            // buttonAccedi
+            // _accediButton
             // 
+            this._accediButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._accediButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._accediButton.Location = new System.Drawing.Point(95, 212);
-            this._accediButton.Name = "buttonAccedi";
+            this._accediButton.Location = new System.Drawing.Point(95, 237);
+            this._accediButton.Name = "_accediButton";
             this._accediButton.Size = new System.Drawing.Size(123, 37);
             this._accediButton.TabIndex = 3;
             this._accediButton.Text = "Accedi";
             this._accediButton.UseVisualStyleBackColor = true;
             // 
-            // buttonRegistrati
+            // _registratiButton
             // 
+            this._registratiButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._registratiButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._registratiButton.Location = new System.Drawing.Point(95, 255);
-            this._registratiButton.Name = "buttonRegistrati";
+            this._registratiButton.Location = new System.Drawing.Point(95, 281);
+            this._registratiButton.Name = "_registratiButton";
             this._registratiButton.Size = new System.Drawing.Size(123, 36);
             this._registratiButton.TabIndex = 4;
             this._registratiButton.Text = "Registrati";
             this._registratiButton.UseVisualStyleBackColor = true;
             // 
-            // labelMail
+            // _mailLabel
             // 
+            this._mailLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this._mailLabel.AutoSize = true;
             this._mailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._mailLabel.Location = new System.Drawing.Point(132, 98);
-            this._mailLabel.Name = "labelMail";
+            this._mailLabel.Location = new System.Drawing.Point(134, 25);
+            this._mailLabel.Name = "_mailLabel";
             this._mailLabel.Size = new System.Drawing.Size(49, 16);
             this._mailLabel.TabIndex = 5;
             this._mailLabel.Text = "E-mail:";
             // 
-            // labelPassword
+            // _passwordLabel
             // 
+            this._passwordLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this._passwordLabel.AutoSize = true;
             this._passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._passwordLabel.Location = new System.Drawing.Point(119, 151);
-            this._passwordLabel.Name = "labelPassword";
+            this._passwordLabel.Location = new System.Drawing.Point(125, 9);
+            this._passwordLabel.Name = "_passwordLabel";
             this._passwordLabel.Size = new System.Drawing.Size(71, 16);
             this._passwordLabel.TabIndex = 6;
             this._passwordLabel.Text = "Password:";
             // 
-            // FormLogin
+            // _errorProvider
+            // 
+            this._errorProvider.ContainerControl = this;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this._titoloLabel, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this._registratiButton, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this._accediButton, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 2);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 5);
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(313, 326);
+            this.tableLayoutPanel1.TabIndex = 7;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this._mailTextBox);
+            this.panel1.Controls.Add(this._mailLabel);
+            this.panel1.Location = new System.Drawing.Point(0, 78);
+            this.panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(313, 78);
+            this.panel1.TabIndex = 1;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this._passwordTextBox);
+            this.panel2.Controls.Add(this._passwordLabel);
+            this.panel2.Location = new System.Drawing.Point(0, 156);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(313, 78);
+            this.panel2.TabIndex = 2;
+            // 
+            // LoginForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(313, 326);
-            this.Controls.Add(this._passwordLabel);
-            this.Controls.Add(this._mailLabel);
-            this.Controls.Add(this._registratiButton);
-            this.Controls.Add(this._accediButton);
-            this.Controls.Add(this._passwordTextBox);
-            this.Controls.Add(this._mailTextBox);
-            this.Controls.Add(this._titoloLabel);
-            this.MaximumSize = new System.Drawing.Size(329, 364);
+            this.Controls.Add(this.tableLayoutPanel1);
             this.MinimumSize = new System.Drawing.Size(329, 364);
-            this.Name = "FormLogin";
-            this.Text = "Room8";
+            this.Name = "LoginForm";
+            this.Text = "Room8 - Login";
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -139,5 +205,8 @@
         private System.Windows.Forms.Label _mailLabel;
         private System.Windows.Forms.Label _passwordLabel;
 		private System.Windows.Forms.ErrorProvider _errorProvider;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
