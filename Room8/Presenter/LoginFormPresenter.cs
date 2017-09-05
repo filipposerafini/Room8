@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Room8.View;
+using System;
 namespace Room8
 {
 	public class LoginFormPresenter
@@ -50,9 +51,9 @@ namespace Room8
 
 		private void RegistratiButton_Click(object sender, EventArgs e)
 		{
-			//RegistratiForm registratiForm = new RegistratiForm();
-			//new RegistratiFormPresenter(registratiForm);
-			//registratiForm.Show();
+			RegistratiForm registratiForm = new RegistratiForm();
+			new RegistratiFormPresenter();
+			registratiForm.Show();
 		}
 	}
 }
