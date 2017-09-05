@@ -55,8 +55,8 @@
             // _tableLayoutPanel
             // 
             this._tableLayoutPanel.ColumnCount = 2;
-            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 37.69276F));
+            this._tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 62.30724F));
             this._tableLayoutPanel.Controls.Add(this._nomeLabel, 0, 0);
             this._tableLayoutPanel.Controls.Add(this._cognomeLabel, 0, 1);
             this._tableLayoutPanel.Controls.Add(this._mailLabel, 0, 2);
@@ -69,9 +69,6 @@
             this._tableLayoutPanel.Controls.Add(this._confermaPasswordTextBox, 1, 4);
             this._tableLayoutPanel.Controls.Add(this._telefonoTextBox, 1, 5);
             this._tableLayoutPanel.Controls.Add(this._cognomeTextBox, 1, 1);
-            this._tableLayoutPanel.Controls.Add(this._annullaButton, 0, 6);
-            this._tableLayoutPanel.Controls.Add(this._confermaButton, 1, 6);
-            this._tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._tableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this._tableLayoutPanel.Name = "_tableLayoutPanel";
             this._tableLayoutPanel.RowCount = 7;
@@ -82,109 +79,130 @@
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
             this._tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28572F));
-            this._tableLayoutPanel.Size = new System.Drawing.Size(396, 274);
+            this._tableLayoutPanel.Size = new System.Drawing.Size(396, 233);
             this._tableLayoutPanel.TabIndex = 0;
             // 
             // _nomeLabel
             // 
-            this._nomeLabel.AutoSize = true;
+            this._nomeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._nomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._nomeLabel.Location = new System.Drawing.Point(3, 0);
             this._nomeLabel.Name = "_nomeLabel";
-            this._nomeLabel.Size = new System.Drawing.Size(35, 13);
+            this._nomeLabel.Size = new System.Drawing.Size(143, 33);
             this._nomeLabel.TabIndex = 0;
             this._nomeLabel.Text = "Nome";
+            this._nomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _cognomeLabel
             // 
-            this._cognomeLabel.AutoSize = true;
-            this._cognomeLabel.Location = new System.Drawing.Point(3, 39);
+            this._cognomeLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._cognomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._cognomeLabel.Location = new System.Drawing.Point(3, 33);
             this._cognomeLabel.Name = "_cognomeLabel";
-            this._cognomeLabel.Size = new System.Drawing.Size(52, 13);
+            this._cognomeLabel.Size = new System.Drawing.Size(143, 33);
             this._cognomeLabel.TabIndex = 2;
             this._cognomeLabel.Text = "Cognome";
+            this._cognomeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _mailLabel
             // 
-            this._mailLabel.AutoSize = true;
-            this._mailLabel.Location = new System.Drawing.Point(3, 78);
+            this._mailLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._mailLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._mailLabel.Location = new System.Drawing.Point(3, 66);
             this._mailLabel.Name = "_mailLabel";
-            this._mailLabel.Size = new System.Drawing.Size(36, 13);
+            this._mailLabel.Size = new System.Drawing.Size(143, 33);
             this._mailLabel.TabIndex = 3;
             this._mailLabel.Text = "E-Mail";
+            this._mailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _passwordLabel
             // 
-            this._passwordLabel.AutoSize = true;
-            this._passwordLabel.Location = new System.Drawing.Point(3, 117);
+            this._passwordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._passwordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._passwordLabel.Location = new System.Drawing.Point(3, 99);
             this._passwordLabel.Name = "_passwordLabel";
-            this._passwordLabel.Size = new System.Drawing.Size(53, 13);
+            this._passwordLabel.Size = new System.Drawing.Size(143, 33);
             this._passwordLabel.TabIndex = 4;
             this._passwordLabel.Text = "Password";
+            this._passwordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _confermaPasswordLabel
             // 
-            this._confermaPasswordLabel.AutoSize = true;
-            this._confermaPasswordLabel.Location = new System.Drawing.Point(3, 156);
+            this._confermaPasswordLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._confermaPasswordLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._confermaPasswordLabel.Location = new System.Drawing.Point(3, 132);
             this._confermaPasswordLabel.Name = "_confermaPasswordLabel";
-            this._confermaPasswordLabel.Size = new System.Drawing.Size(101, 13);
+            this._confermaPasswordLabel.Size = new System.Drawing.Size(143, 33);
             this._confermaPasswordLabel.TabIndex = 5;
             this._confermaPasswordLabel.Text = "Conferma Password";
+            this._confermaPasswordLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _telefonoLabel
             // 
-            this._telefonoLabel.AutoSize = true;
-            this._telefonoLabel.Location = new System.Drawing.Point(3, 195);
+            this._telefonoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._telefonoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._telefonoLabel.Location = new System.Drawing.Point(3, 165);
             this._telefonoLabel.Name = "_telefonoLabel";
-            this._telefonoLabel.Size = new System.Drawing.Size(49, 13);
+            this._telefonoLabel.Size = new System.Drawing.Size(143, 33);
             this._telefonoLabel.TabIndex = 1;
             this._telefonoLabel.Text = "Telefono";
+            this._telefonoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _nomeTextBox
             // 
-            this._nomeTextBox.Location = new System.Drawing.Point(121, 3);
+            this._nomeTextBox.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._nomeTextBox.Location = new System.Drawing.Point(152, 6);
             this._nomeTextBox.Name = "_nomeTextBox";
-            this._nomeTextBox.Size = new System.Drawing.Size(100, 20);
+            this._nomeTextBox.Size = new System.Drawing.Size(77, 20);
             this._nomeTextBox.TabIndex = 6;
             // 
             // _cognomeTextBox
             // 
-            this._cognomeTextBox.Location = new System.Drawing.Point(121, 42);
+            this._cognomeTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._cognomeTextBox.Location = new System.Drawing.Point(152, 39);
             this._cognomeTextBox.Name = "_cognomeTextBox";
-            this._cognomeTextBox.Size = new System.Drawing.Size(100, 20);
+            this._cognomeTextBox.Size = new System.Drawing.Size(241, 20);
             this._cognomeTextBox.TabIndex = 7;
             // 
             // _mailTextBox
             // 
-            this._mailTextBox.Location = new System.Drawing.Point(121, 81);
+            this._mailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._mailTextBox.Location = new System.Drawing.Point(152, 72);
             this._mailTextBox.Name = "_mailTextBox";
-            this._mailTextBox.Size = new System.Drawing.Size(100, 20);
+            this._mailTextBox.Size = new System.Drawing.Size(241, 20);
             this._mailTextBox.TabIndex = 8;
             // 
             // _passwordTextBox
             // 
-            this._passwordTextBox.Location = new System.Drawing.Point(121, 120);
+            this._passwordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._passwordTextBox.Location = new System.Drawing.Point(152, 105);
             this._passwordTextBox.Name = "_passwordTextBox";
-            this._passwordTextBox.Size = new System.Drawing.Size(100, 20);
+            this._passwordTextBox.PasswordChar = '•';
+            this._passwordTextBox.Size = new System.Drawing.Size(241, 20);
             this._passwordTextBox.TabIndex = 9;
             // 
             // _confermaPasswordTextBox
             // 
-            this._confermaPasswordTextBox.Location = new System.Drawing.Point(121, 159);
+            this._confermaPasswordTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._confermaPasswordTextBox.Location = new System.Drawing.Point(152, 138);
             this._confermaPasswordTextBox.Name = "_confermaPasswordTextBox";
-            this._confermaPasswordTextBox.Size = new System.Drawing.Size(100, 20);
+            this._confermaPasswordTextBox.PasswordChar = '•';
+            this._confermaPasswordTextBox.Size = new System.Drawing.Size(241, 20);
             this._confermaPasswordTextBox.TabIndex = 10;
             // 
             // _telefonoTextBox
             // 
-            this._telefonoTextBox.Location = new System.Drawing.Point(121, 198);
+            this._telefonoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._telefonoTextBox.Location = new System.Drawing.Point(152, 171);
             this._telefonoTextBox.Name = "_telefonoTextBox";
-            this._telefonoTextBox.Size = new System.Drawing.Size(100, 20);
+            this._telefonoTextBox.Size = new System.Drawing.Size(241, 20);
             this._telefonoTextBox.TabIndex = 11;
             // 
             // _confermaButton
             // 
+            this._confermaButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this._confermaButton.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this._confermaButton.Location = new System.Drawing.Point(121, 237);
+            this._confermaButton.Location = new System.Drawing.Point(228, 239);
             this._confermaButton.Name = "_confermaButton";
             this._confermaButton.Size = new System.Drawing.Size(75, 23);
             this._confermaButton.TabIndex = 13;
@@ -194,6 +212,7 @@
             // _splitContainer
             // 
             this._splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._splitContainer.IsSplitterFixed = true;
             this._splitContainer.Location = new System.Drawing.Point(0, 0);
             this._splitContainer.Name = "_splitContainer";
             this._splitContainer.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -205,6 +224,8 @@
             // _splitContainer.Panel2
             // 
             this._splitContainer.Panel2.Controls.Add(this._tableLayoutPanel);
+            this._splitContainer.Panel2.Controls.Add(this._annullaButton);
+            this._splitContainer.Panel2.Controls.Add(this._confermaButton);
             this._splitContainer.Size = new System.Drawing.Size(396, 311);
             this._splitContainer.SplitterDistance = 33;
             this._splitContainer.TabIndex = 1;
@@ -222,8 +243,9 @@
             // 
             // _annullaButton
             // 
+            this._annullaButton.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._annullaButton.Location = new System.Drawing.Point(3, 237);
+            this._annullaButton.Location = new System.Drawing.Point(309, 239);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
             this._annullaButton.TabIndex = 14;
