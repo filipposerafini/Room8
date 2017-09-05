@@ -1,12 +1,5 @@
-﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="View/RegistratiForm.cs">
-    <Files>
-      <File FileName="Presenter/SpesaFormPresenter.cs" Line="8" Column="4" />
-      <File FileName="Presenter/RegistratiFormPresenter.cs" Line="82" Column="67" />
-      <File FileName="View/RegistratiForm.cs" Line="56" Column="28" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Room8 PreferredExecutionTarget="MonoDevelop.Default" />
+﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default" StartupItem="Room8.csproj">
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>

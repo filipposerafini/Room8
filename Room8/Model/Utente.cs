@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Xml;
 
 namespace Room8
 {
@@ -14,10 +15,10 @@ namespace Room8
 		private readonly string _cognome;
 		private string _foto;
 		// lista di gruppi di cui l'utente fa parte
-		private readonly List<Gruppo> _gruppi;
-		private readonly List<MovimentoDiDenaro> _movimentiDiDenaro;
+        private readonly List<Gruppo> _gruppi = new List<Gruppo>();
+        private readonly List<MovimentoDiDenaro> _movimentiDiDenaro = new List<MovimentoDiDenaro>();
 
-		public Utente(string email, string password, string nome, string cognome)
+		public Utente(string email, string password, string nome, string cognome, string foto)
 		{
 			if (String.IsNullOrEmpty(email))
 				throw new ArgumentException("email is null or empty");
@@ -27,23 +28,45 @@ namespace Room8
 				throw new ArgumentException("nome is null or empty");
 			if (String.IsNullOrEmpty(cognome))
 				throw new ArgumentException("cognome is null or empty");
-
-			this._email = email;
+            if (String.IsNullOrEmpty(foto))
+                this._foto = null;
+            
+            this._email = email;
 			this._password = password;
 			this._nome = nome;
 			this._cognome = cognome;
 			this._foto = FOTODEFAULT;
-			this._gruppi = new List<Gruppo>();
-			this._movimentiDiDenaro = new List<MovimentoDiDenaro>();
+            this._foto = foto;
 		}
 
-		public Utente(string email, string password, string nome, string cognome, string foto)
-			: this(email, password, nome, cognome)
-		{
-			if (String.IsNullOrEmpty(foto))
-				throw new ArgumentException("foto is null or empty");
-			this._foto = foto;
-		}
+        public Utente (XmlNode utenteNode)
+        {
+            if (utenteNode == null)
+            {
+                throw new ArgumentException("UtenteNode è null");
+            }
+            foreach (XmlNode utenteAtt in utenteNode.ChildNodes)
+            {
+                if (utenteAtt.Name.Equals("Nome"))
+                {
+                    _nome = utenteAtt.InnerText;
+                }
+                else if (utenteAtt.Name.Equals("Cognome"))
+                {
+                    _cognome = utenteAtt.InnerText;
+                }
+                else if (utenteAtt.Name.Equals("Email"))
+                {
+                    _email = utenteAtt.InnerText;
+                }
+                else if (utenteAtt.Name.Equals("Password"))
+                {
+                    _password = utenteAtt.InnerText;
+                }
+            }
+            this._foto = null;
+        }
+
 
 		public string Email
 		{

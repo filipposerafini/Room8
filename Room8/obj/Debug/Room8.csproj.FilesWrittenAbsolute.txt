@@ -29,3 +29,7 @@
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.LoginForm.resources
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.MainForm.resources
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.View.RegistratiForm.resources
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/obj/Debug/Room8.LoginForm.resources
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/obj/Debug/Room8.MainForm.resources
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/obj/Debug/Room8.View.RegistratiForm.resources
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/obj/Debug/Room8.View.SpesaForm.resources
