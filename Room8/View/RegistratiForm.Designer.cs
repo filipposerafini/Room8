@@ -265,7 +265,6 @@
             // _annullaButton
             // 
             this._annullaButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this._annullaButton.Location = new System.Drawing.Point(263, 5);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
@@ -276,7 +275,6 @@
             // _confermaButton
             // 
             this._confermaButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this._confermaButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this._confermaButton.Location = new System.Drawing.Point(185, 5);
             this._confermaButton.Name = "_confermaButton";
             this._confermaButton.Size = new System.Drawing.Size(75, 23);
@@ -324,6 +322,7 @@
             // 
             // RegistratiForm
             // 
+            this.AcceptButton = this._confermaButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(350, 271);

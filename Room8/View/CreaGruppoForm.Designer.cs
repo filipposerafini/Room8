@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._saldaLabel = new System.Windows.Forms.Label();
             this._confirmPanel = new System.Windows.Forms.Panel();
@@ -41,11 +42,13 @@
             this._addPanel = new System.Windows.Forms.Panel();
             this._creatorGroupLabel = new System.Windows.Forms.Label();
             this._aggiungiPersonaLinkLabel = new System.Windows.Forms.LinkLabel();
+            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
             this._nameGroupTableLayoutPanel1.SuspendLayout();
             this._addPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainTableLayoutPanel
@@ -92,7 +95,6 @@
             // _confermaButton
             // 
             this._confermaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._confermaButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this._confermaButton.Location = new System.Drawing.Point(194, 4);
             this._confermaButton.Name = "_confermaButton";
             this._confermaButton.Size = new System.Drawing.Size(75, 23);
@@ -103,7 +105,6 @@
             // _annullaButton
             // 
             this._annullaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this._annullaButton.Location = new System.Drawing.Point(275, 4);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
@@ -161,7 +162,7 @@
             this._pagatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._pagatoLabel.Location = new System.Drawing.Point(3, 0);
             this._pagatoLabel.Name = "_pagatoLabel";
-            this._pagatoLabel.Size = new System.Drawing.Size(172, 61);
+            this._pagatoLabel.Size = new System.Drawing.Size(172, 70);
             this._pagatoLabel.TabIndex = 0;
             this._pagatoLabel.Text = "Nome del gruppo:";
             this._pagatoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -169,7 +170,7 @@
             // _nomeGruppoTextBox
             // 
             this._nomeGruppoTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._nomeGruppoTextBox.Location = new System.Drawing.Point(181, 20);
+            this._nomeGruppoTextBox.Location = new System.Drawing.Point(181, 25);
             this._nomeGruppoTextBox.Name = "_nomeGruppoTextBox";
             this._nomeGruppoTextBox.Size = new System.Drawing.Size(172, 20);
             this._nomeGruppoTextBox.TabIndex = 1;
@@ -206,8 +207,13 @@
             this._aggiungiPersonaLinkLabel.Text = "+Aggiungi una persona";
             this._aggiungiPersonaLinkLabel.VisitedLinkColor = System.Drawing.Color.Blue;
             // 
+            // _errorProvider
+            // 
+            this._errorProvider.ContainerControl = this;
+            // 
             // CreaGruppoForm
             // 
+            this.AcceptButton = this._confermaButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(362, 262);
@@ -222,6 +228,7 @@
             this._nameGroupTableLayoutPanel1.PerformLayout();
             this._addPanel.ResumeLayout(false);
             this._addPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -241,5 +248,6 @@
         private System.Windows.Forms.Panel _addPanel;
         private System.Windows.Forms.Label _creatorGroupLabel;
         private System.Windows.Forms.LinkLabel _aggiungiPersonaLinkLabel;
+        private System.Windows.Forms.ErrorProvider _errorProvider;
     }
 }

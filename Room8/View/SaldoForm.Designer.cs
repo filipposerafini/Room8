@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaldoForm));
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._saldaLabel = new System.Windows.Forms.Label();
@@ -44,12 +45,14 @@
             this._daComboBox = new System.Windows.Forms.ComboBox();
             this._daPictureBox = new System.Windows.Forms.PictureBox();
             this._aPictureBox = new System.Windows.Forms.PictureBox();
+            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._numericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._daPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._aPictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainTableLayoutPanel
@@ -96,7 +99,6 @@
             // _confermaButton
             // 
             this._confermaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._confermaButton.DialogResult = System.Windows.Forms.DialogResult.OK;
             this._confermaButton.Location = new System.Drawing.Point(260, 6);
             this._confermaButton.Name = "_confermaButton";
             this._confermaButton.Size = new System.Drawing.Size(75, 23);
@@ -107,7 +109,6 @@
             // _annullaButton
             // 
             this._annullaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this._annullaButton.Location = new System.Drawing.Point(341, 6);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
@@ -233,8 +234,13 @@
             this._aPictureBox.TabIndex = 19;
             this._aPictureBox.TabStop = false;
             // 
+            // _errorProvider
+            // 
+            this._errorProvider.ContainerControl = this;
+            // 
             // SaldoForm
             // 
+            this.AcceptButton = this._confermaButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 273);
@@ -248,6 +254,7 @@
             ((System.ComponentModel.ISupportInitialize)(this._numericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._daPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._aPictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -269,5 +276,6 @@
         private System.Windows.Forms.DateTimePicker _dateTimePicker;
         private System.Windows.Forms.PictureBox _daPictureBox;
         private System.Windows.Forms.PictureBox _aPictureBox;
+        private System.Windows.Forms.ErrorProvider _errorProvider;
     }
 }

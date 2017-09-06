@@ -109,6 +109,9 @@
     <EmbeddedResource Include="View\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\PartiForm.resx">
+      <DependentUpon>PartiForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\RegistratiForm.resx">
       <DependentUpon>RegistratiForm.cs</DependentUpon>
     </EmbeddedResource>
