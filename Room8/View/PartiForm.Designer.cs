@@ -67,9 +67,9 @@
             this._mainTableLayoutPanel.Name = "_mainTableLayoutPanel";
             this._mainTableLayoutPanel.RowCount = 3;
             this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._mainTableLayoutPanel.Size = new System.Drawing.Size(357, 267);
+            this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._mainTableLayoutPanel.Size = new System.Drawing.Size(333, 232);
             this._mainTableLayoutPanel.TabIndex = 3;
             // 
             // _confirmPanel
@@ -77,16 +77,16 @@
             this._confirmPanel.Controls.Add(this._confermaButton);
             this._confirmPanel.Controls.Add(this._annullaButton);
             this._confirmPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._confirmPanel.Location = new System.Drawing.Point(0, 223);
+            this._confirmPanel.Location = new System.Drawing.Point(0, 172);
             this._confirmPanel.Margin = new System.Windows.Forms.Padding(0);
             this._confirmPanel.Name = "_confirmPanel";
-            this._confirmPanel.Size = new System.Drawing.Size(357, 44);
+            this._confirmPanel.Size = new System.Drawing.Size(333, 60);
             this._confirmPanel.TabIndex = 1;
             // 
             // _confermaButton
             // 
             this._confermaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._confermaButton.Location = new System.Drawing.Point(189, 9);
+            this._confermaButton.Location = new System.Drawing.Point(165, 25);
             this._confermaButton.Name = "_confermaButton";
             this._confermaButton.Size = new System.Drawing.Size(75, 23);
             this._confermaButton.TabIndex = 1;
@@ -96,7 +96,9 @@
             // _annullaButton
             // 
             this._annullaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._annullaButton.Location = new System.Drawing.Point(270, 9);
+            this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this._annullaButton.Location = new System.Drawing.Point(246, 25);
+            this._annullaButton.MinimumSize = new System.Drawing.Size(75, 23);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
             this._annullaButton.TabIndex = 0;
@@ -113,7 +115,7 @@
             this._formTableLayoutPanel.Name = "_formTableLayoutPanel";
             this._formTableLayoutPanel.RowCount = 1;
             this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this._formTableLayoutPanel.Size = new System.Drawing.Size(351, 183);
+            this._formTableLayoutPanel.Size = new System.Drawing.Size(327, 132);
             this._formTableLayoutPanel.TabIndex = 2;
             // 
             // _partiLabel
@@ -124,7 +126,7 @@
             this._partiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._partiLabel.Location = new System.Drawing.Point(3, 0);
             this._partiLabel.Name = "_partiLabel";
-            this._partiLabel.Size = new System.Drawing.Size(351, 34);
+            this._partiLabel.Size = new System.Drawing.Size(327, 34);
             this._partiLabel.TabIndex = 0;
             this._partiLabel.Text = "Dividi per";
             this._partiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -137,15 +139,15 @@
             this._scrollPanel.Location = new System.Drawing.Point(0, 0);
             this._scrollPanel.Margin = new System.Windows.Forms.Padding(0);
             this._scrollPanel.Name = "_scrollPanel";
-            this._scrollPanel.Size = new System.Drawing.Size(351, 183);
+            this._scrollPanel.Size = new System.Drawing.Size(327, 132);
             this._scrollPanel.TabIndex = 0;
             // 
             // _vScrollBar
             // 
             this._vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this._vScrollBar.Location = new System.Drawing.Point(334, 0);
+            this._vScrollBar.Location = new System.Drawing.Point(310, 0);
             this._vScrollBar.Name = "_vScrollBar";
-            this._vScrollBar.Size = new System.Drawing.Size(17, 183);
+            this._vScrollBar.Size = new System.Drawing.Size(17, 132);
             this._vScrollBar.TabIndex = 1;
             // 
             // _errorProvider
@@ -164,7 +166,7 @@
             this._partiTableLayoutPanel.Name = "_partiTableLayoutPanel";
             this._partiTableLayoutPanel.RowCount = 1;
             this._partiTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._partiTableLayoutPanel.Size = new System.Drawing.Size(331, 42);
+            this._partiTableLayoutPanel.Size = new System.Drawing.Size(307, 42);
             this._partiTableLayoutPanel.TabIndex = 2;
             // 
             // _splitContainer
@@ -180,8 +182,8 @@
             // _splitContainer.Panel2
             // 
             this._splitContainer.Panel2.Controls.Add(this._numericUpDown);
-            this._splitContainer.Size = new System.Drawing.Size(325, 36);
-            this._splitContainer.SplitterDistance = 197;
+            this._splitContainer.Size = new System.Drawing.Size(301, 36);
+            this._splitContainer.SplitterDistance = 205;
             this._splitContainer.TabIndex = 0;
             // 
             // _utenteLabel
@@ -190,14 +192,16 @@
             this._utenteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._utenteLabel.Location = new System.Drawing.Point(0, 0);
             this._utenteLabel.Name = "_utenteLabel";
-            this._utenteLabel.Size = new System.Drawing.Size(197, 36);
+            this._utenteLabel.Size = new System.Drawing.Size(205, 36);
             this._utenteLabel.TabIndex = 0;
             this._utenteLabel.Text = "Nome utente";
             this._utenteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _numericUpDown
             // 
-            this._numericUpDown.Location = new System.Drawing.Point(30, 10);
+            this._numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._numericUpDown.Location = new System.Drawing.Point(13, 10);
             this._numericUpDown.Name = "_numericUpDown";
             this._numericUpDown.Size = new System.Drawing.Size(66, 20);
             this._numericUpDown.TabIndex = 1;
@@ -207,9 +211,9 @@
             this.AcceptButton = this._confermaButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(357, 267);
+            this.ClientSize = new System.Drawing.Size(333, 232);
             this.Controls.Add(this._mainTableLayoutPanel);
-            this.MinimumSize = new System.Drawing.Size(373, 305);
+            this.MinimumSize = new System.Drawing.Size(349, 270);
             this.Name = "PartiForm";
             this.Text = "Room8 - Divisione";
             this._mainTableLayoutPanel.ResumeLayout(false);
