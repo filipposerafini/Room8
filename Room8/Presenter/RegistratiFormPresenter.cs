@@ -44,9 +44,9 @@ namespace Room8
 
 		private void InitializeEvents()
 		{
-			RegistratiForm.FotoButton.Click += new EventHandler(FotoButton_Click);
-			RegistratiForm.ConfermaButton.Click += new EventHandler(ConfermaButton_Click);
-			RegistratiForm.AnnullaButton.Click += new EventHandler(AnnullaButton_Click);
+			RegistratiForm.FotoButton.Click += FotoButton_Click;
+			RegistratiForm.ConfermaButton.Click += ConfermaButton_Click;
+			RegistratiForm.AnnullaButton.Click += AnnullaButton_Click;
 		}
 
 		private void FotoButton_Click(object sender, EventArgs e)

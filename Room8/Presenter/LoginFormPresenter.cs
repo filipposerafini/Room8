@@ -31,8 +31,8 @@ namespace Room8
 
 		private void InitializeEvents()
 		{
-			LoginForm.AccediButton.Click += new EventHandler(AccediButton_Click);
-			LoginForm.RegistratiButton.Click += new EventHandler(RegistratiButton_Click);
+			LoginForm.AccediButton.Click += AccediButton_Click;
+			LoginForm.RegistratiButton.Click += RegistratiButton_Click;
 		}
 
 		private void AccediButton_Click(object sender, EventArgs e)

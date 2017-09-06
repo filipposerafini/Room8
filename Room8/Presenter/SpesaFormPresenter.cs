@@ -39,12 +39,10 @@ namespace Room8
 
 		private void InitializeEvents()
 		{
-			SpesaForm.GruppoComboBox.SelectedIndexChanged += new EventHandler(GruppoComboBox_SelectIndexChanged);
-			SpesaForm.EquoRadioButton.Click += new EventHandler(RadioButton_Click);
-			SpesaForm.PercentualeRadioButton.Click += new EventHandler(RadioButton_Click);
-			SpesaForm.QuoteRadioButton.Click += new EventHandler(RadioButton_Click);
-			SpesaForm.ConfermaButton.Click += new EventHandler(ConfermaButton_Click);
-			SpesaForm.AnnullaButton.Click += new EventHandler(AnnullaButton_Click);
+			SpesaForm.GruppoComboBox.SelectedIndexChanged += GruppoComboBox_SelectIndexChanged;
+			SpesaForm.PercentualeRadioButton.Click += RadioButton_Click;
+			SpesaForm.QuoteRadioButton.Click += RadioButton_Click;
+			SpesaForm.ConfermaButton.Click += ConfermaButton_Click;
 		}
 
 		void GruppoComboBox_SelectIndexChanged(object sender, EventArgs e)
@@ -58,7 +56,7 @@ namespace Room8
 		{
 			string nomeMetodo = SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked).Tag.ToString();
 			PartiForm partiForm = new PartiForm();
-			new PartiFormPresenter(partiForm, nomeMetodo);
+			new PartiFormPresenter(partiForm, Spesa, nomeMetodo);
 			if (partiForm.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
 				SpesaForm.EquoRadioButton.Checked = true;
 		}
@@ -99,11 +97,6 @@ namespace Room8
 				}
 				SpesaForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
 			}
-		}
-
-		void AnnullaButton_Click(object sender, EventArgs e)
-		{
-			SpesaForm.Close();
 		}
 	}
 }

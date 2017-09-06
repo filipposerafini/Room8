@@ -15,5 +15,20 @@ namespace Room8.View
         {
             InitializeComponent();
         }
+
+		public Label PartiLabel
+		{
+			get { return _partiLabel; }
+		}
+
+		public Panel ScrollPanel
+		{
+			get { return _scrollPanel; }
+		}
+
+		public Button ConfermaButton
+		{
+			get { return _confermaButton; }
+		}
     }
 }

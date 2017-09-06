@@ -31,11 +31,6 @@ namespace Room8.View
 			get { return _confermaButton; }
 		}
 
-		public Button AnnullaButton
-		{
-			get { return _annullaButton; }
-		}
-
 		public ComboBox GruppoComboBox
 		{
 			get { return _gruppoComboBox; }
