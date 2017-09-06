@@ -116,6 +116,7 @@
             this._annullaButton.TabIndex = 14;
             this._annullaButton.Text = "Annulla";
             this._annullaButton.UseVisualStyleBackColor = true;
+			this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             // 
             // _confermaButton
             // 
@@ -394,6 +395,7 @@
             this._imageTableLayoutPanel.ResumeLayout(false);
             this._fotoPanel.ResumeLayout(false);
             this._fotoPanel.PerformLayout();
+			this.AcceptButton = this._confermaButton;
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);

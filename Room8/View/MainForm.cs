@@ -58,10 +58,10 @@ namespace Room8
 			get { return _pictureBox; }
 		}
 
-		//public ToolStripDropDownButton UtenteToolStrip
-		//{
-		//	get { return _utenteToolStripDropDownButton; }
-		//}
+		public ToolStripDropDownButton UtenteToolStrip
+		{
+			get { return _utenteToolStrip; }
+		}
 
 		public ToolStripMenuItem AccountToolStrip
 		{

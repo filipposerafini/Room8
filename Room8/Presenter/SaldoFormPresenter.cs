@@ -27,7 +27,7 @@ namespace Room8
 			utenti.Add(utente);
 			SaldoForm.AComboBox.DataSource = utenti;
             SaldoForm.AComboBox.DisplayMember = "Nome";
-            //SaldoForm.DaComboBox.SelectedValue = utente;
+			//SaldoForm.DaComboBox.SelectedText = utente.Nome;
 
             SaldoForm.APictureBox.ImageLocation = (SaldoForm.AComboBox.SelectedItem as Utente).Foto;
             SaldoForm.DaPictureBox.ImageLocation = (SaldoForm.DaComboBox.SelectedItem as Utente).Foto;

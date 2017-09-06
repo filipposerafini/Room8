@@ -251,6 +251,7 @@
             this._annullaButton.TabIndex = 14;
             this._annullaButton.Text = "Annulla";
             this._annullaButton.UseVisualStyleBackColor = true;
+			this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             // 
             // _confermaButton
             // 
@@ -282,6 +283,7 @@
             this._transazioniTableLayoutPanel.ResumeLayout(false);
             this._transazioniTableLayoutPanel.PerformLayout();
             this._confermaPanel.ResumeLayout(false);
+			this.AcceptButton = this._confermaButton;
             this.ResumeLayout(false);
 
         }

@@ -169,6 +169,14 @@
     <Compile Include="Persistance\IPersistenza.cs" />
     <Compile Include="Persistance\PersistenzaXml.cs" />
     <Compile Include="Presenter\SaldoFormPresenter.cs" />
+    <Compile Include="Presenter\CreaGruppoFormPresenter.cs" />
+    <None Include="Resources\DB\inizializzazione.xml" />
+    <None Include="Resources\Images\defaultgroup.jpg" />
+    <None Include="Resources\Images\defaultperson.png" />
+    <None Include="Resources\Images\fillo.jpg" />
+    <None Include="Resources\Images\nico.jpg" />
+    <Compile Include="Presenter\ProfiloFormPresenter.cs" />
+    <Compile Include="Presenter\AmicoFormPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

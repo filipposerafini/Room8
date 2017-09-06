@@ -1,10 +1,19 @@
 ﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Room8/Presenter/LoginFormPresenter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Room8/View/ProfiloForm.Designer.cs">
     <Files>
-      <File FileName="Room8/Presenter/MainFormPresenter.cs" Line="57" Column="20" />
-      <File FileName="Room8/View/FormMain.designer.cs" Line="463" Column="13" />
-      <File FileName="Room8/View/MainForm.cs" Line="18" Column="35" />
+      <File FileName="Room8/Presenter/MainFormPresenter.cs" Line="73" Column="9" />
+      <File FileName="Room8/View/FormMain.designer.cs" Line="91" Column="48" />
+      <File FileName="Room8/View/MainForm.cs" Line="63" Column="33" />
       <File FileName="Room8/Presenter/LoginFormPresenter.cs" Line="46" Column="54" />
+      <File FileName="Room8/Model/Utente.cs" Line="11" Column="95" />
+      <File FileName="Room8/Model/Gruppo.cs" Line="9" Column="88" />
+      <File FileName="Room8/Presenter/SaldoFormPresenter.cs" Line="30" Column="6" />
+      <File FileName="Room8/Presenter/ProfiloFormPresenter.cs" Line="13" Column="26" />
+      <File FileName="Room8/Presenter/CreaGruppoFormPresenter.cs" Line="7" Column="32" />
+      <File FileName="Room8/Presenter/AmicoFormPresenter.cs" Line="13" Column="10" />
+      <File FileName="Room8/View/AmicoForm.Designer.cs" Line="285" Column="53" />
+      <File FileName="Room8/View/ProfiloForm.cs" Line="1" Column="1" />
+      <File FileName="Room8/View/ProfiloForm.Designer.cs" Line="394" Column="56" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Room8 PreferredExecutionTarget="MonoDevelop.Default" />

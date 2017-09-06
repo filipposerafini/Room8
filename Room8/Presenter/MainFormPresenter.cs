@@ -15,6 +15,7 @@ namespace Room8
 			this._loginForm = loginForm;
 			this._utente = utente;
 			InitializeEvents();
+			InitializeUI();
 		}
 
 		public MainForm MainForm
@@ -36,7 +37,20 @@ namespace Room8
 		{
 			MainForm.SpesaButton.Click += SpesaButton_Click;
 			MainForm.SaldaButton.Click += SaldaButton_Click;
+			MainForm.AmiciListBox.Click += AmiciListBox_Click;
+			MainForm.AccountToolStrip.Click += AccountToolStrip_Click;
+			MainForm.CreaGruppoToolStrip.Click += CreaGruppoToolStrip_Click;
 			MainForm.EsciToolStrip.Click += EsciToolStrip_Click;
+		}
+
+		void InitializeUI()
+		{
+			MainForm.UtenteToolStrip.Text = Utente.Nome;
+			MainForm.PictureBox.ImageLocation = Utente.Foto;
+			MainForm.GruppiListBox.DataSource = Utente.Gruppi;
+			MainForm.GruppiListBox.DisplayMember = "Nome";
+			MainForm.AmiciListBox.DataSource = Utente.Amici();
+			MainForm.AmiciListBox.DisplayMember = "Mail";
 		}
 
 		private void SpesaButton_Click(object sender, EventArgs e)
@@ -53,7 +67,28 @@ namespace Room8
 			saldoForm.ShowDialog();
 		}
 
-		void EsciToolStrip_Click(object sender, EventArgs e)
+		void AmiciListBox_Click(object sender, EventArgs e)
+		{
+			AmicoForm amicoForm = new AmicoForm();
+			new AmicoFormPresenter(amicoForm, Utente);
+			amicoForm.ShowDialog();
+		}
+
+		private void AccountToolStrip_Click(object sender, EventArgs e)
+		{
+			ProfiloForm profiloForm = new ProfiloForm();
+			new ProfiloFormPresenter(profiloForm, Utente);
+			profiloForm.ShowDialog();
+		}
+
+		private void CreaGruppoToolStrip_Click(object sender, EventArgs e)
+		{
+			CreaGruppoForm creaGruppoForm = new CreaGruppoForm();
+			new CreaGruppoFormPresenter(creaGruppoForm);
+			creaGruppoForm.ShowDialog();
+		}
+
+		private void EsciToolStrip_Click(object sender, EventArgs e)
 		{
 			MainForm.Close();
 			LoginForm.Show();
