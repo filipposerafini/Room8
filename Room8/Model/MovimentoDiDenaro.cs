@@ -4,9 +4,9 @@ namespace Room8
 	public abstract class MovimentoDiDenaro
 	{
 		private readonly string _id;
-		private readonly Utente _sorgente;
-		private readonly Utente _destinazione;
-		private readonly decimal _importo;
+		private Utente _sorgente;
+		private Utente _destinazione;
+		private decimal _importo;
 
 		private string GenerateId()
 		{
@@ -21,6 +21,11 @@ namespace Room8
 			this._importo = _importo;
 		}
 
+        public MovimentoDiDenaro()
+        {
+            this._id = GenerateId();
+        }
+
 		public string Id
 		{
 			get { return _id; }
@@ -29,21 +34,42 @@ namespace Room8
 		public Utente Sorgente
 		{
 			get { return _sorgente; }
+            set 
+            {
+                if (value == null)
+                    throw new ArgumentException("sorgente");
+                _sorgente = value;
+            }
 		}
 
 		public Utente Destinazione
 		{
 			get { return _destinazione; }
+            set 
+            {
+                if (value == null)
+                    throw new ArgumentException("destinazione");
+                _destinazione = value;
+            }
 		}
 
 		public decimal Importo
 		{
 			get { return _importo; }
+            set 
+            {
+                if (value <= 0)
+                    throw new ArgumentException("L'importo deve essere maggiore di 0", "importo");
+                _importo = value;
+            }
 		}
 
 
 		public void AggiungiMovimentoDiDenaro()
 		{
+            if (this is Saldo && this.Sorgente.Equals(this.Destinazione))
+                    throw new DataMisalignedException("Sorgente e destinazione devono essere diversi");
+
 			Sorgente.MovimentiDiDenaro.Add(this);
 			Destinazione.MovimentiDiDenaro.Add(this);
 		}

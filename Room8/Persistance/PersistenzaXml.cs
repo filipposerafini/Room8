@@ -2,6 +2,7 @@
 using System.Xml;
 using System.IO;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace Room8
 {
@@ -12,20 +13,25 @@ namespace Room8
         private readonly List<Gruppo> _gruppi = new List<Gruppo>();
         private readonly List<Utente> _utenti = new List<Utente>();
         private bool caricato = false;
-
+        private string _nomefile;
 
         public PersistenzaXML(string nomefile)
         {
             _document = new XmlDocument();
+            _nomefile = nomefile;
             try
             {
                 _document.Load(nomefile);
             }
             catch(FileNotFoundException)
             {
+                FileStream file = File.Create(nomefile);
+                file.Close();
                 XmlNode node = _document.CreateXmlDeclaration("1.0","","");
                 _document.AppendChild(node);
-                _document.Save("inizializzato.xml");
+                XmlNode root = _document.CreateElement("Gruppi");
+                _document.AppendChild(root);
+                _document.Save(nomefile);
                 caricato = true;
             }
         }
@@ -64,6 +70,7 @@ namespace Room8
             Utente nuovoUtente = null;
 
             XmlNodeList listaGruppi = _document.SelectNodes("/Gruppi/Gruppo");
+
 
             foreach (XmlNode gruppoNode in listaGruppi)
             {
@@ -104,6 +111,7 @@ namespace Room8
             }
             foreach (XmlNode utenteAtt in utenteNode.ChildNodes)
             {
+
                 if (utenteAtt.Name.Equals("Nome"))
                 {
                     nome = utenteAtt.InnerText;

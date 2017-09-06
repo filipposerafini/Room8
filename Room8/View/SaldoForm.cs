@@ -15,5 +15,44 @@ namespace Room8.View
         {
             InitializeComponent();
         }
+        public ErrorProvider ErrorProvider
+        {
+            get { return _errorProvider; }
+        }
+
+        public ComboBox AComboBox
+        {
+            get { return _aComboBox; }
+        }
+
+        public ComboBox DaComboBox
+        {
+            get { return _daComboBox; }
+        }
+
+        public NumericUpDown NumericUpDown
+        {
+            get { return _numericUpDown; }
+        }
+
+        public DateTimePicker DateTimePicker
+        {
+            get { return _dateTimePicker; }
+        }
+
+        public Button ConfermaButton
+        {
+            get { return _confermaButton; }
+        }
+
+        public PictureBox APictureBox
+        {
+            get { return _aPictureBox; }
+        }
+
+        public PictureBox DaPictureBox
+        {
+            get { return _daPictureBox; }
+        }
     }
 }

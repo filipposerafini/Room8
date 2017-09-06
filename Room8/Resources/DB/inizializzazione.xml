@@ -4,22 +4,32 @@
 	<Nome>gruppo1</Nome>
 	<Utenti>
 		<Utente>
+			<Nome>a</Nome>
+			<Cognome>a</Cognome>
+			<Email>a@a.aa</Email>
+			<Password>12345678</Password>
+			<Telefono>333333333</Telefono>
+		</Utente>
+		<Utente>
 			<Nome>user1</Nome>
 			<Cognome>cognome1</Cognome>
 			<Email>user1@mail.com</Email>
 			<Password>password1</Password>
+			<Telefono>333333333</Telefono>
 		</Utente>
 		<Utente>
 			<Nome>user2</Nome>
 			<Cognome>cognome2</Cognome>
 			<Email>user2@mail.com</Email>
 			<Password>password2</Password>
+			<Telefono>333333333</Telefono>
 		</Utente>
 		<Utente>
 			<Nome>user3</Nome>
 			<Cognome>cognome3</Cognome>
 			<Email>user3@mail.com</Email>
 			<Password>password3</Password>
+			<Telefono>333333333</Telefono>
 		</Utente>
 	</Utenti>
 	</Gruppo>
@@ -39,6 +49,7 @@
 			<Cognome>cognome5</Cognome>
 			<Email>user5@mail.com</Email>
 			<Password>password5</Password>
+			<Telefono>333333333</Telefono>
 		</Utente>
 	</Utenti>
 	</Gruppo>
@@ -51,18 +62,21 @@
 			<Cognome>cognome1</Cognome>
 			<Email>user1@mail.com</Email>
 			<Password>password1</Password>
+			<Telefono>333333333</Telefono>
 		</Utente>
 		<Utente>
 			<Nome>user2</Nome>
 			<Cognome>cognome2</Cognome>
 			<Email>user2@mail.com</Email>
 			<Password>password2</Password>
+			<Telefono>333333333</Telefono>
 		</Utente>
 		<Utente>
 			<Nome>user3</Nome>
 			<Cognome>cognome3</Cognome>
 			<Email>user3@mail.com</Email>
 			<Password>password3</Password>
+			<Telefono>333333333</Telefono>
 		</Utente>
 
 		<Utente>
@@ -70,6 +84,7 @@
 			<Cognome>cognome4</Cognome>
 			<Email>user4@mail.com</Email>
 			<Password>password4</Password>
+			<Telefono>333333333</Telefono>
 		</Utente>
 
 		<Utente>	
@@ -77,6 +92,7 @@
 			<Cognome>cognome5</Cognome>
 			<Email>user5@mail.com</Email>
 			<Password>password5</Password>
+			<Telefono>333333333</Telefono>
 		</Utente>
 	</Utenti>
 	</Gruppo>

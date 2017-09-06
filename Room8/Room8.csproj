@@ -150,6 +150,7 @@
     <Compile Include="Persistance\GestoreUtenti.cs" />
     <Compile Include="Persistance\IPersistenza.cs" />
     <Compile Include="Persistance\PersistenzaXml.cs" />
+    <Compile Include="Presenter\SaldoFormPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
