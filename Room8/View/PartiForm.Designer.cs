@@ -35,13 +35,11 @@
             this._annullaButton = new System.Windows.Forms.Button();
             this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._scrollPanel = new System.Windows.Forms.Panel();
-            this._vScrollBar = new System.Windows.Forms.VScrollBar();
             this._partiLabel = new System.Windows.Forms.Label();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
-            this._scrollPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -110,21 +108,13 @@
             // 
             // _scrollPanel
             // 
-            this._scrollPanel.Controls.Add(this._vScrollBar);
+            this._scrollPanel.AutoScroll = true;
             this._scrollPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._scrollPanel.Location = new System.Drawing.Point(0, 0);
             this._scrollPanel.Margin = new System.Windows.Forms.Padding(0);
             this._scrollPanel.Name = "_scrollPanel";
-            //this._scrollPanel.Size = new System.Drawing.Size(327, 132);
+            this._scrollPanel.Size = new System.Drawing.Size(327, 132);
             this._scrollPanel.TabIndex = 0;
-            // 
-            // _vScrollBar
-            // 
-            this._vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this._vScrollBar.Location = new System.Drawing.Point(310, 0);
-            this._vScrollBar.Name = "_vScrollBar";
-            this._vScrollBar.Size = new System.Drawing.Size(17, 132);
-            this._vScrollBar.TabIndex = 1;
             // 
             // _partiLabel
             // 
@@ -156,7 +146,6 @@
             this._mainTableLayoutPanel.ResumeLayout(false);
             this._confirmPanel.ResumeLayout(false);
             this._formTableLayoutPanel.ResumeLayout(false);
-            this._scrollPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);
 
@@ -171,7 +160,6 @@
         private System.Windows.Forms.Button _annullaButton;
         private System.Windows.Forms.TableLayoutPanel _formTableLayoutPanel;
         private System.Windows.Forms.Panel _scrollPanel;
-        private System.Windows.Forms.VScrollBar _vScrollBar;
         private System.Windows.Forms.ErrorProvider _errorProvider;
     }
 }

@@ -67,6 +67,7 @@
             this._mailTextBox.Name = "_mailTextBox";
             this._mailTextBox.Size = new System.Drawing.Size(181, 20);
             this._mailTextBox.TabIndex = 1;
+            this._mailTextBox.Text = "user1@mail.com";
             // 
             // _passwordTextBox
             // 
@@ -78,6 +79,7 @@
             this._passwordTextBox.PasswordChar = '•';
             this._passwordTextBox.Size = new System.Drawing.Size(181, 20);
             this._passwordTextBox.TabIndex = 2;
+            this._passwordTextBox.Text = "password1";
             // 
             // _accediButton
             // 

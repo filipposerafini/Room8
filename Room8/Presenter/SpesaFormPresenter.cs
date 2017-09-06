@@ -49,7 +49,7 @@ namespace Room8
 		{
 			SpesaForm.PaganteComboBox.DataSource = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).MembriGruppo;
 			SpesaForm.PaganteComboBox.DisplayMember = "Nome";
-            Spesa.SpeseGruppo.Gruppo = (Gruppo)SpesaForm.GruppoComboBox.SelectedItem;
+            Spesa.SpeseGruppo = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).SpeseGruppo;
 		}
 
 		void RadioButton_Click(object sender, EventArgs e)

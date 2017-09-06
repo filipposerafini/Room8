@@ -51,26 +51,22 @@ namespace Room8
 		{
 			PartiForm.PartiLabel.Text = "Divisione " + NomeMetodo;
 			TableLayoutPanel partiTableLayoutPanel = new TableLayoutPanel();
-			partiTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
-			//partiTableLayoutPanel.Dock = DockStyle.Top;
+			partiTableLayoutPanel.Dock = DockStyle.Top;
 			partiTableLayoutPanel.ColumnCount = 1;
 			partiTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			partiTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
 			partiTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
 			partiTableLayoutPanel.Name = "_partiTableLayoutPanel";
 			partiTableLayoutPanel.RowCount = 1;
-			partiTableLayoutPanel.Size = new System.Drawing.Size(310, 40);
+            partiTableLayoutPanel.Height = 40;
 			partiTableLayoutPanel.TabIndex = 2;
 
             for (int i = 0; i < Spesa.SpeseGruppo.Gruppo.MembriGruppo.Count; i++)
 			{
 				NumericUpDown numericUpDown = new NumericUpDown();
-				numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
+				numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left))));
 				numericUpDown.Location = new System.Drawing.Point(13, 10);
 				numericUpDown.Name = "_numericUpDown" + i;
-				numericUpDown.Size = new System.Drawing.Size(66, 20);
 				numericUpDown.TabIndex = 1;
 
 				Label utenteLabel = new Label();
@@ -95,11 +91,11 @@ namespace Room8
 				// _splitContainer.Panel2
 				// 
 				splitContainer.Panel2.Controls.Add(numericUpDown);
-				splitContainer.SplitterDistance = 100;
+				splitContainer.SplitterDistance = 75;
 				splitContainer.TabIndex = 0;
 
 
-				partiTableLayoutPanel.Size = new System.Drawing.Size(320, 40 + 40*i);
+				partiTableLayoutPanel.Height = 40 + 40*i;
 				partiTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40));
 				partiTableLayoutPanel.Controls.Add(splitContainer, 0, i);
 

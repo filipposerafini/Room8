@@ -1,19 +1,9 @@
-﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default" StartupItem="Room8.csproj">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Presenter/SpesaFormPresenter.cs">
-    <Files>
-      <File FileName="Model/Spesa.cs" Line="122" Column="5" />
-      <File FileName="Program.cs" Line="11" Column="16" />
-      <File FileName="Persistance/PersistenzaXml.cs" Line="1" Column="1" />
-      <File FileName="Presenter/SpesaFormPresenter.cs" Line="18" Column="30" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default">
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.ItemProperties.Room8 PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/home/gloria/Room8/Room8/Test/MainModel.cs" line="10" column="1" />
-      <Breakpoint file="/home/gloria/Room8/Room8/Test/MainModel.cs" line="14" column="28" />
-      <Breakpoint file="/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8Tests/Test.cs" line="203" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
