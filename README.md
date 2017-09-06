@@ -5,5 +5,5 @@ Progetto per il corso di **_Ingegneria del Software T_**
 
 #### _Ringraziamenti_
 * [Nicola Sebastianelli](https://nicolasebastianelli.github.io/)
-#### Bestemmie
+#### _Bestemmie_
 * [Gloria Sammaritani](https://gloriasam.github.io/)
