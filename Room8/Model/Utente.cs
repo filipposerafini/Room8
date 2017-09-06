@@ -54,35 +54,6 @@ namespace Room8
 				this._foto = foto;
 		}
 
-        public Utente (XmlNode utenteNode)
-        {
-            if (utenteNode == null)
-            {
-                throw new ArgumentException("UtenteNode è null");
-            }
-            foreach (XmlNode utenteAtt in utenteNode.ChildNodes)
-            {
-                if (utenteAtt.Name.Equals("Nome"))
-                {
-                    _nome = utenteAtt.InnerText;
-                }
-                else if (utenteAtt.Name.Equals("Cognome"))
-                {
-                    _cognome = utenteAtt.InnerText;
-                }
-                else if (utenteAtt.Name.Equals("Email"))
-                {
-                    _mail = utenteAtt.InnerText;
-                }
-                else if (utenteAtt.Name.Equals("Password"))
-                {
-                    _password = utenteAtt.InnerText;
-                }
-            }
-            this._foto = null;
-        }
-
-
 		public string Mail
 		{
 			get { return _mail; }
@@ -205,6 +176,11 @@ namespace Room8
 
 			result = gruppo.MembriGruppo.Sum(u => this.calcolaSituazioneGruppo(u, gruppo));
 			return result;
+		}
+
+		public	List<Utente> Amici()
+		{
+			return Gruppi.SelectMany(g => g.MembriGruppo).Distinct().Where(u => !u.Equals(this)).ToList();
 		}
 	}
 }
