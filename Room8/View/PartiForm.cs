@@ -30,5 +30,10 @@ namespace Room8.View
 		{
 			get { return _confermaButton; }
 		}
+
+		public ErrorProvider ErrorProvider
+		{
+			get { return _errorProvider; }
+		}
     }
 }

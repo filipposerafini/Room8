@@ -107,11 +107,20 @@ namespace Room8
 
 		void ConfermaButton_Click(object sender, EventArgs e)
 		{
-			foreach (var utente in Dictionary.Keys)
+			PartiForm.ErrorProvider.Clear();
+			try
 			{
-				Spesa.Parti.ImpostaParte(utente, (int)(Dictionary[utente] as NumericUpDown).Value);
+				foreach (var utente in Dictionary.Keys)
+				{
+					Spesa.Parti.ImpostaParte(utente, (int)(Dictionary[utente] as NumericUpDown).Value);
+				}
+				Spesa.Parti.ControllaParti(NomeMetodo);
+				PartiForm.DialogResult = DialogResult.OK;
 			}
-			PartiForm.DialogResult = DialogResult.OK;
+			catch (ArgumentException ae)
+			{
+				PartiForm.ErrorProvider.SetError(PartiForm.ConfermaButton, ae.Message);
+			}
 		}
 	}
 }

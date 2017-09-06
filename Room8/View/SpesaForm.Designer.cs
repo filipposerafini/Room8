@@ -234,7 +234,7 @@
             this._quoteRadioButton.Name = "_quoteRadioButton";
             this._quoteRadioButton.Size = new System.Drawing.Size(71, 17);
             this._quoteRadioButton.TabIndex = 2;
-            this._quoteRadioButton.Tag = "Per quote";
+            this._quoteRadioButton.Tag = "per quote";
             this._quoteRadioButton.Text = "Per quote";
             this._quoteRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -245,7 +245,7 @@
             this._percentualeRadioButton.Name = "_percentualeRadioButton";
             this._percentualeRadioButton.Size = new System.Drawing.Size(82, 17);
             this._percentualeRadioButton.TabIndex = 1;
-            this._percentualeRadioButton.Tag = "Percentuale";
+            this._percentualeRadioButton.Tag = "percentuale";
             this._percentualeRadioButton.Text = "Percentuale";
             this._percentualeRadioButton.UseVisualStyleBackColor = true;
             // 
@@ -258,7 +258,7 @@
             this._equoRadioButton.Size = new System.Drawing.Size(50, 17);
             this._equoRadioButton.TabIndex = 0;
             this._equoRadioButton.TabStop = true;
-            this._equoRadioButton.Tag = "Equa";
+            this._equoRadioButton.Tag = "equa";
             this._equoRadioButton.Text = "Equo";
             this._equoRadioButton.UseVisualStyleBackColor = true;
             // 

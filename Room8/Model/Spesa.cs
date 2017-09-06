@@ -32,7 +32,6 @@ namespace Room8
 				if (value == null)
 					throw new ArgumentNullException("gruppo");
 				_speseGruppo = value;
-                Parti = new Parti(value.Gruppo);
 			}
 		}
 
@@ -101,6 +100,8 @@ namespace Room8
 			{
                 if (value.Equals(DateTime.MinValue))
 					throw new ArgumentNullException("data");
+				if (value.CompareTo(DateTime.Now) > 0)
+					throw new ArgumentException("La data non può essere successiva a quella di oggi", "data");
 				_data = value;
 			}
 		}

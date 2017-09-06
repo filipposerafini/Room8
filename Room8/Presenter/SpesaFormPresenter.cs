@@ -22,6 +22,23 @@ namespace Room8
 			SpesaForm.GruppoComboBox.DisplayMember = "Nome";
 		}
 
+		public SpesaFormPresenter(SpesaForm spesaForm, Utente utente, Spesa daModificare)
+		{
+			this._spesaForm = spesaForm;
+			this._utente = utente;
+			this._spesa = daModificare;
+			InitializeEvents();
+
+			SpesaForm.GruppoComboBox.DataSource = utente.Gruppi;
+			SpesaForm.GruppoComboBox.DisplayMember = "Nome";
+
+			SpesaForm.GruppoComboBox.SelectedItem = daModificare.SpeseGruppo.Gruppo;
+			SpesaForm.DescrizioneTextBox.Text = daModificare.Descrizione;
+			SpesaForm.NumericUpDown.Value = daModificare.Importo;
+			SpesaForm.PaganteComboBox.SelectedItem = daModificare.Pagante;
+			SpesaForm.DateTimePicker.Value = daModificare.Data;
+		}
+
 		public SpesaForm SpesaForm
 		{
 			get { return _spesaForm; }
@@ -50,10 +67,12 @@ namespace Room8
 			SpesaForm.PaganteComboBox.DataSource = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).MembriGruppo;
 			SpesaForm.PaganteComboBox.DisplayMember = "Nome";
             Spesa.SpeseGruppo = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).SpeseGruppo;
+			Spesa.Parti = new Parti(Spesa.SpeseGruppo.Gruppo);
 		}
 
 		void RadioButton_Click(object sender, EventArgs e)
 		{
+			Spesa.Parti = new Parti(Spesa.SpeseGruppo.Gruppo);
 			string nomeMetodo = SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked).Tag.ToString();
 			PartiForm partiForm = new PartiForm();
 			new PartiFormPresenter(partiForm, Spesa, nomeMetodo);
@@ -71,7 +90,7 @@ namespace Room8
 				Spesa.Pagante = (Utente)SpesaForm.PaganteComboBox.SelectedItem;
 				string nomeMetodo = SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked).Tag.ToString();
 				Spesa.MetodoDivisione = MetodoDiDivisioneFactory.getMetodoDiDivisione(nomeMetodo);
-				Spesa.Data = SpesaForm.DateTimePicker.Value.Date;
+				Spesa.Data = SpesaForm.DateTimePicker.Value;
 				Spesa.Note = SpesaForm.NoteTextBox.Text;
 
                 Spesa.SpeseGruppo.Gruppo.SpeseGruppo.AggiungiSpesa(Spesa);
@@ -90,6 +109,9 @@ namespace Room8
 						break;
 					case "pagante" :
 						control = SpesaForm.PaganteComboBox;
+						break;
+					case "data" :
+						control = SpesaForm.DateTimePicker;
 						break;
 					default:
 						control = SpesaForm.ConfermaButton;

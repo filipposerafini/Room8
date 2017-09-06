@@ -11,9 +11,9 @@ namespace Room8
 		static MetodoDiDivisioneFactory()
 		{
 			_dictionary = new Dictionary<string, IMetodoDiDivisione>();
-			_dictionary.Add("Equa", new DivisioneEqua());
-			_dictionary.Add("Percentuale", new DivisionePercentuale());
-			_dictionary.Add("Per quote", new DivisionePerQuote());
+			_dictionary.Add("equa", new DivisioneEqua());
+			_dictionary.Add("percentuale", new DivisionePercentuale());
+			_dictionary.Add("per quote", new DivisionePerQuote());
 		}
 
 		public static IMetodoDiDivisione getMetodoDiDivisione(string nome)
@@ -58,14 +58,7 @@ namespace Room8
 		{
 			protected override decimal Dividi(decimal totale, Utente utente, Dictionary<Utente, int> parti)
 			{
-				int tot = 0;
-				foreach (int perc in parti.Values)
-					tot += perc;
-
-				if (tot != 100)
-					throw new ArgumentException("Percentuale totale diversa da 100");
-
-				return totale * ((decimal)parti[utente] / tot);
+				return totale * ((decimal)parti[utente] / 100);
 			}
 		}
 
@@ -76,9 +69,6 @@ namespace Room8
 				int quote = 0;
 				foreach (int quota in parti.Values)
 					quote += quota;
-
-				if (quote == 0)
-					throw new ArgumentException("Quote tutte nulle");
 
 				return (totale / quote) * parti[utente];
 			}
