@@ -1,13 +1,10 @@
 ﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default" StartupItem="Room8.csproj">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Model/MovimentoDiDenaro.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Presenter/SpesaFormPresenter.cs">
     <Files>
-      <File FileName="Persistance/GestoreUtenti.cs" Line="14" Column="10" />
-      <File FileName="Persistance/IPersistenza.cs" Line="9" Column="37" />
-      <File FileName="Persistance/PersistenzaXml.cs" Line="11" Column="39" />
-      <File FileName="Model/Spesa.cs" Line="27" Column="33" />
-      <File FileName="Model/MovimentoDiDenaro.cs" Line="58" Column="9" />
-      <File FileName="../Room8Tests/TestPersistenza.cs" Line="8" Column="32" />
-      <File FileName="../Room8Tests/Test.cs" Line="20" Column="13" />
+      <File FileName="Model/Spesa.cs" Line="122" Column="5" />
+      <File FileName="Program.cs" Line="11" Column="16" />
+      <File FileName="Persistance/PersistenzaXml.cs" Line="1" Column="1" />
+      <File FileName="Presenter/SpesaFormPresenter.cs" Line="18" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -15,6 +12,7 @@
     <BreakpointStore>
       <Breakpoint file="/home/gloria/Room8/Room8/Test/MainModel.cs" line="10" column="1" />
       <Breakpoint file="/home/gloria/Room8/Room8/Test/MainModel.cs" line="14" column="28" />
+      <Breakpoint file="/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8Tests/Test.cs" line="203" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

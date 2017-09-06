@@ -49,7 +49,7 @@ namespace Room8
 		{
 			SpesaForm.PaganteComboBox.DataSource = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).MembriGruppo;
 			SpesaForm.PaganteComboBox.DisplayMember = "Nome";
-			Spesa.Gruppo = (Gruppo)SpesaForm.GruppoComboBox.SelectedItem;
+            Spesa.SpeseGruppo.Gruppo = (Gruppo)SpesaForm.GruppoComboBox.SelectedItem;
 		}
 
 		void RadioButton_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace Room8
 				Spesa.Data = SpesaForm.DateTimePicker.Value.Date;
 				Spesa.Note = SpesaForm.NoteTextBox.Text;
 
-				Spesa.Gruppo.SpeseGruppo.AggiungiSpesa(Spesa);
+                Spesa.SpeseGruppo.Gruppo.SpeseGruppo.AggiungiSpesa(Spesa);
 				SpesaForm.Close();
 			}
 			catch (ArgumentException ae)

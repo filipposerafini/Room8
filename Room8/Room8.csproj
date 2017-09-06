@@ -142,12 +142,14 @@
     <Compile Include="Model\Movimento.cs" />
     <Compile Include="Model\SpeseGruppo.cs" />
     <Compile Include="Model\Parti.cs" />
-    <Compile Include="Model\GestoreUtenti.cs" />
     <Compile Include="Presenter\LoginFormPresenter.cs" />
     <Compile Include="Presenter\MainFormPresenter.cs" />
     <Compile Include="Presenter\RegistratiFormPresenter.cs" />
     <Compile Include="Presenter\SpesaFormPresenter.cs" />
     <Compile Include="Presenter\PartiFormPresenter.cs" />
+    <Compile Include="Persistance\GestoreUtenti.cs" />
+    <Compile Include="Persistance\IPersistenza.cs" />
+    <Compile Include="Persistance\PersistenzaXml.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

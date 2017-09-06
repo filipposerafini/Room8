@@ -38,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Test.cs" />
+    <Compile Include="TestPersistenza.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Room8\Room8.csproj">

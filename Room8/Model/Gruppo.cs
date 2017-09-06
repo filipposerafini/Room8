@@ -7,12 +7,12 @@ namespace Room8
 	public class Gruppo
 	{
 		private static readonly string FOTODEFAULT = "/pathto/fotodefault.jpg";
-		private readonly string _id;
-		private readonly string _nome;
-		private readonly List<Utente> _membriGruppo;
-		private readonly SpeseGruppo _speseGruppo;
-		private readonly List<Prodotto> _daComprare;
-		private readonly DateTime _dataCreazione;
+		private string _id;
+		private string _nome;
+		private List<Utente> _membriGruppo;
+		private SpeseGruppo _speseGruppo;
+		private List<Prodotto> _daComprare;
+		private DateTime _dataCreazione;
 		private string _foto;
 
 		public Gruppo(string nome)

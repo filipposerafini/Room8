@@ -6,8 +6,8 @@ namespace Room8
 {
 	public class SpeseGruppo
 	{
-		private readonly Gruppo _gruppo;
-		private readonly List<Spesa> _spese;
+		private Gruppo _gruppo;
+		private List<Spesa> _spese;
 
 		public SpeseGruppo(Gruppo gruppo)
 		{
@@ -18,11 +18,17 @@ namespace Room8
 		public Gruppo Gruppo
 		{
 			get { return _gruppo; }
+            set
+            { 
+                if (value == null)
+                    throw new ArgumentException("gruppo");
+                _gruppo = value;
+            }    
 		}
 
 		public IList<Spesa> Spese
 		{
-			get { return _spese.AsReadOnly(); }
+			get { return _spese; }
 		}
 
 		public void AggiungiSpesa(Spesa spesa)

@@ -1,11 +1,3 @@
-/home/gloria/Documenti/IngegneriaSoftwere/Room8/Room8Tests/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
-/home/gloria/Documenti/IngegneriaSoftwere/Room8/Room8Tests/bin/Debug/Room8Tests.dll.mdb
-/home/gloria/Documenti/IngegneriaSoftwere/Room8/Room8Tests/bin/Debug/Room8Tests.dll
-/home/gloria/Documenti/IngegneriaSoftwere/Room8/Room8Tests/obj/Debug/Room8Tests.dll
-/home/gloria/Documenti/IngegneriaSoftwere/Room8/Room8Tests/obj/Debug/Room8Tests.dll.mdb
-/home/gloria/Documenti/IngegneriaSoftwere/Room8/Room8Tests/bin/Debug/nunit.framework.dll
-/home/gloria/Documenti/IngegneriaSoftwere/Room8/Room8Tests/bin/Debug/Room8.exe
-/home/gloria/Documenti/IngegneriaSoftwere/Room8/Room8Tests/bin/Debug/Room8.exe.mdb
 /home/gloria/Documenti/IngegneriaSoftware/Room8/Room8Tests/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
 /home/gloria/Documenti/IngegneriaSoftware/Room8/Room8Tests/bin/Debug/Room8Tests.dll.mdb
 /home/gloria/Documenti/IngegneriaSoftware/Room8/Room8Tests/bin/Debug/Room8Tests.dll
@@ -14,14 +6,3 @@
 /home/gloria/Documenti/IngegneriaSoftware/Room8/Room8Tests/bin/Debug/nunit.framework.dll
 /home/gloria/Documenti/IngegneriaSoftware/Room8/Room8Tests/bin/Debug/Room8.exe
 /home/gloria/Documenti/IngegneriaSoftware/Room8/Room8Tests/bin/Debug/Room8.exe.mdb
-/home/filippo/Documents/University/Room8/Room8Tests/obj/Debug/.NETFramework,Version=v4.0.AssemblyAttribute.cs
-/home/filippo/Documents/University/Room8/Room8Tests/bin/Debug/Room8Tests.dll.mdb
-/home/filippo/Documents/University/Room8/Room8Tests/bin/Debug/Room8Tests.pdb
-/home/filippo/Documents/University/Room8/Room8Tests/bin/Debug/Room8Tests.dll
-/home/filippo/Documents/University/Room8/Room8Tests/obj/Debug/Room8Tests.dll
-/home/filippo/Documents/University/Room8/Room8Tests/obj/Debug/Room8Tests.dll.mdb
-/home/filippo/Documents/University/Room8/Room8Tests/obj/Debug/Room8Tests.pdb
-/home/filippo/Documents/University/Room8/Room8Tests/bin/Debug/nunit.framework.dll
-/home/filippo/Documents/University/Room8/Room8Tests/bin/Debug/Room8.exe
-/home/filippo/Documents/University/Room8/Room8Tests/bin/Debug/Room8.exe.mdb
-/home/filippo/Documents/University/Room8/Room8Tests/bin/Debug/Room8.pdb
