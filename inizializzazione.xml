@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Gruppi>
+	<Gruppo>
+	<Nome>gruppo1</Nome>
+	<Utenti>
+		<Utente>
+			<Nome>user1</Nome>
+			<Cognome>cognome1</Cognome>
+			<Email>user1@mail.com</Email>
+			<Password>password1</Password>
+		</Utente>
+		<Utente>
+			<Nome>user2</Nome>
+			<Cognome>cognome2</Cognome>
+			<Email>user2@mail.com</Email>
+			<Password>password2</Password>
+		</Utente>
+		<Utente>
+			<Nome>user3</Nome>
+			<Cognome>cognome3</Cognome>
+			<Email>user3@mail.com</Email>
+			<Password>password3</Password>
+		</Utente>
+	</Utenti>
+	</Gruppo>
+
+	<Gruppo>
+	<Nome>gruppo2</Nome>
+	<Utenti>
+		<Utente>
+			<Nome>user4</Nome>
+			<Cognome>cognome4</Cognome>
+			<Email>user4@mail.com</Email>
+			<Password>password4</Password>
+		</Utente>
+
+		<Utente>
+			<Nome>user5</Nome>
+			<Cognome>cognome5</Cognome>
+			<Email>user5@mail.com</Email>
+			<Password>password5</Password>
+		</Utente>
+	</Utenti>
+	</Gruppo>
+
+	<Gruppo>
+	<Nome>gruppo3</Nome>
+	<Utenti>
+		<Utente>
+			<Nome>user1</Nome>
+			<Cognome>cognome1</Cognome>
+			<Email>user1@mail.com</Email>
+			<Password>password1</Password>
+		</Utente>
+		<Utente>
+			<Nome>user2</Nome>
+			<Cognome>cognome2</Cognome>
+			<Email>user2@mail.com</Email>
+			<Password>password2</Password>
+		</Utente>
+		<Utente>
+			<Nome>user3</Nome>
+			<Cognome>cognome3</Cognome>
+			<Email>user3@mail.com</Email>
+			<Password>password3</Password>
+		</Utente>
+
+		<Utente>
+			<Nome>user4</Nome>
+			<Cognome>cognome4</Cognome>
+			<Email>user4@mail.com</Email>
+			<Password>password4</Password>
+		</Utente>
+
+		<Utente>	
+			<Nome>user5</Nome>
+			<Cognome>cognome5</Cognome>
+			<Email>user5@mail.com</Email>
+			<Password>password5</Password>
+		</Utente>
+	</Utenti>
+	</Gruppo>
+</Gruppi>
