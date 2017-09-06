@@ -5,7 +5,7 @@ namespace Room8
 	public class Spesa
 	{
 		private readonly string _id;
-		private Gruppo _gruppo;
+		private SpeseGruppo _speseGruppo;
 		private string _descrizione;
 		private decimal _importo;
 		private Utente _pagante;
@@ -24,15 +24,15 @@ namespace Room8
 			get { return _id; }
 		}
 
-		public Gruppo Gruppo
+		public SpeseGruppo SpeseGruppo
 		{
-			get { return _gruppo; }
+			get { return _speseGruppo; }
 			set
 			{
 				if (value == null)
 					throw new ArgumentNullException("gruppo");
-				_gruppo = value;
-				Parti = new Parti(value);
+				_speseGruppo = value;
+                Parti = new Parti(value.Gruppo);
 			}
 		}
 
@@ -65,7 +65,7 @@ namespace Room8
 			{
 				if (value == null)
 					throw new ArgumentNullException("pagante");
-				if (!Gruppo.MembriGruppo.Contains(value))
+                if (!SpeseGruppo.Gruppo.MembriGruppo.Contains(value))
 					throw new ArgumentException("Il pagante deve essere un membro del gruppo", "pagante");
 				
 				_pagante = value;
@@ -99,7 +99,7 @@ namespace Room8
 			get { return _data; }
 			set
 			{
-				if (value == null)
+                if (value.Equals(DateTime.MinValue))
 					throw new ArgumentNullException("data");
 				_data = value;
 			}
