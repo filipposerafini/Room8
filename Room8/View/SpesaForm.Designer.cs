@@ -115,6 +115,7 @@
             // _annullaButton
             // 
             this._annullaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this._annullaButton.Location = new System.Drawing.Point(310, 15);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);

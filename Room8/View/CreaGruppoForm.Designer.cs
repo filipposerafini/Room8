@@ -116,6 +116,7 @@
             // _annullaButton
             // 
             this._annullaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this._annullaButton.Location = new System.Drawing.Point(270, 4);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
@@ -228,13 +229,14 @@
             // 
             this._addUserSplitContainer.Panel2.Controls.Add(this._removeButton);
             this._addUserSplitContainer.Size = new System.Drawing.Size(322, 45);
-            this._addUserSplitContainer.SplitterDistance = 256;
+            this._addUserSplitContainer.SplitterDistance = 252;
             this._addUserSplitContainer.TabIndex = 0;
             // 
             // _mailLabel
             // 
+            this._mailLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this._mailLabel.AutoSize = true;
-            this._mailLabel.Location = new System.Drawing.Point(3, 14);
+            this._mailLabel.Location = new System.Drawing.Point(16, 14);
             this._mailLabel.Name = "_mailLabel";
             this._mailLabel.Size = new System.Drawing.Size(35, 13);
             this._mailLabel.TabIndex = 2;
@@ -242,17 +244,16 @@
             // 
             // _mailTextBox
             // 
-            this._mailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._mailTextBox.Location = new System.Drawing.Point(76, 11);
+            this._mailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this._mailTextBox.Location = new System.Drawing.Point(62, 11);
             this._mailTextBox.Name = "_mailTextBox";
-            this._mailTextBox.Size = new System.Drawing.Size(163, 20);
+            this._mailTextBox.Size = new System.Drawing.Size(187, 20);
             this._mailTextBox.TabIndex = 1;
             // 
             // _removeButton
             // 
             this._removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this._removeButton.Location = new System.Drawing.Point(18, 9);
+            this._removeButton.Location = new System.Drawing.Point(19, 9);
             this._removeButton.Name = "_removeButton";
             this._removeButton.Size = new System.Drawing.Size(27, 23);
             this._removeButton.TabIndex = 0;
@@ -269,6 +270,7 @@
             // 
             // _creatorGroupLabel
             // 
+            this._creatorGroupLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this._creatorGroupLabel.AutoSize = true;
             this._creatorGroupLabel.Location = new System.Drawing.Point(9, 16);
             this._creatorGroupLabel.Name = "_creatorGroupLabel";

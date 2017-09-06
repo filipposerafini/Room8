@@ -34,25 +34,25 @@
             this._confermaButton = new System.Windows.Forms.Button();
             this._annullaButton = new System.Windows.Forms.Button();
             this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._partiLabel = new System.Windows.Forms.Label();
             this._scrollPanel = new System.Windows.Forms.Panel();
-            this._vScrollBar = new System.Windows.Forms.VScrollBar();
-            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._partiTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._splitContainer = new System.Windows.Forms.SplitContainer();
             this._utenteLabel = new System.Windows.Forms.Label();
             this._numericUpDown = new System.Windows.Forms.NumericUpDown();
+            this._vScrollBar = new System.Windows.Forms.VScrollBar();
+            this._partiLabel = new System.Windows.Forms.Label();
+            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
             this._scrollPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this._partiTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._splitContainer)).BeginInit();
             this._splitContainer.Panel1.SuspendLayout();
             this._splitContainer.Panel2.SuspendLayout();
             this._splitContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._numericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainTableLayoutPanel
@@ -114,22 +114,9 @@
             this._formTableLayoutPanel.Location = new System.Drawing.Point(3, 37);
             this._formTableLayoutPanel.Name = "_formTableLayoutPanel";
             this._formTableLayoutPanel.RowCount = 1;
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 132F));
             this._formTableLayoutPanel.Size = new System.Drawing.Size(327, 132);
             this._formTableLayoutPanel.TabIndex = 2;
-            // 
-            // _partiLabel
-            // 
-            this._partiLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._partiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._partiLabel.Location = new System.Drawing.Point(3, 0);
-            this._partiLabel.Name = "_partiLabel";
-            this._partiLabel.Size = new System.Drawing.Size(327, 34);
-            this._partiLabel.TabIndex = 0;
-            this._partiLabel.Text = "Dividi per";
-            this._partiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _scrollPanel
             // 
@@ -142,30 +129,18 @@
             this._scrollPanel.Size = new System.Drawing.Size(327, 132);
             this._scrollPanel.TabIndex = 0;
             // 
-            // _vScrollBar
-            // 
-            this._vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
-            this._vScrollBar.Location = new System.Drawing.Point(310, 0);
-            this._vScrollBar.Name = "_vScrollBar";
-            this._vScrollBar.Size = new System.Drawing.Size(17, 132);
-            this._vScrollBar.TabIndex = 1;
-            // 
-            // _errorProvider
-            // 
-            this._errorProvider.ContainerControl = this;
-            // 
             // _partiTableLayoutPanel
             // 
             this._partiTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this._partiTableLayoutPanel.ColumnCount = 1;
-            this._partiTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this._partiTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this._partiTableLayoutPanel.Controls.Add(this._splitContainer, 0, 0);
             this._partiTableLayoutPanel.Location = new System.Drawing.Point(3, 0);
             this._partiTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this._partiTableLayoutPanel.Name = "_partiTableLayoutPanel";
             this._partiTableLayoutPanel.RowCount = 1;
-            this._partiTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this._partiTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this._partiTableLayoutPanel.Size = new System.Drawing.Size(307, 42);
             this._partiTableLayoutPanel.TabIndex = 2;
             // 
@@ -199,12 +174,36 @@
             // 
             // _numericUpDown
             // 
-            this._numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this._numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this._numericUpDown.Location = new System.Drawing.Point(13, 10);
             this._numericUpDown.Name = "_numericUpDown";
             this._numericUpDown.Size = new System.Drawing.Size(66, 20);
             this._numericUpDown.TabIndex = 1;
+            // 
+            // _vScrollBar
+            // 
+            this._vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this._vScrollBar.Location = new System.Drawing.Point(310, 0);
+            this._vScrollBar.Name = "_vScrollBar";
+            this._vScrollBar.Size = new System.Drawing.Size(17, 132);
+            this._vScrollBar.TabIndex = 1;
+            // 
+            // _partiLabel
+            // 
+            this._partiLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._partiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._partiLabel.Location = new System.Drawing.Point(3, 0);
+            this._partiLabel.Name = "_partiLabel";
+            this._partiLabel.Size = new System.Drawing.Size(327, 34);
+            this._partiLabel.TabIndex = 0;
+            this._partiLabel.Text = "Dividi per";
+            this._partiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _errorProvider
+            // 
+            this._errorProvider.ContainerControl = this;
             // 
             // PartiForm
             // 
@@ -220,13 +219,13 @@
             this._confirmPanel.ResumeLayout(false);
             this._formTableLayoutPanel.ResumeLayout(false);
             this._scrollPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this._partiTableLayoutPanel.ResumeLayout(false);
             this._splitContainer.Panel1.ResumeLayout(false);
             this._splitContainer.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._splitContainer)).EndInit();
             this._splitContainer.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._numericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
