@@ -2,13 +2,38 @@
 using System;
 using Room8;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Room8Tests
 {
 	//Spese gruppo
 	[TestFixture()]
-	public class TestSpesa
+	public class TestModel
 	{
+        [Test()]
+        public void TestPopolazioneUtentiEGruppi()
+        {
+            GestoreUtenti dati = GestoreUtenti.Instance;
+
+            Assert.AreEqual(dati.Utenti.Count, 6);
+            Assert.AreEqual(dati.Gruppi.Count, 3);
+
+            int gruppiMembro;
+            foreach (Utente u in dati.Utenti)
+            {
+                gruppiMembro = 0;
+                foreach (Gruppo g in dati.Gruppi)
+                {
+                    if (g.MembriGruppo.Where(x => x.Email.Equals(u.Email)).Count() != 0)
+                    {
+                        gruppiMembro++;
+                    }
+                }
+                Assert.AreEqual(gruppiMembro, u.Gruppi.Count);
+            }
+
+        }
+
 		[Test()]
 		[ExpectedException(typeof(ArgumentException))]
 		public void TestUtentePagante()
@@ -84,49 +109,49 @@ namespace Room8Tests
 
 		}
 
-		[Test()]
-		public void TestMovimenti()
-		{
-            GestoreUtenti dati = GestoreUtenti.Instance;
-
-			Gruppo gruppo1 = dati.Gruppi[0];
-			Utente utente1 = gruppo1.MembriGruppo[0];
-			Utente utente2 = gruppo1.MembriGruppo[1];
-			Utente utente3 = gruppo1.MembriGruppo[2];
-
-			Spesa spesa1 = new Spesa(gruppo1, "1Spesa", 80, utente3, "Per quote", DateTime.Now);
-			spesa1.Parti.ImpostaParte(utente1, 1);
-			spesa1.Parti.ImpostaParte(utente2, 2);
-			spesa1.Parti.ImpostaParte(utente3, 5);
-
-			gruppo1.SpeseGruppo.AggiungiSpesa(spesa1);
-
-			Spesa spesa2 = new Spesa(gruppo1, "2Spesa", 100, utente1, "Percentuale", DateTime.Now);
-			spesa2.Parti.ImpostaParte(utente1, 60);
-			spesa2.Parti.ImpostaParte(utente2, 20);
-			spesa2.Parti.ImpostaParte(utente3, 20);
-
-			gruppo1.SpeseGruppo.AggiungiSpesa(spesa2);
-
-			decimal result = utente1.calcolaSituazione(utente3);
-			Assert.AreEqual(result, -10);
-
-			gruppo1.SpeseGruppo.RimuoviSpesa(spesa2);
-			result = utente1.calcolaSituazione(utente3);
-			Assert.AreEqual(result, 10);
-
-			Saldo saldo = new Saldo(utente1, utente3, 10, DateTime.Now);
-			saldo.AggiungiMovimentoDiDenaro();
-			result = utente1.calcolaSituazione(utente3);
-			Assert.AreEqual(result, 0);
-
-			saldo = (Saldo)utente1.MovimentiDiDenaro.Find(x => x is Saldo);
-			saldo.ModificaMovimentoDiDenaro(new Saldo(utente1, utente3, 20, DateTime.Now));
-			result = utente1.calcolaSituazione(utente3);
-			Assert.AreEqual(result, -10);
-
-		}
-
+//		[Test()]
+//		public void TestMovimenti()
+//		{
+//            GestoreUtenti dati = GestoreUtenti.Instance;
+//
+//			Gruppo gruppo1 = dati.Gruppi[0];
+//			Utente utente1 = gruppo1.MembriGruppo[0];
+//			Utente utente2 = gruppo1.MembriGruppo[1];
+//			Utente utente3 = gruppo1.MembriGruppo[2];
+//
+//			Spesa spesa1 = new Spesa(gruppo1, "1Spesa", 80, utente3, "Per quote", DateTime.Now);
+//			spesa1.Parti.ImpostaParte(utente1, 1);
+//			spesa1.Parti.ImpostaParte(utente2, 2);
+//			spesa1.Parti.ImpostaParte(utente3, 5);
+//
+//			gruppo1.SpeseGruppo.AggiungiSpesa(spesa1);
+//
+//			Spesa spesa2 = new Spesa(gruppo1, "2Spesa", 100, utente1, "Percentuale", DateTime.Now);
+//			spesa2.Parti.ImpostaParte(utente1, 60);
+//			spesa2.Parti.ImpostaParte(utente2, 20);
+//			spesa2.Parti.ImpostaParte(utente3, 20);
+//
+//			gruppo1.SpeseGruppo.AggiungiSpesa(spesa2);
+//
+//			decimal result = utente1.calcolaSituazione(utente3);
+//			Assert.AreEqual(result, -10);
+//
+//			gruppo1.SpeseGruppo.RimuoviSpesa(spesa2);
+//			result = utente1.calcolaSituazione(utente3);
+//			Assert.AreEqual(result, 10);
+//
+//			Saldo saldo = new Saldo(utente1, utente3, 10, DateTime.Now);
+//			saldo.AggiungiMovimentoDiDenaro();
+//			result = utente1.calcolaSituazione(utente3);
+//			Assert.AreEqual(result, 0);
+//
+//			saldo = (Saldo)utente1.MovimentiDiDenaro.Find(x => x is Saldo);
+//			saldo.ModificaMovimentoDiDenaro(new Saldo(utente1, utente3, 20, DateTime.Now));
+//			result = utente1.calcolaSituazione(utente3);
+//			Assert.AreEqual(result, -10);
+//
+//		}
+//
 		[Test()]
 		[ExpectedException(typeof(ArgumentException))]
 		public void TestBilancio()
@@ -173,25 +198,22 @@ namespace Room8Tests
 		}
 
 		[Test()]
-		public void TestGestoreUtenti()
+		public void Test_Utenti_funzione_Amici()
 		{
             GestoreUtenti dati = GestoreUtenti.Instance;
 
-			Utente utenteDoppio = new Utente("user1@mail.com", "abc", "xxx", "xxx",null);
-            Assert.Throws<ArgumentException>(() => dati.AggiugniUtente(utenteDoppio));
+            foreach (Utente u in dati.Utenti)
+            {
+                if (u.Email.Equals("user1@mail.com"))
+                {
+                    List<Utente> amici = u.Amici();
+                    Assert.AreEqual(amici.Distinct().Count(), amici.Count);
+                    Assert.False(amici.Contains(u));
+                    Assert.AreEqual(amici.Count, 5);
+                   
+                }
+            }
 
-			Utente utenteOk = new Utente("utneteOK@mail.com", "abc", "yyy", "yyy",null);
-            dati.AggiugniUtente(utenteOk);
-
-            dati.AggiugniUtente(utenteOk);
-			Gruppo gruppoConNuovi = new Gruppo("GruppoN");
-			gruppoConNuovi.AggiungiMembro(utenteOk);
-			dati.AggiungiGruppo(gruppoConNuovi);
-
-            Assert.IsNotNull(dati.VerificaPassword("utneteOK@mail.com", "abc"));
-            Assert.IsNull(dati.VerificaPassword("utneteOK@mail.com", "abcd"));
-
-			Assert.Throws<ArgumentException>(() => dati.VerificaPassword("emailCheNonEsiste", "aloha"));
 		}
 	}
 }

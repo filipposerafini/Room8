@@ -16,8 +16,8 @@ namespace Room8
             XmlDocument doc = new XmlDocument();
             doc.Load("inizializzazione.xml");
 
-            string nomeGruppo = "";
-            Utente nuovoUtente;
+            Gruppo nuovoGruppo = null;
+            Utente nuovoUtente = null;
 
             XmlNodeList listaGruppi = doc.SelectNodes("/Gruppi/Gruppo");
 
@@ -27,21 +27,62 @@ namespace Room8
                 {
                     if (gruppoAtt.Name.Equals("Nome"))
                     {
-                        nomeGruppo = gruppoAtt.InnerText;
-                        _gruppi.Add(new Gruppo(nomeGruppo));
+                        nuovoGruppo = new Gruppo(gruppoAtt.InnerText);
+                        _gruppi.Add(nuovoGruppo);
                     }
                     if (gruppoAtt.Name.Equals("Utenti"))
                     {
                         foreach (XmlNode utente in gruppoAtt)
                         {
-                            nuovoUtente = new Utente(utente);
-                            if (!_utenti.Exists(x => x.Equals(nuovoUtente)))
-                                _utenti.Add(nuovoUtente);
-                            _gruppi.Find(x => x.Nome.Equals(nomeGruppo)).AggiungiMembro(nuovoUtente);
+                            nuovoUtente = this.LeggiUtente(utente);
+                            nuovoGruppo.AggiungiMembro(nuovoUtente);
                         }
                     }
                 }
             }
+
+        }
+
+        private Utente LeggiUtente(XmlNode utenteNode)
+        {
+            string nome = "";
+            string cognome = "";
+            string email = "";
+            string password = "";
+            string foto = "";
+
+            Utente result = null;
+
+            if (utenteNode == null)
+            {
+                throw new ArgumentException("UtenteNode è null");
+            }
+            foreach (XmlNode utenteAtt in utenteNode.ChildNodes)
+            {
+                if (utenteAtt.Name.Equals("Nome"))
+                {
+                    nome = utenteAtt.InnerText;
+                }
+                else if (utenteAtt.Name.Equals("Cognome"))
+                {
+                    cognome = utenteAtt.InnerText;
+                }
+                else if (utenteAtt.Name.Equals("Email"))
+                {
+                    result = _utenti.Find(u => u.Email.Equals(utenteAtt.InnerText));
+                    if(result != null)
+                        return result;
+                    email = utenteAtt.InnerText;
+                }
+                else if (utenteAtt.Name.Equals("Password"))
+                {
+                    password = utenteAtt.InnerText;
+                }
+            }
+            foto = null;
+            result = new Utente(email, password, nome, cognome, email);
+            _utenti.Add(result);
+            return result;
         }
 
         public static GestoreUtenti Instance
