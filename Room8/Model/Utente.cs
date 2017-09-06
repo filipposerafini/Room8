@@ -8,7 +8,7 @@ namespace Room8
 {
 	public class Utente
 	{
-		private static readonly string FOTODEFAULT = "/pathto/fotodefault.jpg";
+        private static readonly string FOTODEFAULT = "../../Resources/Images/fillo.jpg";
 		private readonly string _mail;
 		private readonly string _password;
 		private readonly string _nome;
@@ -73,6 +73,11 @@ namespace Room8
 		{
 			get { return _cognome; }
 		}
+
+        public string Telefono
+        {
+            get { return _telefono; }
+        }
 
 		public string Foto
 		{

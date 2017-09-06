@@ -131,8 +131,12 @@ namespace Room8
                 {
                     password = utenteAtt.InnerText;
                 }
+                else if (utenteAtt.Name.Equals("Foto"))
+                {
+                    foto = utenteAtt.InnerText;
+                }
             }
-            foto = null;
+
             result = new Utente(email, password, nome, cognome, telefono, foto);
             _utenti.Add(result);
             return result;

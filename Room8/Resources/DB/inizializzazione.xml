@@ -9,6 +9,7 @@
 			<Email>a@a.aa</Email>
 			<Password>12345678</Password>
 			<Telefono>333333333</Telefono>
+			<Foto>../../Resources/Images/fillo.jpg</Foto>
 		</Utente>
 		<Utente>
 			<Nome>user1</Nome>
@@ -16,6 +17,7 @@
 			<Email>user1@mail.com</Email>
 			<Password>password1</Password>
 			<Telefono>333333333</Telefono>
+			<Foto>../../Resources/Images/nico.jpg</Foto>
 		</Utente>
 		<Utente>
 			<Nome>user2</Nome>
@@ -42,14 +44,15 @@
 			<Cognome>cognome4</Cognome>
 			<Email>user4@mail.com</Email>
 			<Password>password4</Password>
+			<Foto></Foto>
 		</Utente>
-
 		<Utente>
 			<Nome>user5</Nome>
 			<Cognome>cognome5</Cognome>
 			<Email>user5@mail.com</Email>
 			<Password>password5</Password>
 			<Telefono>333333333</Telefono>
+			<Foto></Foto>
 		</Utente>
 	</Utenti>
 	</Gruppo>
