@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this._mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this._amiciListBox = new System.Windows.Forms.ListBox();
             this._amiciMenuLabel = new System.Windows.Forms.Label();
@@ -50,10 +49,11 @@
             this._dovutoImportoLabel = new System.Windows.Forms.Label();
             this._topTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._toolStrip = new System.Windows.Forms.ToolStrip();
-            this._utenteToolStripDropDownButton = new System.Windows.Forms.ToolStripDropDownButton();
-            this._ilTuoAccountToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._creaGruppoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this._esciToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this._utenteToolStrip = new System.Windows.Forms.ToolStripDropDownButton();
+            this._accountToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this._creaGruppoToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this._toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this._esciToolStrip = new System.Windows.Forms.ToolStripMenuItem();
             this._riepilogoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this._pictureBox = new System.Windows.Forms.PictureBox();
             this._menuTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -89,10 +89,6 @@
             this._amiciListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._amiciListBox.FormattingEnabled = true;
             this._amiciListBox.ItemHeight = 15;
-            this._amiciListBox.Items.AddRange(new object[] {
-            "Amico1",
-            "Amico2",
-            "Amico3"});
             this._amiciListBox.Location = new System.Drawing.Point(3, 288);
             this._amiciListBox.Name = "_amiciListBox";
             this._amiciListBox.ScrollAlwaysVisible = true;
@@ -130,10 +126,6 @@
             this._gruppiListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._gruppiListBox.FormattingEnabled = true;
             this._gruppiListBox.ItemHeight = 15;
-            this._gruppiListBox.Items.AddRange(new object[] {
-            "Gruppo1",
-            "Gruppo2",
-            "Gruppo3"});
             this._gruppiListBox.Location = new System.Drawing.Point(3, 116);
             this._gruppiListBox.Name = "_gruppiListBox";
             this._gruppiListBox.ScrollAlwaysVisible = true;
@@ -351,7 +343,7 @@
             this._toolStrip.Dock = System.Windows.Forms.DockStyle.Fill;
             this._toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this._toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._utenteToolStripDropDownButton,
+            this._utenteToolStrip,
             this._riepilogoToolStripLabel});
             this._toolStrip.Location = new System.Drawing.Point(0, 0);
             this._toolStrip.Name = "_toolStrip";
@@ -360,38 +352,46 @@
             this._toolStrip.TabIndex = 6;
             this._toolStrip.Text = "toolStrip1";
             // 
-            // _utenteToolStripDropDownButton
+            // _utenteToolStrip
             // 
-            this._utenteToolStripDropDownButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this._utenteToolStripDropDownButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this._utenteToolStripDropDownButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this._ilTuoAccountToolStripMenuItem,
-            this._creaGruppoToolStripMenuItem,
-            this._esciToolStripMenuItem});
-            this._utenteToolStripDropDownButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._utenteToolStripDropDownButton.Image = ((System.Drawing.Image)(resources.GetObject("_utenteToolStripDropDownButton.Image")));
-            this._utenteToolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this._utenteToolStripDropDownButton.Name = "_utenteToolStripDropDownButton";
-            this._utenteToolStripDropDownButton.Size = new System.Drawing.Size(71, 37);
-            this._utenteToolStripDropDownButton.Text = "Utente";
+            this._utenteToolStrip.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this._utenteToolStrip.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this._utenteToolStrip.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this._accountToolStrip,
+            this._creaGruppoToolStrip,
+            this._toolStripSeparator,
+            this._esciToolStrip});
+            this._utenteToolStrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._utenteToolStrip.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this._utenteToolStrip.Name = "_utenteToolStrip";
+            this._utenteToolStrip.Size = new System.Drawing.Size(71, 37);
+            this._utenteToolStrip.Text = "Utente";
             // 
-            // _ilTuoAccountToolStripMenuItem
+            // _accountToolStrip
             // 
-            this._ilTuoAccountToolStripMenuItem.Name = "_ilTuoAccountToolStripMenuItem";
-            this._ilTuoAccountToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
-            this._ilTuoAccountToolStripMenuItem.Text = "Il tuo account";
+            this._accountToolStrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._accountToolStrip.Name = "_accountToolStrip";
+            this._accountToolStrip.Size = new System.Drawing.Size(154, 22);
+            this._accountToolStrip.Text = "Il tuo account";
             // 
-            // _creaGruppoToolStripMenuItem
+            // _creaGruppoToolStrip
             // 
-            this._creaGruppoToolStripMenuItem.Name = "_creaGruppoToolStripMenuItem";
-            this._creaGruppoToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
-            this._creaGruppoToolStripMenuItem.Text = "Crea gruppo";
+            this._creaGruppoToolStrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._creaGruppoToolStrip.Name = "_creaGruppoToolStrip";
+            this._creaGruppoToolStrip.Size = new System.Drawing.Size(154, 22);
+            this._creaGruppoToolStrip.Text = "Crea gruppo";
             // 
-            // _esciToolStripMenuItem
+            // _toolStripSeparator
             // 
-            this._esciToolStripMenuItem.Name = "_esciToolStripMenuItem";
-            this._esciToolStripMenuItem.Size = new System.Drawing.Size(174, 24);
-            this._esciToolStripMenuItem.Text = "Esci";
+            this._toolStripSeparator.Name = "_toolStripSeparator";
+            this._toolStripSeparator.Size = new System.Drawing.Size(151, 6);
+            // 
+            // _esciToolStrip
+            // 
+            this._esciToolStrip.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._esciToolStrip.Name = "_esciToolStrip";
+            this._esciToolStrip.Size = new System.Drawing.Size(154, 22);
+            this._esciToolStrip.Text = "Esci";
             // 
             // _riepilogoToolStripLabel
             // 
@@ -435,14 +435,14 @@
             this._menuTableLayoutPanel.Size = new System.Drawing.Size(161, 434);
             this._menuTableLayoutPanel.TabIndex = 3;
             // 
-            // _aggiungiSpesaButton
+            // _spesaButton
             // 
             this._spesaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._spesaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this._spesaButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this._spesaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._spesaButton.Location = new System.Drawing.Point(19, 5);
-            this._spesaButton.Name = "_aggiungiSpesaButton";
+            this._spesaButton.Name = "_spesaButton";
             this._spesaButton.Size = new System.Drawing.Size(123, 33);
             this._spesaButton.TabIndex = 5;
             this._spesaButton.Text = "Aggiungi spesa";
@@ -536,11 +536,12 @@
         private System.Windows.Forms.PictureBox _pictureBox;
         private System.Windows.Forms.TableLayoutPanel _topTableLayoutPanel;
         private System.Windows.Forms.ToolStrip _toolStrip;
-        private System.Windows.Forms.ToolStripDropDownButton _utenteToolStripDropDownButton;
-        private System.Windows.Forms.ToolStripMenuItem _ilTuoAccountToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem _creaGruppoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem _esciToolStripMenuItem;
+        private System.Windows.Forms.ToolStripDropDownButton _utenteToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem _accountToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem _creaGruppoToolStrip;
+        private System.Windows.Forms.ToolStripMenuItem _esciToolStrip;
 		private System.Windows.Forms.ToolStripLabel _riepilogoToolStripLabel;
+        private System.Windows.Forms.ToolStripSeparator _toolStripSeparator;
     }
 }
 

@@ -28,3 +28,5 @@ E:\Progetto\Room8\Room8\obj\Debug\Room8.View.SpesaForm.resources
 E:\Progetto\Room8\Room8\obj\Debug\Room8.View.SaldoForm.resources
 E:\Progetto\Room8\Room8\obj\Debug\Room8.View.CreaGruppoForm.resources
 E:\Progetto\Room8\Room8\obj\Debug\Room8.View.PartiForm.resources
+E:\Progetto\Room8\Room8\obj\Debug\Room8.View.AmicoForm.resources
+E:\Progetto\Room8\Room8\obj\Debug\Room8.View.ProfiloForm.resources

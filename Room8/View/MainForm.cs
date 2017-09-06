@@ -65,17 +65,17 @@ namespace Room8
 
 		public ToolStripMenuItem AccountToolStrip
 		{
-			get { return _ilTuoAccountToolStripMenuItem; }
+			get { return _accountToolStrip; }
 		}
 
 		public ToolStripMenuItem CreaGruppoToolStrip
 		{
-			get { return _creaGruppoToolStripMenuItem; }
+			get { return _creaGruppoToolStrip; }
 		}
 
 		public ToolStripMenuItem EsciToolStrip
 		{
-			get { return _esciToolStripMenuItem; }
+			get { return _esciToolStrip; }
 		}
     }
 }

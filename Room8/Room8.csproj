@@ -48,6 +48,12 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\AmicoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AmicoForm.Designer.cs">
+      <DependentUpon>AmicoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CreaGruppoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -71,6 +77,12 @@
     </Compile>
     <Compile Include="View\PartiForm.Designer.cs">
       <DependentUpon>PartiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\ProfiloForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProfiloForm.Designer.cs">
+      <DependentUpon>ProfiloForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\RegistratiForm.cs">
       <SubType>Form</SubType>
@@ -100,6 +112,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="View\AmicoForm.resx">
+      <DependentUpon>AmicoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\CreaGruppoForm.resx">
       <DependentUpon>CreaGruppoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -111,6 +126,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PartiForm.resx">
       <DependentUpon>PartiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProfiloForm.resx">
+      <DependentUpon>ProfiloForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\RegistratiForm.resx">
       <DependentUpon>RegistratiForm.cs</DependentUpon>
