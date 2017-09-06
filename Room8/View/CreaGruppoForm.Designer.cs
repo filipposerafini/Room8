@@ -43,12 +43,23 @@
             this._creatorGroupLabel = new System.Windows.Forms.Label();
             this._aggiungiPersonaLinkLabel = new System.Windows.Forms.LinkLabel();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this._vScrollBar = new System.Windows.Forms.VScrollBar();
+            this._addUserTableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this._addUserSplitContainer = new System.Windows.Forms.SplitContainer();
+            this._removeButton = new System.Windows.Forms.Button();
+            this._mailTextBox = new System.Windows.Forms.TextBox();
+            this._mailLabel = new System.Windows.Forms.Label();
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
             this._nameGroupTableLayoutPanel1.SuspendLayout();
             this._addPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
+            this._addUserTableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._addUserSplitContainer)).BeginInit();
+            this._addUserSplitContainer.Panel1.SuspendLayout();
+            this._addUserSplitContainer.Panel2.SuspendLayout();
+            this._addUserSplitContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // _mainTableLayoutPanel
@@ -63,9 +74,9 @@
             this._mainTableLayoutPanel.Name = "_mainTableLayoutPanel";
             this._mainTableLayoutPanel.RowCount = 3;
             this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._mainTableLayoutPanel.Size = new System.Drawing.Size(362, 262);
+            this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._mainTableLayoutPanel.Size = new System.Drawing.Size(362, 305);
             this._mainTableLayoutPanel.TabIndex = 2;
             // 
             // _saldaLabel
@@ -86,7 +97,7 @@
             this._confirmPanel.Controls.Add(this._confermaButton);
             this._confirmPanel.Controls.Add(this._annullaButton);
             this._confirmPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._confirmPanel.Location = new System.Drawing.Point(0, 223);
+            this._confirmPanel.Location = new System.Drawing.Point(0, 266);
             this._confirmPanel.Margin = new System.Windows.Forms.Padding(0);
             this._confirmPanel.Name = "_confirmPanel";
             this._confirmPanel.Size = new System.Drawing.Size(362, 39);
@@ -126,7 +137,7 @@
             this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._formTableLayoutPanel.Size = new System.Drawing.Size(356, 183);
+            this._formTableLayoutPanel.Size = new System.Drawing.Size(356, 226);
             this._formTableLayoutPanel.TabIndex = 2;
             // 
             // _membriLabel
@@ -177,13 +188,15 @@
             // 
             // _addPanel
             // 
+            this._addPanel.Controls.Add(this._addUserTableLayoutPanel1);
+            this._addPanel.Controls.Add(this._vScrollBar);
             this._addPanel.Controls.Add(this._creatorGroupLabel);
             this._addPanel.Controls.Add(this._aggiungiPersonaLinkLabel);
             this._addPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._addPanel.Location = new System.Drawing.Point(0, 110);
             this._addPanel.Margin = new System.Windows.Forms.Padding(0);
             this._addPanel.Name = "_addPanel";
-            this._addPanel.Size = new System.Drawing.Size(356, 73);
+            this._addPanel.Size = new System.Drawing.Size(356, 116);
             this._addPanel.TabIndex = 4;
             // 
             // _creatorGroupLabel
@@ -199,7 +212,7 @@
             // 
             this._aggiungiPersonaLinkLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this._aggiungiPersonaLinkLabel.AutoSize = true;
-            this._aggiungiPersonaLinkLabel.Location = new System.Drawing.Point(231, 16);
+            this._aggiungiPersonaLinkLabel.Location = new System.Drawing.Point(220, 16);
             this._aggiungiPersonaLinkLabel.Name = "_aggiungiPersonaLinkLabel";
             this._aggiungiPersonaLinkLabel.Size = new System.Drawing.Size(116, 13);
             this._aggiungiPersonaLinkLabel.TabIndex = 2;
@@ -211,14 +224,79 @@
             // 
             this._errorProvider.ContainerControl = this;
             // 
+            // _vScrollBar
+            // 
+            this._vScrollBar.Dock = System.Windows.Forms.DockStyle.Right;
+            this._vScrollBar.Location = new System.Drawing.Point(339, 0);
+            this._vScrollBar.Name = "_vScrollBar";
+            this._vScrollBar.Size = new System.Drawing.Size(17, 116);
+            this._vScrollBar.TabIndex = 4;
+            // 
+            // _addUserTableLayoutPanel1
+            // 
+            this._addUserTableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._addUserTableLayoutPanel1.ColumnCount = 1;
+            this._addUserTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this._addUserTableLayoutPanel1.Controls.Add(this._addUserSplitContainer, 0, 0);
+            this._addUserTableLayoutPanel1.Location = new System.Drawing.Point(3, 32);
+            this._addUserTableLayoutPanel1.Name = "_addUserTableLayoutPanel1";
+            this._addUserTableLayoutPanel1.RowCount = 1;
+            this._addUserTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this._addUserTableLayoutPanel1.Size = new System.Drawing.Size(333, 51);
+            this._addUserTableLayoutPanel1.TabIndex = 5;
+            // 
+            // _addUserSplitContainer
+            // 
+            this._addUserSplitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._addUserSplitContainer.Location = new System.Drawing.Point(3, 3);
+            this._addUserSplitContainer.Name = "_addUserSplitContainer";
+            // 
+            // _addUserSplitContainer.Panel1
+            // 
+            this._addUserSplitContainer.Panel1.Controls.Add(this._mailLabel);
+            this._addUserSplitContainer.Panel1.Controls.Add(this._mailTextBox);
+            // 
+            // _addUserSplitContainer.Panel2
+            // 
+            this._addUserSplitContainer.Panel2.Controls.Add(this._removeButton);
+            this._addUserSplitContainer.Size = new System.Drawing.Size(327, 45);
+            this._addUserSplitContainer.SplitterDistance = 260;
+            this._addUserSplitContainer.TabIndex = 0;
+            // 
+            // _removeButton
+            // 
+            this._removeButton.Location = new System.Drawing.Point(18, 9);
+            this._removeButton.Name = "_removeButton";
+            this._removeButton.Size = new System.Drawing.Size(27, 23);
+            this._removeButton.TabIndex = 0;
+            this._removeButton.Text = "X";
+            this._removeButton.UseVisualStyleBackColor = true;
+            // 
+            // _mailTextBox
+            // 
+            this._mailTextBox.Location = new System.Drawing.Point(76, 11);
+            this._mailTextBox.Name = "_mailTextBox";
+            this._mailTextBox.Size = new System.Drawing.Size(163, 20);
+            this._mailTextBox.TabIndex = 1;
+            // 
+            // _mailLabel
+            // 
+            this._mailLabel.AutoSize = true;
+            this._mailLabel.Location = new System.Drawing.Point(3, 14);
+            this._mailLabel.Name = "_mailLabel";
+            this._mailLabel.Size = new System.Drawing.Size(35, 13);
+            this._mailLabel.TabIndex = 2;
+            this._mailLabel.Text = "E-mail";
+            // 
             // CreaGruppoForm
             // 
             this.AcceptButton = this._confermaButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 262);
+            this.ClientSize = new System.Drawing.Size(362, 305);
             this.Controls.Add(this._mainTableLayoutPanel);
-            this.MinimumSize = new System.Drawing.Size(378, 300);
+            this.MinimumSize = new System.Drawing.Size(378, 343);
             this.Name = "CreaGruppoForm";
             this.Text = "Room8 - Crea gruppo";
             this._mainTableLayoutPanel.ResumeLayout(false);
@@ -229,6 +307,12 @@
             this._addPanel.ResumeLayout(false);
             this._addPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
+            this._addUserTableLayoutPanel1.ResumeLayout(false);
+            this._addUserSplitContainer.Panel1.ResumeLayout(false);
+            this._addUserSplitContainer.Panel1.PerformLayout();
+            this._addUserSplitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this._addUserSplitContainer)).EndInit();
+            this._addUserSplitContainer.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -249,5 +333,11 @@
         private System.Windows.Forms.Label _creatorGroupLabel;
         private System.Windows.Forms.LinkLabel _aggiungiPersonaLinkLabel;
         private System.Windows.Forms.ErrorProvider _errorProvider;
+        private System.Windows.Forms.TableLayoutPanel _addUserTableLayoutPanel1;
+        private System.Windows.Forms.SplitContainer _addUserSplitContainer;
+        private System.Windows.Forms.Label _mailLabel;
+        private System.Windows.Forms.TextBox _mailTextBox;
+        private System.Windows.Forms.Button _removeButton;
+        private System.Windows.Forms.VScrollBar _vScrollBar;
     }
 }
