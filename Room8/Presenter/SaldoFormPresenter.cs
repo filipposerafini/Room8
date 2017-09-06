@@ -1,6 +1,8 @@
 ﻿using System;
 using Room8.View;
 using System.Windows.Forms;
+using System.Collections.ObjectModel;
+using System.Collections.Generic;
 
 namespace Room8
 {
@@ -17,11 +19,15 @@ namespace Room8
             this._saldo = new Saldo();
             InitializeEvents();
 
-            SaldoForm.DaComboBox.DataSource = utente.Amici();
+			List<Utente> utenti = utente.Amici();
+			utenti.Add(utente);
+			SaldoForm.DaComboBox.DataSource = utenti;
             SaldoForm.DaComboBox.DisplayMember = "Nome";
-            SaldoForm.AComboBox.DataSource = utente.Amici();
+			utenti = utente.Amici();
+			utenti.Add(utente);
+			SaldoForm.AComboBox.DataSource = utenti;
             SaldoForm.AComboBox.DisplayMember = "Nome";
-            SaldoForm.DaComboBox.SelectedValue = utente;   
+            //SaldoForm.DaComboBox.SelectedValue = utente;
 
             SaldoForm.APictureBox.ImageLocation = (SaldoForm.AComboBox.SelectedItem as Utente).Foto;
             SaldoForm.DaPictureBox.ImageLocation = (SaldoForm.DaComboBox.SelectedItem as Utente).Foto;
@@ -69,6 +75,11 @@ namespace Room8
             SaldoForm.DaComboBox.SelectedIndexChanged += DaComboBox_SelectIndexChanged;
             SaldoForm.AComboBox.SelectedIndexChanged += AComboBox_SelectIndexChanged;
         }
+
+		private void InitalizeCombo()
+		{
+			
+		}
 
         void DaComboBox_SelectIndexChanged(object sender, EventArgs e)
         {

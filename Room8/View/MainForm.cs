@@ -72,12 +72,14 @@ namespace Room8
         private void _aggiungiSpesaButton_Click(object sender, EventArgs e)
         {
             SpesaForm spesaForm = new SpesaForm();
+			new SpesaFormPresenter(spesaForm, _utente);
             spesaForm.ShowDialog();
         }
 
         private void _saldaButton_Click(object sender, EventArgs e)
         {
             SaldoForm saldoForm = new SaldoForm();
+			new SaldoFormPresenter(saldoForm, _utente);
             saldoForm.ShowDialog();
         }
     }

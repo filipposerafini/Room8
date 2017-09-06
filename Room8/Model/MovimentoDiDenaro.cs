@@ -67,8 +67,8 @@ namespace Room8
 
 		public void AggiungiMovimentoDiDenaro()
 		{
-            if (this is Saldo && this.Sorgente.Equals(this.Destinazione))
-                    throw new DataMisalignedException("Sorgente e destinazione devono essere diversi");
+            if (this.Sorgente.Equals(this.Destinazione))
+                    throw new ArgumentException("Sorgente e destinazione devono essere diversi", "sorgente/destinazione");
 
 			Sorgente.MovimentiDiDenaro.Add(this);
 			Destinazione.MovimentiDiDenaro.Add(this);

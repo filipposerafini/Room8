@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 ﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default" StartupItem="Room8.csproj">
   <MonoDevelop.Ide.Workbench ActiveDocument="View/SaldoForm.cs">
     <Files>
@@ -11,6 +12,21 @@
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
+=======
+﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Model/Spesa.cs">
+    <Files>
+      <File FileName="Presenter/PartiFormPresenter.cs" Line="116" Column="6" />
+      <File FileName="View/PartiForm.cs" Line="36" Column="33" />
+      <File FileName="Model/MetodoDiDivisioneFactory.cs" Line="60" Column="5" />
+      <File FileName="Model/Parti.cs" Line="56" Column="41" />
+      <File FileName="View/SpesaForm.Designer.cs" Line="261" Column="43" />
+      <File FileName="Presenter/SpesaFormPresenter.cs" Line="57" Column="28" />
+      <File FileName="Model/Spesa.cs" Line="35" Column="49" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Room8 PreferredExecutionTarget="MonoDevelop.Default" />
+>>>>>>> Stashed changes
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
