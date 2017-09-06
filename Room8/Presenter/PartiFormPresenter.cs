@@ -51,16 +51,16 @@ namespace Room8
 		{
 			PartiForm.PartiLabel.Text = "Divisione " + NomeMetodo;
 			TableLayoutPanel partiTableLayoutPanel = new TableLayoutPanel();
-			//partiTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-			//| System.Windows.Forms.AnchorStyles.Right)));
-			partiTableLayoutPanel.Dock = DockStyle.Fill;
+			partiTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
+			//partiTableLayoutPanel.Dock = DockStyle.Top;
 			partiTableLayoutPanel.ColumnCount = 1;
 			partiTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
 			partiTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
 			partiTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
 			partiTableLayoutPanel.Name = "_partiTableLayoutPanel";
 			partiTableLayoutPanel.RowCount = 1;
-			partiTableLayoutPanel.Size = new System.Drawing.Size(307, 42);
+			partiTableLayoutPanel.Size = new System.Drawing.Size(310, 40);
 			partiTableLayoutPanel.TabIndex = 2;
 
 			for (int i = 0; i < Spesa.Gruppo.MembriGruppo.Count; i++)
@@ -78,15 +78,15 @@ namespace Room8
 				utenteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 				utenteLabel.Location = new System.Drawing.Point(0, 0);
 				utenteLabel.Name = "_utenteLabel" + i;
-				utenteLabel.Size = new System.Drawing.Size(205, 36);
 				utenteLabel.TabIndex = 0;
-				utenteLabel.Text = Spesa.Gruppo.MembriGruppo[i].Nome;
+				utenteLabel.Text = Spesa.Gruppo.MembriGruppo[i].Nome + " " + Spesa.Gruppo.MembriGruppo[i].Cognome;
 				utenteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
 				SplitContainer splitContainer = new SplitContainer();
 				splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
 				splitContainer.Location = new System.Drawing.Point(3, 3);
 				splitContainer.Name = "_splitContainer" + i;
+				splitContainer.IsSplitterFixed = true;
 				// 
 				// _splitContainer.Panel1
 				// 
@@ -95,11 +95,12 @@ namespace Room8
 				// _splitContainer.Panel2
 				// 
 				splitContainer.Panel2.Controls.Add(numericUpDown);
-				splitContainer.Size = new System.Drawing.Size(301, 36);
-				splitContainer.SplitterDistance = 205;
+				splitContainer.SplitterDistance = 100;
 				splitContainer.TabIndex = 0;
 
-				partiTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100 / Spesa.Gruppo.MembriGruppo.Count));
+
+				partiTableLayoutPanel.Size = new System.Drawing.Size(320, 40 + 40*i);
+				partiTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40));
 				partiTableLayoutPanel.Controls.Add(splitContainer, 0, i);
 
 				Dictionary.Add(Spesa.Gruppo.MembriGruppo[i], numericUpDown);

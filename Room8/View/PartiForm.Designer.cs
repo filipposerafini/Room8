@@ -115,7 +115,7 @@
             this._scrollPanel.Location = new System.Drawing.Point(0, 0);
             this._scrollPanel.Margin = new System.Windows.Forms.Padding(0);
             this._scrollPanel.Name = "_scrollPanel";
-            this._scrollPanel.Size = new System.Drawing.Size(327, 132);
+            //this._scrollPanel.Size = new System.Drawing.Size(327, 132);
             this._scrollPanel.TabIndex = 0;
             // 
             // _vScrollBar
