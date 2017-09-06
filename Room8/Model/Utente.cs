@@ -31,12 +31,12 @@ namespace Room8
 				throw new ArgumentException("Inserisci un cognome valido", "cognome");
 			if (string.IsNullOrEmpty(mail))
 				throw new ArgumentException("Inserisci la mail", "mail");
-			if (!Regex.IsMatch(mail, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
-				throw new ArgumentException("Inserisci una mail valida", "mail");
+			//if (!Regex.IsMatch(mail, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
+			//	throw new ArgumentException("Inserisci una mail valida", "mail");
 			if (string.IsNullOrEmpty(password))
 				throw new ArgumentException("Inserisci la password", "password");
-			if (!Regex.IsMatch(password, @".{8,}"))
-				throw new ArgumentException("La password deve avere almeno 8 caratteri", "password");
+			//if (!Regex.IsMatch(password, @".{8,}"))
+			//	throw new ArgumentException("La password deve avere almeno 8 caratteri", "password");
 			if (string.IsNullOrEmpty(telefono))
 				throw new ArgumentException("Inserisci un numero di telefono", "telefono");
 			if (!Regex.IsMatch(telefono, @"\+?[0-9]{8,}"))

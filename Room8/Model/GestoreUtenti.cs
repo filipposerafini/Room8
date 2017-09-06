@@ -49,7 +49,8 @@ namespace Room8
             string cognome = "";
             string email = "";
             string password = "";
-            string foto = "";
+			string telefono = "";
+			string foto = "";
 
             Utente result = null;
 
@@ -69,7 +70,7 @@ namespace Room8
                 }
                 else if (utenteAtt.Name.Equals("Email"))
                 {
-                    result = _utenti.Find(u => u.Email.Equals(utenteAtt.InnerText));
+                    result = _utenti.Find(u => u.Mail.Equals(utenteAtt.InnerText));
                     if(result != null)
                         return result;
                     email = utenteAtt.InnerText;
@@ -80,7 +81,7 @@ namespace Room8
                 }
             }
             foto = null;
-            result = new Utente(email, password, nome, cognome, email);
+			result = new Utente(email, password, nome, cognome, "333333333", foto);
             _utenti.Add(result);
             return result;
         }
