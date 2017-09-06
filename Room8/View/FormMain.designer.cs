@@ -57,7 +57,7 @@
             this._riepilogoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this._pictureBox = new System.Windows.Forms.PictureBox();
             this._menuTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._aggiungiSpesaButton = new System.Windows.Forms.Button();
+            this._spesaButton = new System.Windows.Forms.Button();
             this._saldaButton = new System.Windows.Forms.Button();
             this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._riepilogoTableLayoutPanel.SuspendLayout();
@@ -98,7 +98,6 @@
             this._amiciListBox.ScrollAlwaysVisible = true;
             this._amiciListBox.Size = new System.Drawing.Size(155, 143);
             this._amiciListBox.TabIndex = 9;
-            this._amiciListBox.SelectedIndexChanged += new System.EventHandler(this.listBoxAmici_SelectedIndexChanged);
             // 
             // _amiciMenuLabel
             // 
@@ -140,7 +139,6 @@
             this._gruppiListBox.ScrollAlwaysVisible = true;
             this._gruppiListBox.Size = new System.Drawing.Size(155, 141);
             this._gruppiListBox.TabIndex = 6;
-            this._gruppiListBox.SelectedIndexChanged += new System.EventHandler(this.listBoxGruppi_SelectedIndexChanged);
             // 
             // _riepilogoTableLayoutPanel
             // 
@@ -422,7 +420,7 @@
             this._menuTableLayoutPanel.Controls.Add(this._amiciMenuLabel, 0, 4);
             this._menuTableLayoutPanel.Controls.Add(this._gruppiListBox, 0, 3);
             this._menuTableLayoutPanel.Controls.Add(this._gruppiMenuLabel, 0, 2);
-            this._menuTableLayoutPanel.Controls.Add(this._aggiungiSpesaButton, 0, 0);
+            this._menuTableLayoutPanel.Controls.Add(this._spesaButton, 0, 0);
             this._menuTableLayoutPanel.Controls.Add(this._saldaButton, 0, 1);
             this._menuTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._menuTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
@@ -439,17 +437,16 @@
             // 
             // _aggiungiSpesaButton
             // 
-            this._aggiungiSpesaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._aggiungiSpesaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this._aggiungiSpesaButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this._aggiungiSpesaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._aggiungiSpesaButton.Location = new System.Drawing.Point(19, 5);
-            this._aggiungiSpesaButton.Name = "_aggiungiSpesaButton";
-            this._aggiungiSpesaButton.Size = new System.Drawing.Size(123, 33);
-            this._aggiungiSpesaButton.TabIndex = 5;
-            this._aggiungiSpesaButton.Text = "Aggiungi spesa";
-            this._aggiungiSpesaButton.UseVisualStyleBackColor = false;
-            this._aggiungiSpesaButton.Click += new System.EventHandler(this._aggiungiSpesaButton_Click);
+            this._spesaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._spesaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this._spesaButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._spesaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._spesaButton.Location = new System.Drawing.Point(19, 5);
+            this._spesaButton.Name = "_aggiungiSpesaButton";
+            this._spesaButton.Size = new System.Drawing.Size(123, 33);
+            this._spesaButton.TabIndex = 5;
+            this._spesaButton.Text = "Aggiungi spesa";
+            this._spesaButton.UseVisualStyleBackColor = false;
             // 
             // _saldaButton
             // 
@@ -463,7 +460,6 @@
             this._saldaButton.TabIndex = 10;
             this._saldaButton.Text = "Salda";
             this._saldaButton.UseVisualStyleBackColor = false;
-            this._saldaButton.Click += new System.EventHandler(this._saldaButton_Click);
             // 
             // _formTableLayoutPanel
             // 
@@ -491,7 +487,6 @@
             this.MinimumSize = new System.Drawing.Size(664, 500);
             this.Name = "MainForm";
             this.Text = "Room8 - Riepilogo";
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this._riepilogoTableLayoutPanel.ResumeLayout(false);
             this._riepilogoTabControl.ResumeLayout(false);
             this._riepilogoInfoTableLayoutPanel.ResumeLayout(false);
@@ -536,7 +531,7 @@
         private System.Windows.Forms.Label _dovutoImportoLabel;
         private System.Windows.Forms.TableLayoutPanel _menuTableLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel _formTableLayoutPanel;
-        private System.Windows.Forms.Button _aggiungiSpesaButton;
+		private System.Windows.Forms.Button _spesaButton;
         private System.Windows.Forms.Button _saldaButton;
         private System.Windows.Forms.PictureBox _pictureBox;
         private System.Windows.Forms.TableLayoutPanel _topTableLayoutPanel;
@@ -545,12 +540,7 @@
         private System.Windows.Forms.ToolStripMenuItem _ilTuoAccountToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _creaGruppoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem _esciToolStripMenuItem;
-        private System.Windows.Forms.ToolStripLabel _riepilogoToolStripLabel;
-        private System.Windows.Forms.ToolStripPanel BottomToolStripPanel;
-        private System.Windows.Forms.ToolStripPanel TopToolStripPanel;
-        private System.Windows.Forms.ToolStripPanel RightToolStripPanel;
-        private System.Windows.Forms.ToolStripPanel LeftToolStripPanel;
-        private System.Windows.Forms.ToolStripContentPanel ContentPanel;
+		private System.Windows.Forms.ToolStripLabel _riepilogoToolStripLabel;
     }
 }
 

@@ -42,8 +42,8 @@ namespace Room8
 			{
 				Utente utente = GestoreUtenti.VerificaPassword(LoginForm.MailTextBox.Text, LoginForm.PasswordTextBox.Text);
 				LoginForm.Hide();
-				MainForm mainForm = new MainForm(utente);
-				new MainFormPresenter(mainForm);
+				MainForm mainForm = new MainForm();
+				new MainFormPresenter(mainForm, LoginForm, utente);
 				mainForm.Show();
 			}
 			catch (ArgumentException ae)
