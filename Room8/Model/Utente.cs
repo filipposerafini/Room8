@@ -9,11 +9,11 @@ namespace Room8
 	public class Utente
 	{
         private static readonly string FOTODEFAULT = "../../Resources/Images/defaultperson.png";
-		private readonly string _mail;
-		private readonly string _password;
-		private readonly string _nome;
-		private readonly string _cognome;
-		private readonly string _telefono;
+		private string _mail;
+		private string _password;
+		private string _nome;
+		private string _cognome;
+		private string _telefono;
 		private string _foto;
 		// lista di gruppi di cui l'utente fa parte
         private readonly List<Gruppo> _gruppi = new List<Gruppo>();
@@ -21,62 +21,77 @@ namespace Room8
 
 		public Utente(string mail, string password, string nome, string cognome, string telefono, string foto)
 		{
-			if (string.IsNullOrEmpty(nome))
-				throw new ArgumentException("Inserisci un nome", "nome");
-			if (!Regex.IsMatch(nome, @"[A-z]{1,}"))
-				throw new ArgumentException("Inserisci un nome valido", "nome");
-			if (string.IsNullOrEmpty(cognome))
-				throw new ArgumentException("Inserisci un cognome", "cognome");
-            if (!Regex.IsMatch(cognome, @"[A-z]{1,}"))
-				throw new ArgumentException("Inserisci un cognome valido", "cognome");
-			if (string.IsNullOrEmpty(mail))
-				throw new ArgumentException("Inserisci la mail", "mail");
-			if (!Regex.IsMatch(mail, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
-				throw new ArgumentException("Inserisci una mail valida", "mail");
-			if (string.IsNullOrEmpty(password))
-				throw new ArgumentException("Inserisci la password", "password");
-			if (!Regex.IsMatch(password, @".{8,}"))
-				throw new ArgumentException("La password deve avere almeno 8 caratteri", "password");
-			if (string.IsNullOrEmpty(telefono))
-				throw new ArgumentException("Inserisci un numero di telefono", "telefono");
-			if (!Regex.IsMatch(telefono, @"\+?[0-9]{8,}"))
-				throw new ArgumentException("Inserisci un numero di telefono valido", "telefono");
-			
-            this._mail = mail;
-			this._password = password;
-			this._nome = nome;
-			this._cognome = cognome;
-			this._telefono = telefono;
-
-			if (string.IsNullOrEmpty(foto))
-				this._foto = FOTODEFAULT;
-			else
-				this._foto = foto;
+			Mail = mail;
+			Password = password;
+			Nome = nome;
+			Cognome = cognome;
+			Telefono = telefono;
+			Foto = foto;
 		}
 
 		public string Mail
 		{
 			get { return _mail; }
+			set
+			{
+				if (string.IsNullOrEmpty(value))
+					throw new ArgumentException("Inserisci la mail", "mail");
+				if (!Regex.IsMatch(value, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
+					throw new ArgumentException("Inserisci una mail valida", "mail");
+				_mail = value;
+			}
 		}
 
 		public string Password
 		{
 			get { return _password; }
+			set
+			{
+				if (string.IsNullOrEmpty(value))
+					throw new ArgumentException("Inserisci la password", "password");
+				if (!Regex.IsMatch(value, @".{8,}"))
+					throw new ArgumentException("La password deve avere almeno 8 caratteri", "password");
+				_password = value;
+			}
 		}
 
 		public string Nome
 		{
 			get { return _nome; }
+			set
+			{
+				if (string.IsNullOrEmpty(value))
+					throw new ArgumentException("Inserisci un nome", "nome");
+				if (!Regex.IsMatch(value, @"[A-z]{1,}"))
+					throw new ArgumentException("Inserisci un nome valido", "nome");
+				_nome = value;
+			}
 		}
 
 		public string Cognome
 		{
 			get { return _cognome; }
+			set
+			{
+				if (string.IsNullOrEmpty(value))
+					throw new ArgumentException("Inserisci un cognome", "cognome");
+				if (!Regex.IsMatch(value, @"[A-z]{1,}"))
+					throw new ArgumentException("Inserisci un cognome valido", "cognome");
+				_cognome = value;
+			}
 		}
 
         public string Telefono
         {
             get { return _telefono; }
+			set
+			{
+				if (string.IsNullOrEmpty(value))
+					throw new ArgumentException("Inserisci un numero di telefono", "telefono");
+				if (!Regex.IsMatch(value, @"\+?[0-9]{8,}"))
+					throw new ArgumentException("Inserisci un numero di telefono valido", "telefono");
+				_telefono = value;
+			}
         }
 
 		public string Foto
@@ -85,9 +100,11 @@ namespace Room8
 
 			set
 			{
-				if (String.IsNullOrEmpty(value))
-					throw new ArgumentException("foto is null or empty");
-
+				if (string.IsNullOrEmpty(value))
+					_foto = FOTODEFAULT;
+				else if (!(value.EndsWith(".jpg") || value.EndsWith(".png")))
+					throw new ArgumentException("Inserisci una foto valida", "foto");
+				
 				_foto = value;
 			}
 		}
@@ -183,7 +200,7 @@ namespace Room8
 			return result;
 		}
 
-		public	List<Utente> Amici()
+		public List<Utente> Amici()
 		{
 			return Gruppi.SelectMany(g => g.MembriGruppo).Distinct().Where(u => !u.Equals(this)).ToList();
 		}

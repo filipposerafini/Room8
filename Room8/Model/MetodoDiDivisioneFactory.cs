@@ -14,6 +14,7 @@ namespace Room8
 			_dictionary.Add("equa", new DivisioneEqua());
 			_dictionary.Add("percentuale", new DivisionePercentuale());
 			_dictionary.Add("per quote", new DivisionePerQuote());
+			_dictionary.Add("per importi precisi", new DivisionePerImportiPrecisi());
 		}
 
 		public static IMetodoDiDivisione getMetodoDiDivisione(string nome)
@@ -71,6 +72,15 @@ namespace Room8
 					quote += quota;
 
 				return (totale / quote) * parti[utente];
+			}
+		}
+
+
+		private class DivisionePerImportiPrecisi : MetodoDiDivisione
+		{
+			protected override decimal Dividi(decimal totale, Utente utente, Dictionary<Utente, int> parti)
+			{
+				return parti[utente];
 			}
 		}
 	}

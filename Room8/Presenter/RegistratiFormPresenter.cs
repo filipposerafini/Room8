@@ -55,13 +55,8 @@ namespace Room8
 			if (RegistratiForm.OpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
 			{
 				string foto = RegistratiForm.OpenFileDialog.FileName;
-				if (foto.EndsWith(".jpg") || foto.EndsWith(".png"))
-				{
-					RegistratiForm.FileLabel.Text = foto.Substring(foto.LastIndexOf('/') + 1);
-					Foto = foto;
-				}
-				else
-					RegistratiForm.ErrorProvider.SetError(RegistratiForm.FileLabel, "Seleziona immagine valida");
+				Foto = foto;
+				RegistratiForm.FileLabel.Text = foto.Substring(foto.LastIndexOf('/') + 1);
 			}
 		}
 
@@ -104,6 +99,9 @@ namespace Room8
 						break;
 					case "telefono":
 						control = RegistratiForm.TelefonoTextBox;
+						break;
+					case "foto":
+						control = RegistratiForm.FileLabel;
 						break;
 					default:
 						control = RegistratiForm.ConfermaButton;

@@ -91,7 +91,6 @@ namespace Room8
 				string nomeMetodo = SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked).Tag.ToString();
 				Spesa.MetodoDivisione = MetodoDiDivisioneFactory.getMetodoDiDivisione(nomeMetodo);
 				Spesa.Data = SpesaForm.DateTimePicker.Value;
-				Spesa.Note = SpesaForm.NoteTextBox.Text;
 
                 Spesa.SpeseGruppo.Gruppo.SpeseGruppo.AggiungiSpesa(Spesa);
 				SpesaForm.Close();

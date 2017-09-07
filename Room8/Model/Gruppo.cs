@@ -6,36 +6,25 @@ namespace Room8
 {
 	public class Gruppo
 	{
-		private static readonly string FOTODEFAULT = "../../Resources/Images/defaultgroup.jpg";
-		private string _id;
+		private static string FOTODEFAULT = "../../Resources/Images/defaultgroup.jpg";
+		private readonly string _id;
 		private string _nome;
-		private List<Utente> _membriGruppo;
-		private SpeseGruppo _speseGruppo;
-		private List<Prodotto> _daComprare;
-		private DateTime _dataCreazione;
+		private readonly List<Utente> _membriGruppo;
+		private readonly SpeseGruppo _speseGruppo;
+		private readonly List<Prodotto> _daComprare;
 		private string _foto;
 
 		public Gruppo(string nome)
 		{
 			if (String.IsNullOrEmpty(nome))
-				throw new ArgumentException("nome is null or empty");
+				throw new ArgumentException("Inserisci un nome", "nome");
 
 			this._id = Guid.NewGuid().ToString();
-			this._nome = nome;
+			Nome = nome;
 			this._membriGruppo = new List<Utente>();
 			this._speseGruppo = new SpeseGruppo(this);
 			this._daComprare = new List<Prodotto>();
-			this._dataCreazione = DateTime.Now;
 			this._foto = FOTODEFAULT;
-		}
-
-		public Gruppo(string nome, string foto)
-			: this(nome)
-		{
-			if (String.IsNullOrEmpty(foto))
-				throw new ArgumentException("foto is null or empty");
-
-			this._foto = foto;
 		}
 
 		public string Id
@@ -46,11 +35,17 @@ namespace Room8
 		public string Nome
 		{
 			get { return _nome; }
+			set
+			{
+				if (string.IsNullOrEmpty(value))
+					throw new ArgumentException("Inserisci un nome", "nome");
+				_nome = value;
+			}
 		}
 
 		public IList<Utente> MembriGruppo
 		{
-			get { return _membriGruppo; }
+			get { return _membriGruppo.AsReadOnly(); }
 		}
 
 		public SpeseGruppo SpeseGruppo
@@ -63,19 +58,16 @@ namespace Room8
 			get { return _daComprare.AsReadOnly(); }
 		}
 
-		public DateTime DataCreazione
-		{
-			get { return _dataCreazione; }
-		}
-
 		public string Foto
 		{
 			get { return _foto; }
 
 			set
 			{
-				if (String.IsNullOrEmpty(value))
-					throw new ArgumentException("foto is null or empty");
+				if (string.IsNullOrEmpty(value))
+					_foto = FOTODEFAULT;
+				if (value.EndsWith(".jpg") || value.EndsWith(".png"))
+					throw new ArgumentException("Inserisci una foto valida", "foto");
 
 				_foto = value;
 			}
@@ -84,43 +76,33 @@ namespace Room8
 		public void AggiungiProdotto(Prodotto prodotto)
 		{
 			if (prodotto == null)
-				throw new ArgumentException("Prodotto null");
+				throw new ArgumentNullException("prodotto");
 
-			// Versione Linq
-			try
-			{
-				Prodotto p = DaComprare.Single(s => prodotto.Nome.Equals(s.Nome));
-				p.Quantita += prodotto.Quantita;
-			}
-			catch (InvalidOperationException)
-			{
+			Prodotto p = _daComprare.Find(s => prodotto.Nome.Equals(s.Nome));
+			if (p == null)
 				_daComprare.Add(prodotto);
-			}
+			else
+				p.Quantita += prodotto.Quantita;
 		}
 
 		public void RimuoviProdotto(string nome)
 		{
 			if (nome == null)
-				throw new ArgumentException("Nome prodotto null");
+				throw new ArgumentNullException("nome");
 
-			try
-			{
-				Prodotto p = DaComprare.Single(s => nome.Equals(s.Nome));
-				_daComprare.Remove(p);
-			}
-			catch (InvalidOperationException)
-			{
+			Prodotto p = _daComprare.Find(s => nome.Equals(s.Nome));
+			if (p == null)
 				throw new ArgumentException("Prodotto non presente");
-			}
+			_daComprare.Remove(p);
 		}
 
 		public void AggiungiMembro(Utente utente)
 		{
 			if (utente == null)
-				throw new ArgumentException("Utente null");
+				throw new ArgumentNullException("utente");
 
-			if (_membriGruppo.Contains(utente))
-				throw new ArgumentException("Utente già presente");
+			if (MembriGruppo.Contains(utente))
+				throw new ArgumentException("Utente già presente", "membro");
 
 			_membriGruppo.Add(utente);
 			// aggiorniamo anche la lista di gruppi di cui l'utente è membro
@@ -130,9 +112,9 @@ namespace Room8
 		public void RimuoviMembro(Utente utente)
 		{
 			if (utente == null)
-				throw new ArgumentException("Utente null");
+				throw new ArgumentNullException("utente");
 
-			if (!_membriGruppo.Contains(utente))
+			if (!MembriGruppo.Contains(utente))
 				throw new ArgumentException("Utente non presente");
 
 			_membriGruppo.Remove(utente);

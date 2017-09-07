@@ -8,23 +8,17 @@ namespace Room8
 		private Utente _destinazione;
 		private decimal _importo;
 
-		private string GenerateId()
+		public MovimentoDiDenaro()
 		{
-			return Guid.NewGuid().ToString();
+			this._id = Guid.NewGuid().ToString();
 		}
 
-		public MovimentoDiDenaro(Utente _sorgente, Utente _destinazione, decimal _importo)
+		public MovimentoDiDenaro(Utente _sorgente, Utente _destinazione, decimal _importo) : base()
 		{
-			this._id = GenerateId();
-			this._sorgente = _sorgente;
-			this._destinazione = _destinazione;
-			this._importo = _importo;
+			Sorgente = _sorgente;
+			Destinazione = _destinazione;
+			Importo = _importo;
 		}
-
-        public MovimentoDiDenaro()
-        {
-            this._id = GenerateId();
-        }
 
 		public string Id
 		{
@@ -37,8 +31,8 @@ namespace Room8
             set 
             {
                 if (value == null)
-                    throw new ArgumentException("sorgente");
-                _sorgente = value;
+                    throw new ArgumentNullException("sorgente");
+				_sorgente = value;
             }
 		}
 
@@ -48,8 +42,8 @@ namespace Room8
             set 
             {
                 if (value == null)
-                    throw new ArgumentException("destinazione");
-                _destinazione = value;
+                    throw new ArgumentNullException("destinazione");
+				_destinazione = value;
             }
 		}
 
@@ -64,15 +58,7 @@ namespace Room8
             }
 		}
 
-
-		public void AggiungiMovimentoDiDenaro()
-		{
-            if (this.Sorgente.Equals(this.Destinazione))
-                    throw new ArgumentException("Sorgente e destinazione devono essere diversi", "sorgente/destinazione");
-
-			Sorgente.MovimentiDiDenaro.Add(this);
-			Destinazione.MovimentiDiDenaro.Add(this);
-		}
+		public abstract void AggiungiMovimentoDiDenaro();
 
 		public void RimuoviMovimentoDiDenaro()
 		{
@@ -80,15 +66,6 @@ namespace Room8
 				throw new ArgumentException("movimento non presente");
 			if (!Destinazione.MovimentiDiDenaro.Remove(this))
 				throw new ArgumentException("movimento non presente");
-		}
-
-		public void ModificaMovimentoDiDenaro(MovimentoDiDenaro nuovoMovimento)
-		{
-			if (nuovoMovimento == null)
-				throw new ArgumentException("saldo null");
-
-			this.RimuoviMovimentoDiDenaro();
-			nuovoMovimento.AggiungiMovimentoDiDenaro();
 		}
 	}
 }

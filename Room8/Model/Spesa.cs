@@ -12,7 +12,6 @@ namespace Room8
 		private IMetodoDiDivisione _metodoDivisione;
 		private Parti _parti;
 		private DateTime _data;
-		private string _note;
 
 		public Spesa()
 		{
@@ -103,15 +102,6 @@ namespace Room8
 				if (value.CompareTo(DateTime.Now) > 0)
 					throw new ArgumentException("La data non può essere successiva a quella di oggi", "data");
 				_data = value;
-			}
-		}
-
-		public string Note
-		{
-			get { return _note; }
-			set
-			{
-				_note = value;
 			}
 		}
 

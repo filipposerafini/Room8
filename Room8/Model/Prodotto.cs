@@ -8,8 +8,10 @@ namespace Room8
 
 		public Prodotto(string nome, int quantita)
 		{
+			if (string.IsNullOrEmpty(nome))
+				throw new ArgumentException("Inserisci un nome", "nome");
 			this._nome = nome;
-			this._quantita = quantita;
+			Quantita = quantita;
 		}
 
 		public string Nome
@@ -24,7 +26,7 @@ namespace Room8
 			set
 			{
 				if (value <= 0)
-					throw new ArgumentException("Quantita negativa");
+					throw new ArgumentException("Inserisci una quantità positiva", "quantita");
 
 				_quantita = value;
 			}

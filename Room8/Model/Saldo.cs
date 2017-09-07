@@ -5,8 +5,12 @@ namespace Room8
 	{
 		private DateTime _data;
 
-        public Saldo()
+		public Saldo() : base() {}
+
+		public Saldo(Utente sorgente, Utente destinazione, decimal importo, DateTime data)
+			: base(sorgente, destinazione, importo)
 		{
+			Data = data;
 		}
 
 		public DateTime Data
@@ -20,6 +24,17 @@ namespace Room8
                     throw new ArgumentException("La data non può essere successiva a quella di oggi", "data");
                 _data = value;
             }
+		}
+
+		public override void AggiungiMovimentoDiDenaro()
+		{
+			if (Sorgente.Equals(Destinazione))
+				throw new ArgumentException("Sorgente e destinazione devono essere diversi", "sorgente/destinazione");
+			if (!Sorgente.Amici().Contains(Destinazione))
+				throw new ArgumentException("Sorgente e destinazione devono essere amici", "sorgente/destinazione");
+
+			Sorgente.MovimentiDiDenaro.Add(this);
+			Destinazione.MovimentiDiDenaro.Add(this);
 		}
 	}
 }

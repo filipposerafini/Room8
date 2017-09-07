@@ -15,5 +15,17 @@ namespace Room8
 		{
 			get { return _spesa; }
 		}
+
+		public override void AggiungiMovimentoDiDenaro()
+		{
+			if (Sorgente.Equals(Destinazione))
+				throw new ArgumentException("Sorgente e destinazione devono essere diversi", "sorgente/destinazione");
+			if (!Spesa.SpeseGruppo.Gruppo.MembriGruppo.Contains(Sorgente)
+			    || !Spesa.SpeseGruppo.Gruppo.MembriGruppo.Contains(Destinazione))
+				throw new ArgumentException("Sorgente e destinazione devono far parte dello stesso gruppo", "sorgente/destinazione");
+
+			Sorgente.MovimentiDiDenaro.Add(this);
+			Destinazione.MovimentiDiDenaro.Add(this);
+		}
 	}
 }

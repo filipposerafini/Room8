@@ -177,6 +177,7 @@
     <None Include="Resources\Images\nico.jpg" />
     <Compile Include="Presenter\ProfiloFormPresenter.cs" />
     <Compile Include="Presenter\AmicoFormPresenter.cs" />
+    <None Include="Resources\Images\gloria.jpg" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

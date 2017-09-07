@@ -10,7 +10,7 @@ namespace Room8
 		public Parti(Gruppo gruppo)
 		{
 			if (gruppo == null)
-				throw new ArgumentException("gruppo null");
+				throw new ArgumentNullException("gruppo");
 
 			_divisione = new Dictionary<Utente, int>();
 			foreach (var utente in gruppo.MembriGruppo)
@@ -35,7 +35,7 @@ namespace Room8
 				throw new ArgumentException("utente non presente");
 		}
 
-		public void ControllaParti(string nomeMetodo)
+		public void ControllaParti(string nomeMetodo, decimal totale)
 		{
 			switch (nomeMetodo)
 			{
@@ -44,6 +44,9 @@ namespace Room8
 					break;
 				case "per quote" :
 					ContollaQuote();
+					break;
+				case "per importi precisi" :
+					ControllaImportiPrecisi(totale);
 					break;
 				default:
 					return;
@@ -67,5 +70,14 @@ namespace Room8
 					return;
 			throw new ArgumentException("Almeno una quota deve essere diversa da 0");
 		}
-}
+
+		private void ControllaImportiPrecisi(decimal totale)
+		{
+			decimal tot = 0;
+			foreach (var importo in Divisione.Values)
+				tot += importo;
+			if (tot != totale)
+				throw new ArgumentException("La somma degli importi deve essere uguale al totale speso");
+		}
+	}
 }
