@@ -17,16 +17,11 @@ namespace Room8
 			_dictionary.Add("per importi precisi", new DivisionePerImportiPrecisi());
 		}
 
-		public static IMetodoDiDivisione getMetodoDiDivisione(string nome)
+		public static IMetodoDiDivisione GetMetodoDiDivisione(string nome)
 		{
 			if (!_dictionary.ContainsKey(nome))
 				throw new ArgumentException("Metodo di divisione inesistente: " + nome);
 			return _dictionary[nome];
-		}
-
-		public static string getNomeMetodo(IMetodoDiDivisione metodo)
-		{
-			return _dictionary.FirstOrDefault(x => x.Value == metodo).Key;
 		}
 
 		private abstract class MetodoDiDivisione : IMetodoDiDivisione
@@ -37,50 +32,50 @@ namespace Room8
 				decimal tot = 0;
 				foreach (Utente utente in parti.Divisione.Keys)
 				{
-					divisione[utente] = Dividi(totale, utente, parti.Divisione);
+					divisione[utente] = Dividi(totale, utente, parti);
 					tot += divisione[utente];
 				}
 
 				return divisione;
 			}
 
-			protected abstract decimal Dividi(decimal totale, Utente utente, Dictionary<Utente, int> parti);
+			protected abstract decimal Dividi(decimal totale, Utente utente, Parti parti);
 		}
 
 		private class DivisioneEqua : MetodoDiDivisione
 		{
-			protected override decimal Dividi(decimal totale, Utente utente, Dictionary<Utente, int> parti)
+			protected override decimal Dividi(decimal totale, Utente utente, Parti parti)
 			{
-				return totale / parti.Keys.Count;
+				return totale / parti.Divisione.Keys.Count;
 			}
 		}
 
 		private class DivisionePercentuale : MetodoDiDivisione
 		{
-			protected override decimal Dividi(decimal totale, Utente utente, Dictionary<Utente, int> parti)
+			protected override decimal Dividi(decimal totale, Utente utente, Parti parti)
 			{
-				return totale * ((decimal)parti[utente] / 100);
+				return totale * ((decimal)parti.Divisione[utente] / 100);
 			}
 		}
 
 		private class DivisionePerQuote : MetodoDiDivisione
 		{
-			protected override decimal Dividi(decimal totale, Utente utente, Dictionary<Utente, int> parti)
+			protected override decimal Dividi(decimal totale, Utente utente, Parti parti)
 			{
 				int quote = 0;
-				foreach (int quota in parti.Values)
+				foreach (int quota in parti.Divisione.Values)
 					quote += quota;
 
-				return (totale / quote) * parti[utente];
+				return (totale / quote) * parti.Divisione[utente];
 			}
 		}
 
 
 		private class DivisionePerImportiPrecisi : MetodoDiDivisione
 		{
-			protected override decimal Dividi(decimal totale, Utente utente, Dictionary<Utente, int> parti)
+			protected override decimal Dividi(decimal totale, Utente utente, Parti parti)
 			{
-				return parti[utente];
+				return parti.Divisione[utente];
 			}
 		}
 	}

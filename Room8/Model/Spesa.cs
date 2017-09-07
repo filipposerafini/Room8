@@ -118,7 +118,7 @@ namespace Room8
             get { return _commenti.AsReadOnly(); }
         }
 
-        public void AggiungiCommenti(Commento commento)
+        public void AggiungiCommento(Commento commento)
         {
             _commenti.Add(commento);
         }
