@@ -104,8 +104,8 @@ namespace Room8
 					_foto = FOTODEFAULT;
 				else if (!(value.EndsWith(".jpg") || value.EndsWith(".png")))
 					throw new ArgumentException("Inserisci una foto valida", "foto");
-				
-				_foto = value;
+				else
+					_foto = value;
 			}
 		}
 
@@ -136,7 +136,7 @@ namespace Room8
 			_gruppi.Remove(gruppo);
 		}
 
-		public decimal calcolaSituazione(Utente amico)
+		public decimal CalcolaSituazione(Utente amico)
 		{
 			// ritorna l'ammontare totale a Credito/debito con utente 'amico'
 			if (amico == null)
@@ -157,7 +157,7 @@ namespace Room8
 			return result;
 		}
 
-		public decimal calcolaSituazioneGruppo(Utente amico, Gruppo gruppo)
+		public decimal CalcolaSituazioneGruppo(Utente amico, Gruppo gruppo)
 		{
 			// come calcolaSituazione ma limitato ai movimenti nel gruppo 'gruppo' 
 			if (amico == null)
@@ -186,7 +186,7 @@ namespace Room8
 			return result;
 		}
 
-		public decimal calcolaBilancio(Gruppo gruppo)
+		public decimal CalcolaBilancio(Gruppo gruppo)
 		{
 			// ritorna l'ammontare totale a credito/debito con l'intero gruppo
 			if (gruppo == null)
@@ -196,7 +196,7 @@ namespace Room8
 
 			decimal result = 0;
 
-			result = gruppo.MembriGruppo.Sum(u => this.calcolaSituazioneGruppo(u, gruppo));
+			result = gruppo.MembriGruppo.Sum(u => this.CalcolaSituazioneGruppo(u, gruppo));
 			return result;
 		}
 

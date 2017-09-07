@@ -32,6 +32,8 @@ namespace Room8
 				throw new ArgumentException("Sorgente e destinazione devono essere diversi", "sorgente/destinazione");
 			if (!Sorgente.Amici().Contains(Destinazione))
 				throw new ArgumentException("Sorgente e destinazione devono essere amici", "sorgente/destinazione");
+			if (Sorgente.CalcolaSituazione(Destinazione) == 0)
+				throw new ArgumentException("Deve esistere un debito/credito tra sorgente e destinazione", "sorgente/destinazione");
 
 			Sorgente.MovimentiDiDenaro.Add(this);
 			Destinazione.MovimentiDiDenaro.Add(this);

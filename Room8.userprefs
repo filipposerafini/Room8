@@ -1,9 +1,14 @@
 ﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Room8/Presenter/MainFormPresenter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Room8/Model/Utente.cs">
     <Files>
       <File FileName="Room8/Resources/DB/inizializzazione.xml" Line="93" Column="1" />
       <File FileName="Room8/View/LoginForm.Designer.cs" Line="82" Column="55" />
       <File FileName="Room8/Presenter/MainFormPresenter.cs" Line="74" Column="1" />
+      <File FileName="Room8/Model/Saldo.cs" Line="36" Column="120" />
+      <File FileName="Room8/Presenter/SaldoFormPresenter.cs" Line="1" Column="1" />
+      <File FileName="Room8/Model/Spesa.cs" Line="1" Column="1" />
+      <File FileName="Room8/Model/SpeseGruppo.cs" Line="1" Column="1" />
+      <File FileName="Room8/Model/Utente.cs" Line="139" Column="19" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Room8 PreferredExecutionTarget="MonoDevelop.Default" />

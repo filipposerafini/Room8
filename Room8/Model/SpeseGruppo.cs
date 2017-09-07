@@ -38,7 +38,7 @@ namespace Room8
 
 			try
 			{
-				spesa.generaMovimenti();
+				spesa.GeneraMovimenti();
 				_spese.Add(spesa);
 			}
 			catch (ArgumentException)

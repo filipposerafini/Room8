@@ -105,7 +105,7 @@ namespace Room8
 			}
 		}
 
-		public void generaMovimenti()
+		public void GeneraMovimenti()
 		{
 			foreach (var item in _metodoDivisione.DividiSpesa(Importo, Parti))
 			{
