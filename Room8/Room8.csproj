@@ -167,7 +167,6 @@
     <Compile Include="Presenter\PartiFormPresenter.cs" />
     <Compile Include="Persistance\GestoreUtenti.cs" />
     <Compile Include="Persistance\IPersistenza.cs" />
-    <Compile Include="Persistance\PersistenzaXml.cs" />
     <Compile Include="Presenter\SaldoFormPresenter.cs" />
     <Compile Include="Presenter\CreaGruppoFormPresenter.cs" />
     <None Include="Resources\DB\inizializzazione.xml" />
@@ -178,6 +177,9 @@
     <Compile Include="Presenter\ProfiloFormPresenter.cs" />
     <Compile Include="Presenter\AmicoFormPresenter.cs" />
     <None Include="Resources\Images\gloria.jpg" />
+    <Compile Include="Model\IPagante.cs" />
+    <Compile Include="Persistance\PersistenzaGruppiXml.cs" />
+    <Compile Include="Model\Commento.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

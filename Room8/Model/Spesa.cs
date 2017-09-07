@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 namespace Room8
 {
@@ -8,10 +9,12 @@ namespace Room8
 		private SpeseGruppo _speseGruppo;
 		private string _descrizione;
 		private decimal _importo;
-		private Utente _pagante;
+        private IPagante _pagante;
 		private IMetodoDiDivisione _metodoDivisione;
 		private Parti _parti;
 		private DateTime _data;
+        private List<Movimento> _movimenti;
+        private List<Commento> _commenti;
 
 		public Spesa()
 		{
@@ -56,14 +59,14 @@ namespace Room8
 			}
 		}
 
-		public Utente Pagante
+        public IPagante Pagante
 		{
 			get { return _pagante; }
 			set
 			{
 				if (value == null)
 					throw new ArgumentNullException("pagante");
-                if (!SpeseGruppo.Gruppo.MembriGruppo.Contains(value))
+                if (!SpeseGruppo.Gruppo.MembriGruppo.Contains(value as Utente))
 					throw new ArgumentException("Il pagante deve essere un membro del gruppo", "pagante");
 				
 				_pagante = value;
@@ -105,6 +108,21 @@ namespace Room8
 			}
 		}
 
+        public IList<Movimento> Movimenti
+        {
+            get { return _movimenti.AsReadOnly(); }
+        }
+
+        public IList<Commento> Commenti
+        {
+            get { return _commenti.AsReadOnly(); }
+        }
+
+        public void AggiungiCommenti(Commento commento)
+        {
+            _commenti.Add(commento);
+        }
+
 		public void GeneraMovimenti()
 		{
 			foreach (var item in _metodoDivisione.DividiSpesa(Importo, Parti))
@@ -113,8 +131,9 @@ namespace Room8
 					continue;
 				else
 				{
-					Movimento movimento = new Movimento(Pagante, item.Key, item.Value, this);
+                    Movimento movimento = new Movimento((Pagante as Utente), item.Key, item.Value, this);
 					movimento.AggiungiMovimentoDiDenaro();
+                    _movimenti.Add(movimento);
 				}
 			}
 

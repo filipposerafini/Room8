@@ -6,7 +6,7 @@ using System.Xml;
 
 namespace Room8
 {
-	public class Utente
+    public class Utente : IPagante
 	{
         private static readonly string FOTODEFAULT = "../../Resources/Images/defaultperson.png";
 		private string _mail;

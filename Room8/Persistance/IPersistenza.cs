@@ -3,11 +3,10 @@ using System.Collections.Generic;
 
 namespace Room8
 {
-    public interface IPersistenza
+    public interface IPersistenza<T>
     {
-        void Salva(GestoreUtenti dati);
-        List<Utente> CaricaUtenti();
-        List<Gruppo> CaricaGruppi();
+        IEnumerable<T> CaricaElementi();
+        void SalvaElementi(IEnumerable<T> elementi);
     }
 }
 

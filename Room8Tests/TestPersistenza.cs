@@ -11,7 +11,7 @@ namespace Room8Tests
         public void Test1()
         {
             GestoreUtenti dati = GestoreUtenti.Instance;
-            IPersistenza persistenzaXml = new PersistenzaXML("inizializzazione.xml");
+            IPersistenza<Gruppo> persistenzaXml = new PersistenzaGruppiXML("inizializzazione.xml");
             dati.Carica(persistenzaXml);
 
             Assert.AreEqual(dati.Utenti.Count, 6);

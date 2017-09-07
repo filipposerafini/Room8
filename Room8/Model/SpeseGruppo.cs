@@ -65,17 +65,8 @@ namespace Room8
 
 			if (_spese.Remove(spesa))
 			{
-				List<MovimentoDiDenaro> daEliminare;
-				foreach (var utente in Gruppo.MembriGruppo)
-				{
-					daEliminare = new List<MovimentoDiDenaro>();
-					foreach (var movimento in utente.MovimentiDiDenaro)
-						if (movimento is Movimento && (movimento as Movimento).Spesa.Equals(spesa))
-							daEliminare.Add(movimento);
-
-					foreach (var movimento in daEliminare)
-						movimento.RimuoviMovimentoDiDenaro();
-				}
+                foreach (var movimento in spesa.Movimenti)
+					movimento.RimuoviMovimentoDiDenaro();
 			}
 			else
 				throw new ArgumentException("Spesa non trovata");

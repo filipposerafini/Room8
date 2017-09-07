@@ -6,19 +6,17 @@ using System.Xml.Serialization;
 
 namespace Room8
 {
-    public class PersistenzaXML : IPersistenza 
+    public class PersistenzaGruppiXML : IPersistenza<Gruppo>
     {
         private XmlDocument _document;
 
         private readonly List<Gruppo> _gruppi = new List<Gruppo>();
         private readonly List<Utente> _utenti = new List<Utente>();
         private bool caricato = false;
-        private string _nomefile;
-
-        public PersistenzaXML(string nomefile)
+     
+        public PersistenzaGruppiXML(string nomefile)
         {
             _document = new XmlDocument();
-            _nomefile = nomefile;
             try
             {
                 _document.Load(nomefile);
@@ -41,21 +39,7 @@ namespace Room8
             get { return _document; }
         }
 
-        public void Salva(GestoreUtenti dati)
-        {
-            //in append salvare le modifiche? 
-            //o salvo tutto?
-//            dati.Utenti;
-//            dati.Gruppi;
-        }
-
-        public List<Utente> CaricaUtenti()
-        {
-            Carica();
-            return _utenti;
-        }
-
-        public List<Gruppo> CaricaGruppi()
+        public IEnumerable<Gruppo> CaricaElementi()
         {
             Carica();
             return _gruppi;
@@ -100,7 +84,7 @@ namespace Room8
             string cognome = "";
             string email = "";
             string password = "";
-            string telefono = "33333333333";
+            string telefono = "3331231231";
             string foto = "";
 
             Utente result = null;
@@ -140,6 +124,11 @@ namespace Room8
             result = new Utente(email, password, nome, cognome, telefono, foto);
             _utenti.Add(result);
             return result;
+        }
+
+        public void SalvaElementi(IEnumerable<Gruppo>  gestoreUtenti)
+        {
+            throw new NotImplementedException();
         }
     }
 }

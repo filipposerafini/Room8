@@ -18,8 +18,8 @@ namespace Room8
 			Application.SetCompatibleTextRenderingDefault(false);
 
             GestoreUtenti dati = GestoreUtenti.Instance;
-            IPersistenza persistenzaXml = new PersistenzaXML("../../Resources/DB/inizializzazione.xml");
-            dati.Carica(persistenzaXml);
+            IPersistenza<Gruppo> persistenzaGruppi = new PersistenzaGruppiXML("../../Resources/DB/inizializzazione.xml");
+            dati.Carica(persistenzaGruppi);
 
 			LoginForm loginForm = new LoginForm();
 			new LoginFormPresenter(loginForm);

@@ -60,7 +60,7 @@ namespace Room8
 
         public void AggiungiGruppo(Gruppo gruppo)
         {
-            if ((this.Gruppi as List<Gruppo>).Exists(x => x.Id.Equals(gruppo.Id)))
+            if (this.Gruppi.Count != 0 && (_gruppi as List<Gruppo>).Exists(x => x.Id.Equals(gruppo.Id)))
             {
                 throw new ArgumentException("Utente già presente");
             }
@@ -72,7 +72,7 @@ namespace Room8
                     _utenti.Add(utente);
                 }
             }
-            this.Gruppi.Add(gruppo);
+            _gruppi.Add(gruppo);
         }
 
         public void RimuoviGruppo(Gruppo gruppo)
@@ -81,7 +81,7 @@ namespace Room8
             {
                 throw new ArgumentException("Gruppo non presente, eliminazione fallita");
             }
-            this.Gruppi.Remove(gruppo);
+            _gruppi.Remove(gruppo);
         }
 
         public Utente VerificaPassword(string mail, string password)
@@ -103,16 +103,16 @@ namespace Room8
         }
 
         // scegli la tua modalià di persistenza
-        public void Salva(IPersistenza tipoPersistenza)
+        public void Salva(IPersistenza<Gruppo> tipoPersistenza)
         {
-            tipoPersistenza.Salva(this);
+            tipoPersistenza.SalvaElementi(_gruppi);
         }
 
         // scegli la tua modalià di persistenza
-        public void Carica(IPersistenza tipoPersistenza)
+        public void Carica(IPersistenza<Gruppo> tipoPersistenza)
         {
-            _gruppi = tipoPersistenza.CaricaGruppi();
-            _utenti = tipoPersistenza.CaricaUtenti();
+            List<Gruppo> gruppiDaAggiungere = (tipoPersistenza.CaricaElementi() as List<Gruppo>);   
+            gruppiDaAggiungere.ForEach(AggiungiGruppo);
         }
     }
 }
