@@ -157,7 +157,7 @@ namespace Room8
 			return result;
 		}
 
-		public decimal CalcolaSituazioneGruppo(Utente amico, Gruppo gruppo)
+		public decimal CalcolaSituazione(Utente amico, Gruppo gruppo)
 		{
 			// come calcolaSituazione ma limitato ai movimenti nel gruppo 'gruppo' 
 			if (amico == null)
@@ -196,7 +196,7 @@ namespace Room8
 
 			decimal result = 0;
 
-			result = gruppo.MembriGruppo.Sum(u => this.CalcolaSituazioneGruppo(u, gruppo));
+			result = gruppo.MembriGruppo.Sum(u => this.CalcolaSituazione(u, gruppo));
 			return result;
 		}
 
