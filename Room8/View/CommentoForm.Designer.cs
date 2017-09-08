@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._titoloLabel = new System.Windows.Forms.Label();
             this._confirmPanel = new System.Windows.Forms.Panel();
@@ -38,9 +39,11 @@
             this._commentoLabel = new System.Windows.Forms.Label();
             this._commentoTextBox = new System.Windows.Forms.TextBox();
             this._commentiListBox = new System.Windows.Forms.ListBox();
+            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainTableLayoutPanel
@@ -163,6 +166,10 @@
             this._commentiListBox.Size = new System.Drawing.Size(220, 183);
             this._commentiListBox.TabIndex = 7;
             // 
+            // _errorProvider
+            // 
+            this._errorProvider.ContainerControl = this;
+            // 
             // CommentoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -176,6 +183,7 @@
             this._confirmPanel.ResumeLayout(false);
             this._formTableLayoutPanel.ResumeLayout(false);
             this._formTableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,5 +200,6 @@
         private System.Windows.Forms.Label _commentoLabel;
         private System.Windows.Forms.TextBox _commentoTextBox;
         private System.Windows.Forms.ListBox _commentiListBox;
+        private System.Windows.Forms.ErrorProvider _errorProvider;
     }
 }
