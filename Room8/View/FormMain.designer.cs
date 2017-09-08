@@ -34,9 +34,6 @@
             this._gruppiMenuLabel = new System.Windows.Forms.Label();
             this._gruppiListBox = new System.Windows.Forms.ListBox();
             this._riepilogoTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._riepilogoTabControl = new System.Windows.Forms.TabControl();
-            this._riepilogoListaTabPage = new System.Windows.Forms.TabPage();
-            this._riepilogoGraficoTabPage = new System.Windows.Forms.TabPage();
             this._riepilogoInfoTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._bilancioTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._riepilogoBilancioLabel = new System.Windows.Forms.Label();
@@ -60,8 +57,9 @@
             this._spesaButton = new System.Windows.Forms.Button();
             this._saldaButton = new System.Windows.Forms.Button();
             this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._attivitaRecentiListBox = new System.Windows.Forms.ListBox();
+            this._attivitaRecentiLabel = new System.Windows.Forms.Label();
             this._riepilogoTableLayoutPanel.SuspendLayout();
-            this._riepilogoTabControl.SuspendLayout();
             this._riepilogoInfoTableLayoutPanel.SuspendLayout();
             this._bilancioTableLayoutPanel.SuspendLayout();
             this._deviTableLayoutPanel.SuspendLayout();
@@ -84,7 +82,7 @@
             // 
             // _amiciListBox
             // 
-            this._amiciListBox.BackColor = System.Drawing.SystemColors.Control;
+            this._amiciListBox.BackColor = System.Drawing.Color.White;
             this._amiciListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._amiciListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._amiciListBox.FormattingEnabled = true;
@@ -121,7 +119,7 @@
             // 
             // _gruppiListBox
             // 
-            this._gruppiListBox.BackColor = System.Drawing.SystemColors.Control;
+            this._gruppiListBox.BackColor = System.Drawing.Color.White;
             this._gruppiListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gruppiListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._gruppiListBox.FormattingEnabled = true;
@@ -136,54 +134,20 @@
             // 
             this._riepilogoTableLayoutPanel.ColumnCount = 1;
             this._riepilogoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._riepilogoTableLayoutPanel.Controls.Add(this._riepilogoTabControl, 0, 2);
             this._riepilogoTableLayoutPanel.Controls.Add(this._riepilogoInfoTableLayoutPanel, 0, 1);
             this._riepilogoTableLayoutPanel.Controls.Add(this._topTableLayoutPanel, 0, 0);
+            this._riepilogoTableLayoutPanel.Controls.Add(this._attivitaRecentiListBox, 0, 3);
+            this._riepilogoTableLayoutPanel.Controls.Add(this._attivitaRecentiLabel, 0, 2);
             this._riepilogoTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._riepilogoTableLayoutPanel.Location = new System.Drawing.Point(170, 3);
             this._riepilogoTableLayoutPanel.Name = "_riepilogoTableLayoutPanel";
-            this._riepilogoTableLayoutPanel.RowCount = 3;
+            this._riepilogoTableLayoutPanel.RowCount = 4;
             this._riepilogoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this._riepilogoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._riepilogoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._riepilogoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 301F));
             this._riepilogoTableLayoutPanel.Size = new System.Drawing.Size(475, 434);
             this._riepilogoTableLayoutPanel.TabIndex = 5;
-            // 
-            // _riepilogoTabControl
-            // 
-            this._riepilogoTabControl.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this._riepilogoTabControl.Controls.Add(this._riepilogoListaTabPage);
-            this._riepilogoTabControl.Controls.Add(this._riepilogoGraficoTabPage);
-            this._riepilogoTabControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._riepilogoTabControl.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._riepilogoTabControl.Location = new System.Drawing.Point(0, 103);
-            this._riepilogoTabControl.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
-            this._riepilogoTabControl.Name = "_riepilogoTabControl";
-            this._riepilogoTabControl.SelectedIndex = 0;
-            this._riepilogoTabControl.Size = new System.Drawing.Size(475, 331);
-            this._riepilogoTabControl.TabIndex = 1;
-            // 
-            // _riepilogoListaTabPage
-            // 
-            this._riepilogoListaTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._riepilogoListaTabPage.Location = new System.Drawing.Point(4, 28);
-            this._riepilogoListaTabPage.Margin = new System.Windows.Forms.Padding(0);
-            this._riepilogoListaTabPage.Name = "_riepilogoListaTabPage";
-            this._riepilogoListaTabPage.Size = new System.Drawing.Size(467, 299);
-            this._riepilogoListaTabPage.TabIndex = 0;
-            this._riepilogoListaTabPage.Text = "Lista";
-            this._riepilogoListaTabPage.UseVisualStyleBackColor = true;
-            // 
-            // _riepilogoGraficoTabPage
-            // 
-            this._riepilogoGraficoTabPage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this._riepilogoGraficoTabPage.Location = new System.Drawing.Point(4, 28);
-            this._riepilogoGraficoTabPage.Name = "_riepilogoGraficoTabPage";
-            this._riepilogoGraficoTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this._riepilogoGraficoTabPage.Size = new System.Drawing.Size(467, 299);
-            this._riepilogoGraficoTabPage.TabIndex = 1;
-            this._riepilogoGraficoTabPage.Text = "Grafico";
-            this._riepilogoGraficoTabPage.UseVisualStyleBackColor = true;
             // 
             // _riepilogoInfoTableLayoutPanel
             // 
@@ -477,6 +441,28 @@
             this._formTableLayoutPanel.Size = new System.Drawing.Size(648, 440);
             this._formTableLayoutPanel.TabIndex = 4;
             // 
+            // _attivitaRecentiListBox
+            // 
+            this._attivitaRecentiListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._attivitaRecentiListBox.FormattingEnabled = true;
+            this._attivitaRecentiListBox.Location = new System.Drawing.Point(3, 136);
+            this._attivitaRecentiListBox.Name = "_attivitaRecentiListBox";
+            this._attivitaRecentiListBox.ScrollAlwaysVisible = true;
+            this._attivitaRecentiListBox.Size = new System.Drawing.Size(469, 295);
+            this._attivitaRecentiListBox.TabIndex = 6;
+            // 
+            // _attivitaRecentiLabel
+            // 
+            this._attivitaRecentiLabel.AutoSize = true;
+            this._attivitaRecentiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._attivitaRecentiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._attivitaRecentiLabel.Location = new System.Drawing.Point(3, 98);
+            this._attivitaRecentiLabel.Name = "_attivitaRecentiLabel";
+            this._attivitaRecentiLabel.Size = new System.Drawing.Size(469, 35);
+            this._attivitaRecentiLabel.TabIndex = 7;
+            this._attivitaRecentiLabel.Text = "Attività recenti:";
+            this._attivitaRecentiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -488,7 +474,7 @@
             this.Name = "MainForm";
             this.Text = "Room8 - Riepilogo";
             this._riepilogoTableLayoutPanel.ResumeLayout(false);
-            this._riepilogoTabControl.ResumeLayout(false);
+            this._riepilogoTableLayoutPanel.PerformLayout();
             this._riepilogoInfoTableLayoutPanel.ResumeLayout(false);
             this._bilancioTableLayoutPanel.ResumeLayout(false);
             this._bilancioTableLayoutPanel.PerformLayout();
@@ -515,9 +501,6 @@
         private System.Windows.Forms.ListBox _amiciListBox;
         private System.Windows.Forms.Label _amiciMenuLabel;
         private System.Windows.Forms.Label _gruppiMenuLabel;
-        private System.Windows.Forms.TabControl _riepilogoTabControl;
-        private System.Windows.Forms.TabPage _riepilogoListaTabPage;
-        private System.Windows.Forms.TabPage _riepilogoGraficoTabPage;
         private System.Windows.Forms.TableLayoutPanel _riepilogoInfoTableLayoutPanel;
         private System.Windows.Forms.Label _riepilogoBilancioLabel;
         private System.Windows.Forms.Label _riepilogoDeviLabel;
@@ -542,6 +525,8 @@
         private System.Windows.Forms.ToolStripMenuItem _esciToolStrip;
 		private System.Windows.Forms.ToolStripLabel _riepilogoToolStripLabel;
         private System.Windows.Forms.ToolStripSeparator _toolStripSeparator;
+        private System.Windows.Forms.ListBox _attivitaRecentiListBox;
+        private System.Windows.Forms.Label _attivitaRecentiLabel;
     }
 }
 

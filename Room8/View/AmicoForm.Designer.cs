@@ -37,10 +37,10 @@
             this._bilancioLabel = new System.Windows.Forms.Label();
             this._importoTotaleLabel = new System.Windows.Forms.Label();
             this._mainPanel = new System.Windows.Forms.Panel();
+            this.listBox = new System.Windows.Forms.ListBox();
             this._confermaPanel = new System.Windows.Forms.Panel();
             this._annullaButton = new System.Windows.Forms.Button();
             this._confermaButton = new System.Windows.Forms.Button();
-            this.listBox = new System.Windows.Forms.ListBox();
             this._mainTableLayoutPanel.SuspendLayout();
             this._nomeTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
@@ -177,6 +177,16 @@
             this._mainPanel.Size = new System.Drawing.Size(344, 136);
             this._mainPanel.TabIndex = 2;
             // 
+            // listBox
+            // 
+            this.listBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox.FormattingEnabled = true;
+            this.listBox.Location = new System.Drawing.Point(0, 0);
+            this.listBox.Name = "listBox";
+            this.listBox.ScrollAlwaysVisible = true;
+            this.listBox.Size = new System.Drawing.Size(344, 136);
+            this.listBox.TabIndex = 0;
+            // 
             // _confermaPanel
             // 
             this._confermaPanel.Controls.Add(this._annullaButton);
@@ -208,15 +218,6 @@
             this._confermaButton.TabIndex = 13;
             this._confermaButton.Text = "Conferma";
             this._confermaButton.UseVisualStyleBackColor = true;
-            // 
-            // listBox
-            // 
-            this.listBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(0, 0);
-            this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(344, 136);
-            this.listBox.TabIndex = 0;
             // 
             // AmicoForm
             // 

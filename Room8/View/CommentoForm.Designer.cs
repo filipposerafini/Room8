@@ -159,6 +159,7 @@
             this._commentiListBox.FormattingEnabled = true;
             this._commentiListBox.Location = new System.Drawing.Point(135, 3);
             this._commentiListBox.Name = "_commentiListBox";
+            this._commentiListBox.ScrollAlwaysVisible = true;
             this._commentiListBox.Size = new System.Drawing.Size(220, 183);
             this._commentiListBox.TabIndex = 7;
             // 
