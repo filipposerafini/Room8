@@ -37,3 +37,5 @@
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.pdb
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.View.CommentoForm.resources
 >>>>>>> Stashed changes
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/obj/Debug/Room8.View.GruppoForm.resources
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/obj/Debug/Room8.View.BilancioGruppoForm.resources
