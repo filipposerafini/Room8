@@ -76,6 +76,10 @@ namespace Room8
 
 			public override void ControllaParti(Parti parti, decimal totale)
 			{
+				// TODO
+				foreach (var parte in parti.Divisione.Values)
+					if (parte % 1 != 0)
+						throw new ArgumentException("Le quote devono essere degli interi");
 				if (parti.Divisione.Values.Sum() == 0)
 					throw new ArgumentException("Almeno una quota deve essere diversa da 0");
 			}

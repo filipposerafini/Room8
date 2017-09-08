@@ -64,6 +64,7 @@ namespace Room8
             for (int i = 0; i < Spesa.SpeseGruppo.Gruppo.MembriGruppo.Count; i++)
 			{
 				NumericUpDown numericUpDown = new NumericUpDown();
+				numericUpDown.DecimalPlaces = 2;
 				numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left))));
 				numericUpDown.Location = new System.Drawing.Point(13, 10);
 				numericUpDown.Name = "_numericUpDown" + i;
@@ -112,7 +113,7 @@ namespace Room8
 			{
 				foreach (var utente in Dictionary.Keys)
 				{
-					Spesa.Parti.ImpostaParte(utente, (int)(Dictionary[utente] as NumericUpDown).Value);
+					Spesa.Parti.ImpostaParte(utente, (Dictionary[utente] as NumericUpDown).Value);
 				}
 				Spesa.MetodoDivisione.ControllaParti(Spesa.Parti, Spesa.Importo);
 				PartiForm.DialogResult = DialogResult.OK;

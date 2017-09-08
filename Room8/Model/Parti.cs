@@ -5,26 +5,26 @@ namespace Room8
 {
 	public class Parti
 	{
-		private readonly Dictionary<Utente, int> _divisione;
+		private readonly Dictionary<Utente, decimal> _divisione;
 
 		public Parti(Gruppo gruppo)
 		{
 			if (gruppo == null)
 				throw new ArgumentNullException("gruppo");
 
-			_divisione = new Dictionary<Utente, int>();
+			_divisione = new Dictionary<Utente, decimal>();
 			foreach (var utente in gruppo.MembriGruppo)
 			{
 				_divisione.Add(utente, 0);
 			}
 		}
 
-		public Dictionary<Utente, int> Divisione
+		public Dictionary<Utente, decimal> Divisione
 		{
 			get { return _divisione; }
 		}
 
-		public void ImpostaParte(Utente utente, int parte)
+		public void ImpostaParte(Utente utente, decimal parte)
 		{
 			if (utente == null)
 				throw new ArgumentException("utente null");
