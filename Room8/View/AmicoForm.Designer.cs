@@ -188,7 +188,7 @@
             this._transazioniTableLayoutPanel.ColumnCount = 3;
             this._transazioniTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.46154F));
             this._transazioniTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.53846F));
-            this._transazioniTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
+            this._transazioniTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this._transazioniTableLayoutPanel.Controls.Add(this._dataLabel, 0, 0);
             this._transazioniTableLayoutPanel.Controls.Add(this._gruppoLabel, 1, 0);
             this._transazioniTableLayoutPanel.Controls.Add(this._soldiLabel, 2, 0);
@@ -216,7 +216,7 @@
             this._gruppoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._gruppoLabel.Location = new System.Drawing.Point(85, 0);
             this._gruppoLabel.Name = "_gruppoLabel";
-            this._gruppoLabel.Size = new System.Drawing.Size(158, 44);
+            this._gruppoLabel.Size = new System.Drawing.Size(159, 44);
             this._gruppoLabel.TabIndex = 1;
             this._gruppoLabel.Text = "Gruppo";
             this._gruppoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -225,9 +225,9 @@
             // 
             this._soldiLabel.AutoSize = true;
             this._soldiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._soldiLabel.Location = new System.Drawing.Point(249, 0);
+            this._soldiLabel.Location = new System.Drawing.Point(250, 0);
             this._soldiLabel.Name = "_soldiLabel";
-            this._soldiLabel.Size = new System.Drawing.Size(86, 44);
+            this._soldiLabel.Size = new System.Drawing.Size(85, 44);
             this._soldiLabel.TabIndex = 2;
             this._soldiLabel.Text = "Soldi";
             this._soldiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -236,7 +236,6 @@
             // 
             this._confermaPanel.Controls.Add(this._annullaButton);
             this._confermaPanel.Controls.Add(this._confermaButton);
-            this._confermaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._confermaPanel.Location = new System.Drawing.Point(0, 182);
             this._confermaPanel.Margin = new System.Windows.Forms.Padding(0);
             this._confermaPanel.Name = "_confermaPanel";
@@ -246,13 +245,13 @@
             // _annullaButton
             // 
             this._annullaButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this._annullaButton.Location = new System.Drawing.Point(364, 8);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
             this._annullaButton.TabIndex = 14;
             this._annullaButton.Text = "Annulla";
             this._annullaButton.UseVisualStyleBackColor = true;
+			this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             // 
             // _confermaButton
             // 
@@ -266,7 +265,6 @@
             // 
             // AmicoForm
             // 
-            this.AcceptButton = this._confermaButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 229);
@@ -285,6 +283,7 @@
             this._transazioniTableLayoutPanel.ResumeLayout(false);
             this._transazioniTableLayoutPanel.PerformLayout();
             this._confermaPanel.ResumeLayout(false);
+			this.AcceptButton = this._confermaButton;
             this.ResumeLayout(false);
 
         }

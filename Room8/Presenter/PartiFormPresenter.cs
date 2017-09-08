@@ -115,7 +115,7 @@ namespace Room8
 				{
 					Spesa.Parti.ImpostaParte(utente, (Dictionary[utente] as NumericUpDown).Value);
 				}
-                Spesa.GeneraMovimenti();
+				Spesa.MetodoDivisione.ControllaParti(Spesa.Parti, Spesa.Importo);
 				PartiForm.DialogResult = DialogResult.OK;
 			}
 			catch (ArgumentException ae)

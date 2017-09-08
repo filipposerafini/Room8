@@ -128,10 +128,17 @@ namespace Room8
 		public void GeneraMovimenti()
 		{
 			foreach (var item in _metodoDivisione.DividiSpesa(Importo, Parti))
+			{
 				if (item.Key.Equals(Pagante))
 					continue;
 				else
-                    _movimenti.Add(new Movimento((Pagante as Utente), item.Key, item.Value, this));
+				{
+                    Movimento movimento = new Movimento((Pagante as Utente), item.Key, item.Value, this);
+					movimento.AggiungiMovimentoDiDenaro();
+                    _movimenti.Add(movimento);
+				}
+			}
+
 		}
 	}
 }

@@ -36,6 +36,8 @@ namespace Room8
 			}
 
 			protected abstract decimal Dividi(decimal totale, Utente utente, Parti parti);
+
+			public abstract void ControllaParti(Parti parti, decimal totale);
 		}
 
 		private class DivisioneEqua : MetodoDiDivisione
@@ -44,15 +46,24 @@ namespace Room8
 			{
 				return totale / parti.Divisione.Keys.Count;
 			}
+
+			public override void ControllaParti(Parti parti, decimal totale)
+			{
+				return;
+			}
 		}
 
 		private class DivisionePercentuale : MetodoDiDivisione
 		{
 			protected override decimal Dividi(decimal totale, Utente utente, Parti parti)
 			{
-                if (parti.Divisione.Values.Sum() != 100)
-                    throw new ArgumentException("La somma delle percentuali deve essere 100");
-                return totale * ((decimal)parti.Divisione[utente] / 100);
+				return totale * ((decimal)parti.Divisione[utente] / 100);
+			}
+
+			public override void ControllaParti(Parti parti, decimal totale)
+			{
+				if (parti.Divisione.Values.Sum() != 100)
+					throw new ArgumentException("La somma delle percentuali deve essere 100");
 			}
 		}
 
@@ -60,11 +71,17 @@ namespace Room8
 		{
 			protected override decimal Dividi(decimal totale, Utente utente, Parti parti)
 			{
-                if (parti.Divisione.Values.First(n => n % 1 != 0) != null)
-                    throw new ArgumentException("Le quote devono essere degli interi");
-                if (parti.Divisione.Values.Sum() == 0)
-                    throw new ArgumentException("Almeno una quota deve essere diversa da 0");
-                return (totale / parti.Divisione.Values.Sum()) * parti.Divisione[utente];
+				return (totale / parti.Divisione.Values.Sum()) * parti.Divisione[utente];
+			}
+
+			public override void ControllaParti(Parti parti, decimal totale)
+			{
+				// TODO
+				foreach (var parte in parti.Divisione.Values)
+					if (parte % 1 != 0)
+						throw new ArgumentException("Le quote devono essere degli interi");
+				if (parti.Divisione.Values.Sum() == 0)
+					throw new ArgumentException("Almeno una quota deve essere diversa da 0");
 			}
 		}
 
@@ -72,9 +89,13 @@ namespace Room8
 		{
 			protected override decimal Dividi(decimal totale, Utente utente, Parti parti)
 			{
-                if (parti.Divisione.Values.Sum() != totale)
-                    throw new ArgumentException("La somma degli importi deve essere uguale totale speso");
-                return parti.Divisione[utente];
+				return parti.Divisione[utente];
+			}
+
+			public override void ControllaParti(Parti parti, decimal totale)
+			{
+				if (parti.Divisione.Values.Sum() != totale)
+					throw new ArgumentException("La somma degli importi deve essere uguale totale speso");
 			}
 		}
 	}
