@@ -75,29 +75,40 @@ namespace Room8
 		{
 			SpesaForm.PaganteComboBox.DataSource = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).MembriGruppo;
 			SpesaForm.PaganteComboBox.DisplayMember = "Nome";
-            Spesa.SpeseGruppo = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).SpeseGruppo;
+			Spesa.SpeseGruppo = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).SpeseGruppo;
 			Spesa.Parti = new Parti(Spesa.SpeseGruppo.Gruppo);
 		}
 
 		void RadioButton_Click(object sender, EventArgs e)
 		{
-			//Spesa.Parti = new Parti(Spesa.SpeseGruppo.Gruppo);
-			string nomeMetodo = SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked).Tag.ToString();
-			Spesa.MetodoDivisione = MetodoDiDivisioneFactory.GetMetodoDiDivisione(nomeMetodo);
-			Spesa.Importo = SpesaForm.NumericUpDown.Value;
-			PartiForm partiForm = new PartiForm();
-			new PartiFormPresenter(partiForm, Spesa, nomeMetodo);
-			if (partiForm.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+			try
 			{
+				SpesaForm.ErrorProvider.Clear();
+				string nomeMetodo = SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked).Tag.ToString();
+				Spesa.MetodoDivisione = MetodoDiDivisioneFactory.GetMetodoDiDivisione(nomeMetodo);
+				Spesa.Importo = SpesaForm.NumericUpDown.Value;
+				PartiForm partiForm = new PartiForm();
+				new PartiFormPresenter(partiForm, Spesa, nomeMetodo);
+				if (partiForm.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)
+				{
+					SpesaForm.EquoRadioButton.Checked = true;
+					nomeMetodo = SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked).Tag.ToString();
+					Spesa.MetodoDivisione = MetodoDiDivisioneFactory.GetMetodoDiDivisione(nomeMetodo);
+				}
+			}
+			catch (ArgumentException ae)
+			{
+				SpesaForm.ErrorProvider.SetError(SpesaForm.NumericUpDown, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
 				SpesaForm.EquoRadioButton.Checked = true;
-				nomeMetodo = SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked).Tag.ToString();
+				string nomeMetodo = SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked).Tag.ToString();
 				Spesa.MetodoDivisione = MetodoDiDivisioneFactory.GetMetodoDiDivisione(nomeMetodo);
 			}
 		}
 
-        private void CommentoButton_Click(object sender, EventArgs e)
+		private void CommentoButton_Click(object sender, EventArgs e)
 		{
 			CommentoForm commentoForm = new CommentoForm();
+			new CommentoFormPresenter(commentoForm, Spesa, Utente);
 			commentoForm.ShowDialog();
 		}
 
@@ -113,7 +124,7 @@ namespace Room8
 				Spesa.MetodoDivisione = MetodoDiDivisioneFactory.GetMetodoDiDivisione(nomeMetodo);
 				Spesa.Data = SpesaForm.DateTimePicker.Value;
 
-                Spesa.SpeseGruppo.Gruppo.SpeseGruppo.AggiungiSpesa(Spesa);
+				Spesa.SpeseGruppo.Gruppo.SpeseGruppo.AggiungiSpesa(Spesa);
 				Observer.AggiornaUI();
 				SpesaForm.Close();
 			}
@@ -122,16 +133,16 @@ namespace Room8
 				Control control;
 				switch (ae.ParamName)
 				{
-					case "descrizione" : 
+					case "descrizione":
 						control = SpesaForm.DescrizioneTextBox;
 						break;
-					case "importo" :
+					case "importo":
 						control = SpesaForm.NumericUpDown;
 						break;
-					case "pagante" :
+					case "pagante":
 						control = SpesaForm.PaganteComboBox;
 						break;
-					case "data" :
+					case "data":
 						control = SpesaForm.DateTimePicker;
 						break;
 					default:

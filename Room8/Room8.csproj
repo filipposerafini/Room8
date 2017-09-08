@@ -199,6 +199,7 @@
     <Compile Include="Model\Commento.cs" />
     <Compile Include="Presenter\IPresenterEvent.cs" />
     <Compile Include="Presenter\BilancioGruppoFormPresenter.cs" />
+    <Compile Include="Presenter\CommentoFormPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

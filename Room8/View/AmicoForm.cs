@@ -15,5 +15,20 @@ namespace Room8.View
         {
             InitializeComponent();
         }
+
+		public Label NomeAmicoLabel
+		{
+			get { return _nomeAmicoLabel; }
+		}
+
+		public Label BilancioLabel
+		{
+			get { return _importoTotaleLabel; }
+		}
+
+		public PictureBox PictureBox
+		{
+			get { return _pictureBox; }
+		}
     }
 }

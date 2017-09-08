@@ -15,5 +15,30 @@ namespace Room8.View
         {
             InitializeComponent();
         }
+
+		public Label GruppoLabel
+		{
+			get { return _registratiLabel; }
+		}
+
+		public Label BilancioLabel
+		{
+			get { return _bilancioImportoLabel; }
+		}
+
+		public PictureBox PictureBox
+		{
+			get { return _pictureBox; }
+		}
+
+		public ListBox MembriListBox
+		{
+			get { return _membriListBox; }
+		}
+
+		public ListBox SpeseListBox
+		{
+			get { return _speseListBox; }
+		}
     }
 }

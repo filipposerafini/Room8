@@ -43,6 +43,11 @@ namespace Room8
 			get { return _dovutoImportoLabel; }
 		}
 
+		public ListBox AttivitaRecentiListBox
+		{
+			get { return _attivitaRecentiListBox; }
+		}
+
 		public Button SpesaButton
 		{
 			get { return _spesaButton; }

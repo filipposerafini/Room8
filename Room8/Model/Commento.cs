@@ -11,7 +11,7 @@ namespace Room8
         public Commento(string testo, Utente autore)
         {
             if (string.IsNullOrEmpty(testo))
-                throw new ArgumentException("Inserisci un testo","testo");
+                throw new ArgumentException("Inserisci un testo");
             if (autore == null)
                 throw new ArgumentNullException("autore");
             _data = DateTime.Now;

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Drawing;
+using System.Linq;
 using Room8.View;
 
 namespace Room8
@@ -82,14 +83,14 @@ namespace Room8
 		void AmiciListBox_Click(object sender, EventArgs e)
 		{
 			AmicoForm amicoForm = new AmicoForm();
-			new AmicoFormPresenter(amicoForm, Utente);
+			new AmicoFormPresenter(amicoForm, Utente, MainForm.AmiciListBox);
 			amicoForm.ShowDialog();
 		}
 
 		void GruppiListBox_Click(object sender, EventArgs e)
 		{
 			BilancioGruppoForm bilancioGruppoForm = new BilancioGruppoForm();
-			new BilancioGruppoFormPresenter(bilancioGruppoForm, Utente);
+			new BilancioGruppoFormPresenter(bilancioGruppoForm, Utente, MainForm.GruppiListBox);
 			bilancioGruppoForm.ShowDialog();
 		}
 
