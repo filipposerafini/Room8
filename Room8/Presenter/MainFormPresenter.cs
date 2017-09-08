@@ -41,6 +41,7 @@ namespace Room8
 			MainForm.AccountToolStrip.Click += AccountToolStrip_Click;
 			MainForm.CreaGruppoToolStrip.Click += CreaGruppoToolStrip_Click;
 			MainForm.EsciToolStrip.Click += EsciToolStrip_Click;
+			MainForm.FormClosing += MainForm_FormClosing;
 		}
 
 		void InitializeUI()
@@ -56,7 +57,7 @@ namespace Room8
 		private void SpesaButton_Click(object sender, EventArgs e)
 		{
 			SpesaForm spesaForm = new SpesaForm();
-			new SpesaFormPresenter(spesaForm, Utente);
+			new SpesaFormPresenter(spesaForm, Utente, null);
 			spesaForm.ShowDialog();
 		}
 
