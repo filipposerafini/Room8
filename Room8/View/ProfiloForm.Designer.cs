@@ -56,6 +56,7 @@
             this._fotoButton = new System.Windows.Forms.Button();
             this._pictureBox = new System.Windows.Forms.PictureBox();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this._openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this._tableLayoutPanel.SuspendLayout();
             this._confermaPanel.SuspendLayout();
             this._centralTableLayoutPanel.SuspendLayout();
@@ -110,13 +111,13 @@
             // _annullaButton
             // 
             this._annullaButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this._annullaButton.Location = new System.Drawing.Point(434, 8);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
             this._annullaButton.TabIndex = 14;
             this._annullaButton.Text = "Annulla";
             this._annullaButton.UseVisualStyleBackColor = true;
-			this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             // 
             // _confermaButton
             // 
@@ -378,8 +379,13 @@
             // 
             this._errorProvider.ContainerControl = this;
             // 
+            // _openFileDialog
+            // 
+            this._openFileDialog.FileName = "openFileDialog1";
+            // 
             // ProfiloForm
             // 
+            this.AcceptButton = this._confermaButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(521, 312);
@@ -395,7 +401,6 @@
             this._imageTableLayoutPanel.ResumeLayout(false);
             this._fotoPanel.ResumeLayout(false);
             this._fotoPanel.PerformLayout();
-			this.AcceptButton = this._confermaButton;
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);
@@ -431,5 +436,6 @@
         private System.Windows.Forms.Button _fotoButton;
         private System.Windows.Forms.PictureBox _pictureBox;
         private System.Windows.Forms.ErrorProvider _errorProvider;
+        private System.Windows.Forms.OpenFileDialog _openFileDialog;
     }
 }
