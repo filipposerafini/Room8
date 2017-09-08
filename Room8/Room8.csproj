@@ -188,6 +188,7 @@
     <None Include="Resources\Images\gloria.jpg" />
     <Compile Include="Persistance\PersistenzaGruppiXml.cs" />
     <Compile Include="Model\Commento.cs" />
+    <Compile Include="Presenter\IPresenterEvent.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

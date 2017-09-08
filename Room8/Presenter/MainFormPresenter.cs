@@ -3,14 +3,14 @@ using Room8.View;
 
 namespace Room8
 {
-	public class MainFormPresenter
+    public class MainFormPresenter : IPresenterEvent
 	{
 		private readonly MainForm _mainForm;
 		private readonly LoginForm _loginForm;
 		private readonly Utente _utente;
 
 		public MainFormPresenter(MainForm mainForm, LoginForm loginForm, Utente utente)
-		{
+		{   
 			this._mainForm = mainForm;
 			this._loginForm = loginForm;
 			this._utente = utente;
@@ -52,19 +52,21 @@ namespace Room8
 			MainForm.GruppiListBox.DisplayMember = "Nome";
 			MainForm.AmiciListBox.DataSource = Utente.Amici();
 			MainForm.AmiciListBox.DisplayMember = "Mail";
+            this.Aggiorna();
 		}
 
 		private void SpesaButton_Click(object sender, EventArgs e)
 		{
 			SpesaForm spesaForm = new SpesaForm();
+			new SpesaFormPresenter(spesaForm, Utente,this);
 			new SpesaFormPresenter(spesaForm, Utente, null);
-			spesaForm.ShowDialog();
+            spesaForm.ShowDialog();
 		}
 
 		private void SaldaButton_Click(object sender, EventArgs e)
 		{
 			SaldoForm saldoForm = new SaldoForm();
-			new SaldoFormPresenter(saldoForm, Utente);
+			new SaldoFormPresenter(saldoForm, Utente,this);
 			saldoForm.ShowDialog();
 		}
 
@@ -74,6 +76,14 @@ namespace Room8
 			new AmicoFormPresenter(amicoForm, Utente);
 			amicoForm.ShowDialog();
 		}
+
+        public void Aggiorna()
+        {
+            // aggiorno il valore del bilancio
+            MainForm.BilancioImportoLabel.Text = _utente.CalcolaBilancioTotale().ToString("#.##");
+            MainForm.DeviImportoLabel.Text = _utente.TotaleDebiti().ToString("#.##");
+            MainForm.DovutoImportoLabel.Text = _utente.TotaleCrediti().ToString("#.##");
+        }
 
 		private void AccountToolStrip_Click(object sender, EventArgs e)
 		{

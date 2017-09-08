@@ -10,11 +10,13 @@ namespace Room8
     {
         private SaldoForm _saldoForm;
         private readonly Utente _utente;
+        private IPresenterEvent _observer;
 
-        public SaldoFormPresenter(SaldoForm saldoForm, Utente utente)
+        public SaldoFormPresenter(SaldoForm saldoForm, Utente utente, IPresenterEvent observer )
         {
             this._saldoForm = saldoForm;
             this._utente = utente;
+            this._observer = observer;
             InitializeEvents();
 
 			List<Utente> utenti = utente.Amici();
@@ -95,6 +97,7 @@ namespace Room8
                 Saldo saldo = new Saldo(sorgente,destinazione,importo,data);
 
                 saldo.AggiungiMovimentoDiDenaro();
+                _observer.Aggiorna();
                 SaldoForm.Close();
             }
             catch (ArgumentException ae)

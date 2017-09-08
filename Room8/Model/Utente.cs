@@ -204,5 +204,20 @@ namespace Room8
 		{
 			return Gruppi.SelectMany(g => g.MembriGruppo).Distinct().Where(u => !u.Equals(this)).ToList();
 		}
+
+        public decimal CalcolaBilancioTotale()
+        {
+            return TotaleCrediti() - TotaleDebiti();
+        }
+
+        public decimal TotaleDebiti()
+        {
+            return MovimentiDiDenaro.Where(m => m.Destinazione.Equals(this)).Sum(mo => mo.Importo);
+        }
+
+        public decimal TotaleCrediti()
+        {
+            return MovimentiDiDenaro.Where(m => m.Sorgente.Equals(this)).Sum(mo => mo.Importo);
+        }
 	}
 }
