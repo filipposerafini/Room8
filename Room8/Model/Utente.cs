@@ -136,7 +136,12 @@ namespace Room8
 			_gruppi.Remove(gruppo);
 		}
 
-		public decimal CalcolaSituazione(Utente amico)
+        public List<Utente> Amici()
+        {
+            return Gruppi.SelectMany(g => g.MembriGruppo).Distinct().Where(u => !u.Equals(this)).ToList();
+        }
+		
+        public decimal CalcolaSituazione(Utente amico)
 		{
 			// ritorna l'ammontare totale a Credito/debito con utente 'amico'
 			if (amico == null)
@@ -198,11 +203,6 @@ namespace Room8
 
 			result = gruppo.MembriGruppo.Sum(u => this.CalcolaSituazione(u, gruppo));
 			return result;
-		}
-
-		public List<Utente> Amici()
-		{
-			return Gruppi.SelectMany(g => g.MembriGruppo).Distinct().Where(u => !u.Equals(this)).ToList();
 		}
 
         public decimal CalcolaBilancioTotale()

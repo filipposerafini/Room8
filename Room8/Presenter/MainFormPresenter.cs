@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using Room8.View;
 
 namespace Room8
@@ -79,9 +80,14 @@ namespace Room8
         public void Aggiorna()
         {
             // aggiorno il valore del bilancio
-            MainForm.BilancioImportoLabel.Text = _utente.CalcolaBilancioTotale().ToString("#.##");
-            MainForm.DeviImportoLabel.Text = _utente.TotaleDebiti().ToString("#.##");
-            MainForm.DovutoImportoLabel.Text = _utente.TotaleCrediti().ToString("#.##");
+            decimal bilancioTotale = _utente.CalcolaBilancioTotale();
+            MainForm.BilancioImportoLabel.Text = bilancioTotale.ToString("0.00");
+            if (bilancioTotale < 0)
+                MainForm.BilancioImportoLabel.ForeColor = Color.Red;
+            else
+                MainForm.BilancioImportoLabel.ForeColor = Color.Green;
+            MainForm.DeviImportoLabel.Text = _utente.TotaleDebiti().ToString("0.00");
+            MainForm.DovutoImportoLabel.Text = _utente.TotaleCrediti().ToString("0.00");
         }
 
 		private void AccountToolStrip_Click(object sender, EventArgs e)
@@ -93,9 +99,9 @@ namespace Room8
 
 		private void CreaGruppoToolStrip_Click(object sender, EventArgs e)
 		{
-			CreaGruppoForm creaGruppoForm = new CreaGruppoForm();
-			new CreaGruppoFormPresenter(creaGruppoForm);
-			creaGruppoForm.ShowDialog();
+//			CreaGruppoForm creaGruppoForm = new CreaGruppoForm();
+//			new CreaGruppoFormPresenter(creaGruppoForm);
+//			creaGruppoForm.ShowDialog();
 		}
 
 		private void EsciToolStrip_Click(object sender, EventArgs e)
