@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Linq;
 using Room8.View;
+using System.Windows.Forms;
 
 namespace Room8
 {
@@ -82,16 +83,16 @@ namespace Room8
 
 		void AmiciListBox_Click(object sender, EventArgs e)
 		{
-			AmicoForm amicoForm = new AmicoForm();
-			new AmicoFormPresenter(amicoForm, Utente, MainForm.AmiciListBox);
-			amicoForm.ShowDialog();
+            AmicoForm amicoForm = new AmicoForm();
+            new AmicoFormPresenter(amicoForm, Utente, MainForm.AmiciListBox);
+            amicoForm.ShowDialog();
 		}
 
 		void GruppiListBox_Click(object sender, EventArgs e)
 		{
-			BilancioGruppoForm bilancioGruppoForm = new BilancioGruppoForm();
-			new BilancioGruppoFormPresenter(bilancioGruppoForm, Utente, MainForm.GruppiListBox);
-			bilancioGruppoForm.ShowDialog();
+            BilancioGruppoForm bilancioGruppoForm = new BilancioGruppoForm();
+            new BilancioGruppoFormPresenter(bilancioGruppoForm, Utente, MainForm.GruppiListBox);
+            bilancioGruppoForm.ShowDialog();
 		}
 
 		private void AccountToolStrip_Click(object sender, EventArgs e)

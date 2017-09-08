@@ -13,6 +13,7 @@ namespace Room8
 		{
 			this._bilancioGruppoForm = bilancioGruppoForm;
 			this._utente = utente;
+            this._listBox = listBox;
 			InitializeUI();
 		}
 
@@ -36,7 +37,9 @@ namespace Room8
 			Gruppo selezionato = (Gruppo)ListBox.SelectedItem;
 			BilancioGruppoForm.GruppoLabel.Text = selezionato.Nome;
 			BilancioGruppoForm.PictureBox.ImageLocation = selezionato.Foto;
-			BilancioGruppoForm.BilancioLabel.Text = Utente.CalcolaSituazione(Utente, selezionato).ToString("0.00 \u20AC");
-		}
+			BilancioGruppoForm.BilancioLabel.Text = Utente.CalcolaBilancio(selezionato).ToString("0.00 \u20AC");
+            BilancioGruppoForm.MembriListBox.DataSource = selezionato.MembriGruppo;
+            BilancioGruppoForm.MembriListBox.DisplayMember = "Mail";
+        }
 	}
 }
