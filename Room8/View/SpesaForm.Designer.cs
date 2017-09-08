@@ -247,6 +247,7 @@
             this._importiPrecisiRadioButton.TabIndex = 3;
             this._importiPrecisiRadioButton.TabStop = true;
             this._importiPrecisiRadioButton.Text = "Importi precisi";
+			this._importiPrecisiRadioButton.Tag = "per importi precisi";
             this._importiPrecisiRadioButton.UseVisualStyleBackColor = true;
             // 
             // _quoteRadioButton

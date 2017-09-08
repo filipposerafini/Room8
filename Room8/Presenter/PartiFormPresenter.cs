@@ -69,6 +69,7 @@ namespace Room8
 				numericUpDown.Location = new System.Drawing.Point(13, 10);
 				numericUpDown.Name = "_numericUpDown" + i;
 				numericUpDown.TabIndex = 1;
+				numericUpDown.Value = Spesa.Parti.Divisione[Spesa.SpeseGruppo.Gruppo.MembriGruppo[i]];
 
 				Label utenteLabel = new Label();
 				utenteLabel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -109,6 +110,7 @@ namespace Room8
 		void ConfermaButton_Click(object sender, EventArgs e)
 		{
 			PartiForm.ErrorProvider.Clear();
+			Spesa.Parti = new Parti(Spesa.SpeseGruppo.Gruppo);
 			try
 			{
 				foreach (var utente in Dictionary.Keys)

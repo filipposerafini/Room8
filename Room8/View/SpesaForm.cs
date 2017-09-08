@@ -66,7 +66,6 @@ namespace Room8.View
             get { return _importiPrecisiRadioButton; }
         }
 
-
 		public ComboBox PaganteComboBox
 		{
 			get { return _paganteComboBox; }

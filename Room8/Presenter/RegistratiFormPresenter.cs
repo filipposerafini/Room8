@@ -74,7 +74,7 @@ namespace Room8
 				                           RegistratiForm.TelefonoTextBox.Text,
 				                    	   Foto);
 				GestoreUtenti.AggiugniUtente(utente);
-				RegistratiForm.Hide();
+				RegistratiForm.Close();
 				LoginForm.Show();
 			}
 			catch (ArgumentException ae)
@@ -113,7 +113,7 @@ namespace Room8
 
 		private void AnnullaButton_Click(object sender, EventArgs e)
 		{
-			RegistratiForm.Hide();
+			RegistratiForm.Close();
 			LoginForm.Show();
 		}
 	}

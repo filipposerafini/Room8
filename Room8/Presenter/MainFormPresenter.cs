@@ -41,7 +41,7 @@ namespace Room8
 			MainForm.AccountToolStrip.Click += AccountToolStrip_Click;
 			MainForm.CreaGruppoToolStrip.Click += CreaGruppoToolStrip_Click;
 			MainForm.EsciToolStrip.Click += EsciToolStrip_Click;
-			MainForm.FormClosing += MainForm_FormClosing;
+			MainForm.FormClosing += EsciToolStrip_Click;
 		}
 
 		void InitializeUI()
@@ -58,15 +58,14 @@ namespace Room8
 		private void SpesaButton_Click(object sender, EventArgs e)
 		{
 			SpesaForm spesaForm = new SpesaForm();
-			new SpesaFormPresenter(spesaForm, Utente,this);
-			new SpesaFormPresenter(spesaForm, Utente, null);
+			new SpesaFormPresenter(spesaForm, Utente, null, this);
             spesaForm.ShowDialog();
 		}
 
 		private void SaldaButton_Click(object sender, EventArgs e)
 		{
 			SaldoForm saldoForm = new SaldoForm();
-			new SaldoFormPresenter(saldoForm, Utente,this);
+			new SaldoFormPresenter(saldoForm, Utente, this);
 			saldoForm.ShowDialog();
 		}
 
@@ -104,9 +103,5 @@ namespace Room8
 			MainForm.Close();
 			LoginForm.Show();
 		}
-        private void MainForm_FormClosing(object sender, EventArgs e)
-        {
-            LoginForm.Close();
-        }
     }
 }

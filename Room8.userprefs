@@ -1,8 +1,23 @@
+<<<<<<< Updated upstream
 ﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default" StartupItem="Room8/Room8.csproj">
   <MonoDevelop.Ide.Workbench ActiveDocument="Room8/Presenter/SaldoFormPresenter.cs">
     <Files>
       <File FileName="Room8/Presenter/SpesaFormPresenter.cs" Line="1" Column="1" />
       <File FileName="Room8/Presenter/SaldoFormPresenter.cs" Line="105" Column="33" />
+=======
+﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Room8/Model/MetodoDiDivisioneFactory.cs">
+    <Files>
+      <File FileName="Room8/Presenter/SpesaFormPresenter.cs" Line="77" Column="1" />
+      <File FileName="Room8/View/SpesaForm.cs" Line="67" Column="10" />
+      <File FileName="Room8/View/LoginForm.Designer.cs" Line="15" Column="1" />
+      <File FileName="Room8/Presenter/MainFormPresenter.cs" Line="44" Column="48" />
+      <File FileName="Room8/Presenter/LoginFormPresenter.cs" Line="49" Column="28" />
+      <File FileName="Room8/Presenter/RegistratiFormPresenter.cs" Line="73" Column="22" />
+      <File FileName="Room8/Presenter/PartiFormPresenter.cs" Line="125" Column="63" />
+      <File FileName="Room8/View/SpesaForm.Designer.cs" Line="250" Column="63" />
+      <File FileName="Room8/Model/MetodoDiDivisioneFactory.cs" Line="1" Column="1" />
+>>>>>>> Stashed changes
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -11,4 +26,7 @@
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />
+  <DisabledProjects>
+    <String>Model/Model.csproj</String>
+  </DisabledProjects>
 </Properties>
