@@ -36,7 +36,7 @@
             this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._listaCommentiLabel = new System.Windows.Forms.Label();
             this._commentoLabel = new System.Windows.Forms.Label();
-            this._descrizioneTextBox = new System.Windows.Forms.TextBox();
+            this._commentoTextBox = new System.Windows.Forms.TextBox();
             this._commentiListBox = new System.Windows.Forms.ListBox();
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
@@ -112,7 +112,7 @@
             this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.09864F));
             this._formTableLayoutPanel.Controls.Add(this._listaCommentiLabel, 0, 0);
             this._formTableLayoutPanel.Controls.Add(this._commentoLabel, 0, 1);
-            this._formTableLayoutPanel.Controls.Add(this._descrizioneTextBox, 1, 1);
+            this._formTableLayoutPanel.Controls.Add(this._commentoTextBox, 1, 1);
             this._formTableLayoutPanel.Controls.Add(this._commentiListBox, 1, 0);
             this._formTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._formTableLayoutPanel.Location = new System.Drawing.Point(3, 37);
@@ -145,13 +145,13 @@
             this._commentoLabel.Text = "Commento:";
             this._commentoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // _descrizioneTextBox
+            // _commentoTextBox
             // 
-            this._descrizioneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this._descrizioneTextBox.Location = new System.Drawing.Point(135, 196);
-            this._descrizioneTextBox.Name = "_descrizioneTextBox";
-            this._descrizioneTextBox.Size = new System.Drawing.Size(220, 20);
-            this._descrizioneTextBox.TabIndex = 6;
+            this._commentoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._commentoTextBox.Location = new System.Drawing.Point(135, 196);
+            this._commentoTextBox.Name = "_commentoTextBox";
+            this._commentoTextBox.Size = new System.Drawing.Size(220, 20);
+            this._commentoTextBox.TabIndex = 6;
             // 
             // _commentiListBox
             // 
@@ -190,7 +190,7 @@
         private System.Windows.Forms.TableLayoutPanel _formTableLayoutPanel;
         private System.Windows.Forms.Label _listaCommentiLabel;
         private System.Windows.Forms.Label _commentoLabel;
-        private System.Windows.Forms.TextBox _descrizioneTextBox;
+        private System.Windows.Forms.TextBox _commentoTextBox;
         private System.Windows.Forms.ListBox _commentiListBox;
     }
 }
