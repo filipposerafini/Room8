@@ -8,13 +8,9 @@ namespace Room8
 		private Utente _destinazione;
 		private decimal _importo;
 
-		public MovimentoDiDenaro()
-		{
-			this._id = Guid.NewGuid().ToString();
-		}
-
 		public MovimentoDiDenaro(Utente _sorgente, Utente _destinazione, decimal _importo) : base()
 		{
+            this._id = Guid.NewGuid().ToString();
 			Sorgente = _sorgente;
 			Destinazione = _destinazione;
 			Importo = _importo;

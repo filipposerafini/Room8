@@ -43,7 +43,7 @@ namespace Room8
 			}
 			catch (ArgumentException)
 			{
-				Console.WriteLine("Spesa non è stata inserita");
+                throw new ArgumentException("Spesa non è stata inserita");
 			}
 		}
 

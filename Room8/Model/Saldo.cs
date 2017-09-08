@@ -5,8 +5,6 @@ namespace Room8
 	{
 		private DateTime _data;
 
-		public Saldo() : base() {}
-
 		public Saldo(Utente sorgente, Utente destinazione, decimal importo, DateTime data)
 			: base(sorgente, destinazione, importo)
 		{

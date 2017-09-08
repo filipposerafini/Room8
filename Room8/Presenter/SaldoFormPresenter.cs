@@ -10,13 +10,11 @@ namespace Room8
     {
         private SaldoForm _saldoForm;
         private readonly Utente _utente;
-        private readonly Saldo _saldo;
 
         public SaldoFormPresenter(SaldoForm saldoForm, Utente utente)
         {
             this._saldoForm = saldoForm;
             this._utente = utente;
-            this._saldo = new Saldo();
             InitializeEvents();
 
 			List<Utente> utenti = utente.Amici();
@@ -37,7 +35,6 @@ namespace Room8
         {
             this._saldoForm = saldoForm;
             this._utente = utente;
-            this._saldo = new Saldo();
             InitializeEvents();
 
             SaldoForm.DaComboBox.DataSource = utente.Amici();
@@ -62,11 +59,6 @@ namespace Room8
         public Utente Utente
         {
             get { return _utente; }
-        }
-
-        public Saldo Saldo
-        {
-            get { return _saldo; }
         }
 
         private void InitializeEvents()
@@ -96,12 +88,13 @@ namespace Room8
             SaldoForm.ErrorProvider.Clear();
             try
             {
-                Saldo.Sorgente = (Utente)SaldoForm.DaComboBox.SelectedItem;
-                Saldo.Destinazione = (Utente)SaldoForm.AComboBox.SelectedItem;
-                Saldo.Importo = SaldoForm.NumericUpDown.Value;
-                Saldo.Data = SaldoForm.DateTimePicker.Value;
+                Utente sorgente = (Utente)SaldoForm.DaComboBox.SelectedItem;
+                Utente destinazione = (Utente)SaldoForm.AComboBox.SelectedItem;
+                decimal importo = SaldoForm.NumericUpDown.Value;
+                DateTime data = SaldoForm.DateTimePicker.Value;
+                Saldo saldo = new Saldo(sorgente,destinazione,importo,data);
 
-                Saldo.AggiungiMovimentoDiDenaro();
+                saldo.AggiungiMovimentoDiDenaro();
                 SaldoForm.Close();
             }
             catch (ArgumentException ae)
