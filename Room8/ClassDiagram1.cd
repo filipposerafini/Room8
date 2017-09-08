@@ -1,2 +1,141 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Room8.Utente" Collapsed="true">
+    <Position X="2.75" Y="2.5" Width="1.5" />
+    <AssociationLine Name="_gruppi" Type="Room8.Gruppo" ManuallyRouted="true">
+      <Path>
+        <Point X="3.185" Y="2.5" />
+        <Point X="3.185" Y="1.312" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="_movimentiDiDenaro" Type="Room8.MovimentoDiDenaro" ManuallyRouted="true">
+      <Path>
+        <Point X="3.5" Y="3.062" />
+        <Point X="3.5" Y="3.75" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>gCSAMAAIAwABBAAACAAABAAQAAgAACACAAAAQwEgAgA=</HashCode>
+      <FileName>Model\Utente.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_gruppi" />
+      <Field Name="_movimentiDiDenaro" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Room8.SpeseGruppo" Collapsed="true">
+    <Position X="6.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAgAAAIAAQAAQAAAAAAAAAAAAAAAAAAIAAAIAAAAAA=</HashCode>
+      <FileName>Model\SpeseGruppo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Field Name="_spese" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="Room8.Spesa" Collapsed="true">
+    <Position X="6.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABACAAIABAAAAAhgAEBQAAAAAECAABAAAAgAIEAIAAA=</HashCode>
+      <FileName>Model\Spesa.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_metodoDivisione" />
+      <Field Name="_pagante" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Room8.Saldo" Collapsed="true">
+    <Position X="1.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAhAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Saldo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Room8.Prodotto" Collapsed="true">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAAAABAAAAAAAAAAIAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Model\Prodotto.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Room8.Parti" Collapsed="true">
+    <Position X="10" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAQAAAAIAAAAAAAAABAAAAAgAACgAAAAABA=</HashCode>
+      <FileName>Model\Parti.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Room8.MovimentoDiDenaro" Collapsed="true">
+    <Position X="2.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AECCAAAAgAAAAAAAAEBAAAAAAAAAABAAAAAAAEAQAIA=</HashCode>
+      <FileName>Model\MovimentoDiDenaro.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Room8.Movimento" Collapsed="true">
+    <Position X="3.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAgAAAAQAAAAAAAAAAAAAAAgAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\Movimento.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Room8.MetodoDiDivisioneFactory" Collapsed="true">
+    <Position X="10" Y="1.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Room8.MetodoDiDivisioneFactory.MetodoDiDivisione" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Model\MetodoDiDivisioneFactory.cs</NewMemberFileName>
+        </TypeIdentifier>
+        <Lollipop Position="0.2" />
+      </Class>
+      <Class Name="Room8.MetodoDiDivisioneFactory.DivisioneEqua" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Model\MetodoDiDivisioneFactory.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Room8.MetodoDiDivisioneFactory.DivisionePercentuale" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Model\MetodoDiDivisioneFactory.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Room8.MetodoDiDivisioneFactory.DivisionePerQuote" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Model\MetodoDiDivisioneFactory.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Room8.MetodoDiDivisioneFactory.DivisionePerImportiPrecisi" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Model\MetodoDiDivisioneFactory.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAABAAAAAAAAAAAAAACAAAAAAAAA=</HashCode>
+      <FileName>Model\MetodoDiDivisioneFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Room8.Gruppo" Collapsed="true">
+    <Position X="2.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACIAAAgAAgDAIAAABAgAAAAACAAAAAAAAAwAEpAAA=</HashCode>
+      <FileName>Model\Gruppo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="_speseGruppo" />
+    </ShowAsAssociation>
+    <ShowAsCollectionAssociation>
+      <Field Name="_daComprare" />
+    </ShowAsCollectionAssociation>
+  </Class>
+  <Interface Name="Room8.IMetodoDiDivisione" Collapsed="true">
+    <Position X="10" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Model\IMetodoDiDivisione.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
