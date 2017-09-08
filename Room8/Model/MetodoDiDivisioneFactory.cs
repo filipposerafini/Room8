@@ -29,17 +29,15 @@ namespace Room8
 			public Dictionary<Utente, decimal> DividiSpesa(decimal totale, Parti parti)
 			{
 				Dictionary<Utente, decimal> divisione = new Dictionary<Utente, decimal>();
-				decimal tot = 0;
 				foreach (Utente utente in parti.Divisione.Keys)
-				{
 					divisione[utente] = Dividi(totale, utente, parti);
-					tot += divisione[utente];
-				}
 
 				return divisione;
 			}
 
 			protected abstract decimal Dividi(decimal totale, Utente utente, Parti parti);
+
+			public abstract void ControllaParti(Parti parti, decimal totale);
 		}
 
 		private class DivisioneEqua : MetodoDiDivisione
@@ -47,6 +45,11 @@ namespace Room8
 			protected override decimal Dividi(decimal totale, Utente utente, Parti parti)
 			{
 				return totale / parti.Divisione.Keys.Count;
+			}
+
+			public override void ControllaParti(Parti parti, decimal totale)
+			{
+				return;
 			}
 		}
 
@@ -56,26 +59,39 @@ namespace Room8
 			{
 				return totale * ((decimal)parti.Divisione[utente] / 100);
 			}
+
+			public override void ControllaParti(Parti parti, decimal totale)
+			{
+				if (parti.Divisione.Values.Sum() != 100)
+					throw new ArgumentException("La somma delle percentuali deve essere 100");
+			}
 		}
 
 		private class DivisionePerQuote : MetodoDiDivisione
 		{
 			protected override decimal Dividi(decimal totale, Utente utente, Parti parti)
 			{
-				int quote = 0;
-				foreach (int quota in parti.Divisione.Values)
-					quote += quota;
+				return (totale / parti.Divisione.Values.Sum()) * parti.Divisione[utente];
+			}
 
-				return (totale / quote) * parti.Divisione[utente];
+			public override void ControllaParti(Parti parti, decimal totale)
+			{
+				if (parti.Divisione.Values.Sum() == 0)
+					throw new ArgumentException("Almeno una quota deve essere diversa da 0");
 			}
 		}
-
 
 		private class DivisionePerImportiPrecisi : MetodoDiDivisione
 		{
 			protected override decimal Dividi(decimal totale, Utente utente, Parti parti)
 			{
 				return parti.Divisione[utente];
+			}
+
+			public override void ControllaParti(Parti parti, decimal totale)
+			{
+				if (parti.Divisione.Values.Sum() != totale)
+					throw new ArgumentException("La somma degli importi deve essere uguale totale speso");
 			}
 		}
 	}

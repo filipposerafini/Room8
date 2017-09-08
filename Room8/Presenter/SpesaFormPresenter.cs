@@ -74,6 +74,7 @@ namespace Room8
 		{
 			Spesa.Parti = new Parti(Spesa.SpeseGruppo.Gruppo);
 			string nomeMetodo = SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked).Tag.ToString();
+			Spesa.MetodoDivisione = MetodoDiDivisioneFactory.GetMetodoDiDivisione(nomeMetodo);
 			PartiForm partiForm = new PartiForm();
 			new PartiFormPresenter(partiForm, Spesa, nomeMetodo);
 			if (partiForm.ShowDialog() == System.Windows.Forms.DialogResult.Cancel)

@@ -177,7 +177,6 @@
     <Compile Include="Presenter\ProfiloFormPresenter.cs" />
     <Compile Include="Presenter\AmicoFormPresenter.cs" />
     <None Include="Resources\Images\gloria.jpg" />
-    <Compile Include="Model\IPagante.cs" />
     <Compile Include="Persistance\PersistenzaGruppiXml.cs" />
     <Compile Include="Model\Commento.cs" />
   </ItemGroup>

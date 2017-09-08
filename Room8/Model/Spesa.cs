@@ -9,16 +9,18 @@ namespace Room8
 		private SpeseGruppo _speseGruppo;
 		private string _descrizione;
 		private decimal _importo;
-        private IPagante _pagante;
+        private Utente _pagante;
 		private IMetodoDiDivisione _metodoDivisione;
 		private Parti _parti;
 		private DateTime _data;
-        private List<Movimento> _movimenti;
-        private List<Commento> _commenti;
+        private readonly List<Movimento> _movimenti;
+        private readonly List<Commento> _commenti;
 
 		public Spesa()
 		{
 			this._id = Guid.NewGuid().ToString();
+			this._movimenti = new List<Movimento>();
+			this._commenti = new List<Commento>();
 		}
 
 		public string Id
@@ -59,7 +61,7 @@ namespace Room8
 			}
 		}
 
-        public IPagante Pagante
+		public Utente Pagante
 		{
 			get { return _pagante; }
 			set
