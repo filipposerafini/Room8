@@ -9,7 +9,7 @@ namespace Room8
 		private static string FOTODEFAULT = "../../Resources/Images/defaultgroup.jpg";
 		private readonly string _id;
 		private string _nome;
-		private readonly List<Utente> _membriGruppo;
+		private readonly MembriGruppo _membriGruppo;
 		private readonly SpeseGruppo _speseGruppo;
 		private readonly List<Prodotto> _daComprare;
 		private string _foto;
@@ -21,7 +21,7 @@ namespace Room8
 
 			this._id = Guid.NewGuid().ToString();
 			Nome = nome;
-			this._membriGruppo = new List<Utente>();
+			this._membriGruppo = new MembriGruppo(this);
 			this._speseGruppo = new SpeseGruppo(this);
 			this._daComprare = new List<Prodotto>();
 			this._foto = FOTODEFAULT;
@@ -43,9 +43,9 @@ namespace Room8
 			}
 		}
 
-		public IList<Utente> MembriGruppo
+		public MembriGruppo MembriGruppo
 		{
-			get { return _membriGruppo.AsReadOnly(); }
+			get { return _membriGruppo; }
 		}
 
 		public SpeseGruppo SpeseGruppo
@@ -94,32 +94,6 @@ namespace Room8
 			if (p == null)
 				throw new ArgumentException("Prodotto non presente");
 			_daComprare.Remove(p);
-		}
-
-		public void AggiungiMembro(Utente utente)
-		{
-			if (utente == null)
-				throw new ArgumentNullException("utente");
-
-			if (MembriGruppo.Contains(utente))
-				throw new ArgumentException("Utente già presente", "membro");
-
-			_membriGruppo.Add(utente);
-			// aggiorniamo anche la lista di gruppi di cui l'utente è membro
-			utente.AggiungiGruppo(this);
-		}
-
-		public void RimuoviMembro(Utente utente)
-		{
-			if (utente == null)
-				throw new ArgumentNullException("utente");
-
-			if (!MembriGruppo.Contains(utente))
-				throw new ArgumentException("Utente non presente");
-
-			_membriGruppo.Remove(utente);
-			// aggiorniamo anche la lista di gruppi di cui l'utente è membro
-			utente.RimuoviGruppo(this);
 		}
 	}
 }

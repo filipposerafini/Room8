@@ -68,7 +68,7 @@ namespace Room8
 			{
 				if (value == null)
 					throw new ArgumentNullException("pagante");
-                if (!SpeseGruppo.Gruppo.MembriGruppo.Contains(value as Utente))
+                if (!SpeseGruppo.Gruppo.MembriGruppo.Utenti.Contains(value as Utente))
 					throw new ArgumentException("Il pagante deve essere un membro del gruppo", "pagante");
 				
 				_pagante = value;
@@ -133,7 +133,7 @@ namespace Room8
 					continue;
 				else
 				{
-                    Movimento movimento = new Movimento((Pagante as Utente), item.Key, item.Value, this);
+					Movimento movimento = new Movimento((Pagante as Utente), item.Key, item.Value, this);
 					movimento.AggiungiMovimentoDiDenaro();
                     _movimenti.Add(movimento);
 				}

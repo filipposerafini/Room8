@@ -58,10 +58,8 @@ namespace Room8
 
 		public void RimuoviMovimentoDiDenaro()
 		{
-			if (!Sorgente.MovimentiDiDenaro.Remove(this))
-				throw new ArgumentException("movimento non presente");
-			if (!Destinazione.MovimentiDiDenaro.Remove(this))
-				throw new ArgumentException("movimento non presente");
+			Sorgente.RimuoviMovimentoUtente(this);
+			Destinazione.RimuoviMovimentoUtente(this);
 		}
 	}
 }

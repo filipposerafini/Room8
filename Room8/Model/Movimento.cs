@@ -20,12 +20,12 @@ namespace Room8
 		{
 			if (Sorgente.Equals(Destinazione))
 				throw new ArgumentException("Sorgente e destinazione devono essere diversi", "sorgente/destinazione");
-			if (!Spesa.SpeseGruppo.Gruppo.MembriGruppo.Contains(Sorgente)
-			    || !Spesa.SpeseGruppo.Gruppo.MembriGruppo.Contains(Destinazione))
+			if (!Spesa.SpeseGruppo.Gruppo.MembriGruppo.Utenti.Contains(Sorgente)
+			    || !Spesa.SpeseGruppo.Gruppo.MembriGruppo.Utenti.Contains(Destinazione))
 				throw new ArgumentException("Sorgente e destinazione devono far parte dello stesso gruppo", "sorgente/destinazione");
 
-			Sorgente.MovimentiDiDenaro.Add(this);
-			Destinazione.MovimentiDiDenaro.Add(this);
+			Sorgente.AggiungiMovimentoUtente(this);
+			Destinazione.AggiungiMovimentoUtente(this);
 		}
 	}
 }

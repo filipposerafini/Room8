@@ -65,7 +65,7 @@ namespace Room8
                 throw new ArgumentException("Utente già presente");
             }
 
-            foreach (var utente in gruppo.MembriGruppo)
+			foreach (var utente in gruppo.MembriGruppo.Utenti)
             {
                 if (!_utenti.Exists(x => x.Mail.Equals(utente.Mail)))
                 {
