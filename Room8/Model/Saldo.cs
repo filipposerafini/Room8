@@ -33,8 +33,8 @@ namespace Room8
 			if (Sorgente.CalcolaSituazione(Destinazione) == 0)
 				throw new ArgumentException("Deve esistere un debito/credito tra sorgente e destinazione", "sorgente/destinazione");
 
-			Sorgente.AggiungiMovimentoUtente(this);
-			Destinazione.AggiungiMovimentoUtente(this);
+			Sorgente.MovimentiDiDenaro.Add(this);
+			Destinazione.MovimentiDiDenaro.Add(this);
 		}
 	}
 }

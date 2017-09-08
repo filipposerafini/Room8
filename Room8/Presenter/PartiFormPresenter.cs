@@ -61,7 +61,7 @@ namespace Room8
             partiTableLayoutPanel.Height = 40;
 			partiTableLayoutPanel.TabIndex = 2;
 
-			for (int i = 0; i < Spesa.SpeseGruppo.Gruppo.MembriGruppo.Utenti.Count; i++)
+            for (int i = 0; i < Spesa.SpeseGruppo.Gruppo.MembriGruppo.Count; i++)
 			{
 				NumericUpDown numericUpDown = new NumericUpDown();
 				numericUpDown.DecimalPlaces = 2;
@@ -76,7 +76,7 @@ namespace Room8
 				utenteLabel.Location = new System.Drawing.Point(0, 0);
 				utenteLabel.Name = "_utenteLabel" + i;
 				utenteLabel.TabIndex = 0;
-				utenteLabel.Text = Spesa.SpeseGruppo.Gruppo.MembriGruppo.Utenti[i].Nome + " " + Spesa.SpeseGruppo.Gruppo.MembriGruppo.Utenti[i].Cognome;
+                utenteLabel.Text = Spesa.SpeseGruppo.Gruppo.MembriGruppo[i].Nome + " " + Spesa.SpeseGruppo.Gruppo.MembriGruppo[i].Cognome;
 				utenteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 
 				SplitContainer splitContainer = new SplitContainer();
@@ -100,7 +100,7 @@ namespace Room8
 				partiTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40));
 				partiTableLayoutPanel.Controls.Add(splitContainer, 0, i);
 
-				Dictionary.Add(Spesa.SpeseGruppo.Gruppo.MembriGruppo.Utenti[i], numericUpDown);
+                Dictionary.Add(Spesa.SpeseGruppo.Gruppo.MembriGruppo[i], numericUpDown);
 			}
 
 			PartiForm.ScrollPanel.Controls.Add(partiTableLayoutPanel);

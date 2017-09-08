@@ -18,8 +18,7 @@ namespace Room8
 			this._spesa = new Spesa();
 			InitializeEvents();
 
-			foreach (var membriGruppo in utente.MembriGruppo)
-				SpesaForm.GruppoComboBox.Items.Add(membriGruppo.Gruppo);
+			SpesaForm.GruppoComboBox.DataSource = utente.Gruppi;
 			SpesaForm.GruppoComboBox.DisplayMember = "Nome";
 		}
 
@@ -30,7 +29,7 @@ namespace Room8
 			this._spesa = daModificare;
 			InitializeEvents();
 
-			SpesaForm.GruppoComboBox.DataSource = utente.MembriGruppo;
+			SpesaForm.GruppoComboBox.DataSource = utente.Gruppi;
 			SpesaForm.GruppoComboBox.DisplayMember = "Nome";
 
 			SpesaForm.GruppoComboBox.SelectedItem = daModificare.SpeseGruppo.Gruppo;
@@ -65,9 +64,9 @@ namespace Room8
 
 		void GruppoComboBox_SelectIndexChanged(object sender, EventArgs e)
 		{
-			SpesaForm.PaganteComboBox.DataSource = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).MembriGruppo.Utenti;
+			SpesaForm.PaganteComboBox.DataSource = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).MembriGruppo;
 			SpesaForm.PaganteComboBox.DisplayMember = "Nome";
-			Spesa.SpeseGruppo = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).SpeseGruppo;
+            Spesa.SpeseGruppo = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).SpeseGruppo;
 			Spesa.Parti = new Parti(Spesa.SpeseGruppo.Gruppo);
 		}
 

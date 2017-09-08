@@ -13,7 +13,7 @@ namespace Room8
 				throw new ArgumentNullException("gruppo");
 
 			_divisione = new Dictionary<Utente, decimal>();
-			foreach (var utente in gruppo.MembriGruppo.Utenti)
+			foreach (var utente in gruppo.MembriGruppo)
 			{
 				_divisione.Add(utente, 0);
 			}

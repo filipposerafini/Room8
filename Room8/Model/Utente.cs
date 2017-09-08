@@ -16,8 +16,8 @@ namespace Room8
 		private string _telefono;
 		private string _foto;
 		// lista di gruppi di cui l'utente fa parte
-        private readonly List<MembriGruppo> _membriGruppo = new List<MembriGruppo>();
-		private readonly List<MovimentoDiDenaro> _movimentiDiDenaro = new List<MovimentoDiDenaro>();
+        private readonly List<Gruppo> _gruppi = new List<Gruppo>();
+        private readonly List<MovimentoDiDenaro> _movimentiDiDenaro = new List<MovimentoDiDenaro>();
 
 		public Utente(string mail, string password, string nome, string cognome, string telefono, string foto)
 		{
@@ -109,44 +109,31 @@ namespace Room8
 			}
 		}
 
-		public IList<MembriGruppo> MembriGruppo
+		public List<Gruppo> Gruppi
 		{
-			get { return _membriGruppo.AsReadOnly(); }
+			get { return _gruppi; }
 		}
 
-		public IList<MovimentoDiDenaro> MovimentiDiDenaro
+		public List<MovimentoDiDenaro> MovimentiDiDenaro
 		{
-			get { return _movimentiDiDenaro.AsReadOnly(); }
+			get { return _movimentiDiDenaro; }
 		}
 
-		public void AggiungiMembriGruppo(MembriGruppo membriGruppo)
+		// Aggiungi e Rimuovi membri dovrebbe essere possibile solo da Gruppo
+		public void AggiungiGruppo(Gruppo gruppo)
 		{
-			if (membriGruppo == null)
-				throw new ArgumentNullException("membriGruppo");
-			_membriGruppo.Add(membriGruppo);
+			if (gruppo == null)
+				throw new ArgumentException("membriGruppo null");
+
+			_gruppi.Add(gruppo);
 		}
 
-		public void RimuoviMembriGruppo(MembriGruppo membriGruppo)
+		public void RimuoviGruppo(Gruppo gruppo)
 		{
-			if (membriGruppo == null)
-				throw new ArgumentNullException("membriGruppo");
-			if (!_membriGruppo.Remove(membriGruppo))
-				throw new ArgumentException("MembriGruppo non presente");
-		}
+			if (gruppo == null)
+				throw new ArgumentException("membriGruppo null");
 
-		public void AggiungiMovimentoUtente(MovimentoDiDenaro movimentoDiDenaro)
-		{
-			if (movimentoDiDenaro == null)
-				throw new ArgumentNullException("movimentoDiDenaro");
-			_movimentiDiDenaro.Add(movimentoDiDenaro);
-		}
-
-		public void RimuoviMovimentoUtente(MovimentoDiDenaro movimentoDiDenaro)
-		{
-			if (movimentoDiDenaro == null)
-				throw new ArgumentNullException("movimentoDiDenaro");
-			if (!_movimentiDiDenaro.Remove(movimentoDiDenaro))
-				throw new ArgumentException("movimentoDiDenaro non presente");
+			_gruppi.Remove(gruppo);
 		}
 
 		public decimal CalcolaSituazione(Utente amico)
@@ -204,18 +191,18 @@ namespace Room8
 			// ritorna l'ammontare totale a credito/debito con l'intero gruppo
 			if (gruppo == null)
 				throw new ArgumentException("gruppo null");
-			if (!gruppo.MembriGruppo.Utenti.Contains(this))
+			if (!gruppo.MembriGruppo.Contains(this))
 				throw new ArgumentException("utente non appartenente al gruppo");
 
 			decimal result = 0;
 
-			result = gruppo.MembriGruppo.Utenti.Sum(u => this.CalcolaSituazione(u, gruppo));
+			result = gruppo.MembriGruppo.Sum(u => this.CalcolaSituazione(u, gruppo));
 			return result;
 		}
 
 		public List<Utente> Amici()
 		{
-			return MembriGruppo.SelectMany(g => g.Utenti).Distinct().Where(u => !u.Equals(this)).ToList();
+			return Gruppi.SelectMany(g => g.MembriGruppo).Distinct().Where(u => !u.Equals(this)).ToList();
 		}
 	}
 }

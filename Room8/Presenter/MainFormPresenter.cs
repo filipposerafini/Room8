@@ -47,8 +47,8 @@ namespace Room8
 		{
 			MainForm.UtenteToolStrip.Text = Utente.Nome;
 			MainForm.PictureBox.ImageLocation = Utente.Foto;
-			MainForm.GruppiListBox.DataSource = Utente.MembriGruppo;
-			MainForm.GruppiListBox.DisplayMember = "Gruppo";
+			MainForm.GruppiListBox.DataSource = Utente.Gruppi;
+			MainForm.GruppiListBox.DisplayMember = "Nome";
 			MainForm.AmiciListBox.DataSource = Utente.Amici();
 			MainForm.AmiciListBox.DisplayMember = "Mail";
 		}

@@ -70,7 +70,7 @@ namespace Room8
                         foreach (XmlNode utente in gruppoAtt)
                         {
                             nuovoUtente = this.LeggiUtente(utente);
-							nuovoGruppo.MembriGruppo.AggiungiMembro(nuovoUtente);
+                            nuovoGruppo.AggiungiMembro(nuovoUtente);
                         }
                     }
                 }
