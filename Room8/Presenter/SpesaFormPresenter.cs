@@ -10,20 +10,20 @@ namespace Room8
 		private readonly SpesaForm _spesaForm;
 		private readonly Utente _utente;
 		private readonly Spesa _spesa;
-		private IPresenterEvent _observer;
+		private readonly IPresenterEvent _observer;
 
-		public SpesaFormPresenter(SpesaForm spesaForm, Utente utente, Spesa daModificare, IPresenterEvent observer)
+		public SpesaFormPresenter(SpesaForm spesaForm, Utente utente, IPresenterEvent observer, Spesa daModificare)
 		{
 			this._spesaForm = spesaForm;
 			this._utente = utente;
+			this._observer = observer;
 			if (daModificare == null)
 				this._spesa = new Spesa();
 			else
 				this._spesa = daModificare;
-			this._observer = observer;
 
 			InitializeEvents();
-			InitializeGUI(daModificare);
+			InitializeUI(daModificare);
 		}
 
 		public SpesaForm SpesaForm
@@ -52,10 +52,11 @@ namespace Room8
 			SpesaForm.PercentualeRadioButton.Click += RadioButton_Click;
 			SpesaForm.QuoteRadioButton.Click += RadioButton_Click;
 			SpesaForm.ImportiPrecisiRadioButton.Click += RadioButton_Click;
+			SpesaForm.CommentoButton.Click += CommentoButton_Click;
 			SpesaForm.ConfermaButton.Click += ConfermaButton_Click;
 		}
 
-		void InitializeGUI(Spesa spesa)
+		void InitializeUI(Spesa spesa)
 		{
 			SpesaForm.GruppoComboBox.DataSource = Utente.Gruppi;
 			SpesaForm.GruppoComboBox.DisplayMember = "Nome";
@@ -94,6 +95,12 @@ namespace Room8
 			}
 		}
 
+        private void CommentoButton_Click(object sender, EventArgs e)
+		{
+			CommentoForm commentoForm = new CommentoForm();
+			commentoForm.ShowDialog();
+		}
+
 		void ConfermaButton_Click(object sender, EventArgs e)
 		{
 			SpesaForm.ErrorProvider.Clear();
@@ -107,7 +114,7 @@ namespace Room8
 				Spesa.Data = SpesaForm.DateTimePicker.Value;
 
                 Spesa.SpeseGruppo.Gruppo.SpeseGruppo.AggiungiSpesa(Spesa);
-				Observer.Aggiorna();
+				Observer.AggiornaUI();
 				SpesaForm.Close();
 			}
 			catch (ArgumentException ae)

@@ -111,7 +111,6 @@
             this._commentoButton.TabIndex = 4;
             this._commentoButton.Text = "Commenta";
             this._commentoButton.UseVisualStyleBackColor = true;
-            this._commentoButton.Click += new System.EventHandler(this._commentoButton_Click);
             // 
             // _confermaButton
             // 

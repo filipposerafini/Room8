@@ -54,9 +54,8 @@ namespace Room8
 			RegistratiForm.ErrorProvider.Clear();
 			if (RegistratiForm.OpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
 			{
-				string foto = RegistratiForm.OpenFileDialog.FileName;
-				Foto = foto;
-				RegistratiForm.FileLabel.Text = foto.Substring(foto.LastIndexOf('/') + 1);
+				Foto = RegistratiForm.OpenFileDialog.FileName;
+				RegistratiForm.FileLabel.Text = Foto.Substring(Foto.LastIndexOf('\\') + 1);
 			}
 		}
 

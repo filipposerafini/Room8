@@ -81,10 +81,9 @@ namespace Room8.View
 			get { return _numericUpDown; }
 		}
 
-        private void _commentoButton_Click(object sender, EventArgs e)
-        {
-            CommentoForm commentoForm = new CommentoForm();
-            commentoForm.ShowDialog();
-        }
+		public Button CommentoButton
+		{
+			get { return _commentoButton; }
+		}
     }
 }

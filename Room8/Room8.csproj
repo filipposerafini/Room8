@@ -198,6 +198,7 @@
     <Compile Include="Persistance\PersistenzaGruppiXml.cs" />
     <Compile Include="Model\Commento.cs" />
     <Compile Include="Presenter\IPresenterEvent.cs" />
+    <Compile Include="Presenter\BilancioGruppoFormPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

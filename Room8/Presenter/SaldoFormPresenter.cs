@@ -8,50 +8,18 @@ namespace Room8
 {
     public class SaldoFormPresenter
     {
-        private SaldoForm _saldoForm;
+        private readonly SaldoForm _saldoForm;
         private readonly Utente _utente;
-        private IPresenterEvent _observer;
+        private readonly IPresenterEvent _observer;
 
-        public SaldoFormPresenter(SaldoForm saldoForm, Utente utente, IPresenterEvent observer )
+        public SaldoFormPresenter(SaldoForm saldoForm, Utente utente, IPresenterEvent observer, Saldo daModificare)
         {
             this._saldoForm = saldoForm;
             this._utente = utente;
             this._observer = observer;
-            InitializeEvents();
-
-			List<Utente> utenti = utente.Amici();
-			utenti.Add(utente);
-			SaldoForm.DaComboBox.DataSource = utenti;
-            SaldoForm.DaComboBox.DisplayMember = "Nome";
-			utenti = utente.Amici();
-			utenti.Add(utente);
-			SaldoForm.AComboBox.DataSource = utenti;
-            SaldoForm.AComboBox.DisplayMember = "Nome";
-			//SaldoForm.DaComboBox.SelectedText = utente.Nome;
-
-            SaldoForm.APictureBox.ImageLocation = (SaldoForm.AComboBox.SelectedItem as Utente).Foto;
-            SaldoForm.DaPictureBox.ImageLocation = (SaldoForm.DaComboBox.SelectedItem as Utente).Foto;
-        }
-
-        public SaldoFormPresenter(SaldoForm saldoForm, Utente utente, Saldo daModificare)
-        {
-            this._saldoForm = saldoForm;
-            this._utente = utente;
-            InitializeEvents();
-
-            SaldoForm.DaComboBox.DataSource = utente.Amici();
-            SaldoForm.DaComboBox.DisplayMember = "Nome";
-            SaldoForm.AComboBox.DataSource = utente.Amici();
-            SaldoForm.AComboBox.DisplayMember = "Nome";
-
-            SaldoForm.DaComboBox.SelectedItem = daModificare.Sorgente;
-            SaldoForm.AComboBox.SelectedItem = daModificare.Destinazione;
-            SaldoForm.NumericUpDown.Value = daModificare.Importo;
-            SaldoForm.DateTimePicker.Value = daModificare.Data;   
-
-            SaldoForm.DaPictureBox.ImageLocation = daModificare.Sorgente.Foto;
-            SaldoForm.APictureBox.ImageLocation = daModificare.Destinazione.Foto;
-        }
+			InitializeEvents();
+			InitalizeUI(daModificare);
+		}
 
         public SaldoForm SaldoForm
         {
@@ -61,7 +29,12 @@ namespace Room8
         public Utente Utente
         {
             get { return _utente; }
-        }
+	    }
+
+		public IPresenterEvent Observer
+		{
+			get { return _observer; }
+		}
 
         private void InitializeEvents()
         {
@@ -70,9 +43,25 @@ namespace Room8
             SaldoForm.AComboBox.SelectedIndexChanged += AComboBox_SelectIndexChanged;
         }
 
-		private void InitalizeCombo()
+		private void InitalizeUI(Saldo saldo)
 		{
-			
+			List<Utente> utenti = Utente.Amici();
+			utenti.Add(Utente);
+			SaldoForm.DaComboBox.DataSource = utenti;
+			SaldoForm.DaComboBox.DisplayMember = "Nome";
+			utenti = Utente.Amici();
+			utenti.Add(Utente);
+			SaldoForm.AComboBox.DataSource = utenti;
+			SaldoForm.AComboBox.DisplayMember = "Nome";
+			if (saldo != null)
+			{
+				SaldoForm.DaComboBox.SelectedItem = saldo.Sorgente;
+				SaldoForm.AComboBox.SelectedItem = saldo.Destinazione;
+				SaldoForm.NumericUpDown.Value = saldo.Importo;
+				SaldoForm.DateTimePicker.Value = saldo.Data;
+			}
+			SaldoForm.APictureBox.ImageLocation = (SaldoForm.AComboBox.SelectedItem as Utente).Foto;
+			SaldoForm.DaPictureBox.ImageLocation = (SaldoForm.DaComboBox.SelectedItem as Utente).Foto;
 		}
 
         void DaComboBox_SelectIndexChanged(object sender, EventArgs e)
@@ -97,7 +86,7 @@ namespace Room8
                 Saldo saldo = new Saldo(sorgente,destinazione,importo,data);
 
                 saldo.AggiungiMovimentoDiDenaro();
-                _observer.Aggiorna();
+                Observer.AggiornaUI();
                 SaldoForm.Close();
             }
             catch (ArgumentException ae)
