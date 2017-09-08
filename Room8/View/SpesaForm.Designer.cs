@@ -343,6 +343,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(398, 388);
             this.Controls.Add(this._mainTableLayoutPanel);
+            this.MinimumSize = new System.Drawing.Size(414, 426);
             this.Name = "SpesaForm";
             this.Text = "Room8 - Spesa";
             this._mainTableLayoutPanel.ResumeLayout(false);
