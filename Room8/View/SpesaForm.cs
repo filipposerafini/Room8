@@ -61,6 +61,12 @@ namespace Room8.View
 			get { return _percentualeRadioButton; }
 		}
 
+        public RadioButton ImportiPrecisiRadioButton
+        {
+            get { return _importiPrecisiRadioButton; }
+        }
+
+
 		public ComboBox PaganteComboBox
 		{
 			get { return _paganteComboBox; }
@@ -71,14 +77,15 @@ namespace Room8.View
 			get { return _dateTimePicker; }
 		}
 
-		public TextBox NoteTextBox
-		{
-			get { return _noteTextBox; }
-		}
-
 		public NumericUpDown NumericUpDown
 		{
 			get { return _numericUpDown; }
 		}
+
+        private void _commentoButton_Click(object sender, EventArgs e)
+        {
+            CommentoForm commentoForm = new CommentoForm();
+            commentoForm.ShowDialog();
+        }
     }
 }

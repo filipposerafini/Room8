@@ -54,6 +54,12 @@
     <Compile Include="View\AmicoForm.Designer.cs">
       <DependentUpon>AmicoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\CommentoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CommentoForm.Designer.cs">
+      <DependentUpon>CommentoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\CreaGruppoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +120,9 @@
     </Compile>
     <EmbeddedResource Include="View\AmicoForm.resx">
       <DependentUpon>AmicoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\CommentoForm.resx">
+      <DependentUpon>CommentoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CreaGruppoForm.resx">
       <DependentUpon>CreaGruppoForm.cs</DependentUpon>

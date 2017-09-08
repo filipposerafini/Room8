@@ -94,5 +94,9 @@ namespace Room8
 			MainForm.Close();
 			LoginForm.Show();
 		}
-	}
+        private void MainForm_FormClosing(object sender, EventArgs e)
+        {
+            LoginForm.Close();
+        }
+    }
 }
