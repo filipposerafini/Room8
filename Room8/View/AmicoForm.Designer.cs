@@ -37,20 +37,16 @@
             this._bilancioLabel = new System.Windows.Forms.Label();
             this._importoTotaleLabel = new System.Windows.Forms.Label();
             this._mainPanel = new System.Windows.Forms.Panel();
-            this._transazioniTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._dataLabel = new System.Windows.Forms.Label();
-            this._gruppoLabel = new System.Windows.Forms.Label();
-            this._soldiLabel = new System.Windows.Forms.Label();
             this._confermaPanel = new System.Windows.Forms.Panel();
             this._annullaButton = new System.Windows.Forms.Button();
             this._confermaButton = new System.Windows.Forms.Button();
+            this.listBox = new System.Windows.Forms.ListBox();
             this._mainTableLayoutPanel.SuspendLayout();
             this._nomeTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
             this._centralTableLayoutPanel.SuspendLayout();
             this._bilancioTableLayoutPanel.SuspendLayout();
             this._mainPanel.SuspendLayout();
-            this._transazioniTableLayoutPanel.SuspendLayout();
             this._confermaPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -173,64 +169,13 @@
             // _mainPanel
             // 
             this._mainPanel.AutoScroll = true;
-            this._mainPanel.Controls.Add(this._transazioniTableLayoutPanel);
+            this._mainPanel.Controls.Add(this.listBox);
             this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._mainPanel.Location = new System.Drawing.Point(0, 0);
             this._mainPanel.Margin = new System.Windows.Forms.Padding(0);
             this._mainPanel.Name = "_mainPanel";
             this._mainPanel.Size = new System.Drawing.Size(344, 136);
             this._mainPanel.TabIndex = 2;
-            // 
-            // _transazioniTableLayoutPanel
-            // 
-            this._transazioniTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._transazioniTableLayoutPanel.ColumnCount = 3;
-            this._transazioniTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.46154F));
-            this._transazioniTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 66.53846F));
-            this._transazioniTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 91F));
-            this._transazioniTableLayoutPanel.Controls.Add(this._dataLabel, 0, 0);
-            this._transazioniTableLayoutPanel.Controls.Add(this._gruppoLabel, 1, 0);
-            this._transazioniTableLayoutPanel.Controls.Add(this._soldiLabel, 2, 0);
-            this._transazioniTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
-            this._transazioniTableLayoutPanel.Name = "_transazioniTableLayoutPanel";
-            this._transazioniTableLayoutPanel.RowCount = 1;
-            this._transazioniTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._transazioniTableLayoutPanel.Size = new System.Drawing.Size(338, 44);
-            this._transazioniTableLayoutPanel.TabIndex = 0;
-            // 
-            // _dataLabel
-            // 
-            this._dataLabel.AutoSize = true;
-            this._dataLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._dataLabel.Location = new System.Drawing.Point(3, 0);
-            this._dataLabel.Name = "_dataLabel";
-            this._dataLabel.Size = new System.Drawing.Size(76, 44);
-            this._dataLabel.TabIndex = 0;
-            this._dataLabel.Text = "Data";
-            this._dataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _gruppoLabel
-            // 
-            this._gruppoLabel.AutoSize = true;
-            this._gruppoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._gruppoLabel.Location = new System.Drawing.Point(85, 0);
-            this._gruppoLabel.Name = "_gruppoLabel";
-            this._gruppoLabel.Size = new System.Drawing.Size(158, 44);
-            this._gruppoLabel.TabIndex = 1;
-            this._gruppoLabel.Text = "Gruppo";
-            this._gruppoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _soldiLabel
-            // 
-            this._soldiLabel.AutoSize = true;
-            this._soldiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._soldiLabel.Location = new System.Drawing.Point(249, 0);
-            this._soldiLabel.Name = "_soldiLabel";
-            this._soldiLabel.Size = new System.Drawing.Size(86, 44);
-            this._soldiLabel.TabIndex = 2;
-            this._soldiLabel.Text = "Soldi";
-            this._soldiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _confermaPanel
             // 
@@ -264,6 +209,15 @@
             this._confermaButton.Text = "Conferma";
             this._confermaButton.UseVisualStyleBackColor = true;
             // 
+            // listBox
+            // 
+            this.listBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox.FormattingEnabled = true;
+            this.listBox.Location = new System.Drawing.Point(0, 0);
+            this.listBox.Name = "listBox";
+            this.listBox.Size = new System.Drawing.Size(344, 136);
+            this.listBox.TabIndex = 0;
+            // 
             // AmicoForm
             // 
             this.AcceptButton = this._confermaButton;
@@ -282,8 +236,6 @@
             this._bilancioTableLayoutPanel.ResumeLayout(false);
             this._bilancioTableLayoutPanel.PerformLayout();
             this._mainPanel.ResumeLayout(false);
-            this._transazioniTableLayoutPanel.ResumeLayout(false);
-            this._transazioniTableLayoutPanel.PerformLayout();
             this._confermaPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -303,9 +255,6 @@
         private System.Windows.Forms.Label _bilancioLabel;
         private System.Windows.Forms.Label _importoTotaleLabel;
         private System.Windows.Forms.Panel _mainPanel;
-        private System.Windows.Forms.TableLayoutPanel _transazioniTableLayoutPanel;
-        private System.Windows.Forms.Label _dataLabel;
-        private System.Windows.Forms.Label _gruppoLabel;
-        private System.Windows.Forms.Label _soldiLabel;
+        private System.Windows.Forms.ListBox listBox;
     }
 }

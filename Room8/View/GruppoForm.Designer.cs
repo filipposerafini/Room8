@@ -52,6 +52,7 @@
             this._creatorGroupLabel = new System.Windows.Forms.Label();
             this._aggiungiPersonaLinkLabel = new System.Windows.Forms.LinkLabel();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this._openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
@@ -335,6 +336,10 @@
             // 
             this._errorProvider.ContainerControl = this;
             // 
+            // _openFileDialog
+            // 
+            this._openFileDialog.FileName = "openFileDialog1";
+            // 
             // GruppoForm
             // 
             this.AcceptButton = this._confermaButton;
@@ -391,5 +396,6 @@
         private System.Windows.Forms.Label _fileLabel;
         private System.Windows.Forms.Button _fotoButton;
         private System.Windows.Forms.PictureBox _pictureBox;
+        private System.Windows.Forms.OpenFileDialog _openFileDialog;
     }
 }
