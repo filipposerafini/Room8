@@ -41,7 +41,7 @@ namespace Room8
 			MainForm.AccountToolStrip.Click += AccountToolStrip_Click;
 			MainForm.CreaGruppoToolStrip.Click += CreaGruppoToolStrip_Click;
 			MainForm.EsciToolStrip.Click += EsciToolStrip_Click;
-			MainForm.FormClosing += EsciToolStrip_Click;
+			MainForm.FormClosing += MainForm_FormClosing;
 		}
 
 		void InitializeUI()
@@ -101,7 +101,10 @@ namespace Room8
 		private void EsciToolStrip_Click(object sender, EventArgs e)
 		{
 			MainForm.Close();
-			LoginForm.Show();
 		}
+        private void MainForm_FormClosing(object sender, EventArgs e)
+        {
+            LoginForm.Close();
+        }
     }
 }

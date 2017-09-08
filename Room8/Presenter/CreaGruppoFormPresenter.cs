@@ -4,9 +4,9 @@ namespace Room8
 {
 	class CreaGruppoFormPresenter
 	{
-		CreaGruppoForm creaGruppoForm;
+		GruppoForm creaGruppoForm;
 
-		public CreaGruppoFormPresenter(CreaGruppoForm creaGruppoForm)
+		public CreaGruppoFormPresenter(GruppoForm creaGruppoForm)
 		{
 			this.creaGruppoForm = creaGruppoForm;
 		}

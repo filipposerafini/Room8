@@ -37,7 +37,7 @@
             this._listaCommentiLabel = new System.Windows.Forms.Label();
             this._commentoLabel = new System.Windows.Forms.Label();
             this._descrizioneTextBox = new System.Windows.Forms.TextBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this._commentiListBox = new System.Windows.Forms.ListBox();
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
@@ -113,7 +113,7 @@
             this._formTableLayoutPanel.Controls.Add(this._listaCommentiLabel, 0, 0);
             this._formTableLayoutPanel.Controls.Add(this._commentoLabel, 0, 1);
             this._formTableLayoutPanel.Controls.Add(this._descrizioneTextBox, 1, 1);
-            this._formTableLayoutPanel.Controls.Add(this.listBox1, 1, 0);
+            this._formTableLayoutPanel.Controls.Add(this._commentiListBox, 1, 0);
             this._formTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._formTableLayoutPanel.Location = new System.Drawing.Point(3, 37);
             this._formTableLayoutPanel.Name = "_formTableLayoutPanel";
@@ -153,14 +153,14 @@
             this._descrizioneTextBox.Size = new System.Drawing.Size(220, 20);
             this._descrizioneTextBox.TabIndex = 6;
             // 
-            // listBox1
+            // _commentiListBox
             // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(135, 3);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(220, 183);
-            this.listBox1.TabIndex = 7;
+            this._commentiListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._commentiListBox.FormattingEnabled = true;
+            this._commentiListBox.Location = new System.Drawing.Point(135, 3);
+            this._commentiListBox.Name = "_commentiListBox";
+            this._commentiListBox.Size = new System.Drawing.Size(220, 183);
+            this._commentiListBox.TabIndex = 7;
             // 
             // CommentoForm
             // 
@@ -190,6 +190,6 @@
         private System.Windows.Forms.Label _listaCommentiLabel;
         private System.Windows.Forms.Label _commentoLabel;
         private System.Windows.Forms.TextBox _descrizioneTextBox;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox _commentiListBox;
     }
 }

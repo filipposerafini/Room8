@@ -1,6 +1,6 @@
 ﻿namespace Room8.View
 {
-    partial class CreaGruppoForm
+    partial class GruppoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._saldaLabel = new System.Windows.Forms.Label();
+            this._gruppoLabel = new System.Windows.Forms.Label();
             this._confirmPanel = new System.Windows.Forms.Panel();
             this._confermaButton = new System.Windows.Forms.Button();
             this._annullaButton = new System.Windows.Forms.Button();
@@ -39,6 +39,10 @@
             this._nameGroupTableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this._pagatoLabel = new System.Windows.Forms.Label();
             this._nomeGruppoTextBox = new System.Windows.Forms.TextBox();
+            this._caricaPanel = new System.Windows.Forms.Panel();
+            this._fileLabel = new System.Windows.Forms.Label();
+            this._fotoButton = new System.Windows.Forms.Button();
+            this._pictureBox = new System.Windows.Forms.PictureBox();
             this._addPanel = new System.Windows.Forms.Panel();
             this._addUserTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._addUserSplitContainer = new System.Windows.Forms.SplitContainer();
@@ -52,6 +56,8 @@
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
             this._nameGroupTableLayoutPanel1.SuspendLayout();
+            this._caricaPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
             this._addPanel.SuspendLayout();
             this._addUserTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._addUserSplitContainer)).BeginInit();
@@ -65,7 +71,7 @@
             // 
             this._mainTableLayoutPanel.ColumnCount = 1;
             this._mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._mainTableLayoutPanel.Controls.Add(this._saldaLabel, 0, 0);
+            this._mainTableLayoutPanel.Controls.Add(this._gruppoLabel, 0, 0);
             this._mainTableLayoutPanel.Controls.Add(this._confirmPanel, 0, 2);
             this._mainTableLayoutPanel.Controls.Add(this._formTableLayoutPanel, 0, 1);
             this._mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -78,18 +84,18 @@
             this._mainTableLayoutPanel.Size = new System.Drawing.Size(357, 318);
             this._mainTableLayoutPanel.TabIndex = 2;
             // 
-            // _saldaLabel
+            // _gruppoLabel
             // 
-            this._saldaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this._gruppoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this._saldaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._saldaLabel.Location = new System.Drawing.Point(3, 0);
-            this._saldaLabel.Name = "_saldaLabel";
-            this._saldaLabel.Size = new System.Drawing.Size(351, 34);
-            this._saldaLabel.TabIndex = 0;
-            this._saldaLabel.Text = "Crea gruppo";
-            this._saldaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._gruppoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._gruppoLabel.Location = new System.Drawing.Point(3, 0);
+            this._gruppoLabel.Name = "_gruppoLabel";
+            this._gruppoLabel.Size = new System.Drawing.Size(351, 34);
+            this._gruppoLabel.TabIndex = 0;
+            this._gruppoLabel.Text = "Gruppo";
+            this._gruppoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _confirmPanel
             // 
@@ -134,8 +140,8 @@
             this._formTableLayoutPanel.Location = new System.Drawing.Point(3, 37);
             this._formTableLayoutPanel.Name = "_formTableLayoutPanel";
             this._formTableLayoutPanel.RowCount = 3;
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 93F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
             this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this._formTableLayoutPanel.Size = new System.Drawing.Size(351, 239);
             this._formTableLayoutPanel.TabIndex = 2;
@@ -144,9 +150,9 @@
             // 
             this._membriLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._membriLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._membriLabel.Location = new System.Drawing.Point(3, 70);
+            this._membriLabel.Location = new System.Drawing.Point(3, 93);
             this._membriLabel.Name = "_membriLabel";
-            this._membriLabel.Size = new System.Drawing.Size(345, 40);
+            this._membriLabel.Size = new System.Drawing.Size(345, 33);
             this._membriLabel.TabIndex = 1;
             this._membriLabel.Text = "Membri del gruppo:";
             this._membriLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -154,17 +160,20 @@
             // _nameGroupTableLayoutPanel1
             // 
             this._nameGroupTableLayoutPanel1.ColumnCount = 2;
-            this._nameGroupTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._nameGroupTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this._nameGroupTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 40.17094F));
+            this._nameGroupTableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 59.82906F));
             this._nameGroupTableLayoutPanel1.Controls.Add(this._pagatoLabel, 0, 0);
             this._nameGroupTableLayoutPanel1.Controls.Add(this._nomeGruppoTextBox, 1, 0);
+            this._nameGroupTableLayoutPanel1.Controls.Add(this._caricaPanel, 1, 1);
+            this._nameGroupTableLayoutPanel1.Controls.Add(this._pictureBox, 0, 1);
             this._nameGroupTableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this._nameGroupTableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this._nameGroupTableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
             this._nameGroupTableLayoutPanel1.Name = "_nameGroupTableLayoutPanel1";
-            this._nameGroupTableLayoutPanel1.RowCount = 1;
+            this._nameGroupTableLayoutPanel1.RowCount = 2;
             this._nameGroupTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._nameGroupTableLayoutPanel1.Size = new System.Drawing.Size(351, 70);
+            this._nameGroupTableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
+            this._nameGroupTableLayoutPanel1.Size = new System.Drawing.Size(351, 93);
             this._nameGroupTableLayoutPanel1.TabIndex = 3;
             // 
             // _pagatoLabel
@@ -173,7 +182,7 @@
             this._pagatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._pagatoLabel.Location = new System.Drawing.Point(3, 0);
             this._pagatoLabel.Name = "_pagatoLabel";
-            this._pagatoLabel.Size = new System.Drawing.Size(169, 70);
+            this._pagatoLabel.Size = new System.Drawing.Size(135, 38);
             this._pagatoLabel.TabIndex = 0;
             this._pagatoLabel.Text = "Nome del gruppo:";
             this._pagatoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -181,10 +190,52 @@
             // _nomeGruppoTextBox
             // 
             this._nomeGruppoTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._nomeGruppoTextBox.Location = new System.Drawing.Point(178, 25);
+            this._nomeGruppoTextBox.Location = new System.Drawing.Point(161, 9);
             this._nomeGruppoTextBox.Name = "_nomeGruppoTextBox";
             this._nomeGruppoTextBox.Size = new System.Drawing.Size(170, 20);
             this._nomeGruppoTextBox.TabIndex = 1;
+            // 
+            // _caricaPanel
+            // 
+            this._caricaPanel.Controls.Add(this._fileLabel);
+            this._caricaPanel.Controls.Add(this._fotoButton);
+            this._caricaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._caricaPanel.Location = new System.Drawing.Point(144, 41);
+            this._caricaPanel.Name = "_caricaPanel";
+            this._caricaPanel.Size = new System.Drawing.Size(204, 49);
+            this._caricaPanel.TabIndex = 5;
+            // 
+            // _fileLabel
+            // 
+            this._fileLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this._fileLabel.AutoSize = true;
+            this._fileLabel.Location = new System.Drawing.Point(98, 18);
+            this._fileLabel.Name = "_fileLabel";
+            this._fileLabel.Size = new System.Drawing.Size(78, 13);
+            this._fileLabel.TabIndex = 5;
+            this._fileLabel.Text = "Seleziona file...";
+            // 
+            // _fotoButton
+            // 
+            this._fotoButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this._fotoButton.Location = new System.Drawing.Point(17, 13);
+            this._fotoButton.Name = "_fotoButton";
+            this._fotoButton.Size = new System.Drawing.Size(75, 23);
+            this._fotoButton.TabIndex = 4;
+            this._fotoButton.Text = "Carica foto";
+            this._fotoButton.UseVisualStyleBackColor = true;
+            // 
+            // _pictureBox
+            // 
+            this._pictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._pictureBox.Image = global::Room8.Properties.Resources.defaultgroup;
+            this._pictureBox.Location = new System.Drawing.Point(45, 40);
+            this._pictureBox.Margin = new System.Windows.Forms.Padding(0);
+            this._pictureBox.Name = "_pictureBox";
+            this._pictureBox.Size = new System.Drawing.Size(50, 50);
+            this._pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this._pictureBox.TabIndex = 6;
+            this._pictureBox.TabStop = false;
             // 
             // _addPanel
             // 
@@ -193,10 +244,10 @@
             this._addPanel.Controls.Add(this._creatorGroupLabel);
             this._addPanel.Controls.Add(this._aggiungiPersonaLinkLabel);
             this._addPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._addPanel.Location = new System.Drawing.Point(0, 110);
+            this._addPanel.Location = new System.Drawing.Point(0, 126);
             this._addPanel.Margin = new System.Windows.Forms.Padding(0);
             this._addPanel.Name = "_addPanel";
-            this._addPanel.Size = new System.Drawing.Size(351, 129);
+            this._addPanel.Size = new System.Drawing.Size(351, 113);
             this._addPanel.TabIndex = 4;
             // 
             // _addUserTableLayoutPanel
@@ -284,7 +335,7 @@
             // 
             this._errorProvider.ContainerControl = this;
             // 
-            // CreaGruppoForm
+            // GruppoForm
             // 
             this.AcceptButton = this._confermaButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -292,13 +343,16 @@
             this.ClientSize = new System.Drawing.Size(357, 318);
             this.Controls.Add(this._mainTableLayoutPanel);
             this.MinimumSize = new System.Drawing.Size(373, 356);
-            this.Name = "CreaGruppoForm";
-            this.Text = "Room8 - Crea gruppo";
+            this.Name = "GruppoForm";
+            this.Text = "Room8 - Gruppo";
             this._mainTableLayoutPanel.ResumeLayout(false);
             this._confirmPanel.ResumeLayout(false);
             this._formTableLayoutPanel.ResumeLayout(false);
             this._nameGroupTableLayoutPanel1.ResumeLayout(false);
             this._nameGroupTableLayoutPanel1.PerformLayout();
+            this._caricaPanel.ResumeLayout(false);
+            this._caricaPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).EndInit();
             this._addPanel.ResumeLayout(false);
             this._addPanel.PerformLayout();
             this._addUserTableLayoutPanel.ResumeLayout(false);
@@ -315,7 +369,7 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel _mainTableLayoutPanel;
-        private System.Windows.Forms.Label _saldaLabel;
+        private System.Windows.Forms.Label _gruppoLabel;
         private System.Windows.Forms.Panel _confirmPanel;
         private System.Windows.Forms.Button _confermaButton;
         private System.Windows.Forms.Button _annullaButton;
@@ -333,5 +387,9 @@
         private System.Windows.Forms.Label _mailLabel;
         private System.Windows.Forms.TextBox _mailTextBox;
         private System.Windows.Forms.Button _removeButton;
+        private System.Windows.Forms.Panel _caricaPanel;
+        private System.Windows.Forms.Label _fileLabel;
+        private System.Windows.Forms.Button _fotoButton;
+        private System.Windows.Forms.PictureBox _pictureBox;
     }
 }

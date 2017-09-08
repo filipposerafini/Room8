@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace Room8.View
 {
-    public partial class CreaGruppoForm : Form
+    public partial class BilancioGruppoForm : Form
     {
-        public CreaGruppoForm()
+        public BilancioGruppoForm()
         {
             InitializeComponent();
         }

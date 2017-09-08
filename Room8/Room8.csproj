@@ -60,11 +60,17 @@
     <Compile Include="View\CommentoForm.Designer.cs">
       <DependentUpon>CommentoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\CreaGruppoForm.cs">
+    <Compile Include="View\GruppoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\CreaGruppoForm.Designer.cs">
-      <DependentUpon>CreaGruppoForm.cs</DependentUpon>
+    <Compile Include="View\GruppoForm.Designer.cs">
+      <DependentUpon>GruppoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\BilancioGruppoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\BilancioGruppoForm.Designer.cs">
+      <DependentUpon>BilancioGruppoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
@@ -124,8 +130,11 @@
     <EmbeddedResource Include="View\CommentoForm.resx">
       <DependentUpon>CommentoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\CreaGruppoForm.resx">
-      <DependentUpon>CreaGruppoForm.cs</DependentUpon>
+    <EmbeddedResource Include="View\GruppoForm.resx">
+      <DependentUpon>GruppoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\BilancioGruppoForm.resx">
+      <DependentUpon>BilancioGruppoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

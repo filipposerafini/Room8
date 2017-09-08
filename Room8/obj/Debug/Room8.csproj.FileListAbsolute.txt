@@ -31,3 +31,4 @@ E:\Progetto\Room8\Room8\obj\Debug\Room8.View.PartiForm.resources
 E:\Progetto\Room8\Room8\obj\Debug\Room8.View.AmicoForm.resources
 E:\Progetto\Room8\Room8\obj\Debug\Room8.View.ProfiloForm.resources
 E:\Progetto\Room8\Room8\obj\Debug\Room8.View.CommentoForm.resources
+E:\Progetto\Room8\Room8\obj\Debug\Room8.View.GruppoForm.resources
