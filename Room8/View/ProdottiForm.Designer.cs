@@ -33,17 +33,15 @@
             this._aggiungiButton = new System.Windows.Forms.Button();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._scrollPanel = new System.Windows.Forms.Panel();
             this._prodottiLabel = new System.Windows.Forms.Label();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._prodottoTextBox = new System.Windows.Forms.TextBox();
             this._prodottoLabel = new System.Windows.Forms.Label();
-            this._checkBox = new System.Windows.Forms.CheckBox();
             this._rimuoviButton = new System.Windows.Forms.Button();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this._prodottiPanel.SuspendLayout();
             this._mainTableLayoutPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
-            this._scrollPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +89,7 @@
             // 
             this._formTableLayoutPanel.ColumnCount = 1;
             this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._formTableLayoutPanel.Controls.Add(this._scrollPanel, 0, 0);
+            this._formTableLayoutPanel.Controls.Add(this.listBox1, 0, 0);
             this._formTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._formTableLayoutPanel.Location = new System.Drawing.Point(3, 37);
             this._formTableLayoutPanel.Name = "_formTableLayoutPanel";
@@ -99,17 +97,6 @@
             this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 132F));
             this._formTableLayoutPanel.Size = new System.Drawing.Size(305, 166);
             this._formTableLayoutPanel.TabIndex = 2;
-            // 
-            // _scrollPanel
-            // 
-            this._scrollPanel.AutoScroll = true;
-            this._scrollPanel.Controls.Add(this._checkBox);
-            this._scrollPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._scrollPanel.Location = new System.Drawing.Point(0, 0);
-            this._scrollPanel.Margin = new System.Windows.Forms.Padding(0);
-            this._scrollPanel.Name = "_scrollPanel";
-            this._scrollPanel.Size = new System.Drawing.Size(305, 166);
-            this._scrollPanel.TabIndex = 0;
             // 
             // _prodottiLabel
             // 
@@ -145,16 +132,6 @@
             this._prodottoLabel.TabIndex = 3;
             this._prodottoLabel.Text = "Prodotto:";
             // 
-            // _checkBox
-            // 
-            this._checkBox.AutoSize = true;
-            this._checkBox.Location = new System.Drawing.Point(9, 13);
-            this._checkBox.Name = "_checkBox";
-            this._checkBox.Size = new System.Drawing.Size(80, 17);
-            this._checkBox.TabIndex = 0;
-            this._checkBox.Text = "checkBox1";
-            this._checkBox.UseVisualStyleBackColor = true;
-            // 
             // _rimuoviButton
             // 
             this._rimuoviButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -164,6 +141,17 @@
             this._rimuoviButton.TabIndex = 4;
             this._rimuoviButton.Text = "Rimuovi selezionati";
             this._rimuoviButton.UseVisualStyleBackColor = true;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(0, 0);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBox1.Size = new System.Drawing.Size(305, 166);
+            this.listBox1.TabIndex = 0;
             // 
             // ProdottiForm
             // 
@@ -178,8 +166,6 @@
             this._prodottiPanel.PerformLayout();
             this._mainTableLayoutPanel.ResumeLayout(false);
             this._formTableLayoutPanel.ResumeLayout(false);
-            this._scrollPanel.ResumeLayout(false);
-            this._scrollPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);
 
@@ -191,12 +177,11 @@
         private System.Windows.Forms.Button _aggiungiButton;
         private System.Windows.Forms.TableLayoutPanel _mainTableLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel _formTableLayoutPanel;
-        private System.Windows.Forms.Panel _scrollPanel;
         private System.Windows.Forms.Label _prodottiLabel;
         private System.Windows.Forms.ErrorProvider _errorProvider;
         private System.Windows.Forms.Button _rimuoviButton;
         private System.Windows.Forms.Label _prodottoLabel;
         private System.Windows.Forms.TextBox _prodottoTextBox;
-        private System.Windows.Forms.CheckBox _checkBox;
+        private System.Windows.Forms.ListBox listBox1;
     }
 }
