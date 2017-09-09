@@ -93,14 +93,14 @@ namespace Room8
 			removeButton.Text = "X";
 			removeButton.UseVisualStyleBackColor = true;
 
-			GruppoForm.MembriTable.Height = 90 + 40 * GruppoForm.MembriTable.RowStyles.Count;
-			GruppoForm.MembriTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40));
-			GruppoForm.MembriTable.Controls.Add(mailLabel, 0, GruppoForm.MembriTable.RowStyles.Count);
-			GruppoForm.MembriTable.Controls.Add(mailTextBox, 1, GruppoForm.MembriTable.RowStyles.Count);
-			GruppoForm.MembriTable.Controls.Add(removeButton, 2, GruppoForm.MembriTable.RowStyles.Count);
-		}
+			GruppoForm.MembriTable.Controls.Add(mailLabel, 0, GruppoForm.MembriTable.RowStyles.Count - 1);
+			GruppoForm.MembriTable.Controls.Add(mailTextBox, 1, GruppoForm.MembriTable.RowStyles.Count - 1);
+			GruppoForm.MembriTable.Controls.Add(removeButton, 2, GruppoForm.MembriTable.RowStyles.Count - 1);
+            GruppoForm.MembriTable.Height = 40 * GruppoForm.MembriTable.RowStyles.Count - 2;
+            GruppoForm.MembriTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40));
+        }
 
-		void FotoButton_Click(object sender, EventArgs e)
+        void FotoButton_Click(object sender, EventArgs e)
 		{
 			GruppoForm.ErrorProvider.Clear();
 			if (GruppoForm.OpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
