@@ -257,9 +257,9 @@
             this._addUserTableLayoutPanel.Name = "_addUserTableLayoutPanel";
             this._addUserTableLayoutPanel.RowCount = 1;
             this._addUserTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
-            this._addUserTableLayoutPanel.Size = new System.Drawing.Size(406, 40);
+            this._addUserTableLayoutPanel.Size = new System.Drawing.Size(406, 0);
             this._addUserTableLayoutPanel.TabIndex = 5;
-            // 
+			// 
             // _creatorGroupLabel
             // 
             this._creatorGroupLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));

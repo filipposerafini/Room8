@@ -10,14 +10,14 @@ namespace Room8
 		private readonly GruppoForm _gruppoForm;
 		private readonly Utente _utente;
 		private Gruppo _gruppo;
-		private Dictionary<TextBox, Button> _controls;
+		private List<Button> _controls;
 
 		public GruppoFormPresenter(GruppoForm creaGruppoForm, Utente utente, Gruppo gruppo)
 		{
 			this._gruppoForm = creaGruppoForm;
 			this._utente = utente;
 			this._gruppo = gruppo;
-			this._controls = new Dictionary<TextBox, Button>();
+			this._controls = new List<Button>();
 			InitializeEvents();
 			InitializeUI();
 		}
@@ -38,7 +38,7 @@ namespace Room8
 			set { _gruppo = value; }
 		}
 
-		public Dictionary<TextBox, Button> Controls
+		public List<Button> Controls
 		{
 			get { return _controls; }
 		}
@@ -92,13 +92,16 @@ namespace Room8
 			removeButton.TabIndex = 0;
 			removeButton.Text = "X";
 			removeButton.UseVisualStyleBackColor = true;
+			removeButton.Click += RemoveButton_Click;
 
 			GruppoForm.MembriTable.Controls.Add(mailLabel, 0, GruppoForm.MembriTable.RowStyles.Count - 1);
 			GruppoForm.MembriTable.Controls.Add(mailTextBox, 1, GruppoForm.MembriTable.RowStyles.Count - 1);
 			GruppoForm.MembriTable.Controls.Add(removeButton, 2, GruppoForm.MembriTable.RowStyles.Count - 1);
-            GruppoForm.MembriTable.Height = 40 * GruppoForm.MembriTable.RowStyles.Count - 2;
-            GruppoForm.MembriTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40));
-        }
+            GruppoForm.MembriTable.Height += 40;
+			GruppoForm.MembriTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40));
+			GruppoForm.MembriTable.RowCount++;
+			Controls.Add(removeButton);
+		}
 
         void FotoButton_Click(object sender, EventArgs e)
 		{
@@ -114,6 +117,41 @@ namespace Room8
 		void AggiungiPersonaLinkLabel_Click(object sender, EventArgs e)
 		{
 			AggiungiRiga("");
+		}
+
+		public void remove_row(TableLayoutPanel panel, int row_index_to_remove)
+		{
+			if (row_index_to_remove >= panel.RowCount)
+				return;
+
+			// delete all controls of row that we want to delete
+			for (int i = 0; i < panel.ColumnCount; i++)
+			{
+				var control = panel.GetControlFromPosition(i, row_index_to_remove);
+				panel.Controls.Remove(control);
+			}
+
+			// move up row controls that comes after row we want to remove
+			for (int i = row_index_to_remove + 1; i < panel.RowCount; i++)
+			{
+				for (int j = 0; j < panel.ColumnCount; j++)
+				{
+					var control = panel.GetControlFromPosition(j, i);
+					if (control != null)
+						panel.SetRow(control, i - 1);
+				}
+			}
+
+			// remove last row
+			panel.RowStyles.RemoveAt(panel.RowCount - 1);
+			panel.RowCount--;
+		}
+
+		void RemoveButton_Click(object sender, EventArgs e)
+		{
+			remove_row(GruppoForm.MembriTable, Controls.IndexOf((Button)sender));
+			Controls.RemoveAt(Controls.IndexOf((Button)sender));
+			GruppoForm.MembriTable.Height -= 40;
 		}
 
 		void ConfermaButton_Click(object sender, EventArgs e)
