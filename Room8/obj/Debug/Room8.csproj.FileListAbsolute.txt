@@ -32,3 +32,4 @@ E:\Progetto\Room8\Room8\obj\Debug\Room8.View.ProfiloForm.resources
 E:\Progetto\Room8\Room8\obj\Debug\Room8.View.CommentoForm.resources
 E:\Progetto\Room8\Room8\obj\Debug\Room8.View.GruppoForm.resources
 E:\Progetto\Room8\Room8\obj\Debug\Room8.View.BilancioGruppoForm.resources
+E:\Progetto\Room8\Room8\obj\Debug\Room8.View.ProdottiForm.resources

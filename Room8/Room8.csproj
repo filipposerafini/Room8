@@ -90,6 +90,12 @@
     <Compile Include="View\PartiForm.Designer.cs">
       <DependentUpon>PartiForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ProdottiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProdottiForm.Designer.cs">
+      <DependentUpon>ProdottiForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\ProfiloForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,6 +150,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\PartiForm.resx">
       <DependentUpon>PartiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProdottiForm.resx">
+      <DependentUpon>ProdottiForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProfiloForm.resx">
       <DependentUpon>ProfiloForm.cs</DependentUpon>

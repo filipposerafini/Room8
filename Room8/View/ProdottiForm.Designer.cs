@@ -63,7 +63,7 @@
             // _aggiungiButton
             // 
             this._aggiungiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._aggiungiButton.Location = new System.Drawing.Point(224, 31);
+            this._aggiungiButton.Location = new System.Drawing.Point(224, 32);
             this._aggiungiButton.Name = "_aggiungiButton";
             this._aggiungiButton.Size = new System.Drawing.Size(75, 23);
             this._aggiungiButton.TabIndex = 1;
@@ -171,6 +171,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 280);
             this.Controls.Add(this._mainTableLayoutPanel);
+            this.MinimumSize = new System.Drawing.Size(327, 318);
             this.Name = "ProdottiForm";
             this.Text = "Room8 - Prodotti";
             this._prodottiPanel.ResumeLayout(false);
