@@ -46,6 +46,7 @@
             this._bilancioImportoLabel = new System.Windows.Forms.Label();
             this._membriListBox = new System.Windows.Forms.ListBox();
             this._membriLabel = new System.Windows.Forms.Label();
+            this._prodottiButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this._mainTableLayoutPanel.SuspendLayout();
@@ -63,7 +64,7 @@
             this._pictureBox.Location = new System.Drawing.Point(0, 0);
             this._pictureBox.Margin = new System.Windows.Forms.Padding(0);
             this._pictureBox.Name = "_pictureBox";
-            this._pictureBox.Size = new System.Drawing.Size(118, 51);
+            this._pictureBox.Size = new System.Drawing.Size(137, 51);
             this._pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this._pictureBox.TabIndex = 0;
             this._pictureBox.TabStop = false;
@@ -86,9 +87,9 @@
             // 
             this._registratiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._registratiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._registratiLabel.Location = new System.Drawing.Point(121, 0);
+            this._registratiLabel.Location = new System.Drawing.Point(140, 0);
             this._registratiLabel.Name = "_registratiLabel";
-            this._registratiLabel.Size = new System.Drawing.Size(383, 51);
+            this._registratiLabel.Size = new System.Drawing.Size(364, 51);
             this._registratiLabel.TabIndex = 0;
             this._registratiLabel.Text = "Nome Gruppo";
             this._registratiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -112,6 +113,7 @@
             // 
             // _bottomPanel
             // 
+            this._bottomPanel.Controls.Add(this._prodottiButton);
             this._bottomPanel.Controls.Add(this._modificaButton);
             this._bottomPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._bottomPanel.Location = new System.Drawing.Point(0, 328);
@@ -123,8 +125,8 @@
             // _titleTableLayoutPanel
             // 
             this._titleTableLayoutPanel.ColumnCount = 2;
-            this._titleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 23.44961F));
-            this._titleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 76.55038F));
+            this._titleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.0217F));
+            this._titleTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.9783F));
             this._titleTableLayoutPanel.Controls.Add(this._pictureBox, 0, 0);
             this._titleTableLayoutPanel.Controls.Add(this._registratiLabel, 1, 0);
             this._titleTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -221,7 +223,6 @@
             this._separatorLabel.Name = "_separatorLabel";
             this._separatorLabel.Size = new System.Drawing.Size(126, 2);
             this._separatorLabel.TabIndex = 14;
-            this._separatorLabel.Text = "dfgdfgdfgdfgdfgfd";
             // 
             // _riepilogoBilancioLabel
             // 
@@ -270,12 +271,23 @@
             this._membriLabel.Text = "Membri del Gruppo:";
             this._membriLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // _prodottiButton
+            // 
+            this._prodottiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._prodottiButton.Location = new System.Drawing.Point(339, 11);
+            this._prodottiButton.Name = "_prodottiButton";
+            this._prodottiButton.Size = new System.Drawing.Size(75, 23);
+            this._prodottiButton.TabIndex = 14;
+            this._prodottiButton.Text = "Prodotti";
+            this._prodottiButton.UseVisualStyleBackColor = true;
+            // 
             // BilancioGruppoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(507, 374);
             this.Controls.Add(this._mainTableLayoutPanel);
+            this.MinimumSize = new System.Drawing.Size(523, 412);
             this.Name = "BilancioGruppoForm";
             this.Text = "Room8 - Gruppo";
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).EndInit();
@@ -311,5 +323,6 @@
         private System.Windows.Forms.Label _riepilogoBilancioLabel;
         private System.Windows.Forms.Label _bilancioImportoLabel;
         private System.Windows.Forms.Label _separatorLabel;
+        private System.Windows.Forms.Button _prodottiButton;
     }
 }

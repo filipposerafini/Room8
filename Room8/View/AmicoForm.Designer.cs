@@ -39,8 +39,7 @@
             this._mainPanel = new System.Windows.Forms.Panel();
             this.listBox = new System.Windows.Forms.ListBox();
             this._confermaPanel = new System.Windows.Forms.Panel();
-            this._annullaButton = new System.Windows.Forms.Button();
-            this._confermaButton = new System.Windows.Forms.Button();
+            this._indietroButton = new System.Windows.Forms.Button();
             this._mainTableLayoutPanel.SuspendLayout();
             this._nomeTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
@@ -189,8 +188,7 @@
             // 
             // _confermaPanel
             // 
-            this._confermaPanel.Controls.Add(this._annullaButton);
-            this._confermaPanel.Controls.Add(this._confermaButton);
+            this._confermaPanel.Controls.Add(this._indietroButton);
             this._confermaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._confermaPanel.Location = new System.Drawing.Point(0, 182);
             this._confermaPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -198,30 +196,19 @@
             this._confermaPanel.Size = new System.Drawing.Size(451, 47);
             this._confermaPanel.TabIndex = 15;
             // 
-            // _annullaButton
+            // _indietroButton
             // 
-            this._annullaButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._annullaButton.Location = new System.Drawing.Point(364, 8);
-            this._annullaButton.Name = "_annullaButton";
-            this._annullaButton.Size = new System.Drawing.Size(75, 23);
-            this._annullaButton.TabIndex = 14;
-            this._annullaButton.Text = "Annulla";
-            this._annullaButton.UseVisualStyleBackColor = true;
-            // 
-            // _confermaButton
-            // 
-            this._confermaButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this._confermaButton.Location = new System.Drawing.Point(286, 8);
-            this._confermaButton.Name = "_confermaButton";
-            this._confermaButton.Size = new System.Drawing.Size(75, 23);
-            this._confermaButton.TabIndex = 13;
-            this._confermaButton.Text = "Conferma";
-            this._confermaButton.UseVisualStyleBackColor = true;
+            this._indietroButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._indietroButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this._indietroButton.Location = new System.Drawing.Point(364, 8);
+            this._indietroButton.Name = "_indietroButton";
+            this._indietroButton.Size = new System.Drawing.Size(75, 23);
+            this._indietroButton.TabIndex = 14;
+            this._indietroButton.Text = "Indietro";
+            this._indietroButton.UseVisualStyleBackColor = true;
             // 
             // AmicoForm
             // 
-            this.AcceptButton = this._confermaButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(451, 229);
@@ -249,8 +236,7 @@
         private System.Windows.Forms.Label _nomeAmicoLabel;
         private System.Windows.Forms.PictureBox _pictureBox;
         private System.Windows.Forms.Panel _confermaPanel;
-        private System.Windows.Forms.Button _annullaButton;
-        private System.Windows.Forms.Button _confermaButton;
+        private System.Windows.Forms.Button _indietroButton;
         private System.Windows.Forms.TableLayoutPanel _centralTableLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel _bilancioTableLayoutPanel;
         private System.Windows.Forms.Label _bilancioLabel;
