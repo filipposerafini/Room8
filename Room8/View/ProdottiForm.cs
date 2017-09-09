@@ -15,5 +15,25 @@ namespace Room8.View
         {
             InitializeComponent();
         }
+
+		public TextBox ProdottoTextBox
+		{
+			get { return _prodottoTextBox; }
+		}
+
+		public Button AggiungiButton
+		{
+			get { return _aggiungiButton; }
+		}
+
+		public Button RimuoviButton
+		{
+			get { return _rimuoviButton; }
+		}
+
+		public ErrorProvider ErrorProvider
+		{
+			get { return _errorProvider; }
+		}
     }
 }

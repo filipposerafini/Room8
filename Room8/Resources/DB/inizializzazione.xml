@@ -47,7 +47,7 @@
 			<Email>utente1@mail.com</Email>
 			<Password>password1</Password>
 			<Telefono>333333333</Telefono>
-			<Foto></Foto>
+			<Foto>../../Resources/Images/frank.jpg</Foto>
 		</Utente>
 	</Utenti>
 	</Gruppo>

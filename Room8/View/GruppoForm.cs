@@ -15,5 +15,55 @@ namespace Room8.View
         {
             InitializeComponent();
         }
+
+		public TextBox NomeGruppoTextBox
+		{
+			get { return _nomeGruppoTextBox; }
+		}
+
+		public PictureBox PictureBox
+		{
+			get { return _pictureBox; }
+		}
+
+		public Button FotoButton
+		{
+			get { return _fotoButton; }
+		}
+
+		public Label FileLabel
+		{
+			get { return _fileLabel; }
+		}
+
+		public OpenFileDialog OpenFileDialog
+		{
+			get { return _openFileDialog; }
+		}
+
+		public Button ConfermaButton
+		{
+			get { return _confermaButton; }
+		}
+
+		public LinkLabel AggiungiPersonaLinkLabel
+		{
+			get { return _aggiungiPersonaLinkLabel; }
+		}
+
+		public Label MailLabel
+		{
+			get { return _creatorGroupLabel; }
+		}
+
+		public ErrorProvider ErrorProvider
+		{
+			get { return _errorProvider; }
+		}
+
+		public TableLayoutPanel MembriTable
+		{
+			get { return _addUserTableLayoutPanel; }
+		}
     }
 }

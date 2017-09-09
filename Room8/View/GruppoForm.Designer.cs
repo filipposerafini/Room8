@@ -245,45 +245,20 @@
             this._addPanel.Name = "_addPanel";
             this._addPanel.Size = new System.Drawing.Size(351, 113);
             this._addPanel.TabIndex = 4;
-            // 
-            // _addUserTableLayoutPanel
-            // 
-            this._addUserTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._addUserTableLayoutPanel.ColumnCount = 3;
-            this._addUserTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._addUserTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 195F));
-            this._addUserTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
-            this._addUserTableLayoutPanel.Controls.Add(this._mailLabel, 0, 0);
-            this._addUserTableLayoutPanel.Controls.Add(this._mailTextBox, 1, 0);
-            this._addUserTableLayoutPanel.Controls.Add(this._removeButton, 2, 0);
+			// 
+			// _addUserTableLayoutPanel
+			// 
+			this._addUserTableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
+			| System.Windows.Forms.AnchorStyles.Right)));
+			this._addUserTableLayoutPanel.ColumnCount = 3;
+			this._addUserTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80));
+			this._addUserTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60));
+			this._addUserTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30));
             this._addUserTableLayoutPanel.Location = new System.Drawing.Point(3, 32);
             this._addUserTableLayoutPanel.Name = "_addUserTableLayoutPanel";
-            this._addUserTableLayoutPanel.RowCount = 1;
-            this._addUserTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._addUserTableLayoutPanel.Size = new System.Drawing.Size(345, 38);
-            this._addUserTableLayoutPanel.TabIndex = 5;
-            // 
-            // _mailLabel
-            // 
-            this._mailLabel.AutoSize = true;
-            this._mailLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._mailLabel.Location = new System.Drawing.Point(3, 0);
-            this._mailLabel.Name = "_mailLabel";
-            this._mailLabel.Size = new System.Drawing.Size(78, 38);
-            this._mailLabel.TabIndex = 2;
-            this._mailLabel.Text = "E-mail";
-            this._mailLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _removeButton
-            // 
-            this._removeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._removeButton.Location = new System.Drawing.Point(298, 9);
-            this._removeButton.Name = "_removeButton";
-            this._removeButton.Size = new System.Drawing.Size(27, 20);
-            this._removeButton.TabIndex = 0;
-            this._removeButton.Text = "X";
-            this._removeButton.UseVisualStyleBackColor = true;
+			this._addUserTableLayoutPanel.Width = 320;
+			this._addUserTableLayoutPanel.RowCount = 1;
+			this._addUserTableLayoutPanel.TabIndex = 5;
             // 
             // _mailTextBox
             // 
@@ -366,14 +341,14 @@
         private System.Windows.Forms.Label _creatorGroupLabel;
         private System.Windows.Forms.LinkLabel _aggiungiPersonaLinkLabel;
         private System.Windows.Forms.ErrorProvider _errorProvider;
-        private System.Windows.Forms.TableLayoutPanel _addUserTableLayoutPanel;
-        private System.Windows.Forms.Label _mailLabel;
-        private System.Windows.Forms.TextBox _mailTextBox;
-        private System.Windows.Forms.Button _removeButton;
+		private System.Windows.Forms.TableLayoutPanel _addUserTableLayoutPanel;
         private System.Windows.Forms.Panel _caricaPanel;
         private System.Windows.Forms.Label _fileLabel;
         private System.Windows.Forms.Button _fotoButton;
         private System.Windows.Forms.PictureBox _pictureBox;
         private System.Windows.Forms.OpenFileDialog _openFileDialog;
+		private System.Windows.Forms.Label _mailLabel;
+		private System.Windows.Forms.Button _removeButton;
+		private System.Windows.Forms.TextBox _mailTextBox;
     }
 }

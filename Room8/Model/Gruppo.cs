@@ -16,9 +16,6 @@ namespace Room8
 
 		public Gruppo(string nome)
 		{
-			if (String.IsNullOrEmpty(nome))
-				throw new ArgumentException("Inserisci un nome", "nome");
-
 			this._id = Guid.NewGuid().ToString();
 			Nome = nome;
 			this._membriGruppo = new List<Utente>();

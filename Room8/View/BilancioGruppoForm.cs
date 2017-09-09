@@ -40,5 +40,15 @@ namespace Room8.View
 		{
 			get { return _speseListBox; }
 		}
+
+		public Button ModificaButton
+		{
+			get { return _modificaButton; }
+		}
+
+		public Button ProdottiButton
+		{
+			get { return _prodottiButton; }
+		}
     }
 }

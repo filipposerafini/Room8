@@ -84,14 +84,14 @@ namespace Room8
 		void AmiciListBox_Click(object sender, EventArgs e)
 		{
             AmicoForm amicoForm = new AmicoForm();
-            new AmicoFormPresenter(amicoForm, Utente, MainForm.AmiciListBox);
+			new AmicoFormPresenter(amicoForm, Utente, (Utente)MainForm.AmiciListBox.SelectedItem);
             amicoForm.ShowDialog();
 		}
 
 		void GruppiListBox_Click(object sender, EventArgs e)
 		{
             BilancioGruppoForm bilancioGruppoForm = new BilancioGruppoForm();
-            new BilancioGruppoFormPresenter(bilancioGruppoForm, Utente, MainForm.GruppiListBox);
+			new BilancioGruppoFormPresenter(bilancioGruppoForm, Utente, (Gruppo)MainForm.GruppiListBox.SelectedItem);
             bilancioGruppoForm.ShowDialog();
 		}
 
@@ -107,7 +107,7 @@ namespace Room8
 		private void CreaGruppoToolStrip_Click(object sender, EventArgs e)
 		{
 			GruppoForm gruppoForm = new GruppoForm();
-			new CreaGruppoFormPresenter(gruppoForm);
+			new GruppoFormPresenter(gruppoForm, Utente, null);
 			gruppoForm.ShowDialog();
 		}
 

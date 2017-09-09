@@ -19,7 +19,7 @@ namespace Room8
 			this._nomeMetodo = nomeMetodo;
 			this._dictionary = new Dictionary<Utente, Control>();
 			InitializeEvents();
-			InitializeParti();
+			InitializeUI();
 		}
 
 		public PartiForm PartiForm
@@ -47,7 +47,7 @@ namespace Room8
 			PartiForm.ConfermaButton.Click += ConfermaButton_Click;
 		}
 
-		void InitializeParti()
+		void InitializeUI()
 		{
 			PartiForm.PartiLabel.Text = "Divisione " + NomeMetodo;
 			TableLayoutPanel partiTableLayoutPanel = new TableLayoutPanel();

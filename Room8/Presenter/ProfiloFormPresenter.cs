@@ -41,6 +41,7 @@ namespace Room8
 			ProfiloForm.MailTextBox.Text = Utente.Mail;
 			ProfiloForm.TelefonoTextBox.Text = Utente.Telefono;
 			ProfiloForm.PictureBox.ImageLocation = Utente.Foto;
+			ProfiloForm.FileLabel.Text = Utente.Foto.Substring(Utente.Foto.LastIndexOf('\\') + 1);
 		}
 
 		void ConfermaButton_Click(object sender, System.EventArgs e)
@@ -107,7 +108,7 @@ namespace Room8
 			if (ProfiloForm.OpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
 			{
 				string foto = ProfiloForm.OpenFileDialog.FileName;
-				ProfiloForm.FileLabel.Text = foto.Substring(foto.LastIndexOf('/') + 1);
+				ProfiloForm.FileLabel.Text = foto.Substring(foto.LastIndexOf('\\') + 1);
 				ProfiloForm.PictureBox.ImageLocation = foto;
 			}
 		}

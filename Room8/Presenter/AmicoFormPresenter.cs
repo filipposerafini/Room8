@@ -8,14 +8,12 @@ namespace Room8
 	{
 		private readonly AmicoForm _amicoForm; 
 		private readonly Utente _utente;
-		private readonly ListBox _listBox;
 
-		public AmicoFormPresenter(AmicoForm amicoForm, Utente utente, ListBox listBox)
+		public AmicoFormPresenter(AmicoForm amicoForm, Utente utente, Utente amico)
 		{
 			this._amicoForm = amicoForm;
 			this._utente = utente;
-			this._listBox = listBox;
-			InitializeUI();
+			InitializeUI(amico);
 		}
 
 		public AmicoForm AmicoForm
@@ -28,17 +26,11 @@ namespace Room8
 			get { return _utente; }
 		}
 
-		public ListBox ListBox
+		void InitializeUI(Utente amico)
 		{
-			get { return _listBox; }
-		}
-
-		void InitializeUI()
-		{
-			Utente selezionato = (Utente)ListBox.SelectedItem;
-			AmicoForm.NomeAmicoLabel.Text = selezionato.Nome + " " + selezionato.Cognome;
-			AmicoForm.PictureBox.ImageLocation = selezionato.Foto;
-			AmicoForm.BilancioLabel.Text = Utente.CalcolaSituazione(selezionato).ToString("0.00 \u20AC");
+			AmicoForm.NomeAmicoLabel.Text = amico.Nome + " " + amico.Cognome;
+			AmicoForm.PictureBox.ImageLocation = amico.Foto;
+			AmicoForm.BilancioLabel.Text = Utente.CalcolaSituazione(amico).ToString("0.00 \u20AC");
 		}
 	}
 }
