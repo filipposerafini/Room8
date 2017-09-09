@@ -45,14 +45,14 @@
             this._pictureBox = new System.Windows.Forms.PictureBox();
             this._addPanel = new System.Windows.Forms.Panel();
             this._addUserTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._membroPanel = new System.Windows.Forms.Panel();
             this._mailLabel = new System.Windows.Forms.Label();
-            this._mailTextBox = new System.Windows.Forms.TextBox();
             this._removeButton = new System.Windows.Forms.Button();
+            this._mailTextBox = new System.Windows.Forms.TextBox();
             this._creatorGroupLabel = new System.Windows.Forms.Label();
             this._aggiungiPersonaLinkLabel = new System.Windows.Forms.LinkLabel();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._openFileDialog = new System.Windows.Forms.OpenFileDialog();
-            this.panel1 = new System.Windows.Forms.Panel();
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
@@ -61,8 +61,8 @@
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
             this._addPanel.SuspendLayout();
             this._addUserTableLayoutPanel.SuspendLayout();
+            this._membroPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // _mainTableLayoutPanel
@@ -254,13 +254,24 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this._addUserTableLayoutPanel.ColumnCount = 1;
             this._addUserTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._addUserTableLayoutPanel.Controls.Add(this.panel1, 0, 0);
+            this._addUserTableLayoutPanel.Controls.Add(this._membroPanel, 0, 0);
             this._addUserTableLayoutPanel.Location = new System.Drawing.Point(3, 32);
             this._addUserTableLayoutPanel.Name = "_addUserTableLayoutPanel";
             this._addUserTableLayoutPanel.RowCount = 1;
             this._addUserTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this._addUserTableLayoutPanel.Size = new System.Drawing.Size(345, 45);
             this._addUserTableLayoutPanel.TabIndex = 5;
+            // 
+            // _membroPanel
+            // 
+            this._membroPanel.Controls.Add(this._mailLabel);
+            this._membroPanel.Controls.Add(this._removeButton);
+            this._membroPanel.Controls.Add(this._mailTextBox);
+            this._membroPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._membroPanel.Location = new System.Drawing.Point(3, 3);
+            this._membroPanel.Name = "_membroPanel";
+            this._membroPanel.Size = new System.Drawing.Size(339, 39);
+            this._membroPanel.TabIndex = 0;
             // 
             // _mailLabel
             // 
@@ -272,14 +283,6 @@
             this._mailLabel.TabIndex = 2;
             this._mailLabel.Text = "E-mail";
             // 
-            // _mailTextBox
-            // 
-            this._mailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this._mailTextBox.Location = new System.Drawing.Point(79, 3);
-            this._mailTextBox.Name = "_mailTextBox";
-            this._mailTextBox.Size = new System.Drawing.Size(187, 20);
-            this._mailTextBox.TabIndex = 1;
-            // 
             // _removeButton
             // 
             this._removeButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
@@ -289,6 +292,14 @@
             this._removeButton.TabIndex = 0;
             this._removeButton.Text = "X";
             this._removeButton.UseVisualStyleBackColor = true;
+            // 
+            // _mailTextBox
+            // 
+            this._mailTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this._mailTextBox.Location = new System.Drawing.Point(79, 3);
+            this._mailTextBox.Name = "_mailTextBox";
+            this._mailTextBox.Size = new System.Drawing.Size(187, 20);
+            this._mailTextBox.TabIndex = 1;
             // 
             // _creatorGroupLabel
             // 
@@ -320,17 +331,6 @@
             // 
             this._openFileDialog.FileName = "openFileDialog1";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this._mailLabel);
-            this.panel1.Controls.Add(this._removeButton);
-            this.panel1.Controls.Add(this._mailTextBox);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(339, 39);
-            this.panel1.TabIndex = 0;
-            // 
             // GruppoForm
             // 
             this.AcceptButton = this._confermaButton;
@@ -352,9 +352,9 @@
             this._addPanel.ResumeLayout(false);
             this._addPanel.PerformLayout();
             this._addUserTableLayoutPanel.ResumeLayout(false);
+            this._membroPanel.ResumeLayout(false);
+            this._membroPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -384,6 +384,6 @@
         private System.Windows.Forms.Button _fotoButton;
         private System.Windows.Forms.PictureBox _pictureBox;
         private System.Windows.Forms.OpenFileDialog _openFileDialog;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel _membroPanel;
     }
 }
