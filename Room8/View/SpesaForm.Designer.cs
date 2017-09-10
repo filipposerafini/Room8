@@ -32,6 +32,7 @@
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._spesaLabel = new System.Windows.Forms.Label();
             this._confirmPanel = new System.Windows.Forms.Panel();
+            this._eliminaButton = new System.Windows.Forms.Button();
             this._commentoButton = new System.Windows.Forms.Button();
             this._confermaButton = new System.Windows.Forms.Button();
             this._annullaButton = new System.Windows.Forms.Button();
@@ -53,7 +54,6 @@
             this._dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this._numericUpDown = new System.Windows.Forms.NumericUpDown();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this._eliminaButton = new System.Windows.Forms.Button();
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
@@ -105,6 +105,15 @@
             this._confirmPanel.Size = new System.Drawing.Size(398, 50);
             this._confirmPanel.TabIndex = 1;
             // 
+            // _eliminaButton
+            // 
+            this._eliminaButton.Location = new System.Drawing.Point(93, 15);
+            this._eliminaButton.Name = "_eliminaButton";
+            this._eliminaButton.Size = new System.Drawing.Size(75, 23);
+            this._eliminaButton.TabIndex = 5;
+            this._eliminaButton.Text = "Elimina";
+            this._eliminaButton.UseVisualStyleBackColor = true;
+            // 
             // _commentoButton
             // 
             this._commentoButton.Location = new System.Drawing.Point(12, 15);
@@ -117,6 +126,7 @@
             // _confermaButton
             // 
             this._confermaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._errorProvider.SetIconAlignment(this._confermaButton, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this._confermaButton.Location = new System.Drawing.Point(229, 15);
             this._confermaButton.Name = "_confermaButton";
             this._confermaButton.Size = new System.Drawing.Size(75, 23);
@@ -338,19 +348,11 @@
             this._numericUpDown.Name = "_numericUpDown";
             this._numericUpDown.Size = new System.Drawing.Size(215, 20);
             this._numericUpDown.TabIndex = 15;
+            this._numericUpDown.ThousandsSeparator = true;
             // 
             // _errorProvider
             // 
             this._errorProvider.ContainerControl = this;
-            // 
-            // _eliminaButton
-            // 
-            this._eliminaButton.Location = new System.Drawing.Point(93, 15);
-            this._eliminaButton.Name = "_eliminaButton";
-            this._eliminaButton.Size = new System.Drawing.Size(75, 23);
-            this._eliminaButton.TabIndex = 5;
-            this._eliminaButton.Text = "Elimina";
-            this._eliminaButton.UseVisualStyleBackColor = true;
             // 
             // SpesaForm
             // 

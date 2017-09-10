@@ -55,22 +55,21 @@
             this._riepilogoToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this._pictureBox = new System.Windows.Forms.PictureBox();
             this._speseLabel = new System.Windows.Forms.Label();
-            this._menuTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._spesaButton = new System.Windows.Forms.Button();
-            this._saldaButton = new System.Windows.Forms.Button();
-            this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._speseDataGridView = new System.Windows.Forms.DataGridView();
             this.spesaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._saldiLabel = new System.Windows.Forms.Label();
             this._saldiDataGridView = new System.Windows.Forms.DataGridView();
             this.saldoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._menuTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._spesaButton = new System.Windows.Forms.Button();
+            this._saldaButton = new System.Windows.Forms.Button();
+            this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paganteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.metodoDivisioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Pagante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sorgenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.destinazioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sorgente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Destinazione = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._riepilogoTableLayoutPanel.SuspendLayout();
@@ -81,12 +80,12 @@
             this._topTableLayoutPanel.SuspendLayout();
             this._toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
-            this._menuTableLayoutPanel.SuspendLayout();
-            this._formTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._speseDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spesaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._saldiDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.saldoBindingSource)).BeginInit();
+            this._menuTableLayoutPanel.SuspendLayout();
+            this._formTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // _mainStatusStrip
@@ -410,6 +409,64 @@
             this._speseLabel.Text = "Spese:";
             this._speseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // _speseDataGridView
+            // 
+            this._speseDataGridView.AllowUserToAddRows = false;
+            this._speseDataGridView.AllowUserToDeleteRows = false;
+            this._speseDataGridView.AutoGenerateColumns = false;
+            this._speseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._speseDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.descrizioneDataGridViewTextBoxColumn,
+            this.importoDataGridViewTextBoxColumn,
+            this.Pagante,
+            this.dataDataGridViewTextBoxColumn});
+            this._speseDataGridView.DataSource = this.spesaBindingSource;
+            this._speseDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._speseDataGridView.Location = new System.Drawing.Point(3, 113);
+            this._speseDataGridView.Name = "_speseDataGridView";
+            this._speseDataGridView.ReadOnly = true;
+            this._speseDataGridView.Size = new System.Drawing.Size(469, 146);
+            this._speseDataGridView.TabIndex = 8;
+            // 
+            // spesaBindingSource
+            // 
+            this.spesaBindingSource.DataSource = typeof(Room8.Spesa);
+            // 
+            // _saldiLabel
+            // 
+            this._saldiLabel.AutoSize = true;
+            this._saldiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._saldiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._saldiLabel.Location = new System.Drawing.Point(3, 262);
+            this._saldiLabel.Name = "_saldiLabel";
+            this._saldiLabel.Size = new System.Drawing.Size(469, 20);
+            this._saldiLabel.TabIndex = 9;
+            this._saldiLabel.Text = "Saldi:";
+            this._saldiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _saldiDataGridView
+            // 
+            this._saldiDataGridView.AllowUserToAddRows = false;
+            this._saldiDataGridView.AllowUserToDeleteRows = false;
+            this._saldiDataGridView.AutoGenerateColumns = false;
+            this._saldiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._saldiDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Sorgente,
+            this.Destinazione,
+            this.importoDataGridViewTextBoxColumn1,
+            this.dataDataGridViewTextBoxColumn1});
+            this._saldiDataGridView.DataSource = this.saldoBindingSource;
+            this._saldiDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._saldiDataGridView.Location = new System.Drawing.Point(3, 285);
+            this._saldiDataGridView.Name = "_saldiDataGridView";
+            this._saldiDataGridView.ReadOnly = true;
+            this._saldiDataGridView.Size = new System.Drawing.Size(469, 146);
+            this._saldiDataGridView.TabIndex = 10;
+            // 
+            // saldoBindingSource
+            // 
+            this.saldoBindingSource.DataSource = typeof(Room8.Saldo);
+            // 
             // _menuTableLayoutPanel
             // 
             this._menuTableLayoutPanel.ColumnCount = 1;
@@ -475,65 +532,6 @@
             this._formTableLayoutPanel.Size = new System.Drawing.Size(648, 440);
             this._formTableLayoutPanel.TabIndex = 4;
             // 
-            // _speseDataGridView
-            // 
-            this._speseDataGridView.AllowUserToAddRows = false;
-            this._speseDataGridView.AllowUserToDeleteRows = false;
-            this._speseDataGridView.AutoGenerateColumns = false;
-            this._speseDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._speseDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.descrizioneDataGridViewTextBoxColumn,
-            this.importoDataGridViewTextBoxColumn,
-            this.paganteDataGridViewTextBoxColumn,
-            this.metodoDivisioneDataGridViewTextBoxColumn,
-            this.dataDataGridViewTextBoxColumn});
-            this._speseDataGridView.DataSource = this.spesaBindingSource;
-            this._speseDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._speseDataGridView.Location = new System.Drawing.Point(3, 113);
-            this._speseDataGridView.Name = "_speseDataGridView";
-            this._speseDataGridView.ReadOnly = true;
-            this._speseDataGridView.Size = new System.Drawing.Size(469, 146);
-            this._speseDataGridView.TabIndex = 8;
-            // 
-            // spesaBindingSource
-            // 
-            this.spesaBindingSource.DataSource = typeof(Room8.Spesa);
-            // 
-            // _saldiLabel
-            // 
-            this._saldiLabel.AutoSize = true;
-            this._saldiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._saldiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._saldiLabel.Location = new System.Drawing.Point(3, 262);
-            this._saldiLabel.Name = "_saldiLabel";
-            this._saldiLabel.Size = new System.Drawing.Size(469, 20);
-            this._saldiLabel.TabIndex = 9;
-            this._saldiLabel.Text = "Saldi:";
-            this._saldiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _saldiDataGridView
-            // 
-            this._saldiDataGridView.AllowUserToAddRows = false;
-            this._saldiDataGridView.AllowUserToDeleteRows = false;
-            this._saldiDataGridView.AutoGenerateColumns = false;
-            this._saldiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._saldiDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.sorgenteDataGridViewTextBoxColumn,
-            this.destinazioneDataGridViewTextBoxColumn,
-            this.importoDataGridViewTextBoxColumn1,
-            this.dataDataGridViewTextBoxColumn1});
-            this._saldiDataGridView.DataSource = this.saldoBindingSource;
-            this._saldiDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._saldiDataGridView.Location = new System.Drawing.Point(3, 285);
-            this._saldiDataGridView.Name = "_saldiDataGridView";
-            this._saldiDataGridView.ReadOnly = true;
-            this._saldiDataGridView.Size = new System.Drawing.Size(469, 146);
-            this._saldiDataGridView.TabIndex = 10;
-            // 
-            // saldoBindingSource
-            // 
-            this.saldoBindingSource.DataSource = typeof(Room8.Saldo);
-            // 
             // descrizioneDataGridViewTextBoxColumn
             // 
             this.descrizioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -550,21 +548,12 @@
             this.importoDataGridViewTextBoxColumn.Name = "importoDataGridViewTextBoxColumn";
             this.importoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // paganteDataGridViewTextBoxColumn
+            // Pagante
             // 
-            this.paganteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.paganteDataGridViewTextBoxColumn.DataPropertyName = "NomePagante";
-            this.paganteDataGridViewTextBoxColumn.HeaderText = "Pagante";
-            this.paganteDataGridViewTextBoxColumn.Name = "paganteDataGridViewTextBoxColumn";
-            this.paganteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // metodoDivisioneDataGridViewTextBoxColumn
-            // 
-            this.metodoDivisioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.metodoDivisioneDataGridViewTextBoxColumn.DataPropertyName = "MetodoDivisione";
-            this.metodoDivisioneDataGridViewTextBoxColumn.HeaderText = "Metodo di divisione";
-            this.metodoDivisioneDataGridViewTextBoxColumn.Name = "metodoDivisioneDataGridViewTextBoxColumn";
-            this.metodoDivisioneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Pagante.DataPropertyName = "NomePagante";
+            this.Pagante.HeaderText = "Pagante";
+            this.Pagante.Name = "Pagante";
+            this.Pagante.ReadOnly = true;
             // 
             // dataDataGridViewTextBoxColumn
             // 
@@ -574,21 +563,19 @@
             this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
             this.dataDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // sorgenteDataGridViewTextBoxColumn
+            // Sorgente
             // 
-            this.sorgenteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sorgenteDataGridViewTextBoxColumn.DataPropertyName = "NomeSorgente";
-            this.sorgenteDataGridViewTextBoxColumn.HeaderText = "Sorgente";
-            this.sorgenteDataGridViewTextBoxColumn.Name = "sorgenteDataGridViewTextBoxColumn";
-            this.sorgenteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Sorgente.DataPropertyName = "NomeSorgente";
+            this.Sorgente.HeaderText = "Sorgente";
+            this.Sorgente.Name = "Sorgente";
+            this.Sorgente.ReadOnly = true;
             // 
-            // destinazioneDataGridViewTextBoxColumn
+            // Destinazione
             // 
-            this.destinazioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.destinazioneDataGridViewTextBoxColumn.DataPropertyName = "NomeDestinazione";
-            this.destinazioneDataGridViewTextBoxColumn.HeaderText = "Destinazione";
-            this.destinazioneDataGridViewTextBoxColumn.Name = "destinazioneDataGridViewTextBoxColumn";
-            this.destinazioneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.Destinazione.DataPropertyName = "NomeDestinazione";
+            this.Destinazione.HeaderText = "Destinazione";
+            this.Destinazione.Name = "Destinazione";
+            this.Destinazione.ReadOnly = true;
             // 
             // importoDataGridViewTextBoxColumn1
             // 
@@ -629,13 +616,13 @@
             this._toolStrip.ResumeLayout(false);
             this._toolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).EndInit();
-            this._menuTableLayoutPanel.ResumeLayout(false);
-            this._menuTableLayoutPanel.PerformLayout();
-            this._formTableLayoutPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this._speseDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spesaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._saldiDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saldoBindingSource)).EndInit();
+            this._menuTableLayoutPanel.ResumeLayout(false);
+            this._menuTableLayoutPanel.PerformLayout();
+            this._formTableLayoutPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -678,13 +665,15 @@
         private System.Windows.Forms.Label _saldiLabel;
         private System.Windows.Forms.DataGridView _saldiDataGridView;
         private System.Windows.Forms.BindingSource saldoBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descrizioneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn paganteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn metodoDivisioneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sorgenteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn destinazioneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descrizioneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pagante;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sorgente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Destinazione;
         private System.Windows.Forms.DataGridViewTextBoxColumn importoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn1;
     }

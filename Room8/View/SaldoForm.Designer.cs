@@ -33,6 +33,7 @@
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._saldaLabel = new System.Windows.Forms.Label();
             this._confirmPanel = new System.Windows.Forms.Panel();
+            this._eliminaButton = new System.Windows.Forms.Button();
             this._confermaButton = new System.Windows.Forms.Button();
             this._annullaButton = new System.Windows.Forms.Button();
             this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -46,7 +47,6 @@
             this._daPictureBox = new System.Windows.Forms.PictureBox();
             this._aPictureBox = new System.Windows.Forms.PictureBox();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this._eliminaButton = new System.Windows.Forms.Button();
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
@@ -98,9 +98,19 @@
             this._confirmPanel.Size = new System.Drawing.Size(428, 41);
             this._confirmPanel.TabIndex = 1;
             // 
+            // _eliminaButton
+            // 
+            this._eliminaButton.Location = new System.Drawing.Point(12, 6);
+            this._eliminaButton.Name = "_eliminaButton";
+            this._eliminaButton.Size = new System.Drawing.Size(75, 23);
+            this._eliminaButton.TabIndex = 2;
+            this._eliminaButton.Text = "Elimina";
+            this._eliminaButton.UseVisualStyleBackColor = true;
+            // 
             // _confermaButton
             // 
             this._confermaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._errorProvider.SetIconAlignment(this._confermaButton, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this._confermaButton.Location = new System.Drawing.Point(260, 6);
             this._confermaButton.Name = "_confermaButton";
             this._confermaButton.Size = new System.Drawing.Size(75, 23);
@@ -245,15 +255,6 @@
             // _errorProvider
             // 
             this._errorProvider.ContainerControl = this;
-            // 
-            // _eliminaButton
-            // 
-            this._eliminaButton.Location = new System.Drawing.Point(12, 6);
-            this._eliminaButton.Name = "_eliminaButton";
-            this._eliminaButton.Size = new System.Drawing.Size(75, 23);
-            this._eliminaButton.TabIndex = 2;
-            this._eliminaButton.Text = "Elimina";
-            this._eliminaButton.UseVisualStyleBackColor = true;
             // 
             // SaldoForm
             // 

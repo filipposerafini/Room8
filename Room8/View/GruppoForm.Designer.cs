@@ -106,6 +106,7 @@
             // _confermaButton
             // 
             this._confermaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._errorProvider.SetIconAlignment(this._confermaButton, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this._confermaButton.Location = new System.Drawing.Point(250, 4);
             this._confermaButton.Name = "_confermaButton";
             this._confermaButton.Size = new System.Drawing.Size(75, 23);
@@ -259,7 +260,7 @@
             this._addUserTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this._addUserTableLayoutPanel.Size = new System.Drawing.Size(406, 0);
             this._addUserTableLayoutPanel.TabIndex = 5;
-			// 
+            // 
             // _creatorGroupLabel
             // 
             this._creatorGroupLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));

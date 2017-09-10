@@ -35,10 +35,10 @@
             this._passwordLabel = new System.Windows.Forms.Label();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._registratiButton = new System.Windows.Forms.Button();
-            this._accediButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this._mailTextBox = new System.Windows.Forms.TextBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this._accediButton = new System.Windows.Forms.Button();
+            this._registratiButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this._tableLayoutPanel.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -119,35 +119,22 @@
             this._tableLayoutPanel.Size = new System.Drawing.Size(278, 273);
             this._tableLayoutPanel.TabIndex = 7;
             // 
-            // _registratiButton
+            // _mailTextBox
             // 
-            this._registratiButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._registratiButton.AutoSize = true;
-            this._registratiButton.Location = new System.Drawing.Point(171, 16);
-            this._registratiButton.Name = "_registratiButton";
-            this._registratiButton.Size = new System.Drawing.Size(75, 23);
-            this._registratiButton.TabIndex = 6;
-            this._registratiButton.Text = "Registrati";
-            this._registratiButton.UseVisualStyleBackColor = true;
-            // 
-            // _accediButton
-            // 
-            this._accediButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._accediButton.AutoSize = true;
-            this._accediButton.Location = new System.Drawing.Point(32, 16);
-            this._accediButton.Name = "_accediButton";
-            this._accediButton.Size = new System.Drawing.Size(75, 23);
-            this._accediButton.TabIndex = 5;
-            this._accediButton.Text = "Accedi";
-            this._accediButton.UseVisualStyleBackColor = true;
+            this._mailTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._mailTextBox.Location = new System.Drawing.Point(25, 129);
+            this._mailTextBox.Name = "_mailTextBox";
+            this._mailTextBox.Size = new System.Drawing.Size(228, 20);
+            this._mailTextBox.TabIndex = 7;
+            this._mailTextBox.Text = "filippo@mail.com";
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this._accediButton, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this._registratiButton, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this._registratiButton, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this._accediButton, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 213);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
@@ -157,14 +144,27 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(278, 55);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
-            // _mailTextBox
+            // _accediButton
             // 
-            this._mailTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._mailTextBox.Location = new System.Drawing.Point(25, 129);
-            this._mailTextBox.Name = "_mailTextBox";
-            this._mailTextBox.Size = new System.Drawing.Size(228, 20);
-            this._mailTextBox.TabIndex = 7;
-            this._mailTextBox.Text = "filippo@mail.com";
+            this._accediButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._accediButton.AutoSize = true;
+            this._accediButton.Location = new System.Drawing.Point(171, 16);
+            this._accediButton.Name = "_accediButton";
+            this._accediButton.Size = new System.Drawing.Size(75, 23);
+            this._accediButton.TabIndex = 5;
+            this._accediButton.Text = "Accedi";
+            this._accediButton.UseVisualStyleBackColor = true;
+            // 
+            // _registratiButton
+            // 
+            this._registratiButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._registratiButton.AutoSize = true;
+            this._registratiButton.Location = new System.Drawing.Point(32, 16);
+            this._registratiButton.Name = "_registratiButton";
+            this._registratiButton.Size = new System.Drawing.Size(75, 23);
+            this._registratiButton.TabIndex = 6;
+            this._registratiButton.Text = "Registrati";
+            this._registratiButton.UseVisualStyleBackColor = true;
             // 
             // LoginForm
             // 

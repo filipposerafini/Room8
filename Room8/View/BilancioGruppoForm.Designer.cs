@@ -40,7 +40,6 @@
             this._titleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._centerTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._speseTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._speseListBox = new System.Windows.Forms.ListBox();
             this._speseLabel = new System.Windows.Forms.Label();
             this._membriTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._separatorLabel = new System.Windows.Forms.Label();
@@ -48,6 +47,12 @@
             this._bilancioImportoLabel = new System.Windows.Forms.Label();
             this._membriListBox = new System.Windows.Forms.ListBox();
             this._membriLabel = new System.Windows.Forms.Label();
+            this._dataGridView = new System.Windows.Forms.DataGridView();
+            this.spesaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomePaganteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this._mainTableLayoutPanel.SuspendLayout();
@@ -56,6 +61,8 @@
             this._centerTableLayoutPanel.SuspendLayout();
             this._speseTableLayoutPanel.SuspendLayout();
             this._membriTableLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spesaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // _pictureBox
@@ -180,8 +187,8 @@
             // 
             this._speseTableLayoutPanel.ColumnCount = 1;
             this._speseTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._speseTableLayoutPanel.Controls.Add(this._speseListBox, 0, 1);
             this._speseTableLayoutPanel.Controls.Add(this._speseLabel, 0, 0);
+            this._speseTableLayoutPanel.Controls.Add(this._dataGridView, 0, 1);
             this._speseTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._speseTableLayoutPanel.Location = new System.Drawing.Point(136, 0);
             this._speseTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
@@ -191,17 +198,6 @@
             this._speseTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.84758F));
             this._speseTableLayoutPanel.Size = new System.Drawing.Size(367, 273);
             this._speseTableLayoutPanel.TabIndex = 1;
-            // 
-            // _speseListBox
-            // 
-            this._speseListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._speseListBox.FormattingEnabled = true;
-            this._speseListBox.Location = new System.Drawing.Point(3, 30);
-            this._speseListBox.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
-            this._speseListBox.Name = "_speseListBox";
-            this._speseListBox.ScrollAlwaysVisible = true;
-            this._speseListBox.Size = new System.Drawing.Size(364, 243);
-            this._speseListBox.TabIndex = 0;
             // 
             // _speseLabel
             // 
@@ -294,6 +290,61 @@
             this._membriLabel.Text = "Membri del Gruppo:";
             this._membriLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // _dataGridView
+            // 
+            this._dataGridView.AllowUserToAddRows = false;
+            this._dataGridView.AllowUserToDeleteRows = false;
+            this._dataGridView.AutoGenerateColumns = false;
+            this._dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.descrizioneDataGridViewTextBoxColumn,
+            this.importoDataGridViewTextBoxColumn,
+            this.nomePaganteDataGridViewTextBoxColumn,
+            this.dataDataGridViewTextBoxColumn});
+            this._dataGridView.DataSource = this.spesaBindingSource;
+            this._dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._dataGridView.Location = new System.Drawing.Point(3, 33);
+            this._dataGridView.Name = "_dataGridView";
+            this._dataGridView.ReadOnly = true;
+            this._dataGridView.Size = new System.Drawing.Size(361, 237);
+            this._dataGridView.TabIndex = 4;
+            // 
+            // spesaBindingSource
+            // 
+            this.spesaBindingSource.DataSource = typeof(Room8.Spesa);
+            // 
+            // descrizioneDataGridViewTextBoxColumn
+            // 
+            this.descrizioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
+            this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
+            this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
+            this.descrizioneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // importoDataGridViewTextBoxColumn
+            // 
+            this.importoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
+            this.importoDataGridViewTextBoxColumn.HeaderText = "Importo";
+            this.importoDataGridViewTextBoxColumn.Name = "importoDataGridViewTextBoxColumn";
+            this.importoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomePaganteDataGridViewTextBoxColumn
+            // 
+            this.nomePaganteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomePaganteDataGridViewTextBoxColumn.DataPropertyName = "NomePagante";
+            this.nomePaganteDataGridViewTextBoxColumn.HeaderText = "NomePagante";
+            this.nomePaganteDataGridViewTextBoxColumn.Name = "nomePaganteDataGridViewTextBoxColumn";
+            this.nomePaganteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataDataGridViewTextBoxColumn
+            // 
+            this.dataDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
+            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // BilancioGruppoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,6 +364,8 @@
             this._speseTableLayoutPanel.PerformLayout();
             this._membriTableLayoutPanel.ResumeLayout(false);
             this._membriTableLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spesaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -327,7 +380,6 @@
         private System.Windows.Forms.TableLayoutPanel _titleTableLayoutPanel;
         private System.Windows.Forms.Label _registratiLabel;
         private System.Windows.Forms.TableLayoutPanel _centerTableLayoutPanel;
-        private System.Windows.Forms.ListBox _speseListBox;
         private System.Windows.Forms.ListBox _membriListBox;
         private System.Windows.Forms.Label _membriLabel;
         private System.Windows.Forms.Label _speseLabel;
@@ -338,5 +390,11 @@
         private System.Windows.Forms.Label _separatorLabel;
         private System.Windows.Forms.Button _prodottiButton;
         private System.Windows.Forms.Button _eliminaButton;
+        private System.Windows.Forms.DataGridView _dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descrizioneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomePaganteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource spesaBindingSource;
     }
 }

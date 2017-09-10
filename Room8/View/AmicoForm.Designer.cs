@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._nomeTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._nomeAmicoLabel = new System.Windows.Forms.Label();
@@ -37,9 +38,13 @@
             this._bilancioLabel = new System.Windows.Forms.Label();
             this._importoTotaleLabel = new System.Windows.Forms.Label();
             this._mainPanel = new System.Windows.Forms.Panel();
-            this.listBox = new System.Windows.Forms.ListBox();
             this._confermaPanel = new System.Windows.Forms.Panel();
             this._indietroButton = new System.Windows.Forms.Button();
+            this._dataGridView = new System.Windows.Forms.DataGridView();
+            this.movimentoDiDenaroBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nomeSorgenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDestinazioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._mainTableLayoutPanel.SuspendLayout();
             this._nomeTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
@@ -47,6 +52,8 @@
             this._bilancioTableLayoutPanel.SuspendLayout();
             this._mainPanel.SuspendLayout();
             this._confermaPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movimentoDiDenaroBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainTableLayoutPanel
@@ -168,23 +175,13 @@
             // _mainPanel
             // 
             this._mainPanel.AutoScroll = true;
-            this._mainPanel.Controls.Add(this.listBox);
+            this._mainPanel.Controls.Add(this._dataGridView);
             this._mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._mainPanel.Location = new System.Drawing.Point(0, 0);
             this._mainPanel.Margin = new System.Windows.Forms.Padding(0);
             this._mainPanel.Name = "_mainPanel";
             this._mainPanel.Size = new System.Drawing.Size(344, 136);
             this._mainPanel.TabIndex = 2;
-            // 
-            // listBox
-            // 
-            this.listBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(0, 0);
-            this.listBox.Name = "listBox";
-            this.listBox.ScrollAlwaysVisible = true;
-            this.listBox.Size = new System.Drawing.Size(344, 136);
-            this.listBox.TabIndex = 0;
             // 
             // _confermaPanel
             // 
@@ -207,6 +204,52 @@
             this._indietroButton.Text = "Indietro";
             this._indietroButton.UseVisualStyleBackColor = true;
             // 
+            // _dataGridView
+            // 
+            this._dataGridView.AllowUserToAddRows = false;
+            this._dataGridView.AllowUserToDeleteRows = false;
+            this._dataGridView.AutoGenerateColumns = false;
+            this._dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nomeSorgenteDataGridViewTextBoxColumn,
+            this.nomeDestinazioneDataGridViewTextBoxColumn,
+            this.importoDataGridViewTextBoxColumn});
+            this._dataGridView.DataSource = this.movimentoDiDenaroBindingSource;
+            this._dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._dataGridView.Location = new System.Drawing.Point(0, 0);
+            this._dataGridView.Name = "_dataGridView";
+            this._dataGridView.ReadOnly = true;
+            this._dataGridView.Size = new System.Drawing.Size(344, 136);
+            this._dataGridView.TabIndex = 0;
+            // 
+            // movimentoDiDenaroBindingSource
+            // 
+            this.movimentoDiDenaroBindingSource.DataSource = typeof(Room8.MovimentoDiDenaro);
+            // 
+            // nomeSorgenteDataGridViewTextBoxColumn
+            // 
+            this.nomeSorgenteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeSorgenteDataGridViewTextBoxColumn.DataPropertyName = "NomeSorgente";
+            this.nomeSorgenteDataGridViewTextBoxColumn.HeaderText = "NomeSorgente";
+            this.nomeSorgenteDataGridViewTextBoxColumn.Name = "nomeSorgenteDataGridViewTextBoxColumn";
+            this.nomeSorgenteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nomeDestinazioneDataGridViewTextBoxColumn
+            // 
+            this.nomeDestinazioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nomeDestinazioneDataGridViewTextBoxColumn.DataPropertyName = "NomeDestinazione";
+            this.nomeDestinazioneDataGridViewTextBoxColumn.HeaderText = "NomeDestinazione";
+            this.nomeDestinazioneDataGridViewTextBoxColumn.Name = "nomeDestinazioneDataGridViewTextBoxColumn";
+            this.nomeDestinazioneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // importoDataGridViewTextBoxColumn
+            // 
+            this.importoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
+            this.importoDataGridViewTextBoxColumn.HeaderText = "Importo";
+            this.importoDataGridViewTextBoxColumn.Name = "importoDataGridViewTextBoxColumn";
+            this.importoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // AmicoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,6 +268,8 @@
             this._bilancioTableLayoutPanel.PerformLayout();
             this._mainPanel.ResumeLayout(false);
             this._confermaPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.movimentoDiDenaroBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -242,6 +287,10 @@
         private System.Windows.Forms.Label _bilancioLabel;
         private System.Windows.Forms.Label _importoTotaleLabel;
         private System.Windows.Forms.Panel _mainPanel;
-        private System.Windows.Forms.ListBox listBox;
+        private System.Windows.Forms.DataGridView _dataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeSorgenteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDestinazioneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource movimentoDiDenaroBindingSource;
     }
 }

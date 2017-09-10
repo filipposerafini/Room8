@@ -275,6 +275,7 @@
             // _confermaButton
             // 
             this._confermaButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this._errorProvider.SetIconAlignment(this._confermaButton, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this._confermaButton.Location = new System.Drawing.Point(185, 5);
             this._confermaButton.Name = "_confermaButton";
             this._confermaButton.Size = new System.Drawing.Size(75, 23);

@@ -36,9 +36,9 @@ namespace Room8.View
 			get { return _membriListBox; }
 		}
 
-		public ListBox SpeseListBox
+		public DataGridView DataGridView
 		{
-			get { return _speseListBox; }
+			get { return _dataGridView; }
 		}
 
 		public Button ModificaButton

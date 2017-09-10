@@ -90,6 +90,7 @@
             // _commentaButton
             // 
             this._commentaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._errorProvider.SetIconAlignment(this._commentaButton, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this._commentaButton.Location = new System.Drawing.Point(196, 3);
             this._commentaButton.Name = "_commentaButton";
             this._commentaButton.Size = new System.Drawing.Size(75, 23);
