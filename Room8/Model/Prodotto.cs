@@ -10,7 +10,7 @@ namespace Room8
 		{
 			if (string.IsNullOrEmpty(nome))
 				throw new ArgumentException("Inserisci un nome", "nome");
-			this._nome = nome;
+			_nome = nome;
 			Quantita = quantita;
 		}
 

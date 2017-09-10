@@ -9,15 +9,13 @@ namespace Room8
 	{
 		private readonly RegistratiForm _registratiForm;
 		private readonly LoginForm _loginForm;
-		private readonly GestoreUtenti _gestoreUtenti;
 		private string _foto;
 
 		public RegistratiFormPresenter(RegistratiForm registratiForm, LoginForm loginForm)
 		{
-			this._registratiForm = registratiForm;
-			this._loginForm = loginForm;
-			this._gestoreUtenti = GestoreUtenti.Instance;
-			this._foto = null;
+			_registratiForm = registratiForm;
+			_loginForm = loginForm;
+			_foto = null;
 			InitializeEvents();
 		}
 
@@ -29,11 +27,6 @@ namespace Room8
 		public LoginForm LoginForm
 		{
 			get { return _loginForm; }
-		}
-
-		public GestoreUtenti GestoreUtenti
-		{
-			get { return _gestoreUtenti; }
 		}
 
 		public string Foto
@@ -72,9 +65,8 @@ namespace Room8
 				                    	   RegistratiForm.CognomeTextBox.Text,
 				                           RegistratiForm.TelefonoTextBox.Text,
 				                    	   Foto);
-				GestoreUtenti.AggiugniUtente(utente);
-				RegistratiForm.Close();
-				LoginForm.Show();
+				GestoreUtenti.Instance.AggiugniUtente(utente);
+				AnnullaButton_Click(sender, e);
 			}
 			catch (ArgumentException ae)
 			{

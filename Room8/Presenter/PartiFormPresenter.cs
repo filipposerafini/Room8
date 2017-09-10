@@ -14,10 +14,10 @@ namespace Room8
 
 		public PartiFormPresenter(PartiForm partiForm, Spesa spesa, string nomeMetodo)
 		{
-			this._partiForm = partiForm;
-			this._spesa = spesa;
-			this._nomeMetodo = nomeMetodo;
-			this._dictionary = new Dictionary<Utente, Control>();
+			_partiForm = partiForm;
+			_spesa = spesa;
+			_nomeMetodo = nomeMetodo;
+			_dictionary = new Dictionary<Utente, Control>();
 			InitializeEvents();
 			InitializeUI();
 		}
@@ -50,61 +50,59 @@ namespace Room8
 		void InitializeUI()
 		{
 			PartiForm.PartiLabel.Text = "Divisione " + NomeMetodo;
-			TableLayoutPanel partiTableLayoutPanel = new TableLayoutPanel();
-			partiTableLayoutPanel.Dock = DockStyle.Top;
-			partiTableLayoutPanel.ColumnCount = 1;
-			partiTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			partiTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-			partiTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-			partiTableLayoutPanel.Name = "_partiTableLayoutPanel";
-			partiTableLayoutPanel.RowCount = 1;
-            partiTableLayoutPanel.Height = 40;
-			partiTableLayoutPanel.TabIndex = 2;
+			TableLayoutPanel tablePanel = new TableLayoutPanel();
+			tablePanel.Dock = DockStyle.Top;
+			tablePanel.ColumnCount = 1;
+			tablePanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+			tablePanel.Location = new System.Drawing.Point(0, 0);
+			tablePanel.Margin = new System.Windows.Forms.Padding(0);
+			tablePanel.Name = "_partiTableLayoutPanel";
+			tablePanel.RowCount = 1;
+            tablePanel.Height = 40;
+			tablePanel.TabIndex = 2;
 
             for (int i = 0; i < Spesa.SpeseGruppo.Gruppo.MembriGruppo.Count; i++)
 			{
-				NumericUpDown numericUpDown = new NumericUpDown();
-				numericUpDown.DecimalPlaces = 2;
-				numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left))));
-				numericUpDown.Location = new System.Drawing.Point(13, 10);
-				numericUpDown.Name = "_numericUpDown" + i;
-				numericUpDown.TabIndex = 1;
-				numericUpDown.Value = Spesa.Parti.Divisione[Spesa.SpeseGruppo.Gruppo.MembriGruppo[i]];
-
-				Label utenteLabel = new Label();
-				utenteLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-				utenteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-				utenteLabel.Location = new System.Drawing.Point(0, 0);
-				utenteLabel.Name = "_utenteLabel" + i;
-				utenteLabel.TabIndex = 0;
-                utenteLabel.Text = Spesa.SpeseGruppo.Gruppo.MembriGruppo[i].Nome + " " + Spesa.SpeseGruppo.Gruppo.MembriGruppo[i].Cognome;
-				utenteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-
-				SplitContainer splitContainer = new SplitContainer();
-				splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
-				splitContainer.Location = new System.Drawing.Point(3, 3);
-				splitContainer.Name = "_splitContainer" + i;
-				splitContainer.IsSplitterFixed = true;
-				// 
-				// _splitContainer.Panel1
-				// 
-				splitContainer.Panel1.Controls.Add(utenteLabel);
-				// 
-				// _splitContainer.Panel2
-				// 
-				splitContainer.Panel2.Controls.Add(numericUpDown);
-				splitContainer.SplitterDistance = 75;
-				splitContainer.TabIndex = 0;
-
-
-				partiTableLayoutPanel.Height = 40 + 40*i;
-				partiTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40));
-				partiTableLayoutPanel.Controls.Add(splitContainer, 0, i);
-
-                Dictionary.Add(Spesa.SpeseGruppo.Gruppo.MembriGruppo[i], numericUpDown);
+				AggiungiRiga(tablePanel, i);
 			}
 
-			PartiForm.ScrollPanel.Controls.Add(partiTableLayoutPanel);
+			PartiForm.ScrollPanel.Controls.Add(tablePanel);
+		}
+
+		private void AggiungiRiga(TableLayoutPanel panel, int index)
+		{
+			NumericUpDown numericUpDown = new NumericUpDown();
+			numericUpDown.DecimalPlaces = 2;
+			numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left))));
+			numericUpDown.Location = new System.Drawing.Point(13, 10);
+			numericUpDown.Name = "_numericUpDown";
+			numericUpDown.TabIndex = 1;
+			numericUpDown.Value = Spesa.Parti.Divisione[Spesa.SpeseGruppo.Gruppo.MembriGruppo[index]];
+
+			Label utenteLabel = new Label();
+			utenteLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+			utenteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			utenteLabel.Location = new System.Drawing.Point(0, 0);
+			utenteLabel.Name = "_utenteLabel";
+			utenteLabel.TabIndex = 0;
+			utenteLabel.Text = Spesa.SpeseGruppo.Gruppo.MembriGruppo[index].Nome + " " + Spesa.SpeseGruppo.Gruppo.MembriGruppo[index].Cognome;
+			utenteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+
+			SplitContainer splitContainer = new SplitContainer();
+			splitContainer.Dock = System.Windows.Forms.DockStyle.Fill;
+			splitContainer.Location = new System.Drawing.Point(3, 3);
+			splitContainer.Name = "_splitContainer";
+			splitContainer.IsSplitterFixed = true;
+			splitContainer.Panel1.Controls.Add(utenteLabel);
+			splitContainer.Panel2.Controls.Add(numericUpDown);
+			splitContainer.SplitterDistance = 75;
+			splitContainer.TabIndex = 0;
+
+			panel.Height += 40;
+			panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40));
+			panel.Controls.Add(splitContainer, 0, index);
+
+			Dictionary.Add(Spesa.SpeseGruppo.Gruppo.MembriGruppo[index], numericUpDown);
 		}
 
 		void ConfermaButton_Click(object sender, EventArgs e)

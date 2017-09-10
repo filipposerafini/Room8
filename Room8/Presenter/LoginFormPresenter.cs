@@ -7,26 +7,16 @@ namespace Room8
 	public class LoginFormPresenter
 	{
 		private readonly LoginForm _loginForm;
-		private readonly GestoreUtenti _gestoreUtenti;
 
 		public LoginFormPresenter(LoginForm loginForm)
 		{
-			if (loginForm == null)
-				throw new ArgumentNullException("loginForm");
 			_loginForm = loginForm;
-			_gestoreUtenti = GestoreUtenti.Instance;
-
 			InitializeEvents();
 		}
 
 		public LoginForm LoginForm
 		{
 			get { return _loginForm; }
-		}
-
-		public GestoreUtenti GestoreUtenti
-		{
-			get { return _gestoreUtenti; }
 		}
 
 		private void InitializeEvents()
@@ -40,7 +30,7 @@ namespace Room8
 			LoginForm.ErrorProvider.Clear();
 			try
 			{
-				Utente utente = GestoreUtenti.VerificaPassword(LoginForm.MailTextBox.Text, LoginForm.PasswordTextBox.Text);
+				Utente utente = GestoreUtenti.Instance.VerificaPassword(LoginForm.MailTextBox.Text, LoginForm.PasswordTextBox.Text);
 				LoginForm.Hide();
 				MainForm mainForm = new MainForm();
 				new MainFormPresenter(mainForm, LoginForm, utente);
@@ -67,9 +57,9 @@ namespace Room8
 
 		private void RegistratiButton_Click(object sender, EventArgs e)
 		{
-			LoginForm.Hide();
 			RegistratiForm registratiForm = new RegistratiForm();
 			new RegistratiFormPresenter(registratiForm, LoginForm);
+			LoginForm.Hide();
 			registratiForm.Show();
 		}
 	}

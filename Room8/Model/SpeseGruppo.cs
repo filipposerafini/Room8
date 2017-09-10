@@ -6,24 +6,18 @@ namespace Room8
 {
 	public class SpeseGruppo
 	{
-		private Gruppo _gruppo;
-		private List<Spesa> _spese;
+		private readonly Gruppo _gruppo;
+		private readonly List<Spesa> _spese;
 
 		public SpeseGruppo(Gruppo gruppo)
 		{
-			this._gruppo = gruppo;
-			this._spese = new List<Spesa>();
+			_gruppo = gruppo;
+			_spese = new List<Spesa>();
 		}
 
 		public Gruppo Gruppo
 		{
-			get { return _gruppo; }
-            set
-            { 
-                if (value == null)
-                    throw new ArgumentException("gruppo");
-                _gruppo = value;
-            }    
+			get { return _gruppo; }  
 		}
 
 		public IList<Spesa> Spese
@@ -34,25 +28,18 @@ namespace Room8
 		public void AggiungiSpesa(Spesa spesa)
 		{
 			if (spesa == null)
-				throw new ArgumentException("Spesa null");
+				throw new ArgumentNullException("spesa");
 
-			try
-			{
-				spesa.GeneraMovimenti();
-				_spese.Add(spesa);
-			}
-			catch (ArgumentException)
-			{
-                throw new ArgumentException("Spesa non è stata inserita");
-			}
+			spesa.GeneraMovimenti();
+			_spese.Add(spesa);
 		}
 
 		public void ModificaSpesa(Spesa daModificare, Spesa nuova)
 		{
 			if (daModificare == null)
-				throw new ArgumentException("daModificare null");
+				throw new ArgumentNullException("daModificare");
 			if (nuova == null)
-				throw new ArgumentException("nuova null");
+				throw new ArgumentNullException("nuova");
 
 			RimuoviSpesa(daModificare);
 			AggiungiSpesa(nuova);
@@ -61,7 +48,7 @@ namespace Room8
 		public void RimuoviSpesa(Spesa spesa)
 		{
 			if (spesa == null)
-				throw new ArgumentException("Spesa null");
+				throw new ArgumentNullException("spesa");
 
 			if (_spese.Remove(spesa))
 			{

@@ -27,12 +27,14 @@ namespace Room8
 		public void ImpostaParte(Utente utente, decimal parte)
 		{
 			if (utente == null)
-				throw new ArgumentException("utente null");
+				throw new ArgumentNullException("utente");
+			if (parte < 0)
+				throw new ArgumentException("La parte non può essere negativa");
 
 			if (Divisione.ContainsKey(utente))
 				Divisione[utente] = parte;
 			else
-				throw new ArgumentException("utente non presente");
+				throw new ArgumentException("Utente non presente");
 		}
 	}
 }

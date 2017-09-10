@@ -8,7 +8,7 @@ namespace Room8
 		public Movimento(Utente sorgente, Utente destinazione, decimal importo, Spesa spesa)
 			: base(sorgente, destinazione, importo)
 		{
-			this._spesa = spesa;
+			_spesa = spesa;
 		}
 
 		public Spesa Spesa

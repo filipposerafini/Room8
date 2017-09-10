@@ -16,11 +16,12 @@ namespace Room8
         private readonly List<Movimento> _movimenti;
         private readonly List<Commento> _commenti;
 
-		public Spesa()
+		public Spesa(Gruppo gruppo)
 		{
-			this._id = Guid.NewGuid().ToString();
-			this._movimenti = new List<Movimento>();
-			this._commenti = new List<Commento>();
+			_id = Guid.NewGuid().ToString();
+			_parti = new Parti(gruppo);
+			_movimenti = new List<Movimento>();
+			_commenti = new List<Commento>();
 		}
 
 		public string Id

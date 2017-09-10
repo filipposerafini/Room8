@@ -16,12 +16,12 @@ namespace Room8
 
 		public Gruppo(string nome)
 		{
-			this._id = Guid.NewGuid().ToString();
+			_id = Guid.NewGuid().ToString();
 			Nome = nome;
-			this._membriGruppo = new List<Utente>();
-			this._speseGruppo = new SpeseGruppo(this);
-			this._daComprare = new List<Prodotto>();
-			this._foto = FOTODEFAULT;
+			_membriGruppo = new List<Utente>();
+			_speseGruppo = new SpeseGruppo(this);
+			_daComprare = new List<Prodotto>();
+			_foto = FOTODEFAULT;
 		}
 
 		public string Id
@@ -63,11 +63,32 @@ namespace Room8
 			{
 				if (string.IsNullOrEmpty(value))
 					_foto = FOTODEFAULT;
-				if (value.EndsWith(".jpg") || value.EndsWith(".png"))
+				else if (!(value.EndsWith(".jpg") || value.EndsWith(".png")))
 					throw new ArgumentException("Inserisci una foto valida", "foto");
-
-				_foto = value;
+				else
+					_foto = value;
 			}
+		}
+
+		public void AggiungiMembro(Utente utente)
+		{
+			if (utente == null)
+				throw new ArgumentNullException("utente");
+			if (MembriGruppo.Contains(utente))
+				throw new ArgumentException("Utente " + utente.Mail + " già presente", "membro");
+			_membriGruppo.Add(utente);
+			utente.AggiungiGruppo(this);
+		}
+
+		public void RimuoviMembro(string mail)
+		{
+			if (string.IsNullOrEmpty(mail))
+				throw new ArgumentNullException("utente");
+			Utente utente = MembriGruppo.First(u => u.Mail.Equals(mail));
+			if (utente == null)
+				throw new ArgumentException("Utente non presente");
+			_membriGruppo.Remove(utente);
+			utente.RimuoviGruppo(this);
 		}
 
 		public void AggiungiProdotto(Prodotto prodotto)
@@ -91,32 +112,6 @@ namespace Room8
 			if (p == null)
 				throw new ArgumentException("Prodotto non presente");
 			_daComprare.Remove(p);
-		}
-
-		public void AggiungiMembro(Utente utente)
-		{
-			if (utente == null)
-				throw new ArgumentNullException("utente");
-
-			if (MembriGruppo.Contains(utente))
-				throw new ArgumentException("Utente già presente", "membro");
-
-			_membriGruppo.Add(utente);
-			// aggiorniamo anche la lista di gruppi di cui l'utente è membro
-			utente.AggiungiGruppo(this);
-		}
-
-		public void RimuoviMembro(Utente utente)
-		{
-			if (utente == null)
-				throw new ArgumentNullException("utente");
-
-			if (!MembriGruppo.Contains(utente))
-				throw new ArgumentException("Utente non presente");
-
-			_membriGruppo.Remove(utente);
-			// aggiorniamo anche la lista di gruppi di cui l'utente è membro
-			utente.RimuoviGruppo(this);
 		}
 	}
 }

@@ -10,8 +10,8 @@ namespace Room8
 
 		public ProdottiFormPresenter(ProdottiForm prodottiForm, Gruppo gruppo)
 		{
-			this._prodottiForm = prodottiForm;
-			this._gruppo = gruppo;
+			_prodottiForm = prodottiForm;
+			_gruppo = gruppo;
 			InitializeEvents();
 			InitializeUI();
 		}

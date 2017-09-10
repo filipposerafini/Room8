@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Windows.Forms;
 using Room8.View;
+using System.Linq;
 
 namespace Room8
 {
@@ -10,14 +11,18 @@ namespace Room8
 		private readonly GruppoForm _gruppoForm;
 		private readonly Utente _utente;
 		private Gruppo _gruppo;
+		private readonly IPresenterEvent _observer;
 		private List<Button> _controls;
+		private List<TextBox> _mails;
 
-		public GruppoFormPresenter(GruppoForm creaGruppoForm, Utente utente, Gruppo gruppo)
+		public GruppoFormPresenter(GruppoForm gruppoForm, Utente utente, Gruppo gruppo, IPresenterEvent observer)
 		{
-			this._gruppoForm = creaGruppoForm;
-			this._utente = utente;
-			this._gruppo = gruppo;
-			this._controls = new List<Button>();
+			_gruppoForm = gruppoForm;
+			_utente = utente;
+			_gruppo = gruppo;
+			_observer = observer;
+			_controls = new List<Button>();
+			_mails = new List<TextBox>();
 			InitializeEvents();
 			InitializeUI();
 		}
@@ -38,20 +43,32 @@ namespace Room8
 			set { _gruppo = value; }
 		}
 
+		public IPresenterEvent Observer
+		{
+			get { return _observer; }
+		}
+
 		public List<Button> Controls
 		{
 			get { return _controls; }
 		}
 
-		void InitializeEvents()
+		public List<TextBox> Mails
+		{
+			get { return _mails; }
+		}
+
+		private void InitializeEvents()
 		{
 			GruppoForm.FotoButton.Click += FotoButton_Click;
 			GruppoForm.AggiungiPersonaLinkLabel.Click += AggiungiPersonaLinkLabel_Click;
 			GruppoForm.ConfermaButton.Click += ConfermaButton_Click;
 		}
 
-		void InitializeUI()
+		private void InitializeUI()
 		{
+			Mails.Add(new TextBox());
+			Controls.Add(new Button());
 			GruppoForm.MailLabel.Text = Utente.Mail;
 			if (Gruppo != null)
 			{
@@ -64,7 +81,7 @@ namespace Room8
 			}
 		}
 
-		void AggiungiRiga(string mail)
+		private void AggiungiRiga(string mail)
 		{
 			Label mailLabel = new Label();
 			mailLabel.AutoSize = true;
@@ -83,6 +100,8 @@ namespace Room8
 			mailTextBox.Text = mail;
 			mailTextBox.Size = new System.Drawing.Size(189, 20);
 			mailTextBox.TabIndex = 1;
+			if (!mail.Equals(""))
+				mailTextBox.Enabled = false;
 
 			Button removeButton = new Button();
 			removeButton.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -101,9 +120,33 @@ namespace Room8
 			GruppoForm.MembriTable.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40));
 			GruppoForm.MembriTable.RowCount++;
 			Controls.Add(removeButton);
+			Mails.Add(mailTextBox);
 		}
 
-        void FotoButton_Click(object sender, EventArgs e)
+		private void RimuoviRiga(int index)
+		{
+			if (index >= GruppoForm.MembriTable.RowCount)
+				return;
+			for (int i = 0; i < GruppoForm.MembriTable.ColumnCount; i++)
+			{
+				var control = GruppoForm.MembriTable.GetControlFromPosition(i, index);
+				GruppoForm.MembriTable.Controls.Remove(control);
+			}
+			for (int i = index + 1; i < GruppoForm.MembriTable.RowCount; i++)
+			{
+				for (int j = 0; j < GruppoForm.MembriTable.ColumnCount; j++)
+				{
+					var control = GruppoForm.MembriTable.GetControlFromPosition(j, i);
+					if (control != null)
+						GruppoForm.MembriTable.SetRow(control, i - 1);
+				}
+			}
+			GruppoForm.MembriTable.RowStyles.RemoveAt(GruppoForm.MembriTable.RowCount - 1);
+			GruppoForm.MembriTable.RowCount--;
+			GruppoForm.MembriTable.Height -= 40;
+		}
+
+        private void FotoButton_Click(object sender, EventArgs e)
 		{
 			GruppoForm.ErrorProvider.Clear();
 			if (GruppoForm.OpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
@@ -114,53 +157,89 @@ namespace Room8
 			}
 		}
 
-		void AggiungiPersonaLinkLabel_Click(object sender, EventArgs e)
+		private void AggiungiPersonaLinkLabel_Click(object sender, EventArgs e)
 		{
-			AggiungiRiga("");
-		}
-
-		public void remove_row(TableLayoutPanel panel, int row_index_to_remove)
-		{
-			if (row_index_to_remove >= panel.RowCount)
-				return;
-
-			// delete all controls of row that we want to delete
-			for (int i = 0; i < panel.ColumnCount; i++)
+			GruppoForm.ErrorProvider.Clear();
+			try
 			{
-				var control = panel.GetControlFromPosition(i, row_index_to_remove);
-				panel.Controls.Remove(control);
-			}
-
-			// move up row controls that comes after row we want to remove
-			for (int i = row_index_to_remove + 1; i < panel.RowCount; i++)
-			{
-				for (int j = 0; j < panel.ColumnCount; j++)
+				if (Gruppo == null)
 				{
-					var control = panel.GetControlFromPosition(j, i);
-					if (control != null)
-						panel.SetRow(control, i - 1);
+					Gruppo = new Gruppo(GruppoForm.NomeGruppoTextBox.Text);
+					Gruppo.AggiungiMembro(Utente);
 				}
+				AggiungiRiga("");
 			}
-
-			// remove last row
-			panel.RowStyles.RemoveAt(panel.RowCount - 1);
-			panel.RowCount--;
+			catch (ArgumentException ae)
+			{
+				GruppoForm.ErrorProvider.SetError(GruppoForm.NomeGruppoTextBox, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
+			}
 		}
 
-		void RemoveButton_Click(object sender, EventArgs e)
+		private void RemoveButton_Click(object sender, EventArgs e)
 		{
-			remove_row(GruppoForm.MembriTable, Controls.IndexOf((Button)sender));
-			Controls.RemoveAt(Controls.IndexOf((Button)sender));
-			GruppoForm.MembriTable.Height -= 40;
+			int index = Controls.IndexOf((Button)sender);
+			RimuoviRiga(index - 1);
+			Mails.RemoveAt(index);
+			Controls.RemoveAt(index);
 		}
 
-		void ConfermaButton_Click(object sender, EventArgs e)
+		private void ConfermaButton_Click(object sender, EventArgs e)
 		{
-			if (Gruppo == null)
-				Gruppo = new Gruppo(GruppoForm.NomeGruppoTextBox.Text);
-			else
+			GruppoForm.ErrorProvider.Clear();
+			try
+			{
+				if (Mails.Count == 1)
+					throw new ArgumentException("Inserisci almeno un'altro utente", "membro");
 				Gruppo.Nome = GruppoForm.NomeGruppoTextBox.Text;
-			Gruppo.Foto = GruppoForm.PictureBox.ImageLocation;
+				Gruppo.Foto = GruppoForm.PictureBox.ImageLocation;
+				GestoreUtenti gu = GestoreUtenti.Instance;
+				int i;
+				for (i = 1; i < Gruppo.MembriGruppo.Count; i++)
+				{
+					int j;
+					for (j = 1; j < Mails.Count; j++)
+					{
+						if (Gruppo.MembriGruppo[i].Mail.Equals(Mails[j].Text))
+							break;
+					}
+					if (j < Mails.Count)
+						continue;
+					Gruppo.RimuoviMembro(Gruppo.MembriGruppo[i].Mail);
+					i--;
+				}
+
+				for (int j = i; j < Mails.Count; j++)
+				{
+					if (Mails[j].Text.Equals(""))
+						throw new ArgumentException("Inserisci una mail", "membro");
+					Utente utente = gu.GetUtente(Mails[j].Text);
+					if (utente == null)
+						throw new ArgumentException("Utente " + Mails[j].Text + " inesistente", "membro");
+					Gruppo.AggiungiMembro(utente);
+				}
+				Observer.AggiornaUI();
+				GruppoForm.DialogResult = DialogResult.OK;
+			}
+			catch (ArgumentException ae)
+			{
+				Control control;
+				switch (ae.ParamName)
+				{
+					case "nome" :
+						control = GruppoForm.NomeGruppoTextBox;
+						break;
+					case "foto":
+						control = GruppoForm.FileLabel;
+						break;
+					case "membro" :
+						control = GruppoForm.AggiungiPersonaLinkLabel;
+						break;
+					default:
+						control = GruppoForm.ConfermaButton;
+						break;
+				}
+				GruppoForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
+			}
 		}
 	}
 }

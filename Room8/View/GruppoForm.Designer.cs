@@ -252,7 +252,7 @@
             this._addUserTableLayoutPanel.ColumnCount = 3;
             this._addUserTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 80F));
             this._addUserTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 60F));
-            this._addUserTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 31F));
+            this._addUserTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 50F));
             this._addUserTableLayoutPanel.Location = new System.Drawing.Point(3, 32);
             this._addUserTableLayoutPanel.Name = "_addUserTableLayoutPanel";
             this._addUserTableLayoutPanel.RowCount = 1;

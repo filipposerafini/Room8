@@ -11,8 +11,8 @@ namespace Room8
 
 		public AmicoFormPresenter(AmicoForm amicoForm, Utente utente, Utente amico)
 		{
-			this._amicoForm = amicoForm;
-			this._utente = utente;
+			_amicoForm = amicoForm;
+			_utente = utente;
 			InitializeUI(amico);
 		}
 
@@ -26,7 +26,7 @@ namespace Room8
 			get { return _utente; }
 		}
 
-		void InitializeUI(Utente amico)
+		private void InitializeUI(Utente amico)
 		{
 			AmicoForm.NomeAmicoLabel.Text = amico.Nome + " " + amico.Cognome;
 			AmicoForm.PictureBox.ImageLocation = amico.Foto;

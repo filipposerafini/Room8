@@ -6,14 +6,15 @@ namespace Room8
 {
 	class ProfiloFormPresenter
 	{
-		ProfiloForm _profiloForm;
-		Utente _utente;
+		private readonly ProfiloForm _profiloForm;
+		private readonly Utente _utente;
+		private readonly IPresenterEvent _observer;
 
-		public ProfiloFormPresenter(ProfiloForm profiloForm, Utente utente)
+		public ProfiloFormPresenter(ProfiloForm profiloForm, Utente utente, IPresenterEvent observer)
 		{
-			this._profiloForm = profiloForm;
-			this._utente = utente;
-
+			_profiloForm = profiloForm;
+			_utente = utente;
+			_observer = observer;
 			InitializeEvents();
 			InitializeUI();
 		}
@@ -28,13 +29,18 @@ namespace Room8
 			get { return _utente; }
 		}
 
+		public IPresenterEvent Observer
+		{
+			get { return _observer; }
+		}
+
 		private void InitializeEvents()
 		{
 			ProfiloForm.ConfermaButton.Click += ConfermaButton_Click;
 			ProfiloForm.FotoButton.Click += FotoButton_Click;
 		}
 
-		void InitializeUI()
+		private void InitializeUI()
 		{
 			ProfiloForm.NomeTextBox.Text = Utente.Nome;
 			ProfiloForm.CognomeTextBox.Text = Utente.Cognome;
@@ -44,7 +50,18 @@ namespace Room8
 			ProfiloForm.FileLabel.Text = Utente.Foto.Substring(Utente.Foto.LastIndexOf('\\') + 1);
 		}
 
-		void ConfermaButton_Click(object sender, System.EventArgs e)
+		private void FotoButton_Click(object sender, System.EventArgs e)
+		{
+			ProfiloForm.ErrorProvider.Clear();
+			if (ProfiloForm.OpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+			{
+				string foto = ProfiloForm.OpenFileDialog.FileName;
+				ProfiloForm.FileLabel.Text = foto.Substring(foto.LastIndexOf('\\') + 1);
+				ProfiloForm.PictureBox.ImageLocation = foto;
+			}
+		}
+
+		private void ConfermaButton_Click(object sender, System.EventArgs e)
 		{
 			ProfiloForm.ErrorProvider.Clear();
 			try
@@ -64,6 +81,7 @@ namespace Room8
 					Utente.Password = ProfiloForm.NuovaPassword.Text;
 				}
 
+				Observer.AggiornaUI();
 				ProfiloForm.DialogResult = System.Windows.Forms.DialogResult.OK;
 			}
 			catch (ArgumentException ae)
@@ -100,16 +118,6 @@ namespace Room8
 						break;
 				}
 				ProfiloForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
-			}
-		}
-		void FotoButton_Click(object sender, System.EventArgs e)
-		{
-			ProfiloForm.ErrorProvider.Clear();
-			if (ProfiloForm.OpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-			{
-				string foto = ProfiloForm.OpenFileDialog.FileName;
-				ProfiloForm.FileLabel.Text = foto.Substring(foto.LastIndexOf('\\') + 1);
-				ProfiloForm.PictureBox.ImageLocation = foto;
 			}
 		}
 	}

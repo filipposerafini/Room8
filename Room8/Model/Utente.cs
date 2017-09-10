@@ -15,7 +15,6 @@ namespace Room8
 		private string _cognome;
 		private string _telefono;
 		private string _foto;
-		// lista di gruppi di cui l'utente fa parte
         private readonly List<Gruppo> _gruppi = new List<Gruppo>();
         private readonly List<MovimentoDiDenaro> _movimentiDiDenaro = new List<MovimentoDiDenaro>();
 
@@ -119,11 +118,10 @@ namespace Room8
 			get { return _movimentiDiDenaro; }
 		}
 
-		// Aggiungi e Rimuovi membri dovrebbe essere possibile solo da Gruppo
 		public void AggiungiGruppo(Gruppo gruppo)
 		{
 			if (gruppo == null)
-				throw new ArgumentException("membriGruppo null");
+				throw new ArgumentNullException("gruppo");
 
 			_gruppi.Add(gruppo);
 		}
@@ -131,7 +129,7 @@ namespace Room8
 		public void RimuoviGruppo(Gruppo gruppo)
 		{
 			if (gruppo == null)
-				throw new ArgumentException("membriGruppo null");
+				throw new ArgumentNullException("gruppo");
 
 			_gruppi.Remove(gruppo);
 		}
@@ -145,7 +143,7 @@ namespace Room8
 		{
 			// ritorna l'ammontare totale a Credito/debito con utente 'amico'
 			if (amico == null)
-				throw new ArgumentException("amico null");
+				throw new ArgumentNullException("amico");
 			decimal result = 0;
 			foreach (var movimento in MovimentiDiDenaro.Where(
 				mov => mov.Destinazione.Equals(amico) || mov.Sorgente.Equals(amico)))
@@ -166,9 +164,9 @@ namespace Room8
 		{
 			// come calcolaSituazione ma limitato ai movimenti nel gruppo 'gruppo' 
 			if (amico == null)
-				throw new ArgumentException("amico null");
+				throw new ArgumentNullException("amico");
 			if (gruppo == null)
-				throw new ArgumentException("amico null");
+				throw new ArgumentNullException("gruppo");
 
 			decimal result = 0;
 			foreach (var movimento in MovimentiDiDenaro.Where(
@@ -195,14 +193,11 @@ namespace Room8
 		{
 			// ritorna l'ammontare totale a credito/debito con l'intero gruppo
 			if (gruppo == null)
-				throw new ArgumentException("gruppo null");
+				throw new ArgumentNullException("gruppo");
 			if (!gruppo.MembriGruppo.Contains(this))
 				throw new ArgumentException("utente non appartenente al gruppo");
 
-			decimal result = 0;
-
-			result = gruppo.MembriGruppo.Sum(u => this.CalcolaSituazione(u, gruppo));
-			return result;
+			return gruppo.MembriGruppo.Sum(u => this.CalcolaSituazione(u, gruppo));
 		}
 
         public decimal CalcolaBilancioTotale()

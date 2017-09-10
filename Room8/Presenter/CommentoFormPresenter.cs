@@ -11,9 +11,9 @@ namespace Room8
 
 		public CommentoFormPresenter(CommentoForm commentoForm, Spesa spesa, Utente utente)
 		{
-			this._commentoForm = commentoForm;
-			this._spesa = spesa;
-			this._utente = utente;
+			_commentoForm = commentoForm;
+			_spesa = spesa;
+			_utente = utente;
 			InitializeEvents();
 			AggiornaUI();
 		}
@@ -33,19 +33,19 @@ namespace Room8
 			get { return _utente; }
 		}
 
-		void InitializeEvents()
+		private void InitializeEvents()
 		{
 			CommentoForm.CommentaButton.Click += CommentaButton_Click;
 		}
 
-		void AggiornaUI()
+		private void AggiornaUI()
 		{
 			CommentoForm.CommentiListBox.Items.Clear();
 			foreach (var commento in Spesa.Commenti)
 				CommentoForm.CommentiListBox.Items.Add(commento.Autore.Nome + ": " + commento.Testo);
 		}
 
-		void CommentaButton_Click(object sender, EventArgs e)
+		private void CommentaButton_Click(object sender, EventArgs e)
 		{
 			CommentoForm.ErrorProvider.Clear();
 			try

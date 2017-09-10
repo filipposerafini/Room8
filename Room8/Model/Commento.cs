@@ -33,8 +33,6 @@ namespace Room8
         {
             get { return _data; }
         }
-
-
     }
 }
 

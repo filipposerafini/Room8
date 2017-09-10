@@ -7,11 +7,13 @@ namespace Room8
     public class GestoreUtenti
     {
         private static GestoreUtenti _instance;
-        private List<Gruppo> _gruppi = new List<Gruppo>();
-        private List<Utente> _utenti = new List<Utente>();
+		private List<Gruppo> _gruppi;
+        private List<Utente> _utenti;
 
         private GestoreUtenti()
         {
+			_gruppi = new List<Gruppo>();
+			_utenti = new List<Utente>();
         }
 
         public static GestoreUtenti Instance
@@ -39,6 +41,14 @@ namespace Room8
                 return _utenti.AsReadOnly();
             }
         }
+
+		public Utente GetUtente(string mail)
+		{
+			foreach (var utente in _utenti)
+				if (utente.Mail.Equals(mail))
+					return utente;
+			return null;
+		}
 
         public void AggiugniUtente(Utente utente)
         {

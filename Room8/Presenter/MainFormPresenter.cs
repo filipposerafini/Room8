@@ -98,16 +98,14 @@ namespace Room8
 		private void AccountToolStrip_Click(object sender, EventArgs e)
 		{
 			ProfiloForm profiloForm = new ProfiloForm();
-			new ProfiloFormPresenter(profiloForm, Utente);
-			if (profiloForm.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-				AggiornaUI();
-			//TODO
+			new ProfiloFormPresenter(profiloForm, Utente, this);
+			profiloForm.ShowDialog();
 		}
 
 		private void CreaGruppoToolStrip_Click(object sender, EventArgs e)
 		{
 			GruppoForm gruppoForm = new GruppoForm();
-			new GruppoFormPresenter(gruppoForm, Utente, null);
+			new GruppoFormPresenter(gruppoForm, Utente, null, this);
 			gruppoForm.ShowDialog();
 		}
 

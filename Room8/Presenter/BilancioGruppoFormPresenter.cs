@@ -4,7 +4,7 @@ using Room8.View;
 
 namespace Room8
 {
-	class BilancioGruppoFormPresenter
+	public class BilancioGruppoFormPresenter : IPresenterEvent
 	{
 		private readonly BilancioGruppoForm _bilancioGruppoForm;
 		private readonly Utente _utente;
@@ -12,11 +12,11 @@ namespace Room8
 
 		public BilancioGruppoFormPresenter(BilancioGruppoForm bilancioGruppoForm, Utente utente, Gruppo gruppo)
 		{
-			this._bilancioGruppoForm = bilancioGruppoForm;
-			this._utente = utente;
-			this._gruppo = gruppo;
+			_bilancioGruppoForm = bilancioGruppoForm;
+			_utente = utente;
+			_gruppo = gruppo;
 			InitializeEvents();
-			InitializeUI();
+			AggiornaUI();
 		}
 
 		public BilancioGruppoForm BilancioGruppoForm
@@ -34,37 +34,37 @@ namespace Room8
 			get { return _gruppo; }
 		}
 
-		void InitializeEvents()
+		private void InitializeEvents()
 		{
 			BilancioGruppoForm.ModificaButton.Click += ModificaButton_Click;
 			BilancioGruppoForm.ProdottiButton.Click += ProdottiButton_Click;
 			BilancioGruppoForm.MembriListBox.Click += MembriListBox_Click;
 		}
 
-		void InitializeUI()
+		public void AggiornaUI()
 		{
 			BilancioGruppoForm.GruppoLabel.Text = Gruppo.Nome;
 			BilancioGruppoForm.PictureBox.ImageLocation = Gruppo.Foto;
 			BilancioGruppoForm.BilancioLabel.Text = Utente.CalcolaBilancio(Gruppo).ToString("0.00 \u20AC");
-            BilancioGruppoForm.MembriListBox.DataSource = Gruppo.MembriGruppo;
-            BilancioGruppoForm.MembriListBox.DisplayMember = "Mail";
-        }
+			BilancioGruppoForm.MembriListBox.DataSource = Gruppo.MembriGruppo;
+			BilancioGruppoForm.MembriListBox.DisplayMember = "Mail";
+		}
 
-		void MembriListBox_Click(object sender, EventArgs e)
+		private void MembriListBox_Click(object sender, EventArgs e)
 		{
 			AmicoForm amicoForm = new AmicoForm();
 			new AmicoFormPresenter(amicoForm, Utente, (Utente)BilancioGruppoForm.MembriListBox.SelectedItem);
 			amicoForm.ShowDialog();
 		}
 
-		void ModificaButton_Click(object sender, EventArgs e)
+		private void ModificaButton_Click(object sender, EventArgs e)
 		{
 			GruppoForm gruppoForm = new GruppoForm();
-			new GruppoFormPresenter(gruppoForm, Utente, Gruppo);
+			new GruppoFormPresenter(gruppoForm, Utente, Gruppo, this);
 			gruppoForm.ShowDialog();
 		}
 
-		void ProdottiButton_Click(object sender, EventArgs e)
+		private void ProdottiButton_Click(object sender, EventArgs e)
 		{
 			ProdottiForm prodottiForm = new ProdottiForm();
 			new ProdottiFormPresenter(prodottiForm, Gruppo);
