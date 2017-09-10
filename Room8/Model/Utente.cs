@@ -152,6 +152,11 @@ namespace Room8
             return res;
         }
 
+		public List<MovimentoDiDenaro> GetSaldi()
+		{
+			return MovimentiDiDenaro.Where(m => m is Saldo).ToList();
+		}
+
         public decimal CalcolaSituazione(Utente amico)
 		{
 			// ritorna l'ammontare totale a Credito/debito con utente 'amico'

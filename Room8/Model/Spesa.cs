@@ -76,6 +76,11 @@ namespace Room8
 			}
 		}
 
+		public string NomePagante
+		{
+			get { return Pagante.Nome; }
+		}
+
 		public IMetodoDiDivisione MetodoDivisione
 		{
 			get { return _metodoDivisione; }

@@ -553,7 +553,7 @@
             // paganteDataGridViewTextBoxColumn
             // 
             this.paganteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.paganteDataGridViewTextBoxColumn.DataPropertyName = "Pagante";
+            this.paganteDataGridViewTextBoxColumn.DataPropertyName = "NomePagante";
             this.paganteDataGridViewTextBoxColumn.HeaderText = "Pagante";
             this.paganteDataGridViewTextBoxColumn.Name = "paganteDataGridViewTextBoxColumn";
             this.paganteDataGridViewTextBoxColumn.ReadOnly = true;
@@ -577,7 +577,7 @@
             // sorgenteDataGridViewTextBoxColumn
             // 
             this.sorgenteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.sorgenteDataGridViewTextBoxColumn.DataPropertyName = "Sorgente";
+            this.sorgenteDataGridViewTextBoxColumn.DataPropertyName = "NomeSorgente";
             this.sorgenteDataGridViewTextBoxColumn.HeaderText = "Sorgente";
             this.sorgenteDataGridViewTextBoxColumn.Name = "sorgenteDataGridViewTextBoxColumn";
             this.sorgenteDataGridViewTextBoxColumn.ReadOnly = true;
@@ -585,7 +585,7 @@
             // destinazioneDataGridViewTextBoxColumn
             // 
             this.destinazioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.destinazioneDataGridViewTextBoxColumn.DataPropertyName = "Destinazione";
+            this.destinazioneDataGridViewTextBoxColumn.DataPropertyName = "NomeDestinazione";
             this.destinazioneDataGridViewTextBoxColumn.HeaderText = "Destinazione";
             this.destinazioneDataGridViewTextBoxColumn.Name = "destinazioneDataGridViewTextBoxColumn";
             this.destinazioneDataGridViewTextBoxColumn.ReadOnly = true;

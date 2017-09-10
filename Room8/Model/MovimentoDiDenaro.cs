@@ -32,6 +32,11 @@ namespace Room8
             }
 		}
 
+		public string NomeSorgente
+		{
+			get { return Sorgente.Nome; }
+		}
+
 		public Utente Destinazione
 		{
 			get { return _destinazione; }
@@ -41,6 +46,11 @@ namespace Room8
                     throw new ArgumentNullException("destinazione");
 				_destinazione = value;
             }
+		}
+
+		public string NomeDestinazione
+		{
+			get { return Destinazione.Nome; }
 		}
 
 		public decimal Importo

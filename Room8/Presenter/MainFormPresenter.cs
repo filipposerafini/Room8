@@ -57,7 +57,8 @@ namespace Room8
 			MainForm.AmiciListBox.DataSource = Utente.Amici();
 			MainForm.AmiciListBox.DisplayMember = "Mail";
 
-            MainForm.DataGridView.DataSource = Utente.GetSpese();
+			MainForm.SpeseDataGridView.DataSource = Utente.GetSpese();
+			MainForm.SaldiDataGridView.DataSource = Utente.GetSaldi();
 
 			decimal bilancioTotale = Utente.CalcolaBilancioTotale();
 			MainForm.BilancioImportoLabel.Text = bilancioTotale.ToString("0.00 \u20AC");
@@ -83,14 +84,14 @@ namespace Room8
 			saldoForm.ShowDialog();
 		}
 
-		void AmiciListBox_Click(object sender, EventArgs e)
+		private void AmiciListBox_Click(object sender, EventArgs e)
 		{
             AmicoForm amicoForm = new AmicoForm();
 			new AmicoFormPresenter(amicoForm, Utente, (Utente)MainForm.AmiciListBox.SelectedItem);
             amicoForm.ShowDialog();
 		}
 
-		void GruppiListBox_Click(object sender, EventArgs e)
+		private void GruppiListBox_Click(object sender, EventArgs e)
 		{
             BilancioGruppoForm bilancioGruppoForm = new BilancioGruppoForm();
 			new BilancioGruppoFormPresenter(bilancioGruppoForm, Utente, (Gruppo)MainForm.GruppiListBox.SelectedItem, this);
