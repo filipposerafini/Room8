@@ -43,9 +43,9 @@ namespace Room8
 			get { return _dovutoImportoLabel; }
 		}
 
-		public ListBox AttivitaRecentiListBox
+		public DataGridView DataGridView
 		{
-			get { return _attivitaRecentiListBox; }
+			get { return _speseDataGridView; }
 		}
 
 		public Button SpesaButton

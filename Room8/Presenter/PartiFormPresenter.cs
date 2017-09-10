@@ -98,7 +98,7 @@ namespace Room8
 			splitContainer.SplitterDistance = 75;
 			splitContainer.TabIndex = 0;
 
-			panel.Height += 40;
+			panel.Height = 40 + 40*index;
 			panel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40));
 			panel.Controls.Add(splitContainer, 0, index);
 

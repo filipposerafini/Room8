@@ -35,6 +35,8 @@
             this._registratiLabel = new System.Windows.Forms.Label();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._bottomPanel = new System.Windows.Forms.Panel();
+            this._eliminaButton = new System.Windows.Forms.Button();
+            this._prodottiButton = new System.Windows.Forms.Button();
             this._titleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._centerTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._speseTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -46,7 +48,6 @@
             this._bilancioImportoLabel = new System.Windows.Forms.Label();
             this._membriListBox = new System.Windows.Forms.ListBox();
             this._membriLabel = new System.Windows.Forms.Label();
-            this._prodottiButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this._mainTableLayoutPanel.SuspendLayout();
@@ -75,7 +76,7 @@
             // 
             // _modificaButton
             // 
-            this._modificaButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this._modificaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._modificaButton.Location = new System.Drawing.Point(420, 11);
             this._modificaButton.Name = "_modificaButton";
             this._modificaButton.Size = new System.Drawing.Size(75, 23);
@@ -113,6 +114,7 @@
             // 
             // _bottomPanel
             // 
+            this._bottomPanel.Controls.Add(this._eliminaButton);
             this._bottomPanel.Controls.Add(this._prodottiButton);
             this._bottomPanel.Controls.Add(this._modificaButton);
             this._bottomPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -121,6 +123,26 @@
             this._bottomPanel.Name = "_bottomPanel";
             this._bottomPanel.Size = new System.Drawing.Size(507, 46);
             this._bottomPanel.TabIndex = 14;
+            // 
+            // _eliminaButton
+            // 
+            this._eliminaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._eliminaButton.Location = new System.Drawing.Point(12, 11);
+            this._eliminaButton.Name = "_eliminaButton";
+            this._eliminaButton.Size = new System.Drawing.Size(75, 23);
+            this._eliminaButton.TabIndex = 15;
+            this._eliminaButton.Text = "Elimina";
+            this._eliminaButton.UseVisualStyleBackColor = true;
+            // 
+            // _prodottiButton
+            // 
+            this._prodottiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._prodottiButton.Location = new System.Drawing.Point(339, 11);
+            this._prodottiButton.Name = "_prodottiButton";
+            this._prodottiButton.Size = new System.Drawing.Size(75, 23);
+            this._prodottiButton.TabIndex = 14;
+            this._prodottiButton.Text = "Prodotti";
+            this._prodottiButton.UseVisualStyleBackColor = true;
             // 
             // _titleTableLayoutPanel
             // 
@@ -174,11 +196,11 @@
             // 
             this._speseListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._speseListBox.FormattingEnabled = true;
-            this._speseListBox.Location = new System.Drawing.Point(0, 30);
-            this._speseListBox.Margin = new System.Windows.Forms.Padding(0);
+            this._speseListBox.Location = new System.Drawing.Point(3, 30);
+            this._speseListBox.Margin = new System.Windows.Forms.Padding(3, 0, 0, 0);
             this._speseListBox.Name = "_speseListBox";
             this._speseListBox.ScrollAlwaysVisible = true;
-            this._speseListBox.Size = new System.Drawing.Size(367, 243);
+            this._speseListBox.Size = new System.Drawing.Size(364, 243);
             this._speseListBox.TabIndex = 0;
             // 
             // _speseLabel
@@ -186,9 +208,10 @@
             this._speseLabel.AutoSize = true;
             this._speseLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._speseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._speseLabel.Location = new System.Drawing.Point(3, 0);
+            this._speseLabel.Location = new System.Drawing.Point(3, 3);
+            this._speseLabel.Margin = new System.Windows.Forms.Padding(3);
             this._speseLabel.Name = "_speseLabel";
-            this._speseLabel.Size = new System.Drawing.Size(361, 30);
+            this._speseLabel.Size = new System.Drawing.Size(361, 24);
             this._speseLabel.TabIndex = 3;
             this._speseLabel.Text = "Lista spese:";
             this._speseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -203,8 +226,8 @@
             this._membriTableLayoutPanel.Controls.Add(this._membriListBox, 0, 4);
             this._membriTableLayoutPanel.Controls.Add(this._membriLabel, 0, 3);
             this._membriTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._membriTableLayoutPanel.Location = new System.Drawing.Point(2, 2);
-            this._membriTableLayoutPanel.Margin = new System.Windows.Forms.Padding(2);
+            this._membriTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this._membriTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this._membriTableLayoutPanel.Name = "_membriTableLayoutPanel";
             this._membriTableLayoutPanel.RowCount = 5;
             this._membriTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.23729F));
@@ -212,16 +235,16 @@
             this._membriTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._membriTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
             this._membriTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 193F));
-            this._membriTableLayoutPanel.Size = new System.Drawing.Size(132, 269);
+            this._membriTableLayoutPanel.Size = new System.Drawing.Size(136, 273);
             this._membriTableLayoutPanel.TabIndex = 2;
             // 
             // _separatorLabel
             // 
             this._separatorLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this._separatorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._separatorLabel.Location = new System.Drawing.Point(3, 42);
+            this._separatorLabel.Location = new System.Drawing.Point(3, 46);
             this._separatorLabel.Name = "_separatorLabel";
-            this._separatorLabel.Size = new System.Drawing.Size(126, 2);
+            this._separatorLabel.Size = new System.Drawing.Size(130, 2);
             this._separatorLabel.TabIndex = 14;
             // 
             // _riepilogoBilancioLabel
@@ -231,7 +254,7 @@
             this._riepilogoBilancioLabel.Location = new System.Drawing.Point(3, 0);
             this._riepilogoBilancioLabel.MinimumSize = new System.Drawing.Size(126, 23);
             this._riepilogoBilancioLabel.Name = "_riepilogoBilancioLabel";
-            this._riepilogoBilancioLabel.Size = new System.Drawing.Size(126, 23);
+            this._riepilogoBilancioLabel.Size = new System.Drawing.Size(130, 25);
             this._riepilogoBilancioLabel.TabIndex = 2;
             this._riepilogoBilancioLabel.Text = "Bilancio totale:";
             this._riepilogoBilancioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -241,9 +264,9 @@
             this._bilancioImportoLabel.AutoSize = true;
             this._bilancioImportoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._bilancioImportoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._bilancioImportoLabel.Location = new System.Drawing.Point(3, 23);
+            this._bilancioImportoLabel.Location = new System.Drawing.Point(3, 25);
             this._bilancioImportoLabel.Name = "_bilancioImportoLabel";
-            this._bilancioImportoLabel.Size = new System.Drawing.Size(126, 19);
+            this._bilancioImportoLabel.Size = new System.Drawing.Size(130, 21);
             this._bilancioImportoLabel.TabIndex = 3;
             this._bilancioImportoLabel.Text = "Soldi";
             this._bilancioImportoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -252,11 +275,11 @@
             // 
             this._membriListBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._membriListBox.FormattingEnabled = true;
-            this._membriListBox.Location = new System.Drawing.Point(0, 75);
+            this._membriListBox.Location = new System.Drawing.Point(0, 79);
             this._membriListBox.Margin = new System.Windows.Forms.Padding(0);
             this._membriListBox.Name = "_membriListBox";
             this._membriListBox.ScrollAlwaysVisible = true;
-            this._membriListBox.Size = new System.Drawing.Size(132, 194);
+            this._membriListBox.Size = new System.Drawing.Size(136, 194);
             this._membriListBox.TabIndex = 1;
             // 
             // _membriLabel
@@ -264,22 +287,12 @@
             this._membriLabel.AutoSize = true;
             this._membriLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._membriLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._membriLabel.Location = new System.Drawing.Point(3, 44);
+            this._membriLabel.Location = new System.Drawing.Point(3, 48);
             this._membriLabel.Name = "_membriLabel";
-            this._membriLabel.Size = new System.Drawing.Size(126, 31);
+            this._membriLabel.Size = new System.Drawing.Size(130, 31);
             this._membriLabel.TabIndex = 2;
             this._membriLabel.Text = "Membri del Gruppo:";
             this._membriLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _prodottiButton
-            // 
-            this._prodottiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this._prodottiButton.Location = new System.Drawing.Point(339, 11);
-            this._prodottiButton.Name = "_prodottiButton";
-            this._prodottiButton.Size = new System.Drawing.Size(75, 23);
-            this._prodottiButton.TabIndex = 14;
-            this._prodottiButton.Text = "Prodotti";
-            this._prodottiButton.UseVisualStyleBackColor = true;
             // 
             // BilancioGruppoForm
             // 
@@ -324,5 +337,6 @@
         private System.Windows.Forms.Label _bilancioImportoLabel;
         private System.Windows.Forms.Label _separatorLabel;
         private System.Windows.Forms.Button _prodottiButton;
+        private System.Windows.Forms.Button _eliminaButton;
     }
 }

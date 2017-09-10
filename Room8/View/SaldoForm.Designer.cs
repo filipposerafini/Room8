@@ -46,6 +46,7 @@
             this._daPictureBox = new System.Windows.Forms.PictureBox();
             this._aPictureBox = new System.Windows.Forms.PictureBox();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this._eliminaButton = new System.Windows.Forms.Button();
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
@@ -87,6 +88,7 @@
             // 
             // _confirmPanel
             // 
+            this._confirmPanel.Controls.Add(this._eliminaButton);
             this._confirmPanel.Controls.Add(this._confermaButton);
             this._confirmPanel.Controls.Add(this._annullaButton);
             this._confirmPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -156,6 +158,11 @@
             this._numericUpDown.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._numericUpDown.DecimalPlaces = 2;
             this._numericUpDown.Location = new System.Drawing.Point(146, 129);
+            this._numericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this._numericUpDown.Name = "_numericUpDown";
             this._numericUpDown.Size = new System.Drawing.Size(133, 20);
             this._numericUpDown.TabIndex = 15;
@@ -239,6 +246,15 @@
             // 
             this._errorProvider.ContainerControl = this;
             // 
+            // _eliminaButton
+            // 
+            this._eliminaButton.Location = new System.Drawing.Point(12, 6);
+            this._eliminaButton.Name = "_eliminaButton";
+            this._eliminaButton.Size = new System.Drawing.Size(75, 23);
+            this._eliminaButton.TabIndex = 2;
+            this._eliminaButton.Text = "Elimina";
+            this._eliminaButton.UseVisualStyleBackColor = true;
+            // 
             // SaldoForm
             // 
             this.AcceptButton = this._confermaButton;
@@ -278,5 +294,6 @@
         private System.Windows.Forms.PictureBox _daPictureBox;
         private System.Windows.Forms.PictureBox _aPictureBox;
         private System.Windows.Forms.ErrorProvider _errorProvider;
+        private System.Windows.Forms.Button _eliminaButton;
     }
 }

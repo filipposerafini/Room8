@@ -67,7 +67,7 @@ namespace Room8
 			}
 		}
 
-		public string Cognome
+        public string Cognome
 		{
 			get { return _cognome; }
 			set
@@ -138,7 +138,20 @@ namespace Room8
         {
             return Gruppi.SelectMany(g => g.MembriGruppo).Distinct().Where(u => !u.Equals(this)).ToList();
         }
-		
+
+        public List<Spesa> GetSpese()
+        {
+            List<Spesa> res = new List<Spesa>();
+            foreach (var gruppo in Gruppi)
+            {
+                foreach (var spesa in gruppo.SpeseGruppo.Spese)
+                {
+                    res.Add(spesa);
+                }
+            }
+            return res;
+        }
+
         public decimal CalcolaSituazione(Utente amico)
 		{
 			// ritorna l'ammontare totale a Credito/debito con utente 'amico'

@@ -57,6 +57,8 @@ namespace Room8
 			MainForm.AmiciListBox.DataSource = Utente.Amici();
 			MainForm.AmiciListBox.DisplayMember = "Mail";
 
+            MainForm.DataGridView.DataSource = Utente.GetSpese();
+
 			decimal bilancioTotale = Utente.CalcolaBilancioTotale();
 			MainForm.BilancioImportoLabel.Text = bilancioTotale.ToString("0.00 \u20AC");
 			if (bilancioTotale < 0)

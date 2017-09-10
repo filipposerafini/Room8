@@ -188,8 +188,8 @@
             // 
             // _confermaPanel
             // 
+            this._confermaPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._confermaPanel.Controls.Add(this._indietroButton);
-            this._confermaPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._confermaPanel.Location = new System.Drawing.Point(0, 182);
             this._confermaPanel.Margin = new System.Windows.Forms.Padding(0);
             this._confermaPanel.Name = "_confermaPanel";

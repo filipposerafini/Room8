@@ -53,6 +53,7 @@
             this._dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this._numericUpDown = new System.Windows.Forms.NumericUpDown();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this._eliminaButton = new System.Windows.Forms.Button();
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
@@ -93,6 +94,7 @@
             // 
             // _confirmPanel
             // 
+            this._confirmPanel.Controls.Add(this._eliminaButton);
             this._confirmPanel.Controls.Add(this._commentoButton);
             this._confirmPanel.Controls.Add(this._confermaButton);
             this._confirmPanel.Controls.Add(this._annullaButton);
@@ -245,8 +247,8 @@
             this._importiPrecisiRadioButton.Size = new System.Drawing.Size(89, 17);
             this._importiPrecisiRadioButton.TabIndex = 3;
             this._importiPrecisiRadioButton.TabStop = true;
+            this._importiPrecisiRadioButton.Tag = "per importi precisi";
             this._importiPrecisiRadioButton.Text = "Importi precisi";
-			this._importiPrecisiRadioButton.Tag = "per importi precisi";
             this._importiPrecisiRadioButton.UseVisualStyleBackColor = true;
             // 
             // _quoteRadioButton
@@ -328,6 +330,11 @@
             this._numericUpDown.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._numericUpDown.DecimalPlaces = 2;
             this._numericUpDown.Location = new System.Drawing.Point(160, 112);
+            this._numericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this._numericUpDown.Name = "_numericUpDown";
             this._numericUpDown.Size = new System.Drawing.Size(215, 20);
             this._numericUpDown.TabIndex = 15;
@@ -335,6 +342,15 @@
             // _errorProvider
             // 
             this._errorProvider.ContainerControl = this;
+            // 
+            // _eliminaButton
+            // 
+            this._eliminaButton.Location = new System.Drawing.Point(93, 15);
+            this._eliminaButton.Name = "_eliminaButton";
+            this._eliminaButton.Size = new System.Drawing.Size(75, 23);
+            this._eliminaButton.TabIndex = 5;
+            this._eliminaButton.Text = "Elimina";
+            this._eliminaButton.UseVisualStyleBackColor = true;
             // 
             // SpesaForm
             // 
@@ -384,5 +400,6 @@
         private System.Windows.Forms.ErrorProvider _errorProvider;
         private System.Windows.Forms.Button _commentoButton;
         private System.Windows.Forms.RadioButton _importiPrecisiRadioButton;
+        private System.Windows.Forms.Button _eliminaButton;
     }
 }

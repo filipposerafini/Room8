@@ -30,15 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this._prodottiPanel = new System.Windows.Forms.Panel();
+            this._rimuoviButton = new System.Windows.Forms.Button();
+            this._prodottoLabel = new System.Windows.Forms.Label();
+            this._prodottoTextBox = new System.Windows.Forms.TextBox();
             this._aggiungiButton = new System.Windows.Forms.Button();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this._prodottiLabel = new System.Windows.Forms.Label();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this._prodottoTextBox = new System.Windows.Forms.TextBox();
-            this._prodottoLabel = new System.Windows.Forms.Label();
-            this._rimuoviButton = new System.Windows.Forms.Button();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this._prodottiPanel.SuspendLayout();
             this._mainTableLayoutPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
@@ -57,6 +57,35 @@
             this._prodottiPanel.Name = "_prodottiPanel";
             this._prodottiPanel.Size = new System.Drawing.Size(311, 74);
             this._prodottiPanel.TabIndex = 1;
+            // 
+            // _rimuoviButton
+            // 
+            this._rimuoviButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._rimuoviButton.Location = new System.Drawing.Point(193, 4);
+            this._rimuoviButton.Name = "_rimuoviButton";
+            this._rimuoviButton.Size = new System.Drawing.Size(106, 23);
+            this._rimuoviButton.TabIndex = 4;
+            this._rimuoviButton.Text = "Rimuovi selezionati";
+            this._rimuoviButton.UseVisualStyleBackColor = true;
+            // 
+            // _prodottoLabel
+            // 
+            this._prodottoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._prodottoLabel.AutoSize = true;
+            this._prodottoLabel.Location = new System.Drawing.Point(12, 37);
+            this._prodottoLabel.Name = "_prodottoLabel";
+            this._prodottoLabel.Size = new System.Drawing.Size(50, 13);
+            this._prodottoLabel.TabIndex = 3;
+            this._prodottoLabel.Text = "Prodotto:";
+            // 
+            // _prodottoTextBox
+            // 
+            this._prodottoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this._prodottoTextBox.Location = new System.Drawing.Point(68, 34);
+            this._prodottoTextBox.Name = "_prodottoTextBox";
+            this._prodottoTextBox.Size = new System.Drawing.Size(150, 20);
+            this._prodottoTextBox.TabIndex = 2;
             // 
             // _aggiungiButton
             // 
@@ -94,9 +123,20 @@
             this._formTableLayoutPanel.Location = new System.Drawing.Point(3, 37);
             this._formTableLayoutPanel.Name = "_formTableLayoutPanel";
             this._formTableLayoutPanel.RowCount = 1;
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 132F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 166F));
             this._formTableLayoutPanel.Size = new System.Drawing.Size(305, 166);
             this._formTableLayoutPanel.TabIndex = 2;
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(0, 0);
+            this.listBox1.Margin = new System.Windows.Forms.Padding(0);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.listBox1.Size = new System.Drawing.Size(305, 166);
+            this.listBox1.TabIndex = 0;
             // 
             // _prodottiLabel
             // 
@@ -113,48 +153,9 @@
             // 
             this._errorProvider.ContainerControl = this;
             // 
-            // _prodottoTextBox
-            // 
-            this._prodottoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._prodottoTextBox.Location = new System.Drawing.Point(68, 34);
-            this._prodottoTextBox.Name = "_prodottoTextBox";
-            this._prodottoTextBox.Size = new System.Drawing.Size(150, 20);
-            this._prodottoTextBox.TabIndex = 2;
-            // 
-            // _prodottoLabel
-            // 
-            this._prodottoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._prodottoLabel.AutoSize = true;
-            this._prodottoLabel.Location = new System.Drawing.Point(12, 37);
-            this._prodottoLabel.Name = "_prodottoLabel";
-            this._prodottoLabel.Size = new System.Drawing.Size(50, 13);
-            this._prodottoLabel.TabIndex = 3;
-            this._prodottoLabel.Text = "Prodotto:";
-            // 
-            // _rimuoviButton
-            // 
-            this._rimuoviButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._rimuoviButton.Location = new System.Drawing.Point(193, 4);
-            this._rimuoviButton.Name = "_rimuoviButton";
-            this._rimuoviButton.Size = new System.Drawing.Size(106, 23);
-            this._rimuoviButton.TabIndex = 4;
-            this._rimuoviButton.Text = "Rimuovi selezionati";
-            this._rimuoviButton.UseVisualStyleBackColor = true;
-            // 
-            // listBox1
-            // 
-            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(0, 0);
-            this.listBox1.Margin = new System.Windows.Forms.Padding(0);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.listBox1.Size = new System.Drawing.Size(305, 166);
-            this.listBox1.TabIndex = 0;
-            // 
             // ProdottiForm
             // 
+            this.AcceptButton = this._aggiungiButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(311, 280);
