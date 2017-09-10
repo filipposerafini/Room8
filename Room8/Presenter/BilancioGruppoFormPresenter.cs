@@ -9,12 +9,14 @@ namespace Room8
 		private readonly BilancioGruppoForm _bilancioGruppoForm;
 		private readonly Utente _utente;
 		private readonly Gruppo _gruppo;
+		private readonly IPresenterEvent _observer;
 
-		public BilancioGruppoFormPresenter(BilancioGruppoForm bilancioGruppoForm, Utente utente, Gruppo gruppo)
+		public BilancioGruppoFormPresenter(BilancioGruppoForm bilancioGruppoForm, Utente utente, Gruppo gruppo, IPresenterEvent observer)
 		{
 			_bilancioGruppoForm = bilancioGruppoForm;
 			_utente = utente;
 			_gruppo = gruppo;
+			_observer = observer;
 			InitializeEvents();
 			AggiornaUI();
 		}
@@ -34,11 +36,17 @@ namespace Room8
 			get { return _gruppo; }
 		}
 
+		public IPresenterEvent Observer
+		{
+			get { return _observer; }
+		}
+
 		private void InitializeEvents()
 		{
 			BilancioGruppoForm.ModificaButton.Click += ModificaButton_Click;
 			BilancioGruppoForm.ProdottiButton.Click += ProdottiButton_Click;
 			BilancioGruppoForm.MembriListBox.Click += MembriListBox_Click;
+			BilancioGruppoForm.FormClosing += BilancioGruppoForm_FormClosing;;
 		}
 
 		public void AggiornaUI()
@@ -69,6 +77,11 @@ namespace Room8
 			ProdottiForm prodottiForm = new ProdottiForm();
 			new ProdottiFormPresenter(prodottiForm, Gruppo);
 			prodottiForm.ShowDialog();
+		}
+
+		void BilancioGruppoForm_FormClosing(object sender, FormClosingEventArgs e)
+		{
+			Observer.AggiornaUI();
 		}
 	}
 }

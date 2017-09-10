@@ -57,14 +57,14 @@ namespace Room8
 			MainForm.AmiciListBox.DataSource = Utente.Amici();
 			MainForm.AmiciListBox.DisplayMember = "Mail";
 
-			decimal bilancioTotale = _utente.CalcolaBilancioTotale();
+			decimal bilancioTotale = Utente.CalcolaBilancioTotale();
 			MainForm.BilancioImportoLabel.Text = bilancioTotale.ToString("0.00 \u20AC");
 			if (bilancioTotale < 0)
 				MainForm.BilancioImportoLabel.ForeColor = Color.Red;
 			else
 				MainForm.BilancioImportoLabel.ForeColor = Color.Green;
-			MainForm.DeviImportoLabel.Text = _utente.TotaleDebiti().ToString("0.00 \u20AC");
-			MainForm.DovutoImportoLabel.Text = _utente.TotaleCrediti().ToString("0.00 \u20AC");
+			MainForm.DeviImportoLabel.Text = Utente.TotaleDebiti().ToString("0.00 \u20AC");
+			MainForm.DovutoImportoLabel.Text = Utente.TotaleCrediti().ToString("0.00 \u20AC");
 		}
 
 		private void SpesaButton_Click(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace Room8
 		void GruppiListBox_Click(object sender, EventArgs e)
 		{
             BilancioGruppoForm bilancioGruppoForm = new BilancioGruppoForm();
-			new BilancioGruppoFormPresenter(bilancioGruppoForm, Utente, (Gruppo)MainForm.GruppiListBox.SelectedItem);
+			new BilancioGruppoFormPresenter(bilancioGruppoForm, Utente, (Gruppo)MainForm.GruppiListBox.SelectedItem, this);
             bilancioGruppoForm.ShowDialog();
 		}
 
