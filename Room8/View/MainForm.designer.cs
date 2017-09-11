@@ -31,8 +31,8 @@ namespace Room8
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this._amiciListBox = new System.Windows.Forms.ListBox();
             this._amiciMenuLabel = new System.Windows.Forms.Label();
             this._gruppiListBox = new System.Windows.Forms.ListBox();
@@ -86,7 +86,7 @@ namespace Room8
             this.panel1 = new System.Windows.Forms.Panel();
             this._modificaSpesaButton = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this._modificaSaldoButton = new System.Windows.Forms.Button();
             this._riepilogoTableLayoutPanel.SuspendLayout();
             this._riepilogoInfoTableLayoutPanel.SuspendLayout();
             this._bilancioTableLayoutPanel.SuspendLayout();
@@ -434,9 +434,9 @@ namespace Room8
             // 
             this._importoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this._importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
-            dataGridViewCellStyle1.Format = "c2";
-            dataGridViewCellStyle1.FormatProvider = new System.Globalization.CultureInfo("it-IT");
-            this._importoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Format = "c2";
+            dataGridViewCellStyle3.FormatProvider = new System.Globalization.CultureInfo("it-IT");
+            this._importoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this._importoDataGridViewTextBoxColumn.HeaderText = "Importo";
             this._importoDataGridViewTextBoxColumn.Name = "_importoDataGridViewTextBoxColumn";
             this._importoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -508,9 +508,9 @@ namespace Room8
             // 
             this._importoDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this._importoDataGridViewTextBoxColumn1.DataPropertyName = "Importo";
-            dataGridViewCellStyle2.Format = "c2";
-            dataGridViewCellStyle2.FormatProvider = new System.Globalization.CultureInfo("it-IT");
-            this._importoDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Format = "c2";
+            dataGridViewCellStyle4.FormatProvider = new System.Globalization.CultureInfo("it-IT");
+            this._importoDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
             this._importoDataGridViewTextBoxColumn1.HeaderText = "Importo";
             this._importoDataGridViewTextBoxColumn1.Name = "_importoDataGridViewTextBoxColumn1";
             this._importoDataGridViewTextBoxColumn1.ReadOnly = true;
@@ -727,7 +727,7 @@ namespace Room8
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this._modificaSaldoButton);
             this.panel2.Controls.Add(this._saldiLabel);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(194, 282);
@@ -736,14 +736,15 @@ namespace Room8
             this.panel2.Size = new System.Drawing.Size(454, 27);
             this.panel2.TabIndex = 15;
             // 
-            // button1
+            // _modificaSaldoButton
             // 
-            this.button1.Location = new System.Drawing.Point(356, 1);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(86, 23);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Modifica saldo";
-            this.button1.UseVisualStyleBackColor = true;
+            this._modificaSaldoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._modificaSaldoButton.Location = new System.Drawing.Point(356, 1);
+            this._modificaSaldoButton.Name = "_modificaSaldoButton";
+            this._modificaSaldoButton.Size = new System.Drawing.Size(86, 23);
+            this._modificaSaldoButton.TabIndex = 10;
+            this._modificaSaldoButton.Text = "Modifica saldo";
+            this._modificaSaldoButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -845,7 +846,7 @@ namespace Room8
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button _modificaSpesaButton;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button _modificaSaldoButton;
     }
 }
 
