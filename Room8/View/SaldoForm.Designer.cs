@@ -132,9 +132,9 @@
             // _formTableLayoutPanel
             // 
             this._formTableLayoutPanel.ColumnCount = 3;
-            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.9F));
-            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.1F));
-            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33F));
+            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
+            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this._formTableLayoutPanel.Controls.Add(this._dateTimePicker, 1, 3);
             this._formTableLayoutPanel.Controls.Add(this._numericUpDown, 1, 2);
             this._formTableLayoutPanel.Controls.Add(this._aComboBox, 2, 1);
@@ -157,53 +157,53 @@
             // 
             // _dateTimePicker
             // 
-            this._dateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._dateTimePicker.Location = new System.Drawing.Point(146, 164);
+            this._dateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._dateTimePicker.Location = new System.Drawing.Point(150, 163);
             this._dateTimePicker.Name = "_dateTimePicker";
-            this._dateTimePicker.Size = new System.Drawing.Size(133, 20);
+            this._dateTimePicker.Size = new System.Drawing.Size(120, 20);
             this._dateTimePicker.TabIndex = 17;
             // 
             // _numericUpDown
             // 
-            this._numericUpDown.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._numericUpDown.DecimalPlaces = 2;
-            this._numericUpDown.Location = new System.Drawing.Point(146, 129);
+            this._numericUpDown.Location = new System.Drawing.Point(150, 128);
             this._numericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this._numericUpDown.Name = "_numericUpDown";
-            this._numericUpDown.Size = new System.Drawing.Size(133, 20);
+            this._numericUpDown.Size = new System.Drawing.Size(120, 20);
             this._numericUpDown.TabIndex = 15;
             // 
             // _aComboBox
             // 
-            this._aComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._aComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._aComboBox.FormattingEnabled = true;
-            this._aComboBox.Location = new System.Drawing.Point(285, 94);
+            this._aComboBox.Location = new System.Drawing.Point(276, 93);
             this._aComboBox.Name = "_aComboBox";
-            this._aComboBox.Size = new System.Drawing.Size(134, 21);
+            this._aComboBox.Size = new System.Drawing.Size(143, 21);
             this._aComboBox.TabIndex = 16;
             // 
             // _pagatoLabel
             // 
             this._pagatoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._pagatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._pagatoLabel.Location = new System.Drawing.Point(146, 87);
+            this._pagatoLabel.Location = new System.Drawing.Point(150, 87);
             this._pagatoLabel.Name = "_pagatoLabel";
-            this._pagatoLabel.Size = new System.Drawing.Size(133, 35);
+            this._pagatoLabel.Size = new System.Drawing.Size(120, 34);
             this._pagatoLabel.TabIndex = 0;
-            this._pagatoLabel.Text = "ha pagato a ";
+            this._pagatoLabel.Text = "rimborsa a";
             this._pagatoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _dataLabel
             // 
             this._dataLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._dataLabel.Location = new System.Drawing.Point(3, 157);
+            this._dataLabel.Location = new System.Drawing.Point(3, 155);
             this._dataLabel.Name = "_dataLabel";
-            this._dataLabel.Size = new System.Drawing.Size(137, 35);
+            this._dataLabel.Size = new System.Drawing.Size(141, 37);
             this._dataLabel.TabIndex = 2;
             this._dataLabel.Text = "Data:";
             this._dataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -212,42 +212,42 @@
             // 
             this._importoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._importoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._importoLabel.Location = new System.Drawing.Point(3, 122);
+            this._importoLabel.Location = new System.Drawing.Point(3, 121);
             this._importoLabel.Name = "_importoLabel";
-            this._importoLabel.Size = new System.Drawing.Size(137, 35);
+            this._importoLabel.Size = new System.Drawing.Size(141, 34);
             this._importoLabel.TabIndex = 1;
-            this._importoLabel.Text = "Descrizione:";
+            this._importoLabel.Text = "Importo:";
             this._importoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _daComboBox
             // 
-            this._daComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._daComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._daComboBox.FormattingEnabled = true;
-            this._daComboBox.Location = new System.Drawing.Point(3, 94);
+            this._daComboBox.Location = new System.Drawing.Point(3, 93);
             this._daComboBox.Name = "_daComboBox";
-            this._daComboBox.Size = new System.Drawing.Size(137, 21);
+            this._daComboBox.Size = new System.Drawing.Size(141, 21);
             this._daComboBox.TabIndex = 4;
             // 
             // _daPictureBox
             // 
-            this._daPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._daPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._daPictureBox.Image = global::Room8.Properties.Resources._default;
             this._daPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("_daPictureBox.InitialImage")));
-            this._daPictureBox.Location = new System.Drawing.Point(31, 3);
+            this._daPictureBox.Location = new System.Drawing.Point(3, 3);
             this._daPictureBox.Name = "_daPictureBox";
-            this._daPictureBox.Size = new System.Drawing.Size(80, 80);
+            this._daPictureBox.Size = new System.Drawing.Size(141, 81);
             this._daPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this._daPictureBox.TabIndex = 18;
             this._daPictureBox.TabStop = false;
             // 
             // _aPictureBox
             // 
-            this._aPictureBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._aPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._aPictureBox.Image = global::Room8.Properties.Resources._default;
             this._aPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("_aPictureBox.InitialImage")));
-            this._aPictureBox.Location = new System.Drawing.Point(311, 3);
+            this._aPictureBox.Location = new System.Drawing.Point(276, 3);
             this._aPictureBox.Name = "_aPictureBox";
-            this._aPictureBox.Size = new System.Drawing.Size(81, 81);
+            this._aPictureBox.Size = new System.Drawing.Size(143, 81);
             this._aPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this._aPictureBox.TabIndex = 19;
             this._aPictureBox.TabStop = false;

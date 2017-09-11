@@ -31,26 +31,25 @@ namespace Room8.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this._pictureBox = new System.Windows.Forms.PictureBox();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._modificaButton = new System.Windows.Forms.Button();
             this._registratiLabel = new System.Windows.Forms.Label();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._bottomPanel = new System.Windows.Forms.Panel();
-            this._eliminaButton = new System.Windows.Forms.Button();
             this._prodottiButton = new System.Windows.Forms.Button();
             this._titleTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._centerTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._speseTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._speseLabel = new System.Windows.Forms.Label();
-            this._membriTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._separatorLabel = new System.Windows.Forms.Label();
-            this._riepilogoBilancioLabel = new System.Windows.Forms.Label();
-            this._bilancioImportoLabel = new System.Windows.Forms.Label();
-            this._membriListBox = new System.Windows.Forms.ListBox();
-            this._membriLabel = new System.Windows.Forms.Label();
             this._dataGridView = new System.Windows.Forms.DataGridView();
             this.spesaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._membriTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._bilancioLabel = new System.Windows.Forms.Label();
+            this._importoLabel = new System.Windows.Forms.Label();
+            this._membriListBox = new System.Windows.Forms.ListBox();
+            this._membriLabel = new System.Windows.Forms.Label();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nomePaganteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -62,9 +61,9 @@ namespace Room8.View
             this._titleTableLayoutPanel.SuspendLayout();
             this._centerTableLayoutPanel.SuspendLayout();
             this._speseTableLayoutPanel.SuspendLayout();
-            this._membriTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.spesaBindingSource)).BeginInit();
+            this._membriTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // _pictureBox
@@ -86,11 +85,12 @@ namespace Room8.View
             // _modificaButton
             // 
             this._modificaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._modificaButton.Location = new System.Drawing.Point(420, 11);
+            this._modificaButton.AutoSize = true;
+            this._modificaButton.Location = new System.Drawing.Point(405, 11);
             this._modificaButton.Name = "_modificaButton";
-            this._modificaButton.Size = new System.Drawing.Size(75, 23);
+            this._modificaButton.Size = new System.Drawing.Size(90, 23);
             this._modificaButton.TabIndex = 13;
-            this._modificaButton.Text = "Modifica";
+            this._modificaButton.Text = "Modifica spesa";
             this._modificaButton.UseVisualStyleBackColor = true;
             // 
             // _registratiLabel
@@ -123,7 +123,6 @@ namespace Room8.View
             // 
             // _bottomPanel
             // 
-            this._bottomPanel.Controls.Add(this._eliminaButton);
             this._bottomPanel.Controls.Add(this._prodottiButton);
             this._bottomPanel.Controls.Add(this._modificaButton);
             this._bottomPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -133,24 +132,15 @@ namespace Room8.View
             this._bottomPanel.Size = new System.Drawing.Size(507, 46);
             this._bottomPanel.TabIndex = 14;
             // 
-            // _eliminaButton
-            // 
-            this._eliminaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._eliminaButton.Location = new System.Drawing.Point(12, 11);
-            this._eliminaButton.Name = "_eliminaButton";
-            this._eliminaButton.Size = new System.Drawing.Size(75, 23);
-            this._eliminaButton.TabIndex = 15;
-            this._eliminaButton.Text = "Elimina";
-            this._eliminaButton.UseVisualStyleBackColor = true;
-            // 
             // _prodottiButton
             // 
-            this._prodottiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._prodottiButton.Location = new System.Drawing.Point(339, 11);
+            this._prodottiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._prodottiButton.AutoSize = true;
+            this._prodottiButton.Location = new System.Drawing.Point(12, 11);
             this._prodottiButton.Name = "_prodottiButton";
-            this._prodottiButton.Size = new System.Drawing.Size(75, 23);
+            this._prodottiButton.Size = new System.Drawing.Size(95, 23);
             this._prodottiButton.TabIndex = 14;
-            this._prodottiButton.Text = "Prodotti";
+            this._prodottiButton.Text = "Lista della spesa";
             this._prodottiButton.UseVisualStyleBackColor = true;
             // 
             // _titleTableLayoutPanel
@@ -214,84 +204,6 @@ namespace Room8.View
             this._speseLabel.Text = "Lista spese:";
             this._speseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // _membriTableLayoutPanel
-            // 
-            this._membriTableLayoutPanel.ColumnCount = 1;
-            this._membriTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._membriTableLayoutPanel.Controls.Add(this._separatorLabel, 0, 2);
-            this._membriTableLayoutPanel.Controls.Add(this._riepilogoBilancioLabel, 0, 0);
-            this._membriTableLayoutPanel.Controls.Add(this._bilancioImportoLabel, 0, 1);
-            this._membriTableLayoutPanel.Controls.Add(this._membriListBox, 0, 4);
-            this._membriTableLayoutPanel.Controls.Add(this._membriLabel, 0, 3);
-            this._membriTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._membriTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this._membriTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this._membriTableLayoutPanel.Name = "_membriTableLayoutPanel";
-            this._membriTableLayoutPanel.RowCount = 5;
-            this._membriTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 54.23729F));
-            this._membriTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.76271F));
-            this._membriTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._membriTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 31F));
-            this._membriTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 193F));
-            this._membriTableLayoutPanel.Size = new System.Drawing.Size(136, 273);
-            this._membriTableLayoutPanel.TabIndex = 2;
-            // 
-            // _separatorLabel
-            // 
-            this._separatorLabel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this._separatorLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._separatorLabel.Location = new System.Drawing.Point(3, 46);
-            this._separatorLabel.Name = "_separatorLabel";
-            this._separatorLabel.Size = new System.Drawing.Size(130, 2);
-            this._separatorLabel.TabIndex = 14;
-            // 
-            // _riepilogoBilancioLabel
-            // 
-            this._riepilogoBilancioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._riepilogoBilancioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._riepilogoBilancioLabel.Location = new System.Drawing.Point(3, 0);
-            this._riepilogoBilancioLabel.MinimumSize = new System.Drawing.Size(126, 23);
-            this._riepilogoBilancioLabel.Name = "_riepilogoBilancioLabel";
-            this._riepilogoBilancioLabel.Size = new System.Drawing.Size(130, 25);
-            this._riepilogoBilancioLabel.TabIndex = 2;
-            this._riepilogoBilancioLabel.Text = "Bilancio totale:";
-            this._riepilogoBilancioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _bilancioImportoLabel
-            // 
-            this._bilancioImportoLabel.AutoSize = true;
-            this._bilancioImportoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._bilancioImportoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._bilancioImportoLabel.Location = new System.Drawing.Point(3, 25);
-            this._bilancioImportoLabel.Name = "_bilancioImportoLabel";
-            this._bilancioImportoLabel.Size = new System.Drawing.Size(130, 21);
-            this._bilancioImportoLabel.TabIndex = 3;
-            this._bilancioImportoLabel.Text = "Soldi";
-            this._bilancioImportoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _membriListBox
-            // 
-            this._membriListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._membriListBox.FormattingEnabled = true;
-            this._membriListBox.Location = new System.Drawing.Point(0, 79);
-            this._membriListBox.Margin = new System.Windows.Forms.Padding(0);
-            this._membriListBox.Name = "_membriListBox";
-            this._membriListBox.ScrollAlwaysVisible = true;
-            this._membriListBox.Size = new System.Drawing.Size(136, 194);
-            this._membriListBox.TabIndex = 1;
-            // 
-            // _membriLabel
-            // 
-            this._membriLabel.AutoSize = true;
-            this._membriLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._membriLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._membriLabel.Location = new System.Drawing.Point(3, 48);
-            this._membriLabel.Name = "_membriLabel";
-            this._membriLabel.Size = new System.Drawing.Size(130, 31);
-            this._membriLabel.TabIndex = 2;
-            this._membriLabel.Text = "Membri del Gruppo:";
-            this._membriLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // _dataGridView
             // 
             this._dataGridView.AllowUserToAddRows = false;
@@ -305,15 +217,83 @@ namespace Room8.View
             this.dataDataGridViewTextBoxColumn});
             this._dataGridView.DataSource = this.spesaBindingSource;
             this._dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._dataGridView.Location = new System.Drawing.Point(3, 33);
+            this._dataGridView.Location = new System.Drawing.Point(5, 30);
+            this._dataGridView.Margin = new System.Windows.Forms.Padding(5, 0, 10, 0);
             this._dataGridView.Name = "_dataGridView";
             this._dataGridView.ReadOnly = true;
-            this._dataGridView.Size = new System.Drawing.Size(361, 237);
+            this._dataGridView.Size = new System.Drawing.Size(352, 243);
             this._dataGridView.TabIndex = 4;
             // 
             // spesaBindingSource
             // 
             this.spesaBindingSource.DataSource = typeof(Room8.Spesa);
+            // 
+            // _membriTableLayoutPanel
+            // 
+            this._membriTableLayoutPanel.ColumnCount = 1;
+            this._membriTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._membriTableLayoutPanel.Controls.Add(this._bilancioLabel, 0, 0);
+            this._membriTableLayoutPanel.Controls.Add(this._importoLabel, 0, 1);
+            this._membriTableLayoutPanel.Controls.Add(this._membriListBox, 0, 3);
+            this._membriTableLayoutPanel.Controls.Add(this._membriLabel, 0, 2);
+            this._membriTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._membriTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this._membriTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this._membriTableLayoutPanel.Name = "_membriTableLayoutPanel";
+            this._membriTableLayoutPanel.RowCount = 4;
+            this._membriTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this._membriTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this._membriTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this._membriTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._membriTableLayoutPanel.Size = new System.Drawing.Size(136, 273);
+            this._membriTableLayoutPanel.TabIndex = 2;
+            // 
+            // _bilancioLabel
+            // 
+            this._bilancioLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._bilancioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._bilancioLabel.Location = new System.Drawing.Point(3, 0);
+            this._bilancioLabel.MinimumSize = new System.Drawing.Size(126, 23);
+            this._bilancioLabel.Name = "_bilancioLabel";
+            this._bilancioLabel.Size = new System.Drawing.Size(130, 30);
+            this._bilancioLabel.TabIndex = 2;
+            this._bilancioLabel.Text = "Bilancio totale:";
+            this._bilancioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _importoLabel
+            // 
+            this._importoLabel.AutoSize = true;
+            this._importoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._importoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._importoLabel.Location = new System.Drawing.Point(3, 30);
+            this._importoLabel.Name = "_importoLabel";
+            this._importoLabel.Size = new System.Drawing.Size(130, 30);
+            this._importoLabel.TabIndex = 3;
+            this._importoLabel.Text = "Soldi";
+            this._importoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _membriListBox
+            // 
+            this._membriListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._membriListBox.FormattingEnabled = true;
+            this._membriListBox.Location = new System.Drawing.Point(10, 85);
+            this._membriListBox.Margin = new System.Windows.Forms.Padding(10, 0, 5, 0);
+            this._membriListBox.Name = "_membriListBox";
+            this._membriListBox.ScrollAlwaysVisible = true;
+            this._membriListBox.Size = new System.Drawing.Size(121, 188);
+            this._membriListBox.TabIndex = 1;
+            // 
+            // _membriLabel
+            // 
+            this._membriLabel.AutoSize = true;
+            this._membriLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._membriLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._membriLabel.Location = new System.Drawing.Point(3, 60);
+            this._membriLabel.Name = "_membriLabel";
+            this._membriLabel.Size = new System.Drawing.Size(130, 25);
+            this._membriLabel.TabIndex = 2;
+            this._membriLabel.Text = "Membri del Gruppo:";
+            this._membriLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // descrizioneDataGridViewTextBoxColumn
             // 
@@ -327,17 +307,18 @@ namespace Room8.View
             // 
             this.importoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
+            dataGridViewCellStyle1.Format = "c2";
+            dataGridViewCellStyle1.FormatProvider = new System.Globalization.CultureInfo("it-IT");
+            this.importoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.importoDataGridViewTextBoxColumn.HeaderText = "Importo";
             this.importoDataGridViewTextBoxColumn.Name = "importoDataGridViewTextBoxColumn";
-			this.importoDataGridViewTextBoxColumn.DefaultCellStyle.Format = "c2";
-			this.importoDataGridViewTextBoxColumn.DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("it-IT");
-			this.importoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.importoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nomePaganteDataGridViewTextBoxColumn
             // 
             this.nomePaganteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nomePaganteDataGridViewTextBoxColumn.DataPropertyName = "NomePagante";
-            this.nomePaganteDataGridViewTextBoxColumn.HeaderText = "NomePagante";
+            this.nomePaganteDataGridViewTextBoxColumn.HeaderText = "Pagante";
             this.nomePaganteDataGridViewTextBoxColumn.Name = "nomePaganteDataGridViewTextBoxColumn";
             this.nomePaganteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -362,14 +343,15 @@ namespace Room8.View
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this._mainTableLayoutPanel.ResumeLayout(false);
             this._bottomPanel.ResumeLayout(false);
+            this._bottomPanel.PerformLayout();
             this._titleTableLayoutPanel.ResumeLayout(false);
             this._centerTableLayoutPanel.ResumeLayout(false);
             this._speseTableLayoutPanel.ResumeLayout(false);
             this._speseTableLayoutPanel.PerformLayout();
-            this._membriTableLayoutPanel.ResumeLayout(false);
-            this._membriTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.spesaBindingSource)).EndInit();
+            this._membriTableLayoutPanel.ResumeLayout(false);
+            this._membriTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -384,21 +366,19 @@ namespace Room8.View
         private System.Windows.Forms.TableLayoutPanel _titleTableLayoutPanel;
         private System.Windows.Forms.Label _registratiLabel;
         private System.Windows.Forms.TableLayoutPanel _centerTableLayoutPanel;
-        private System.Windows.Forms.ListBox _membriListBox;
         private System.Windows.Forms.Label _membriLabel;
         private System.Windows.Forms.Label _speseLabel;
         private System.Windows.Forms.TableLayoutPanel _speseTableLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel _membriTableLayoutPanel;
-        private System.Windows.Forms.Label _riepilogoBilancioLabel;
-        private System.Windows.Forms.Label _bilancioImportoLabel;
-        private System.Windows.Forms.Label _separatorLabel;
+        private System.Windows.Forms.Label _bilancioLabel;
+        private System.Windows.Forms.Label _importoLabel;
         private System.Windows.Forms.Button _prodottiButton;
-        private System.Windows.Forms.Button _eliminaButton;
         private System.Windows.Forms.DataGridView _dataGridView;
+        private System.Windows.Forms.BindingSource spesaBindingSource;
+        private System.Windows.Forms.ListBox _membriListBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn descrizioneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn importoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomePaganteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource spesaBindingSource;
     }
 }

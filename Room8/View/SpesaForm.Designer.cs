@@ -74,8 +74,8 @@
             this._mainTableLayoutPanel.Name = "_mainTableLayoutPanel";
             this._mainTableLayoutPanel.RowCount = 3;
             this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.94727F));
-            this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.05274F));
+            this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._mainTableLayoutPanel.Size = new System.Drawing.Size(398, 388);
             this._mainTableLayoutPanel.TabIndex = 0;
             // 
@@ -148,8 +148,8 @@
             // _formTableLayoutPanel
             // 
             this._formTableLayoutPanel.ColumnCount = 2;
-            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 36.90136F));
-            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 63.09864F));
+            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 150F));
+            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this._formTableLayoutPanel.Controls.Add(this._gruppoLabel, 0, 0);
             this._formTableLayoutPanel.Controls.Add(this._descrizioneLabel, 0, 1);
             this._formTableLayoutPanel.Controls.Add(this._importoLabel, 0, 2);
@@ -166,12 +166,12 @@
             this._formTableLayoutPanel.Location = new System.Drawing.Point(3, 37);
             this._formTableLayoutPanel.Name = "_formTableLayoutPanel";
             this._formTableLayoutPanel.RowCount = 6;
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this._formTableLayoutPanel.Size = new System.Drawing.Size(392, 298);
             this._formTableLayoutPanel.TabIndex = 2;
             // 
@@ -181,7 +181,7 @@
             this._gruppoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._gruppoLabel.Location = new System.Drawing.Point(3, 0);
             this._gruppoLabel.Name = "_gruppoLabel";
-            this._gruppoLabel.Size = new System.Drawing.Size(138, 49);
+            this._gruppoLabel.Size = new System.Drawing.Size(144, 49);
             this._gruppoLabel.TabIndex = 0;
             this._gruppoLabel.Text = "Gruppo:";
             this._gruppoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -192,7 +192,7 @@
             this._descrizioneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._descrizioneLabel.Location = new System.Drawing.Point(3, 49);
             this._descrizioneLabel.Name = "_descrizioneLabel";
-            this._descrizioneLabel.Size = new System.Drawing.Size(138, 49);
+            this._descrizioneLabel.Size = new System.Drawing.Size(144, 49);
             this._descrizioneLabel.TabIndex = 1;
             this._descrizioneLabel.Text = "Descrizione:";
             this._descrizioneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -203,7 +203,7 @@
             this._importoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._importoLabel.Location = new System.Drawing.Point(3, 98);
             this._importoLabel.Name = "_importoLabel";
-            this._importoLabel.Size = new System.Drawing.Size(138, 49);
+            this._importoLabel.Size = new System.Drawing.Size(144, 49);
             this._importoLabel.TabIndex = 2;
             this._importoLabel.Text = "Importo:";
             this._importoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -214,26 +214,26 @@
             this._paganteLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._paganteLabel.Location = new System.Drawing.Point(3, 147);
             this._paganteLabel.Name = "_paganteLabel";
-            this._paganteLabel.Size = new System.Drawing.Size(138, 49);
+            this._paganteLabel.Size = new System.Drawing.Size(144, 49);
             this._paganteLabel.TabIndex = 3;
             this._paganteLabel.Text = "Pagante:";
             this._paganteLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _gruppoComboBox
             // 
-            this._gruppoComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._gruppoComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._gruppoComboBox.FormattingEnabled = true;
-            this._gruppoComboBox.Location = new System.Drawing.Point(160, 14);
+            this._gruppoComboBox.Location = new System.Drawing.Point(153, 14);
             this._gruppoComboBox.Name = "_gruppoComboBox";
-            this._gruppoComboBox.Size = new System.Drawing.Size(215, 21);
+            this._gruppoComboBox.Size = new System.Drawing.Size(236, 21);
             this._gruppoComboBox.TabIndex = 4;
             // 
             // _descrizioneTextBox
             // 
-            this._descrizioneTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._descrizioneTextBox.Location = new System.Drawing.Point(160, 63);
+            this._descrizioneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._descrizioneTextBox.Location = new System.Drawing.Point(153, 63);
             this._descrizioneTextBox.Name = "_descrizioneTextBox";
-            this._descrizioneTextBox.Size = new System.Drawing.Size(215, 20);
+            this._descrizioneTextBox.Size = new System.Drawing.Size(236, 20);
             this._descrizioneTextBox.TabIndex = 6;
             // 
             // _radioPanel
@@ -243,16 +243,17 @@
             this._radioPanel.Controls.Add(this._percentualeRadioButton);
             this._radioPanel.Controls.Add(this._equoRadioButton);
             this._radioPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._radioPanel.Location = new System.Drawing.Point(144, 196);
+            this._radioPanel.Location = new System.Drawing.Point(150, 196);
             this._radioPanel.Margin = new System.Windows.Forms.Padding(0);
             this._radioPanel.Name = "_radioPanel";
-            this._radioPanel.Size = new System.Drawing.Size(248, 49);
+            this._radioPanel.Size = new System.Drawing.Size(242, 49);
             this._radioPanel.TabIndex = 8;
             // 
             // _importiPrecisiRadioButton
             // 
+            this._importiPrecisiRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._importiPrecisiRadioButton.AutoSize = true;
-            this._importiPrecisiRadioButton.Location = new System.Drawing.Point(111, 29);
+            this._importiPrecisiRadioButton.Location = new System.Drawing.Point(105, 29);
             this._importiPrecisiRadioButton.Name = "_importiPrecisiRadioButton";
             this._importiPrecisiRadioButton.Size = new System.Drawing.Size(89, 17);
             this._importiPrecisiRadioButton.TabIndex = 3;
@@ -263,6 +264,7 @@
             // 
             // _quoteRadioButton
             // 
+            this._quoteRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this._quoteRadioButton.AutoSize = true;
             this._quoteRadioButton.Location = new System.Drawing.Point(17, 29);
             this._quoteRadioButton.Name = "_quoteRadioButton";
@@ -274,8 +276,9 @@
             // 
             // _percentualeRadioButton
             // 
+            this._percentualeRadioButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this._percentualeRadioButton.AutoSize = true;
-            this._percentualeRadioButton.Location = new System.Drawing.Point(111, 6);
+            this._percentualeRadioButton.Location = new System.Drawing.Point(105, 6);
             this._percentualeRadioButton.Name = "_percentualeRadioButton";
             this._percentualeRadioButton.Size = new System.Drawing.Size(82, 17);
             this._percentualeRadioButton.TabIndex = 1;
@@ -298,11 +301,11 @@
             // 
             // _paganteComboBox
             // 
-            this._paganteComboBox.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._paganteComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._paganteComboBox.FormattingEnabled = true;
-            this._paganteComboBox.Location = new System.Drawing.Point(160, 161);
+            this._paganteComboBox.Location = new System.Drawing.Point(153, 161);
             this._paganteComboBox.Name = "_paganteComboBox";
-            this._paganteComboBox.Size = new System.Drawing.Size(215, 21);
+            this._paganteComboBox.Size = new System.Drawing.Size(236, 21);
             this._paganteComboBox.TabIndex = 9;
             // 
             // _divisioneLabel
@@ -311,7 +314,7 @@
             this._divisioneLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._divisioneLabel.Location = new System.Drawing.Point(3, 196);
             this._divisioneLabel.Name = "_divisioneLabel";
-            this._divisioneLabel.Size = new System.Drawing.Size(138, 49);
+            this._divisioneLabel.Size = new System.Drawing.Size(144, 49);
             this._divisioneLabel.TabIndex = 10;
             this._divisioneLabel.Text = "Metodo di divisione:";
             this._divisioneLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -322,31 +325,31 @@
             this._dataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._dataLabel.Location = new System.Drawing.Point(3, 245);
             this._dataLabel.Name = "_dataLabel";
-            this._dataLabel.Size = new System.Drawing.Size(138, 53);
+            this._dataLabel.Size = new System.Drawing.Size(144, 53);
             this._dataLabel.TabIndex = 11;
             this._dataLabel.Text = "Data:";
             this._dataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _dateTimePicker
             // 
-            this._dateTimePicker.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._dateTimePicker.Location = new System.Drawing.Point(160, 261);
+            this._dateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._dateTimePicker.Location = new System.Drawing.Point(153, 261);
             this._dateTimePicker.Name = "_dateTimePicker";
-            this._dateTimePicker.Size = new System.Drawing.Size(215, 20);
+            this._dateTimePicker.Size = new System.Drawing.Size(236, 20);
             this._dateTimePicker.TabIndex = 13;
             // 
             // _numericUpDown
             // 
-            this._numericUpDown.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._numericUpDown.DecimalPlaces = 2;
-            this._numericUpDown.Location = new System.Drawing.Point(160, 112);
+            this._numericUpDown.Location = new System.Drawing.Point(153, 112);
             this._numericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this._numericUpDown.Name = "_numericUpDown";
-            this._numericUpDown.Size = new System.Drawing.Size(215, 20);
+            this._numericUpDown.Size = new System.Drawing.Size(236, 20);
             this._numericUpDown.TabIndex = 15;
             this._numericUpDown.ThousandsSeparator = true;
             // 

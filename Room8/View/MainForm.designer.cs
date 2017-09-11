@@ -31,6 +31,8 @@ namespace Room8
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this._mainStatusStrip = new System.Windows.Forms.StatusStrip();
             this._amiciListBox = new System.Windows.Forms.ListBox();
             this._amiciMenuLabel = new System.Windows.Forms.Label();
@@ -58,22 +60,28 @@ namespace Room8
             this._pictureBox = new System.Windows.Forms.PictureBox();
             this._speseLabel = new System.Windows.Forms.Label();
             this._speseDataGridView = new System.Windows.Forms.DataGridView();
-            this.spesaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._saldiLabel = new System.Windows.Forms.Label();
-            this._saldiDataGridView = new System.Windows.Forms.DataGridView();
-            this.saldoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._menuTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._spesaButton = new System.Windows.Forms.Button();
-            this._saldaButton = new System.Windows.Forms.Button();
-            this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pagante = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.spesaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._saldiLabel = new System.Windows.Forms.Label();
+            this._saldiDataGridView = new System.Windows.Forms.DataGridView();
             this.Sorgente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Destinazione = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importoDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saldoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._menuTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._spesaButton = new System.Windows.Forms.Button();
+            this._saldaButton = new System.Windows.Forms.Button();
+            this._visualizzaAmico = new System.Windows.Forms.Button();
+            this._formTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this._visualizzaGruppoButton = new System.Windows.Forms.Button();
+            this._modificaGruppoButton = new System.Windows.Forms.Button();
             this._riepilogoTableLayoutPanel.SuspendLayout();
             this._riepilogoInfoTableLayoutPanel.SuspendLayout();
             this._bilancioTableLayoutPanel.SuspendLayout();
@@ -88,6 +96,9 @@ namespace Room8
             ((System.ComponentModel.ISupportInitialize)(this.saldoBindingSource)).BeginInit();
             this._menuTableLayoutPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // _mainStatusStrip
@@ -106,35 +117,35 @@ namespace Room8
             this._amiciListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._amiciListBox.FormattingEnabled = true;
             this._amiciListBox.ItemHeight = 15;
-            this._amiciListBox.Location = new System.Drawing.Point(3, 288);
+            this._amiciListBox.Location = new System.Drawing.Point(3, 3);
             this._amiciListBox.Name = "_amiciListBox";
             this._amiciListBox.ScrollAlwaysVisible = true;
-            this._amiciListBox.Size = new System.Drawing.Size(155, 143);
+            this._amiciListBox.Size = new System.Drawing.Size(182, 109);
             this._amiciListBox.TabIndex = 9;
             // 
             // _amiciMenuLabel
             // 
             this._amiciMenuLabel.AutoSize = true;
             this._amiciMenuLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._amiciMenuLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._amiciMenuLabel.Location = new System.Drawing.Point(3, 260);
+            this._amiciMenuLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._amiciMenuLabel.Location = new System.Drawing.Point(3, 270);
             this._amiciMenuLabel.Name = "_amiciMenuLabel";
-            this._amiciMenuLabel.Size = new System.Drawing.Size(155, 25);
+            this._amiciMenuLabel.Size = new System.Drawing.Size(188, 20);
             this._amiciMenuLabel.TabIndex = 8;
             this._amiciMenuLabel.Text = "Amici:";
-            this._amiciMenuLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this._amiciMenuLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _gruppiMenuLabel
             // 
             this._gruppiMenuLabel.AutoSize = true;
             this._gruppiMenuLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._gruppiMenuLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._gruppiMenuLabel.Location = new System.Drawing.Point(3, 88);
+            this._gruppiMenuLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._gruppiMenuLabel.Location = new System.Drawing.Point(3, 100);
             this._gruppiMenuLabel.Name = "_gruppiMenuLabel";
-            this._gruppiMenuLabel.Size = new System.Drawing.Size(155, 25);
+            this._gruppiMenuLabel.Size = new System.Drawing.Size(188, 20);
             this._gruppiMenuLabel.TabIndex = 7;
             this._gruppiMenuLabel.Text = "Gruppi:";
-            this._gruppiMenuLabel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this._gruppiMenuLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _gruppiListBox
             // 
@@ -143,10 +154,10 @@ namespace Room8
             this._gruppiListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._gruppiListBox.FormattingEnabled = true;
             this._gruppiListBox.ItemHeight = 15;
-            this._gruppiListBox.Location = new System.Drawing.Point(3, 116);
+            this._gruppiListBox.Location = new System.Drawing.Point(3, 3);
             this._gruppiListBox.Name = "_gruppiListBox";
             this._gruppiListBox.ScrollAlwaysVisible = true;
-            this._gruppiListBox.Size = new System.Drawing.Size(155, 141);
+            this._gruppiListBox.Size = new System.Drawing.Size(182, 108);
             this._gruppiListBox.TabIndex = 6;
             // 
             // _riepilogoTableLayoutPanel
@@ -155,21 +166,14 @@ namespace Room8
             this._riepilogoTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this._riepilogoTableLayoutPanel.Controls.Add(this._riepilogoInfoTableLayoutPanel, 0, 1);
             this._riepilogoTableLayoutPanel.Controls.Add(this._topTableLayoutPanel, 0, 0);
-            this._riepilogoTableLayoutPanel.Controls.Add(this._speseLabel, 0, 2);
-            this._riepilogoTableLayoutPanel.Controls.Add(this._speseDataGridView, 0, 3);
-            this._riepilogoTableLayoutPanel.Controls.Add(this._saldiLabel, 0, 4);
-            this._riepilogoTableLayoutPanel.Controls.Add(this._saldiDataGridView, 0, 5);
             this._riepilogoTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._riepilogoTableLayoutPanel.Location = new System.Drawing.Point(170, 3);
+            this._riepilogoTableLayoutPanel.Location = new System.Drawing.Point(197, 3);
             this._riepilogoTableLayoutPanel.Name = "_riepilogoTableLayoutPanel";
-            this._riepilogoTableLayoutPanel.RowCount = 6;
+            this._riepilogoTableLayoutPanel.RowCount = 2;
             this._riepilogoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this._riepilogoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
-            this._riepilogoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._riepilogoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._riepilogoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._riepilogoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._riepilogoTableLayoutPanel.Size = new System.Drawing.Size(475, 434);
+            this._riepilogoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this._riepilogoTableLayoutPanel.Size = new System.Drawing.Size(448, 94);
             this._riepilogoTableLayoutPanel.TabIndex = 5;
             // 
             // _riepilogoInfoTableLayoutPanel
@@ -188,7 +192,7 @@ namespace Room8
             this._riepilogoInfoTableLayoutPanel.Name = "_riepilogoInfoTableLayoutPanel";
             this._riepilogoInfoTableLayoutPanel.RowCount = 1;
             this._riepilogoInfoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._riepilogoInfoTableLayoutPanel.Size = new System.Drawing.Size(475, 50);
+            this._riepilogoInfoTableLayoutPanel.Size = new System.Drawing.Size(448, 54);
             this._riepilogoInfoTableLayoutPanel.TabIndex = 4;
             // 
             // _bilancioTableLayoutPanel
@@ -204,7 +208,7 @@ namespace Room8
             this._bilancioTableLayoutPanel.RowCount = 2;
             this._bilancioTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this._bilancioTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._bilancioTableLayoutPanel.Size = new System.Drawing.Size(157, 48);
+            this._bilancioTableLayoutPanel.Size = new System.Drawing.Size(148, 52);
             this._bilancioTableLayoutPanel.TabIndex = 0;
             // 
             // _riepilogoBilancioLabel
@@ -213,7 +217,7 @@ namespace Room8
             this._riepilogoBilancioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._riepilogoBilancioLabel.Location = new System.Drawing.Point(3, 0);
             this._riepilogoBilancioLabel.Name = "_riepilogoBilancioLabel";
-            this._riepilogoBilancioLabel.Size = new System.Drawing.Size(151, 24);
+            this._riepilogoBilancioLabel.Size = new System.Drawing.Size(142, 26);
             this._riepilogoBilancioLabel.TabIndex = 0;
             this._riepilogoBilancioLabel.Text = "Bilancio totale";
             this._riepilogoBilancioLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -223,9 +227,9 @@ namespace Room8
             this._bilancioImportoLabel.AutoSize = true;
             this._bilancioImportoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._bilancioImportoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._bilancioImportoLabel.Location = new System.Drawing.Point(3, 24);
+            this._bilancioImportoLabel.Location = new System.Drawing.Point(3, 26);
             this._bilancioImportoLabel.Name = "_bilancioImportoLabel";
-            this._bilancioImportoLabel.Size = new System.Drawing.Size(151, 24);
+            this._bilancioImportoLabel.Size = new System.Drawing.Size(142, 26);
             this._bilancioImportoLabel.TabIndex = 1;
             this._bilancioImportoLabel.Text = "Soldi";
             this._bilancioImportoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -237,13 +241,13 @@ namespace Room8
             this._deviTableLayoutPanel.Controls.Add(this._riepilogoDeviLabel, 0, 0);
             this._deviTableLayoutPanel.Controls.Add(this._deviImportoLabel, 0, 1);
             this._deviTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._deviTableLayoutPanel.Location = new System.Drawing.Point(159, 1);
+            this._deviTableLayoutPanel.Location = new System.Drawing.Point(150, 1);
             this._deviTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this._deviTableLayoutPanel.Name = "_deviTableLayoutPanel";
             this._deviTableLayoutPanel.RowCount = 2;
             this._deviTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this._deviTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._deviTableLayoutPanel.Size = new System.Drawing.Size(157, 48);
+            this._deviTableLayoutPanel.Size = new System.Drawing.Size(148, 52);
             this._deviTableLayoutPanel.TabIndex = 1;
             // 
             // _riepilogoDeviLabel
@@ -252,7 +256,7 @@ namespace Room8
             this._riepilogoDeviLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._riepilogoDeviLabel.Location = new System.Drawing.Point(3, 0);
             this._riepilogoDeviLabel.Name = "_riepilogoDeviLabel";
-            this._riepilogoDeviLabel.Size = new System.Drawing.Size(151, 24);
+            this._riepilogoDeviLabel.Size = new System.Drawing.Size(142, 26);
             this._riepilogoDeviLabel.TabIndex = 1;
             this._riepilogoDeviLabel.Text = "Devi dare";
             this._riepilogoDeviLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -262,9 +266,9 @@ namespace Room8
             this._deviImportoLabel.AutoSize = true;
             this._deviImportoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._deviImportoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._deviImportoLabel.Location = new System.Drawing.Point(3, 24);
+            this._deviImportoLabel.Location = new System.Drawing.Point(3, 26);
             this._deviImportoLabel.Name = "_deviImportoLabel";
-            this._deviImportoLabel.Size = new System.Drawing.Size(151, 24);
+            this._deviImportoLabel.Size = new System.Drawing.Size(142, 26);
             this._deviImportoLabel.TabIndex = 2;
             this._deviImportoLabel.Text = "Soldi";
             this._deviImportoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -276,13 +280,13 @@ namespace Room8
             this._dovutoTableLayoutPanel.Controls.Add(this._riepilogoDovutoLabel, 0, 0);
             this._dovutoTableLayoutPanel.Controls.Add(this._dovutoImportoLabel, 0, 1);
             this._dovutoTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._dovutoTableLayoutPanel.Location = new System.Drawing.Point(317, 1);
+            this._dovutoTableLayoutPanel.Location = new System.Drawing.Point(299, 1);
             this._dovutoTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this._dovutoTableLayoutPanel.Name = "_dovutoTableLayoutPanel";
             this._dovutoTableLayoutPanel.RowCount = 2;
             this._dovutoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this._dovutoTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._dovutoTableLayoutPanel.Size = new System.Drawing.Size(157, 48);
+            this._dovutoTableLayoutPanel.Size = new System.Drawing.Size(148, 52);
             this._dovutoTableLayoutPanel.TabIndex = 2;
             // 
             // _riepilogoDovutoLabel
@@ -291,7 +295,7 @@ namespace Room8
             this._riepilogoDovutoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._riepilogoDovutoLabel.Location = new System.Drawing.Point(3, 0);
             this._riepilogoDovutoLabel.Name = "_riepilogoDovutoLabel";
-            this._riepilogoDovutoLabel.Size = new System.Drawing.Size(151, 24);
+            this._riepilogoDovutoLabel.Size = new System.Drawing.Size(142, 26);
             this._riepilogoDovutoLabel.TabIndex = 2;
             this._riepilogoDovutoLabel.Text = "Ti è dovuto";
             this._riepilogoDovutoLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -301,9 +305,9 @@ namespace Room8
             this._dovutoImportoLabel.AutoSize = true;
             this._dovutoImportoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dovutoImportoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._dovutoImportoLabel.Location = new System.Drawing.Point(3, 24);
+            this._dovutoImportoLabel.Location = new System.Drawing.Point(3, 26);
             this._dovutoImportoLabel.Name = "_dovutoImportoLabel";
-            this._dovutoImportoLabel.Size = new System.Drawing.Size(151, 24);
+            this._dovutoImportoLabel.Size = new System.Drawing.Size(142, 26);
             this._dovutoImportoLabel.TabIndex = 3;
             this._dovutoImportoLabel.Text = "Soldi";
             this._dovutoImportoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -321,7 +325,7 @@ namespace Room8
             this._topTableLayoutPanel.Name = "_topTableLayoutPanel";
             this._topTableLayoutPanel.RowCount = 1;
             this._topTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._topTableLayoutPanel.Size = new System.Drawing.Size(475, 40);
+            this._topTableLayoutPanel.Size = new System.Drawing.Size(448, 40);
             this._topTableLayoutPanel.TabIndex = 5;
             // 
             // _toolStrip
@@ -335,7 +339,7 @@ namespace Room8
             this._toolStrip.Location = new System.Drawing.Point(0, 0);
             this._toolStrip.Name = "_toolStrip";
             this._toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this._toolStrip.Size = new System.Drawing.Size(435, 40);
+            this._toolStrip.Size = new System.Drawing.Size(408, 40);
             this._toolStrip.TabIndex = 6;
             this._toolStrip.Text = "toolStrip1";
             // 
@@ -391,7 +395,7 @@ namespace Room8
             // 
             this._pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._pictureBox.Image = global::Room8.Properties.Resources._default;
-            this._pictureBox.Location = new System.Drawing.Point(435, 0);
+            this._pictureBox.Location = new System.Drawing.Point(408, 0);
             this._pictureBox.Margin = new System.Windows.Forms.Padding(0);
             this._pictureBox.Name = "_pictureBox";
             this._pictureBox.Size = new System.Drawing.Size(40, 40);
@@ -404,9 +408,9 @@ namespace Room8
             this._speseLabel.AutoSize = true;
             this._speseLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._speseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._speseLabel.Location = new System.Drawing.Point(3, 90);
+            this._speseLabel.Location = new System.Drawing.Point(197, 100);
             this._speseLabel.Name = "_speseLabel";
-            this._speseLabel.Size = new System.Drawing.Size(469, 20);
+            this._speseLabel.Size = new System.Drawing.Size(448, 20);
             this._speseLabel.TabIndex = 7;
             this._speseLabel.Text = "Spese:";
             this._speseLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -424,115 +428,11 @@ namespace Room8
             this.dataDataGridViewTextBoxColumn});
             this._speseDataGridView.DataSource = this.spesaBindingSource;
             this._speseDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._speseDataGridView.Location = new System.Drawing.Point(3, 113);
+            this._speseDataGridView.Location = new System.Drawing.Point(197, 123);
             this._speseDataGridView.Name = "_speseDataGridView";
             this._speseDataGridView.ReadOnly = true;
-            this._speseDataGridView.Size = new System.Drawing.Size(469, 146);
+            this._speseDataGridView.Size = new System.Drawing.Size(448, 144);
             this._speseDataGridView.TabIndex = 8;
-            // 
-            // spesaBindingSource
-            // 
-            this.spesaBindingSource.DataSource = typeof(Room8.Spesa);
-            // 
-            // _saldiLabel
-            // 
-            this._saldiLabel.AutoSize = true;
-            this._saldiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._saldiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._saldiLabel.Location = new System.Drawing.Point(3, 262);
-            this._saldiLabel.Name = "_saldiLabel";
-            this._saldiLabel.Size = new System.Drawing.Size(469, 20);
-            this._saldiLabel.TabIndex = 9;
-            this._saldiLabel.Text = "Saldi:";
-            this._saldiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _saldiDataGridView
-            // 
-            this._saldiDataGridView.AllowUserToAddRows = false;
-            this._saldiDataGridView.AllowUserToDeleteRows = false;
-            this._saldiDataGridView.AutoGenerateColumns = false;
-            this._saldiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this._saldiDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Sorgente,
-            this.Destinazione,
-            this.importoDataGridViewTextBoxColumn1,
-            this.dataDataGridViewTextBoxColumn1});
-            this._saldiDataGridView.DataSource = this.saldoBindingSource;
-            this._saldiDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._saldiDataGridView.Location = new System.Drawing.Point(3, 285);
-            this._saldiDataGridView.Name = "_saldiDataGridView";
-            this._saldiDataGridView.ReadOnly = true;
-            this._saldiDataGridView.Size = new System.Drawing.Size(469, 146);
-            this._saldiDataGridView.TabIndex = 10;
-            // 
-            // saldoBindingSource
-            // 
-            this.saldoBindingSource.DataSource = typeof(Room8.Saldo);
-            // 
-            // _menuTableLayoutPanel
-            // 
-            this._menuTableLayoutPanel.ColumnCount = 1;
-            this._menuTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._menuTableLayoutPanel.Controls.Add(this._amiciListBox, 0, 5);
-            this._menuTableLayoutPanel.Controls.Add(this._amiciMenuLabel, 0, 4);
-            this._menuTableLayoutPanel.Controls.Add(this._gruppiListBox, 0, 3);
-            this._menuTableLayoutPanel.Controls.Add(this._gruppiMenuLabel, 0, 2);
-            this._menuTableLayoutPanel.Controls.Add(this._spesaButton, 0, 0);
-            this._menuTableLayoutPanel.Controls.Add(this._saldaButton, 0, 1);
-            this._menuTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._menuTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
-            this._menuTableLayoutPanel.Name = "_menuTableLayoutPanel";
-            this._menuTableLayoutPanel.RowCount = 6;
-            this._menuTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.53846F));
-            this._menuTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.53846F));
-            this._menuTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this._menuTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.46154F));
-            this._menuTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
-            this._menuTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 38.46154F));
-            this._menuTableLayoutPanel.Size = new System.Drawing.Size(161, 434);
-            this._menuTableLayoutPanel.TabIndex = 3;
-            // 
-            // _spesaButton
-            // 
-            this._spesaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._spesaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this._spesaButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this._spesaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._spesaButton.Location = new System.Drawing.Point(19, 5);
-            this._spesaButton.Name = "_spesaButton";
-            this._spesaButton.Size = new System.Drawing.Size(123, 33);
-            this._spesaButton.TabIndex = 5;
-            this._spesaButton.Text = "Aggiungi spesa";
-            this._spesaButton.UseVisualStyleBackColor = false;
-            // 
-            // _saldaButton
-            // 
-            this._saldaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this._saldaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this._saldaButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this._saldaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._saldaButton.Location = new System.Drawing.Point(19, 49);
-            this._saldaButton.Name = "_saldaButton";
-            this._saldaButton.Size = new System.Drawing.Size(123, 33);
-            this._saldaButton.TabIndex = 10;
-            this._saldaButton.Text = "Salda";
-            this._saldaButton.UseVisualStyleBackColor = false;
-            // 
-            // _formTableLayoutPanel
-            // 
-            this._formTableLayoutPanel.ColumnCount = 2;
-            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.87904F));
-            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 74.12096F));
-            this._formTableLayoutPanel.Controls.Add(this._riepilogoTableLayoutPanel, 1, 0);
-            this._formTableLayoutPanel.Controls.Add(this._menuTableLayoutPanel, 0, 0);
-            this._formTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._formTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
-            this._formTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
-            this._formTableLayoutPanel.Name = "_formTableLayoutPanel";
-            this._formTableLayoutPanel.RowCount = 1;
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._formTableLayoutPanel.Size = new System.Drawing.Size(648, 440);
-            this._formTableLayoutPanel.TabIndex = 4;
             // 
             // descrizioneDataGridViewTextBoxColumn
             // 
@@ -546,9 +446,10 @@ namespace Room8
             // 
             this.importoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
+            dataGridViewCellStyle5.Format = "c2";
+            dataGridViewCellStyle5.FormatProvider = new System.Globalization.CultureInfo("it-IT");
+            this.importoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.importoDataGridViewTextBoxColumn.HeaderText = "Importo";
-			this.importoDataGridViewTextBoxColumn.DefaultCellStyle.Format = "c2";
-			this.importoDataGridViewTextBoxColumn.DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("it-IT");
             this.importoDataGridViewTextBoxColumn.Name = "importoDataGridViewTextBoxColumn";
             this.importoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -566,6 +467,41 @@ namespace Room8
             this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
             this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
             this.dataDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // spesaBindingSource
+            // 
+            this.spesaBindingSource.DataSource = typeof(Room8.Spesa);
+            // 
+            // _saldiLabel
+            // 
+            this._saldiLabel.AutoSize = true;
+            this._saldiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._saldiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._saldiLabel.Location = new System.Drawing.Point(197, 270);
+            this._saldiLabel.Name = "_saldiLabel";
+            this._saldiLabel.Size = new System.Drawing.Size(448, 20);
+            this._saldiLabel.TabIndex = 9;
+            this._saldiLabel.Text = "Saldi:";
+            this._saldiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // _saldiDataGridView
+            // 
+            this._saldiDataGridView.AllowUserToAddRows = false;
+            this._saldiDataGridView.AllowUserToDeleteRows = false;
+            this._saldiDataGridView.AutoGenerateColumns = false;
+            this._saldiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._saldiDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Sorgente,
+            this.Destinazione,
+            this.importoDataGridViewTextBoxColumn1,
+            this.dataDataGridViewTextBoxColumn1});
+            this._saldiDataGridView.DataSource = this.saldoBindingSource;
+            this._saldiDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._saldiDataGridView.Location = new System.Drawing.Point(197, 293);
+            this._saldiDataGridView.Name = "_saldiDataGridView";
+            this._saldiDataGridView.ReadOnly = true;
+            this._saldiDataGridView.Size = new System.Drawing.Size(448, 144);
+            this._saldiDataGridView.TabIndex = 10;
             // 
             // Sorgente
             // 
@@ -585,10 +521,11 @@ namespace Room8
             // 
             this.importoDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.importoDataGridViewTextBoxColumn1.DataPropertyName = "Importo";
+            dataGridViewCellStyle6.Format = "c2";
+            dataGridViewCellStyle6.FormatProvider = new System.Globalization.CultureInfo("it-IT");
+            this.importoDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle6;
             this.importoDataGridViewTextBoxColumn1.HeaderText = "Importo";
             this.importoDataGridViewTextBoxColumn1.Name = "importoDataGridViewTextBoxColumn1";
-			this.importoDataGridViewTextBoxColumn1.DefaultCellStyle.Format = "c2";
-			this.importoDataGridViewTextBoxColumn1.DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("it-IT");
             this.importoDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataDataGridViewTextBoxColumn1
@@ -598,6 +535,151 @@ namespace Room8
             this.dataDataGridViewTextBoxColumn1.HeaderText = "Data";
             this.dataDataGridViewTextBoxColumn1.Name = "dataDataGridViewTextBoxColumn1";
             this.dataDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // saldoBindingSource
+            // 
+            this.saldoBindingSource.DataSource = typeof(Room8.Saldo);
+            // 
+            // _menuTableLayoutPanel
+            // 
+            this._menuTableLayoutPanel.ColumnCount = 1;
+            this._menuTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this._menuTableLayoutPanel.Controls.Add(this._spesaButton, 0, 0);
+            this._menuTableLayoutPanel.Controls.Add(this._saldaButton, 0, 1);
+            this._menuTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._menuTableLayoutPanel.Location = new System.Drawing.Point(3, 3);
+            this._menuTableLayoutPanel.Name = "_menuTableLayoutPanel";
+            this._menuTableLayoutPanel.RowCount = 2;
+            this._menuTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this._menuTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this._menuTableLayoutPanel.Size = new System.Drawing.Size(188, 94);
+            this._menuTableLayoutPanel.TabIndex = 3;
+            // 
+            // _spesaButton
+            // 
+            this._spesaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._spesaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this._spesaButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._spesaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._spesaButton.Location = new System.Drawing.Point(32, 8);
+            this._spesaButton.Name = "_spesaButton";
+            this._spesaButton.Size = new System.Drawing.Size(123, 31);
+            this._spesaButton.TabIndex = 5;
+            this._spesaButton.Text = "Aggiungi spesa";
+            this._spesaButton.UseVisualStyleBackColor = false;
+            // 
+            // _saldaButton
+            // 
+            this._saldaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this._saldaButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this._saldaButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this._saldaButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._saldaButton.Location = new System.Drawing.Point(32, 55);
+            this._saldaButton.Name = "_saldaButton";
+            this._saldaButton.Size = new System.Drawing.Size(123, 31);
+            this._saldaButton.TabIndex = 10;
+            this._saldaButton.Text = "Salda";
+            this._saldaButton.UseVisualStyleBackColor = false;
+            // 
+            // _visualizzaAmico
+            // 
+            this._visualizzaAmico.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this._visualizzaAmico.AutoSize = true;
+            this._visualizzaAmico.Location = new System.Drawing.Point(3, 118);
+            this._visualizzaAmico.Name = "_visualizzaAmico";
+            this._visualizzaAmico.Size = new System.Drawing.Size(99, 23);
+            this._visualizzaAmico.TabIndex = 12;
+            this._visualizzaAmico.Text = "Mostra amico";
+            this._visualizzaAmico.UseVisualStyleBackColor = true;
+            // 
+            // _formTableLayoutPanel
+            // 
+            this._formTableLayoutPanel.ColumnCount = 2;
+            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this._formTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this._formTableLayoutPanel.Controls.Add(this._riepilogoTableLayoutPanel, 1, 0);
+            this._formTableLayoutPanel.Controls.Add(this._gruppiMenuLabel, 0, 1);
+            this._formTableLayoutPanel.Controls.Add(this._menuTableLayoutPanel, 0, 0);
+            this._formTableLayoutPanel.Controls.Add(this._speseLabel, 1, 1);
+            this._formTableLayoutPanel.Controls.Add(this._saldiDataGridView, 1, 4);
+            this._formTableLayoutPanel.Controls.Add(this._saldiLabel, 1, 3);
+            this._formTableLayoutPanel.Controls.Add(this._amiciMenuLabel, 0, 3);
+            this._formTableLayoutPanel.Controls.Add(this._speseDataGridView, 1, 2);
+            this._formTableLayoutPanel.Controls.Add(this.tableLayoutPanel1, 0, 4);
+            this._formTableLayoutPanel.Controls.Add(this.tableLayoutPanel2, 0, 2);
+            this._formTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._formTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this._formTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
+            this._formTableLayoutPanel.Name = "_formTableLayoutPanel";
+            this._formTableLayoutPanel.RowCount = 5;
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
+            this._formTableLayoutPanel.Size = new System.Drawing.Size(648, 440);
+            this._formTableLayoutPanel.TabIndex = 4;
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this._visualizzaAmico, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this._amiciListBox, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 293);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(188, 144);
+            this.tableLayoutPanel1.TabIndex = 11;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Controls.Add(this._gruppiListBox, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 1);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 123);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(188, 144);
+            this.tableLayoutPanel2.TabIndex = 12;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this._visualizzaGruppoButton);
+            this.panel1.Controls.Add(this._modificaGruppoButton);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 117);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(182, 24);
+            this.panel1.TabIndex = 11;
+            // 
+            // _visualizzaGruppoButton
+            // 
+            this._visualizzaGruppoButton.AutoSize = true;
+            this._visualizzaGruppoButton.Location = new System.Drawing.Point(1, 0);
+            this._visualizzaGruppoButton.Name = "_visualizzaGruppoButton";
+            this._visualizzaGruppoButton.Size = new System.Drawing.Size(85, 23);
+            this._visualizzaGruppoButton.TabIndex = 1;
+            this._visualizzaGruppoButton.Text = "Mostra gruppo";
+            this._visualizzaGruppoButton.UseVisualStyleBackColor = true;
+            // 
+            // _modificaGruppoButton
+            // 
+            this._modificaGruppoButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this._modificaGruppoButton.AutoSize = true;
+            this._modificaGruppoButton.Location = new System.Drawing.Point(89, 0);
+            this._modificaGruppoButton.Name = "_modificaGruppoButton";
+            this._modificaGruppoButton.Size = new System.Drawing.Size(93, 23);
+            this._modificaGruppoButton.TabIndex = 0;
+            this._modificaGruppoButton.Text = "Modifica gruppo";
+            this._modificaGruppoButton.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 
@@ -610,7 +692,6 @@ namespace Room8
             this.Name = "MainForm";
             this.Text = "Room8 - Riepilogo";
             this._riepilogoTableLayoutPanel.ResumeLayout(false);
-            this._riepilogoTableLayoutPanel.PerformLayout();
             this._riepilogoInfoTableLayoutPanel.ResumeLayout(false);
             this._bilancioTableLayoutPanel.ResumeLayout(false);
             this._bilancioTableLayoutPanel.PerformLayout();
@@ -627,8 +708,13 @@ namespace Room8
             ((System.ComponentModel.ISupportInitialize)(this._saldiDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.saldoBindingSource)).EndInit();
             this._menuTableLayoutPanel.ResumeLayout(false);
-            this._menuTableLayoutPanel.PerformLayout();
             this._formTableLayoutPanel.ResumeLayout(false);
+            this._formTableLayoutPanel.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel1.PerformLayout();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -641,17 +727,7 @@ namespace Room8
         private System.Windows.Forms.ListBox _amiciListBox;
         private System.Windows.Forms.Label _amiciMenuLabel;
         private System.Windows.Forms.Label _gruppiMenuLabel;
-        private System.Windows.Forms.TableLayoutPanel _riepilogoInfoTableLayoutPanel;
-        private System.Windows.Forms.Label _riepilogoBilancioLabel;
-        private System.Windows.Forms.Label _riepilogoDeviLabel;
-        private System.Windows.Forms.Label _riepilogoDovutoLabel;
         private System.Windows.Forms.TableLayoutPanel _riepilogoTableLayoutPanel;
-        private System.Windows.Forms.TableLayoutPanel _bilancioTableLayoutPanel;
-        private System.Windows.Forms.Label _bilancioImportoLabel;
-        private System.Windows.Forms.TableLayoutPanel _deviTableLayoutPanel;
-        private System.Windows.Forms.Label _deviImportoLabel;
-        private System.Windows.Forms.TableLayoutPanel _dovutoTableLayoutPanel;
-        private System.Windows.Forms.Label _dovutoImportoLabel;
         private System.Windows.Forms.TableLayoutPanel _menuTableLayoutPanel;
         private System.Windows.Forms.TableLayoutPanel _formTableLayoutPanel;
 		private System.Windows.Forms.Button _spesaButton;
@@ -682,6 +758,22 @@ namespace Room8
         private System.Windows.Forms.DataGridViewTextBoxColumn Destinazione;
         private System.Windows.Forms.DataGridViewTextBoxColumn importoDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.Button _visualizzaAmico;
+        private System.Windows.Forms.TableLayoutPanel _riepilogoInfoTableLayoutPanel;
+        private System.Windows.Forms.TableLayoutPanel _bilancioTableLayoutPanel;
+        private System.Windows.Forms.Label _riepilogoBilancioLabel;
+        private System.Windows.Forms.Label _bilancioImportoLabel;
+        private System.Windows.Forms.TableLayoutPanel _deviTableLayoutPanel;
+        private System.Windows.Forms.Label _riepilogoDeviLabel;
+        private System.Windows.Forms.Label _deviImportoLabel;
+        private System.Windows.Forms.TableLayoutPanel _dovutoTableLayoutPanel;
+        private System.Windows.Forms.Label _riepilogoDovutoLabel;
+        private System.Windows.Forms.Label _dovutoImportoLabel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button _visualizzaGruppoButton;
+        private System.Windows.Forms.Button _modificaGruppoButton;
     }
 }
 

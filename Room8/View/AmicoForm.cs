@@ -23,7 +23,7 @@ namespace Room8.View
 
 		public Label BilancioLabel
 		{
-			get { return _importoTotaleLabel; }
+			get { return _importoLabel; }
 		}
 
 		public PictureBox PictureBox
