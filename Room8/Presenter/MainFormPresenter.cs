@@ -109,7 +109,7 @@ namespace Room8
 		void ModificaSaldo_Click(object sender, EventArgs e)
 		{
 			SaldoForm saldoForm = new SaldoForm();
-			Saldo saldo = (Saldo)MainForm.SpeseDataGridView.CurrentRow.DataBoundItem;
+			Saldo saldo = (Saldo)MainForm.SaldiDataGridView.CurrentRow.DataBoundItem;
 			new SaldoFormPresenter(saldoForm, Utente, this, saldo);
 			saldoForm.ShowDialog();
 		}

@@ -31,7 +31,6 @@ namespace Room8.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this._pictureBox = new System.Windows.Forms.PictureBox();
             this._modificaButton = new System.Windows.Forms.Button();
             this._registratiLabel = new System.Windows.Forms.Label();
@@ -230,9 +229,8 @@ namespace Room8.View
             // 
             this._importoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this._importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
-            dataGridViewCellStyle1.Format = "c2";
-            dataGridViewCellStyle1.FormatProvider = new System.Globalization.CultureInfo("it-IT");
-            this._importoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+			this._importoDataGridViewTextBoxColumn.DefaultCellStyle.Format = "c2";
+			this._importoDataGridViewTextBoxColumn.DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("it-IT");
             this._importoDataGridViewTextBoxColumn.HeaderText = "Importo";
             this._importoDataGridViewTextBoxColumn.Name = "_importoDataGridViewTextBoxColumn";
             this._importoDataGridViewTextBoxColumn.ReadOnly = true;

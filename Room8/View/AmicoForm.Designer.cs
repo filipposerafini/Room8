@@ -222,7 +222,9 @@ namespace Room8.View
             this.importoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
             this.importoDataGridViewTextBoxColumn.HeaderText = "Importo";
-            this.importoDataGridViewTextBoxColumn.Name = "importoDataGridViewTextBoxColumn";
+            this.importoDataGridViewTextBoxColumn.DefaultCellStyle.Format = "c2";
+			this.importoDataGridViewTextBoxColumn.DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("it-IT");
+			this.importoDataGridViewTextBoxColumn.Name = "importoDataGridViewTextBoxColumn";
             this.importoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // movimentoDiDenaroBindingSource

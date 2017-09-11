@@ -31,8 +31,6 @@ namespace Room8
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this._amiciListBox = new System.Windows.Forms.ListBox();
             this._amiciMenuLabel = new System.Windows.Forms.Label();
             this._gruppiListBox = new System.Windows.Forms.ListBox();
@@ -437,9 +435,8 @@ namespace Room8
             // 
             this._importoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this._importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
-            dataGridViewCellStyle3.Format = "c2";
-            dataGridViewCellStyle3.FormatProvider = new System.Globalization.CultureInfo("it-IT");
-            this._importoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this._importoDataGridViewTextBoxColumn.DefaultCellStyle.Format = "c2";
+			this._importoDataGridViewTextBoxColumn.DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("it-IT");
             this._importoDataGridViewTextBoxColumn.HeaderText = "Importo";
             this._importoDataGridViewTextBoxColumn.Name = "_importoDataGridViewTextBoxColumn";
             this._importoDataGridViewTextBoxColumn.ReadOnly = true;
@@ -511,9 +508,8 @@ namespace Room8
             // 
             this._importoDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this._importoDataGridViewTextBoxColumn1.DataPropertyName = "Importo";
-            dataGridViewCellStyle4.Format = "c2";
-            dataGridViewCellStyle4.FormatProvider = new System.Globalization.CultureInfo("it-IT");
-            this._importoDataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle4;
+            this._importoDataGridViewTextBoxColumn1.DefaultCellStyle.Format = "c2";
+			this._importoDataGridViewTextBoxColumn1.DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("it-IT");
             this._importoDataGridViewTextBoxColumn1.HeaderText = "Importo";
             this._importoDataGridViewTextBoxColumn1.Name = "_importoDataGridViewTextBoxColumn1";
             this._importoDataGridViewTextBoxColumn1.ReadOnly = true;
@@ -816,10 +812,7 @@ namespace Room8
         private System.Windows.Forms.Label _saldiLabel;
         private System.Windows.Forms.DataGridView _saldiDataGridView;
         private System.Windows.Forms.BindingSource _saldoBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paganteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sorgenteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn destinazioneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn _descrizioneDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewTextBoxColumn _descrizioneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn _importoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn _pagante;
         private System.Windows.Forms.DataGridViewTextBoxColumn _dataDataGridViewTextBoxColumn;
