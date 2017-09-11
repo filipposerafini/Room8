@@ -67,6 +67,9 @@ namespace Room8
 				SpesaForm.NumericUpDown.Value = Spesa.Importo;
 				SpesaForm.PaganteComboBox.SelectedItem = Spesa.Pagante;
 				SpesaForm.DateTimePicker.Value = Spesa.Data;
+				SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault
+				         (n => n.Tag.Equals(MetodoDiDivisioneFactory.GetNomeMetodo
+				                            (Spesa.MetodoDivisione))).Checked = true;
 			}
 			else
 				Spesa = new Spesa((Gruppo)SpesaForm.GruppoComboBox.SelectedItem);

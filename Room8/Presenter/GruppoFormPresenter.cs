@@ -67,13 +67,13 @@ namespace Room8
 
 		private void InitializeUI()
 		{
-			Mails.Add(new TextBox());
-			Controls.Add(new Button());
+			//Mails.Add(new TextBox());
+			//Controls.Add(new Button());
 			GruppoForm.MailLabel.Text = Utente.Mail;
 			if (Gruppo != null)
 			{
 				GruppoForm.NomeGruppoTextBox.Text = Gruppo.Nome;
-				GruppoForm.PictureBox.ImageLocation = Gruppo.Foto;
+				GruppoForm.PictureBox.Load(Gruppo.Foto);
 				GruppoForm.FileLabel.Text = Gruppo.Foto.Substring(Gruppo.Foto.LastIndexOf('\\') + 1);
 				foreach (var utente in Gruppo.MembriGruppo)
 					if (!utente.Equals(Utente))
@@ -153,7 +153,7 @@ namespace Room8
 			{
 				string foto = GruppoForm.OpenFileDialog.FileName;
 				GruppoForm.FileLabel.Text = foto.Substring(foto.LastIndexOf('\\') + 1);
-				GruppoForm.PictureBox.ImageLocation = foto;
+				GruppoForm.PictureBox.Load(foto);
 			}
 		}
 
@@ -163,10 +163,7 @@ namespace Room8
 			try
 			{
 				if (Gruppo == null)
-				{
 					Gruppo = new Gruppo(GruppoForm.NomeGruppoTextBox.Text);
-					Gruppo.AggiungiMembro(Utente);
-				}
 				AggiungiRiga("");
 			}
 			catch (ArgumentException ae)
@@ -178,7 +175,7 @@ namespace Room8
 		private void RemoveButton_Click(object sender, EventArgs e)
 		{
 			int index = Controls.IndexOf((Button)sender);
-			RimuoviRiga(index - 1);
+			RimuoviRiga(index);
 			Mails.RemoveAt(index);
 			Controls.RemoveAt(index);
 		}
@@ -188,16 +185,16 @@ namespace Room8
 			GruppoForm.ErrorProvider.Clear();
 			try
 			{
-				if (Mails.Count == 1)
-					throw new ArgumentException("Inserisci almeno un'altro utente", "membro");
+				if (Mails.Count == 0)
+					throw new ArgumentException("Inserisci \talmeno un'altro utente", "membro");
 				Gruppo.Nome = GruppoForm.NomeGruppoTextBox.Text;
 				Gruppo.Foto = GruppoForm.PictureBox.ImageLocation;
 				GestoreUtenti gu = GestoreUtenti.Instance;
 				int i;
-				for (i = 1; i < Gruppo.MembriGruppo.Count; i++)
+				for (i = 0; i < Gruppo.MembriGruppo.Count; i++)
 				{
 					int j;
-					for (j = 1; j < Mails.Count; j++)
+					for (j = 0; j < Mails.Count; j++)
 					{
 						if (Gruppo.MembriGruppo[i].Mail.Equals(Mails[j].Text))
 							break;
@@ -217,6 +214,7 @@ namespace Room8
 						throw new ArgumentException("Utente " + Mails[j].Text + " inesistente", "membro");
 					Gruppo.AggiungiMembro(utente);
 				}
+				Gruppo.AggiungiMembro(Utente);
 				Observer.AggiornaUI();
 				GruppoForm.DialogResult = DialogResult.OK;
 			}

@@ -53,7 +53,7 @@ namespace Room8
 		public void AggiornaUI()
 		{
 			BilancioGruppoForm.GruppoLabel.Text = Gruppo.Nome;
-			BilancioGruppoForm.PictureBox.ImageLocation = Gruppo.Foto;
+			BilancioGruppoForm.PictureBox.Load(Gruppo.Foto);
 			BilancioGruppoForm.BilancioLabel.Text = Utente.CalcolaBilancio(Gruppo).ToString("€ 0.00");
 			BilancioGruppoForm.MembriListBox.DataSource = Gruppo.MembriGruppo;
 			BilancioGruppoForm.MembriListBox.DisplayMember = "Mail";

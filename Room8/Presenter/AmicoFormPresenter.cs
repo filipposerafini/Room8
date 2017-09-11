@@ -37,7 +37,7 @@ namespace Room8
 		public void AggiornaUI()
 		{
 			AmicoForm.NomeAmicoLabel.Text = Amico.Nome + " " + Amico.Cognome;
-			AmicoForm.PictureBox.ImageLocation = Amico.Foto;
+			AmicoForm.PictureBox.Load(Amico.Foto);
 			AmicoForm.BilancioLabel.Text = Utente.CalcolaSituazione(Amico).ToString("€ 0.00");
 			AmicoForm.DataGridView.DataSource = Utente.MovimentiDiDenaro.FindAll
 				(m => m.Sorgente.Equals(Amico) || m.Destinazione.Equals(Amico));

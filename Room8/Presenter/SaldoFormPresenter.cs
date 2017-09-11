@@ -71,18 +71,18 @@ namespace Room8
 				SaldoForm.NumericUpDown.Value = Saldo.Importo;
 				SaldoForm.DateTimePicker.Value = Saldo.Data;
 			}
-			SaldoForm.APictureBox.ImageLocation = (SaldoForm.AComboBox.SelectedItem as Utente).Foto;
-			SaldoForm.DaPictureBox.ImageLocation = (SaldoForm.DaComboBox.SelectedItem as Utente).Foto;
+			SaldoForm.APictureBox.Load((SaldoForm.AComboBox.SelectedItem as Utente).Foto);
+			SaldoForm.DaPictureBox.Load((SaldoForm.DaComboBox.SelectedItem as Utente).Foto);
 		}
 
         private void DaComboBox_SelectIndexChanged(object sender, EventArgs e)
         {
-            SaldoForm.DaPictureBox.ImageLocation = (SaldoForm.DaComboBox.SelectedItem as Utente).Foto;
+			SaldoForm.DaPictureBox.Load((SaldoForm.DaComboBox.SelectedItem as Utente).Foto);
         }
 
         private void AComboBox_SelectIndexChanged(object sender, EventArgs e)
         {
-            SaldoForm.APictureBox.ImageLocation = (SaldoForm.AComboBox.SelectedItem as Utente).Foto;
+			SaldoForm.APictureBox.Load((SaldoForm.AComboBox.SelectedItem as Utente).Foto);
         }
 
 		void EliminaButton_Click(object sender, EventArgs e)

@@ -46,7 +46,7 @@ namespace Room8
 			ProfiloForm.CognomeTextBox.Text = Utente.Cognome;
 			ProfiloForm.MailTextBox.Text = Utente.Mail;
 			ProfiloForm.TelefonoTextBox.Text = Utente.Telefono;
-			ProfiloForm.PictureBox.ImageLocation = Utente.Foto;
+			ProfiloForm.PictureBox.Load(Utente.Foto);
 			ProfiloForm.FileLabel.Text = Utente.Foto.Substring(Utente.Foto.LastIndexOf('\\') + 1);
 		}
 
@@ -57,7 +57,7 @@ namespace Room8
 			{
 				string foto = ProfiloForm.OpenFileDialog.FileName;
 				ProfiloForm.FileLabel.Text = foto.Substring(foto.LastIndexOf('\\') + 1);
-				ProfiloForm.PictureBox.ImageLocation = foto;
+				ProfiloForm.PictureBox.Load(foto);
 			}
 		}
 
