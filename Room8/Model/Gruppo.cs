@@ -103,15 +103,12 @@ namespace Room8
 				p.Quantita += prodotto.Quantita;
 		}
 
-		public void RimuoviProdotto(string nome)
+		public void RimuoviProdotto(Prodotto prodotto)
 		{
-			if (nome == null)
-				throw new ArgumentNullException("nome");
-
-			Prodotto p = _daComprare.Find(s => nome.Equals(s.Nome));
-			if (p == null)
+			if (prodotto == null)
+				throw new ArgumentNullException("prodotto");
+			if (!_daComprare.Remove(prodotto))
 				throw new ArgumentException("Prodotto non presente");
-			_daComprare.Remove(p);
 		}
 	}
 }

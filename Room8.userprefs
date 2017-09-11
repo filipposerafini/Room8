@@ -1,19 +1,15 @@
 ﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Room8/Presenter/MainFormPresenter.cs">
     <Files>
-      <File FileName="Room8/Presenter/MainFormPresenter.cs" Line="55" Column="53" />
-      <File FileName="Room8/Presenter/BilancioGruppoFormPresenter.cs" Line="84" Column="26" />
-      <File FileName="Room8/Presenter/GruppoFormPresenter.cs" Line="220" Column="27" />
-      <File FileName="Room8/Model/Gruppo.cs" Line="89" Column="56" />
-      <File FileName="Room8/Model/Utente.cs" Line="126" Column="6" />
+      <File FileName="Room8/Presenter/MainFormPresenter.cs" Line="58" Column="24" />
+      <File FileName="Room8/Presenter/BilancioGruppoFormPresenter.cs" Line="80" Column="4" />
+      <File FileName="Room8/View/MainForm.cs" Line="108" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Room8 PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/home/filippo/Documents/University/Room8/Room8/Presenter/GruppoFormPresenter.cs" relfile="Room8/Presenter/GruppoFormPresenter.cs" line="220" column="27" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MultiItemStartupConfigurations />

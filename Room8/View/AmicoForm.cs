@@ -35,5 +35,10 @@ namespace Room8.View
 		{
 			get { return _dataGridView; }
 		}
+
+		public Button ModificaButton
+		{
+			get { return _modificaButton; }
+		}
     }
 }

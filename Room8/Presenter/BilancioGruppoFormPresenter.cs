@@ -45,7 +45,6 @@ namespace Room8
 		{
 			BilancioGruppoForm.ModificaButton.Click += ModificaButton_Click;
 			BilancioGruppoForm.ProdottiButton.Click += ProdottiButton_Click;
-			BilancioGruppoForm.DataGridView.Click += DataGridView_Click;
 			BilancioGruppoForm.MembriListBox.Click += MembriListBox_Click;
 			BilancioGruppoForm.FormClosing += BilancioGruppoForm_FormClosing;
 		}
@@ -58,15 +57,7 @@ namespace Room8
 			BilancioGruppoForm.MembriListBox.DataSource = Gruppo.MembriGruppo;
 			BilancioGruppoForm.MembriListBox.DisplayMember = "Mail";
 			BilancioGruppoForm.DataGridView.DataSource = Gruppo.SpeseGruppo.Spese;
-			BilancioGruppoForm.DataGridView.Enabled = BilancioGruppoForm.DataGridView.RowCount != 0;
-		}
-
-		private void DataGridView_Click(object sender, EventArgs e)
-		{
-			SpesaForm spesaForm = new SpesaForm();
-			Spesa spesa = (Spesa)BilancioGruppoForm.DataGridView.CurrentRow.DataBoundItem;
-			new SpesaFormPresenter(spesaForm, Utente, this, spesa);
-			spesaForm.ShowDialog();
+			BilancioGruppoForm.ModificaButton.Enabled = BilancioGruppoForm.DataGridView.RowCount != 0;
 		}
 
 		private void MembriListBox_Click(object sender, EventArgs e)
@@ -78,9 +69,10 @@ namespace Room8
 
 		private void ModificaButton_Click(object sender, EventArgs e)
 		{
-			GruppoForm gruppoForm = new GruppoForm();
-			new GruppoFormPresenter(gruppoForm, Utente, Gruppo, this);
-			gruppoForm.ShowDialog();
+			SpesaForm spesaForm = new SpesaForm();
+			Spesa spesa = (Spesa)BilancioGruppoForm.DataGridView.CurrentRow.DataBoundItem;
+			new SpesaFormPresenter(spesaForm, Utente, this, spesa);
+			spesaForm.ShowDialog();
 		}
 
 		private void ProdottiButton_Click(object sender, EventArgs e)

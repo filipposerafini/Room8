@@ -120,6 +120,7 @@ namespace Room8
 			}
 			catch (ArgumentException ae)
 			{
+				PartiForm.ErrorProvider.SetIconAlignment(PartiForm.ConfermaButton, ErrorIconAlignment.MiddleLeft);
 				PartiForm.ErrorProvider.SetError(PartiForm.ConfermaButton, ae.Message);
 			}
 		}

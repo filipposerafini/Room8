@@ -187,6 +187,8 @@
             this._dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dataGridView.Location = new System.Drawing.Point(3, 43);
             this._dataGridView.Name = "_dataGridView";
+			this._dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+			this._dataGridView.MultiSelect = true;
             this._dataGridView.Size = new System.Drawing.Size(305, 114);
             this._dataGridView.TabIndex = 7;
             // 

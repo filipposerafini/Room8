@@ -15,7 +15,7 @@ namespace Room8
 			_amicoForm = amicoForm;
 			_utente = utente;
 			_amico = amico;
-			AmicoForm.DataGridView.Click += DataGridView_Click;
+			AmicoForm.ModificaButton.Click += ModificaButton_Click;
 			AggiornaUI();
 		}
 
@@ -41,10 +41,10 @@ namespace Room8
 			AmicoForm.BilancioLabel.Text = Utente.CalcolaSituazione(Amico).ToString("€ 0.00");
 			AmicoForm.DataGridView.DataSource = Utente.MovimentiDiDenaro.FindAll
 				(m => m.Sorgente.Equals(Amico) || m.Destinazione.Equals(Amico));
-			AmicoForm.DataGridView.Enabled = AmicoForm.DataGridView.RowCount != 0;
+			AmicoForm.ModificaButton.Enabled = AmicoForm.DataGridView.RowCount != 0;
 		}
 
-		void DataGridView_Click(object sender, EventArgs e)
+		void ModificaButton_Click(object sender, EventArgs e)
 		{
 			MovimentoDiDenaro movimento = (MovimentoDiDenaro)AmicoForm.DataGridView.CurrentRow.DataBoundItem;
 			if (movimento is Movimento)

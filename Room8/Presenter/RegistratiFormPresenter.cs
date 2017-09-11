@@ -40,6 +40,7 @@ namespace Room8
 			RegistratiForm.FotoButton.Click += FotoButton_Click;
 			RegistratiForm.ConfermaButton.Click += ConfermaButton_Click;
 			RegistratiForm.AnnullaButton.Click += AnnullaButton_Click;
+			RegistratiForm.FormClosing += RegistratiForm_FormClosing;
 		}
 
 		private void FotoButton_Click(object sender, EventArgs e)
@@ -103,9 +104,13 @@ namespace Room8
 		}
 
 		private void AnnullaButton_Click(object sender, EventArgs e)
-		{
-			RegistratiForm.Close();
-			LoginForm.Show();
+		{ 
+			RegistratiForm.Close(); 
+		}
+
+		private void RegistratiForm_FormClosing(object sender, FormClosingEventArgs e)
+		{ 
+			LoginForm.Show(); 
 		}
 	}
 }

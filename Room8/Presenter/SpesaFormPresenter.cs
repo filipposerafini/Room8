@@ -159,6 +159,7 @@ namespace Room8
 						break;
 					default:
 						control = SpesaForm.ConfermaButton;
+						SpesaForm.ErrorProvider.SetIconAlignment(control, ErrorIconAlignment.MiddleLeft);
 						break;
 				}
 				SpesaForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));

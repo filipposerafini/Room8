@@ -252,6 +252,7 @@ namespace Room8
             this._deviImportoLabel.Size = new System.Drawing.Size(142, 29);
             this._deviImportoLabel.TabIndex = 2;
             this._deviImportoLabel.Text = "Soldi";
+			this._deviImportoLabel.ForeColor = System.Drawing.Color.Red;
             this._deviImportoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _dovutoTableLayoutPanel
@@ -291,6 +292,7 @@ namespace Room8
             this._dovutoImportoLabel.Size = new System.Drawing.Size(142, 29);
             this._dovutoImportoLabel.TabIndex = 3;
             this._dovutoImportoLabel.Text = "Soldi";
+			this._dovutoImportoLabel.ForeColor = System.Drawing.Color.Green;
             this._dovutoImportoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _topTableLayoutPanel

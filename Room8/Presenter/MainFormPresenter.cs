@@ -40,12 +40,14 @@ namespace Room8
 		{
 			MainForm.SpesaButton.Click += SpesaButton_Click;
 			MainForm.SaldaButton.Click += SaldaButton_Click;
-			MainForm.SpeseDataGridView.Click += SpeseDataGridView_Click;
-			MainForm.SaldiDataGridView.Click += SaldiDataGridView_Click;
-			MainForm.AmiciListBox.Click += AmiciListBox_Click;
-			MainForm.GruppiListBox.Click += GruppiListBox_Click;
+			MainForm.VisualizzaGruppo.Click += VisualizzaGruppo_Click;
+			MainForm.ModificaGruppo.Click += ModificaGruppo_Click;
+			MainForm.VisualizzaAmico.Click += VisualizzaAmico_Click;
+			//MainForm.SpeseDataGridView.Click += SpeseDataGridView_Click;
+			//MainForm.SaldiDataGridView.Click += SaldiDataGridView_Click;;
 			MainForm.AccountToolStrip.Click += AccountToolStrip_Click;
-			MainForm.CreaGruppoToolStrip.Click += CreaGruppoToolStrip_Click;
+			MainForm.CreaGruppoToolStrip.Click += CreaGruppo_Click;
+			MainForm.CreaGruppoLinkLabel.Click += CreaGruppo_Click;
 			MainForm.EsciToolStrip.Click += EsciToolStrip_Click;
 			MainForm.FormClosing += MainForm_FormClosing;
 		}
@@ -54,15 +56,17 @@ namespace Room8
 		{
 			MainForm.UtenteToolStrip.Text = Utente.Nome;
 			MainForm.PictureBox.Load(Utente.Foto);
+
 			MainForm.GruppiListBox.DataSource = Utente.Gruppi;
 			MainForm.GruppiListBox.DisplayMember = "Nome";
+			MainForm.SpesaButton.Enabled = Utente.Gruppi.Count != 0;
+			MainForm.SaldaButton.Enabled = Utente.Gruppi.Count != 0;
+			MainForm.ModificaGruppo.Enabled = Utente.Gruppi.Count != 0;
+
 			MainForm.AmiciListBox.DataSource = Utente.Amici();
 			MainForm.AmiciListBox.DisplayMember = "Mail";
-
-			MainForm.SpeseDataGridView.DataSource = Utente.GetSpese();
-			MainForm.SpeseDataGridView.Enabled = MainForm.SpeseDataGridView.RowCount != 0;
-			MainForm.SaldiDataGridView.DataSource = Utente.GetSaldi();
-			MainForm.SaldiDataGridView.Enabled = MainForm.SaldiDataGridView.RowCount != 0;
+			MainForm.VisualizzaGruppo.Enabled = Utente.Gruppi.Count != 0;
+			MainForm.VisualizzaAmico.Enabled = Utente.Amici().Count != 0;
 
 			decimal bilancioTotale = Utente.CalcolaBilancioTotale();
 			MainForm.BilancioImportoLabel.Text = bilancioTotale.ToString("€ 0.00");
@@ -71,9 +75,7 @@ namespace Room8
 			else
 				MainForm.BilancioImportoLabel.ForeColor = Color.Green;
 			MainForm.DeviImportoLabel.Text = Utente.TotaleDebiti().ToString("€ 0.00");
-			MainForm.DeviImportoLabel.ForeColor = Color.Red;
 			MainForm.DovutoImportoLabel.Text = Utente.TotaleCrediti().ToString("€ 0.00");
-			MainForm.DovutoImportoLabel.ForeColor = Color.Green;
 		}
 
 		private void SpesaButton_Click(object sender, EventArgs e)
@@ -90,35 +92,42 @@ namespace Room8
 			saldoForm.ShowDialog();
 		}
 
-		void SpeseDataGridView_Click(object sender, EventArgs e)
+		private void VisualizzaGruppo_Click(object sender, EventArgs e)
 		{
-			SpesaForm spesaForm = new SpesaForm();
-			Spesa spesa = (Spesa)MainForm.SpeseDataGridView.CurrentRow.DataBoundItem;
-			new SpesaFormPresenter(spesaForm, Utente, this, spesa);
-			spesaForm.ShowDialog();
-		}
-
-		void SaldiDataGridView_Click(object sender, EventArgs e)
-		{
-			SaldoForm saldoForm = new SaldoForm();
-			Saldo saldo = (Saldo)MainForm.SaldiDataGridView.CurrentRow.DataBoundItem;
-			new SaldoFormPresenter(saldoForm, Utente, this, saldo);
-			saldoForm.ShowDialog();
-		}
-
-		private void AmiciListBox_Click(object sender, EventArgs e)
-		{
-            AmicoForm amicoForm = new AmicoForm();
-			new AmicoFormPresenter(amicoForm, Utente, (Utente)MainForm.AmiciListBox.SelectedItem);
-            amicoForm.ShowDialog();
-		}
-
-		private void GruppiListBox_Click(object sender, EventArgs e)
-		{
-            BilancioGruppoForm bilancioGruppoForm = new BilancioGruppoForm();
+			BilancioGruppoForm bilancioGruppoForm = new BilancioGruppoForm();
 			new BilancioGruppoFormPresenter(bilancioGruppoForm, Utente, (Gruppo)MainForm.GruppiListBox.SelectedItem, this);
-            bilancioGruppoForm.ShowDialog();
+			bilancioGruppoForm.ShowDialog();
 		}
+
+		private void ModificaGruppo_Click(object sender, EventArgs e)
+		{
+			GruppoForm gruppoForm = new GruppoForm();
+			new GruppoFormPresenter(gruppoForm, Utente, (Gruppo)MainForm.GruppiListBox.SelectedItem, this);
+			gruppoForm.ShowDialog();
+		}
+
+		private void VisualizzaAmico_Click(object sender, EventArgs e)
+		{
+			AmicoForm amicoForm = new AmicoForm();
+			new AmicoFormPresenter(amicoForm, Utente, (Utente)MainForm.AmiciListBox.SelectedItem);
+			amicoForm.ShowDialog();
+		}
+
+		//private void SpeseDataGridView_Click(object sender, EventArgs e)
+		//{
+		//	SpesaForm spesaForm = new SpesaForm();
+		//	Spesa spesa = (Spesa)MainForm.SpeseDataGridView.CurrentRow.DataBoundItem;
+		//	new SpesaFormPresenter(spesaForm, Utente, this, spesa);
+		//	spesaForm.ShowDialog();
+		//}
+
+		//private void SaldiDataGridView_Click(object sender, EventArgs e)
+		//{
+		//	SaldoForm saldoForm = new SaldoForm();
+		//	Saldo saldo = (Saldo)MainForm.SaldiDataGridView.CurrentRow.DataBoundItem;
+		//	new SaldoFormPresenter(saldoForm, Utente, this, saldo);
+		//	saldoForm.ShowDialog();
+		//}
 
 		private void AccountToolStrip_Click(object sender, EventArgs e)
 		{
@@ -127,7 +136,7 @@ namespace Room8
 			profiloForm.ShowDialog();
 		}
 
-		private void CreaGruppoToolStrip_Click(object sender, EventArgs e)
+		private void CreaGruppo_Click(object sender, EventArgs e)
 		{
 			GruppoForm gruppoForm = new GruppoForm();
 			new GruppoFormPresenter(gruppoForm, Utente, null, this);

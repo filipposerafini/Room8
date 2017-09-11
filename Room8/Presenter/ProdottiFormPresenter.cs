@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows.Forms;
 using Room8.View;
 
 namespace Room8
@@ -13,7 +14,7 @@ namespace Room8
 			_prodottiForm = prodottiForm;
 			_gruppo = gruppo;
 			InitializeEvents();
-			InitializeUI();
+			AggiornaUI();
 		}
 
 		public ProdottiForm ProdottiForm
@@ -32,19 +33,52 @@ namespace Room8
 			ProdottiForm.AggiungiButton.Click += AggiungiButton_Click;
 		}
 
-		void InitializeUI()
+		void AggiornaUI()
 		{
-			
+			ProdottiForm.DataGridView.DataSource = Gruppo.DaComprare;
 		}
 
 		void AggiungiButton_Click(object sender, EventArgs e)
 		{
-
+			ProdottiForm.ErrorProvider.Clear();
+			try
+			{
+				Prodotto prodotto = new Prodotto(
+					ProdottiForm.ProdottoTextBox.Text,
+					(int)ProdottiForm.NumericUpDown.Value);
+				Gruppo.AggiungiProdotto(prodotto);
+				ProdottiForm.ProdottoTextBox.Text = "";
+				ProdottiForm.NumericUpDown.Value = 0;
+				AggiornaUI();
+			}
+			catch (ArgumentException ae)
+			{
+				Control control;
+				switch (ae.ParamName)
+				{
+					case "nome" :
+						control = ProdottiForm.ProdottoTextBox;
+						break;
+					case "quantita" :
+						control = ProdottiForm.NumericUpDown;
+						break;
+					case "rimuovi" :
+						control = ProdottiForm.RimuoviButton;
+						break;
+					default:
+						control = ProdottiForm.AggiungiButton;
+						ProdottiForm.ErrorProvider.SetIconAlignment(control, ErrorIconAlignment.MiddleLeft);
+						break;
+				}
+				ProdottiForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
+			}
 		}
 
 		void RimuoviButton_Click(object sender, EventArgs e)
 		{
-
+			foreach (DataGridViewRow row in ProdottiForm.DataGridView.SelectedRows)
+				Gruppo.RimuoviProdotto((Prodotto)row.DataBoundItem);
+			AggiornaUI();
 		}
 	}
 }

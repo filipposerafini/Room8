@@ -118,12 +118,6 @@ namespace Room8
                 Control control;
                 switch (ae.ParamName)
                 {
-                    case "sorgente" : 
-                        control = SaldoForm.DaComboBox;
-                        break;
-                    case "destinazione" :
-                        control = SaldoForm.AComboBox;
-                        break;
                     case "importo" :
                         control = SaldoForm.NumericUpDown;
                         break;
@@ -132,7 +126,8 @@ namespace Room8
                         break;
                     default:
                         control = SaldoForm.ConfermaButton;
-                        break;
+						SaldoForm.ErrorProvider.SetIconAlignment(control, ErrorIconAlignment.MiddleLeft);
+						break;
                 }
 				SaldoForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
 				Saldo = null;

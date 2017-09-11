@@ -35,5 +35,15 @@ namespace Room8.View
 		{
 			get { return _errorProvider; }
 		}
+
+		public DataGridView DataGridView
+		{
+			get { return _dataGridView; }
+		}
+
+		public NumericUpDown NumericUpDown
+		{
+			get { return _numericUpDown; }
+		}
     }
 }

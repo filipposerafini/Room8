@@ -23,9 +23,24 @@ namespace Room8
 			get { return _gruppiListBox; }
 		}
 
+		public Button VisualizzaGruppo
+		{
+			get { return _visualizzaGruppoButton; }
+		}
+
+		public Button ModificaGruppo
+		{
+			get { return _modificaGruppoButton; }
+		}
+
 		public ListBox AmiciListBox
 		{
 			get { return _amiciListBox; }
+		}
+
+		public Button VisualizzaAmico
+		{
+			get { return _visualizzaAmico; }
 		}
 
 		public Label BilancioImportoLabel
@@ -87,5 +102,10 @@ namespace Room8
 		{
 			get { return _esciToolStrip; }
 		}
-    }
+
+		public LinkLabel CreaGruppoLinkLabel
+		{
+			get { return _creaGruppoLinkLabel; }
+		}
+	}
 }
