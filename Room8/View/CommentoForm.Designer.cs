@@ -30,12 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this._commentiListBox = new System.Windows.Forms.ListBox();
             this._titoloLabel = new System.Windows.Forms.Label();
             this._confirmPanel = new System.Windows.Forms.Panel();
-            this._commentaButton = new System.Windows.Forms.Button();
             this._commentoTextBox = new System.Windows.Forms.TextBox();
+            this._commentaButton = new System.Windows.Forms.Button();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this._commentiListBox = new System.Windows.Forms.ListBox();
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
@@ -57,6 +57,21 @@
             this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this._mainTableLayoutPanel.Size = new System.Drawing.Size(364, 302);
             this._mainTableLayoutPanel.TabIndex = 1;
+            // 
+            // _commentiListBox
+            // 
+            this._commentiListBox.BackColor = System.Drawing.SystemColors.Control;
+            this._commentiListBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._commentiListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._commentiListBox.FormattingEnabled = true;
+            this._commentiListBox.HorizontalScrollbar = true;
+            this._commentiListBox.ItemHeight = 20;
+            this._commentiListBox.Location = new System.Drawing.Point(10, 50);
+            this._commentiListBox.Margin = new System.Windows.Forms.Padding(10);
+            this._commentiListBox.Name = "_commentiListBox";
+            this._commentiListBox.ScrollAlwaysVisible = true;
+            this._commentiListBox.Size = new System.Drawing.Size(344, 202);
+            this._commentiListBox.TabIndex = 8;
             // 
             // _titoloLabel
             // 
@@ -82,6 +97,15 @@
             this._confirmPanel.Size = new System.Drawing.Size(364, 40);
             this._confirmPanel.TabIndex = 1;
             // 
+            // _commentoTextBox
+            // 
+            this._commentoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._errorProvider.SetIconAlignment(this._commentoTextBox, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
+            this._commentoTextBox.Location = new System.Drawing.Point(8, 7);
+            this._commentoTextBox.Name = "_commentoTextBox";
+            this._commentoTextBox.Size = new System.Drawing.Size(250, 20);
+            this._commentoTextBox.TabIndex = 6;
+            // 
             // _commentaButton
             // 
             this._commentaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -94,33 +118,9 @@
             this._commentaButton.Text = "Commenta";
             this._commentaButton.UseVisualStyleBackColor = true;
             // 
-            // _commentoTextBox
-            // 
-            this._commentoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this._errorProvider.SetIconAlignment(this._commentoTextBox, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
-            this._commentoTextBox.Location = new System.Drawing.Point(8, 7);
-            this._commentoTextBox.Name = "_commentoTextBox";
-            this._commentoTextBox.Size = new System.Drawing.Size(261, 20);
-            this._commentoTextBox.TabIndex = 6;
-            // 
             // _errorProvider
             // 
             this._errorProvider.ContainerControl = this;
-            // 
-            // _commentiListBox
-            // 
-            this._commentiListBox.BackColor = System.Drawing.SystemColors.Control;
-            this._commentiListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._commentiListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._commentiListBox.FormattingEnabled = true;
-            this._commentiListBox.HorizontalScrollbar = true;
-            this._commentiListBox.ItemHeight = 20;
-            this._commentiListBox.Location = new System.Drawing.Point(10, 50);
-            this._commentiListBox.Margin = new System.Windows.Forms.Padding(10);
-            this._commentiListBox.Name = "_commentiListBox";
-            this._commentiListBox.ScrollAlwaysVisible = true;
-            this._commentiListBox.Size = new System.Drawing.Size(344, 202);
-            this._commentiListBox.TabIndex = 8;
             // 
             // CommentoForm
             // 

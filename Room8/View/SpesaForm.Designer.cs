@@ -224,16 +224,18 @@
             this._gruppoComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._gruppoComboBox.FormattingEnabled = true;
             this._gruppoComboBox.Location = new System.Drawing.Point(153, 14);
+            this._gruppoComboBox.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this._gruppoComboBox.Name = "_gruppoComboBox";
-            this._gruppoComboBox.Size = new System.Drawing.Size(236, 21);
+            this._gruppoComboBox.Size = new System.Drawing.Size(219, 21);
             this._gruppoComboBox.TabIndex = 4;
             // 
             // _descrizioneTextBox
             // 
             this._descrizioneTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._descrizioneTextBox.Location = new System.Drawing.Point(153, 63);
+            this._descrizioneTextBox.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this._descrizioneTextBox.Name = "_descrizioneTextBox";
-            this._descrizioneTextBox.Size = new System.Drawing.Size(236, 20);
+            this._descrizioneTextBox.Size = new System.Drawing.Size(219, 20);
             this._descrizioneTextBox.TabIndex = 6;
             // 
             // _radioPanel
@@ -304,8 +306,9 @@
             this._paganteComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._paganteComboBox.FormattingEnabled = true;
             this._paganteComboBox.Location = new System.Drawing.Point(153, 161);
+            this._paganteComboBox.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this._paganteComboBox.Name = "_paganteComboBox";
-            this._paganteComboBox.Size = new System.Drawing.Size(236, 21);
+            this._paganteComboBox.Size = new System.Drawing.Size(219, 21);
             this._paganteComboBox.TabIndex = 9;
             // 
             // _divisioneLabel
@@ -334,8 +337,9 @@
             // 
             this._dateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._dateTimePicker.Location = new System.Drawing.Point(153, 261);
+            this._dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this._dateTimePicker.Name = "_dateTimePicker";
-            this._dateTimePicker.Size = new System.Drawing.Size(236, 20);
+            this._dateTimePicker.Size = new System.Drawing.Size(219, 20);
             this._dateTimePicker.TabIndex = 13;
             // 
             // _numericUpDown
@@ -343,13 +347,14 @@
             this._numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._numericUpDown.DecimalPlaces = 2;
             this._numericUpDown.Location = new System.Drawing.Point(153, 112);
+            this._numericUpDown.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this._numericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this._numericUpDown.Name = "_numericUpDown";
-            this._numericUpDown.Size = new System.Drawing.Size(236, 20);
+            this._numericUpDown.Size = new System.Drawing.Size(219, 20);
             this._numericUpDown.TabIndex = 15;
             this._numericUpDown.ThousandsSeparator = true;
             // 

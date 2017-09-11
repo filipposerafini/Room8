@@ -33,7 +33,6 @@ namespace Room8.View
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this._pictureBox = new System.Windows.Forms.PictureBox();
-            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._modificaButton = new System.Windows.Forms.Button();
             this._registratiLabel = new System.Windows.Forms.Label();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
@@ -44,25 +43,24 @@ namespace Room8.View
             this._speseTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._speseLabel = new System.Windows.Forms.Label();
             this._dataGridView = new System.Windows.Forms.DataGridView();
-            this.spesaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._importoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._nomePaganteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this._spesaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._membriTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._bilancioLabel = new System.Windows.Forms.Label();
             this._importoLabel = new System.Windows.Forms.Label();
             this._membriListBox = new System.Windows.Forms.ListBox();
             this._membriLabel = new System.Windows.Forms.Label();
-            this.descrizioneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomePaganteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this._mainTableLayoutPanel.SuspendLayout();
             this._bottomPanel.SuspendLayout();
             this._titleTableLayoutPanel.SuspendLayout();
             this._centerTableLayoutPanel.SuspendLayout();
             this._speseTableLayoutPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spesaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._spesaBindingSource)).BeginInit();
             this._membriTableLayoutPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,10 +75,6 @@ namespace Room8.View
             this._pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this._pictureBox.TabIndex = 0;
             this._pictureBox.TabStop = false;
-            // 
-            // _errorProvider
-            // 
-            this._errorProvider.ContainerControl = this;
             // 
             // _modificaButton
             // 
@@ -211,11 +205,11 @@ namespace Room8.View
             this._dataGridView.AutoGenerateColumns = false;
             this._dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this._dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.descrizioneDataGridViewTextBoxColumn,
-            this.importoDataGridViewTextBoxColumn,
-            this.nomePaganteDataGridViewTextBoxColumn,
-            this.dataDataGridViewTextBoxColumn});
-            this._dataGridView.DataSource = this.spesaBindingSource;
+            this._descrizioneDataGridViewTextBoxColumn,
+            this._importoDataGridViewTextBoxColumn,
+            this._nomePaganteDataGridViewTextBoxColumn,
+            this._dataDataGridViewTextBoxColumn});
+            this._dataGridView.DataSource = this._spesaBindingSource;
             this._dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dataGridView.Location = new System.Drawing.Point(5, 30);
             this._dataGridView.Margin = new System.Windows.Forms.Padding(5, 0, 10, 0);
@@ -224,9 +218,44 @@ namespace Room8.View
             this._dataGridView.Size = new System.Drawing.Size(352, 243);
             this._dataGridView.TabIndex = 4;
             // 
-            // spesaBindingSource
+            // _descrizioneDataGridViewTextBoxColumn
             // 
-            this.spesaBindingSource.DataSource = typeof(Room8.Spesa);
+            this._descrizioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
+            this._descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
+            this._descrizioneDataGridViewTextBoxColumn.Name = "_descrizioneDataGridViewTextBoxColumn";
+            this._descrizioneDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // _importoDataGridViewTextBoxColumn
+            // 
+            this._importoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
+            dataGridViewCellStyle1.Format = "c2";
+            dataGridViewCellStyle1.FormatProvider = new System.Globalization.CultureInfo("it-IT");
+            this._importoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
+            this._importoDataGridViewTextBoxColumn.HeaderText = "Importo";
+            this._importoDataGridViewTextBoxColumn.Name = "_importoDataGridViewTextBoxColumn";
+            this._importoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // _nomePaganteDataGridViewTextBoxColumn
+            // 
+            this._nomePaganteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._nomePaganteDataGridViewTextBoxColumn.DataPropertyName = "NomePagante";
+            this._nomePaganteDataGridViewTextBoxColumn.HeaderText = "Pagante";
+            this._nomePaganteDataGridViewTextBoxColumn.Name = "_nomePaganteDataGridViewTextBoxColumn";
+            this._nomePaganteDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // _dataDataGridViewTextBoxColumn
+            // 
+            this._dataDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this._dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
+            this._dataDataGridViewTextBoxColumn.HeaderText = "Data";
+            this._dataDataGridViewTextBoxColumn.Name = "_dataDataGridViewTextBoxColumn";
+            this._dataDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // _spesaBindingSource
+            // 
+            this._spesaBindingSource.DataSource = typeof(Room8.Spesa);
             // 
             // _membriTableLayoutPanel
             // 
@@ -295,41 +324,6 @@ namespace Room8.View
             this._membriLabel.Text = "Membri del Gruppo:";
             this._membriLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // descrizioneDataGridViewTextBoxColumn
-            // 
-            this.descrizioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.descrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione";
-            this.descrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione";
-            this.descrizioneDataGridViewTextBoxColumn.Name = "descrizioneDataGridViewTextBoxColumn";
-            this.descrizioneDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // importoDataGridViewTextBoxColumn
-            // 
-            this.importoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
-            dataGridViewCellStyle1.Format = "c2";
-            dataGridViewCellStyle1.FormatProvider = new System.Globalization.CultureInfo("it-IT");
-            this.importoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
-            this.importoDataGridViewTextBoxColumn.HeaderText = "Importo";
-            this.importoDataGridViewTextBoxColumn.Name = "importoDataGridViewTextBoxColumn";
-            this.importoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nomePaganteDataGridViewTextBoxColumn
-            // 
-            this.nomePaganteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nomePaganteDataGridViewTextBoxColumn.DataPropertyName = "NomePagante";
-            this.nomePaganteDataGridViewTextBoxColumn.HeaderText = "Pagante";
-            this.nomePaganteDataGridViewTextBoxColumn.Name = "nomePaganteDataGridViewTextBoxColumn";
-            this.nomePaganteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dataDataGridViewTextBoxColumn
-            // 
-            this.dataDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
-            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
-            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
-            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // BilancioGruppoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -340,7 +334,6 @@ namespace Room8.View
             this.Name = "BilancioGruppoForm";
             this.Text = "Room8 - Gruppo";
             ((System.ComponentModel.ISupportInitialize)(this._pictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this._mainTableLayoutPanel.ResumeLayout(false);
             this._bottomPanel.ResumeLayout(false);
             this._bottomPanel.PerformLayout();
@@ -349,7 +342,7 @@ namespace Room8.View
             this._speseTableLayoutPanel.ResumeLayout(false);
             this._speseTableLayoutPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.spesaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._spesaBindingSource)).EndInit();
             this._membriTableLayoutPanel.ResumeLayout(false);
             this._membriTableLayoutPanel.PerformLayout();
             this.ResumeLayout(false);
@@ -359,7 +352,6 @@ namespace Room8.View
         #endregion
 
         private System.Windows.Forms.PictureBox _pictureBox;
-        private System.Windows.Forms.ErrorProvider _errorProvider;
         private System.Windows.Forms.TableLayoutPanel _mainTableLayoutPanel;
         private System.Windows.Forms.Panel _bottomPanel;
         private System.Windows.Forms.Button _modificaButton;
@@ -374,11 +366,11 @@ namespace Room8.View
         private System.Windows.Forms.Label _importoLabel;
         private System.Windows.Forms.Button _prodottiButton;
         private System.Windows.Forms.DataGridView _dataGridView;
-        private System.Windows.Forms.BindingSource spesaBindingSource;
+        private System.Windows.Forms.BindingSource _spesaBindingSource;
         private System.Windows.Forms.ListBox _membriListBox;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descrizioneDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomePaganteDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _descrizioneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _importoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _nomePaganteDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn _dataDataGridViewTextBoxColumn;
     }
 }

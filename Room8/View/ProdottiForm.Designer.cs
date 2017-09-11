@@ -81,7 +81,7 @@
             this._prodottoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._prodottoTextBox.Location = new System.Drawing.Point(68, 9);
             this._prodottoTextBox.Name = "_prodottoTextBox";
-            this._prodottoTextBox.Size = new System.Drawing.Size(231, 20);
+            this._prodottoTextBox.Size = new System.Drawing.Size(222, 20);
             this._prodottoTextBox.TabIndex = 2;
             // 
             // _rimuoviButton
@@ -132,7 +132,7 @@
             this._numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._numericUpDown.Location = new System.Drawing.Point(68, 12);
             this._numericUpDown.Name = "_numericUpDown";
-            this._numericUpDown.Size = new System.Drawing.Size(231, 20);
+            this._numericUpDown.Size = new System.Drawing.Size(222, 20);
             this._numericUpDown.TabIndex = 4;
             // 
             // _quantitaLabel
