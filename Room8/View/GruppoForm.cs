@@ -51,11 +51,6 @@ namespace Room8.View
 			get { return _aggiungiPersonaLinkLabel; }
 		}
 
-		public Label MailLabel
-		{
-			get { return _creatorGroupLabel; }
-		}
-
 		public ErrorProvider ErrorProvider
 		{
 			get { return _errorProvider; }

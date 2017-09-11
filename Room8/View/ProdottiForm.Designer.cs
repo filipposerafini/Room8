@@ -30,29 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             this._prodottiPanel = new System.Windows.Forms.Panel();
-            this._rimuoviButton = new System.Windows.Forms.Button();
             this._prodottoLabel = new System.Windows.Forms.Label();
             this._prodottoTextBox = new System.Windows.Forms.TextBox();
+            this._rimuoviButton = new System.Windows.Forms.Button();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._prodottiLabel = new System.Windows.Forms.Label();
-            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._quantitaPanel = new System.Windows.Forms.Panel();
-            this._quantitaLabel = new System.Windows.Forms.Label();
-            this._aggiungiButton = new System.Windows.Forms.Button();
-            this.prodottoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this._contorlPanel = new System.Windows.Forms.Panel();
             this._numericUpDown = new System.Windows.Forms.NumericUpDown();
+            this._quantitaLabel = new System.Windows.Forms.Label();
+            this._prodottiLabel = new System.Windows.Forms.Label();
+            this._contorlPanel = new System.Windows.Forms.Panel();
+            this._aggiungiButton = new System.Windows.Forms.Button();
             this._dataGridView = new System.Windows.Forms.DataGridView();
             this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantitaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.prodottoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this._prodottiPanel.SuspendLayout();
             this._mainTableLayoutPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this._quantitaPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource)).BeginInit();
-            this._contorlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._numericUpDown)).BeginInit();
+            this._contorlPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // _prodottiPanel
@@ -65,17 +65,6 @@
             this._prodottiPanel.Name = "_prodottiPanel";
             this._prodottiPanel.Size = new System.Drawing.Size(311, 40);
             this._prodottiPanel.TabIndex = 1;
-            // 
-            // _rimuoviButton
-            // 
-            this._rimuoviButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this._rimuoviButton.AutoSize = true;
-            this._rimuoviButton.Location = new System.Drawing.Point(9, 2);
-            this._rimuoviButton.Name = "_rimuoviButton";
-            this._rimuoviButton.Size = new System.Drawing.Size(107, 23);
-            this._rimuoviButton.TabIndex = 4;
-            this._rimuoviButton.Text = "Rimuovi selezionati";
-            this._rimuoviButton.UseVisualStyleBackColor = true;
             // 
             // _prodottoLabel
             // 
@@ -94,6 +83,17 @@
             this._prodottoTextBox.Name = "_prodottoTextBox";
             this._prodottoTextBox.Size = new System.Drawing.Size(231, 20);
             this._prodottoTextBox.TabIndex = 2;
+            // 
+            // _rimuoviButton
+            // 
+            this._rimuoviButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this._rimuoviButton.AutoSize = true;
+            this._rimuoviButton.Location = new System.Drawing.Point(9, 2);
+            this._rimuoviButton.Name = "_rimuoviButton";
+            this._rimuoviButton.Size = new System.Drawing.Size(107, 23);
+            this._rimuoviButton.TabIndex = 4;
+            this._rimuoviButton.Text = "Rimuovi selezionati";
+            this._rimuoviButton.UseVisualStyleBackColor = true;
             // 
             // _mainTableLayoutPanel
             // 
@@ -116,21 +116,6 @@
             this._mainTableLayoutPanel.Size = new System.Drawing.Size(311, 280);
             this._mainTableLayoutPanel.TabIndex = 4;
             // 
-            // _prodottiLabel
-            // 
-            this._prodottiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._prodottiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._prodottiLabel.Location = new System.Drawing.Point(3, 0);
-            this._prodottiLabel.Name = "_prodottiLabel";
-            this._prodottiLabel.Size = new System.Drawing.Size(305, 40);
-            this._prodottiLabel.TabIndex = 0;
-            this._prodottiLabel.Text = "Prodotti";
-            this._prodottiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // _errorProvider
-            // 
-            this._errorProvider.ContainerControl = this;
-            // 
             // _quantitaPanel
             // 
             this._quantitaPanel.Controls.Add(this._numericUpDown);
@@ -142,6 +127,14 @@
             this._quantitaPanel.Size = new System.Drawing.Size(311, 40);
             this._quantitaPanel.TabIndex = 5;
             // 
+            // _numericUpDown
+            // 
+            this._numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._numericUpDown.Location = new System.Drawing.Point(68, 12);
+            this._numericUpDown.Name = "_numericUpDown";
+            this._numericUpDown.Size = new System.Drawing.Size(231, 20);
+            this._numericUpDown.TabIndex = 4;
+            // 
             // _quantitaLabel
             // 
             this._quantitaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -152,19 +145,16 @@
             this._quantitaLabel.TabIndex = 3;
             this._quantitaLabel.Text = "Quantità:";
             // 
-            // _aggiungiButton
+            // _prodottiLabel
             // 
-            this._aggiungiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this._aggiungiButton.Location = new System.Drawing.Point(221, 2);
-            this._aggiungiButton.Name = "_aggiungiButton";
-            this._aggiungiButton.Size = new System.Drawing.Size(75, 23);
-            this._aggiungiButton.TabIndex = 1;
-            this._aggiungiButton.Text = "Aggiungi";
-            this._aggiungiButton.UseVisualStyleBackColor = true;
-            // 
-            // prodottoBindingSource
-            // 
-            this.prodottoBindingSource.DataSource = typeof(Room8.Prodotto);
+            this._prodottiLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._prodottiLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._prodottiLabel.Location = new System.Drawing.Point(3, 0);
+            this._prodottiLabel.Name = "_prodottiLabel";
+            this._prodottiLabel.Size = new System.Drawing.Size(305, 40);
+            this._prodottiLabel.TabIndex = 0;
+            this._prodottiLabel.Text = "Prodotti";
+            this._prodottiLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _contorlPanel
             // 
@@ -176,13 +166,15 @@
             this._contorlPanel.Size = new System.Drawing.Size(305, 34);
             this._contorlPanel.TabIndex = 6;
             // 
-            // _numericUpDown
+            // _aggiungiButton
             // 
-            this._numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this._numericUpDown.Location = new System.Drawing.Point(68, 12);
-            this._numericUpDown.Name = "_numericUpDown";
-            this._numericUpDown.Size = new System.Drawing.Size(231, 20);
-            this._numericUpDown.TabIndex = 4;
+            this._aggiungiButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this._aggiungiButton.Location = new System.Drawing.Point(221, 2);
+            this._aggiungiButton.Name = "_aggiungiButton";
+            this._aggiungiButton.Size = new System.Drawing.Size(75, 23);
+            this._aggiungiButton.TabIndex = 1;
+            this._aggiungiButton.Text = "Aggiungi";
+            this._aggiungiButton.UseVisualStyleBackColor = true;
             // 
             // _dataGridView
             // 
@@ -213,6 +205,14 @@
             this.quantitaDataGridViewTextBoxColumn.HeaderText = "Quantità";
             this.quantitaDataGridViewTextBoxColumn.Name = "quantitaDataGridViewTextBoxColumn";
             // 
+            // prodottoBindingSource
+            // 
+            this.prodottoBindingSource.DataSource = typeof(Room8.Prodotto);
+            // 
+            // _errorProvider
+            // 
+            this._errorProvider.ContainerControl = this;
+            // 
             // ProdottiForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,14 +225,14 @@
             this._prodottiPanel.ResumeLayout(false);
             this._prodottiPanel.PerformLayout();
             this._mainTableLayoutPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this._quantitaPanel.ResumeLayout(false);
             this._quantitaPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._numericUpDown)).EndInit();
             this._contorlPanel.ResumeLayout(false);
             this._contorlPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._numericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodottoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }

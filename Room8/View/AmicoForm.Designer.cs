@@ -116,7 +116,7 @@ namespace Room8.View
             // 
             this._centralTableLayoutPanel.ColumnCount = 2;
             this._centralTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this._centralTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 107F));
+            this._centralTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 115F));
             this._centralTableLayoutPanel.Controls.Add(this._bilancioTableLayoutPanel, 1, 0);
             this._centralTableLayoutPanel.Controls.Add(this._dataGridView, 0, 0);
             this._centralTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -136,14 +136,14 @@ namespace Room8.View
             this._bilancioTableLayoutPanel.Controls.Add(this._importoLabel, 0, 1);
             this._bilancioTableLayoutPanel.Controls.Add(this._modificaButton, 0, 2);
             this._bilancioTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._bilancioTableLayoutPanel.Location = new System.Drawing.Point(455, 0);
+            this._bilancioTableLayoutPanel.Location = new System.Drawing.Point(447, 0);
             this._bilancioTableLayoutPanel.Margin = new System.Windows.Forms.Padding(0);
             this._bilancioTableLayoutPanel.Name = "_bilancioTableLayoutPanel";
             this._bilancioTableLayoutPanel.RowCount = 3;
             this._bilancioTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 28.57143F));
             this._bilancioTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 71.42857F));
             this._bilancioTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._bilancioTableLayoutPanel.Size = new System.Drawing.Size(107, 207);
+            this._bilancioTableLayoutPanel.Size = new System.Drawing.Size(115, 207);
             this._bilancioTableLayoutPanel.TabIndex = 0;
             // 
             // _bilancioLabel
@@ -154,7 +154,7 @@ namespace Room8.View
             this._bilancioLabel.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this._bilancioLabel.Location = new System.Drawing.Point(3, 0);
             this._bilancioLabel.Name = "_bilancioLabel";
-            this._bilancioLabel.Size = new System.Drawing.Size(101, 50);
+            this._bilancioLabel.Size = new System.Drawing.Size(109, 50);
             this._bilancioLabel.TabIndex = 0;
             this._bilancioLabel.Text = "Bilancio:";
             this._bilancioLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -166,7 +166,7 @@ namespace Room8.View
             this._importoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._importoLabel.Location = new System.Drawing.Point(3, 50);
             this._importoLabel.Name = "_importoLabel";
-            this._importoLabel.Size = new System.Drawing.Size(101, 20);
+            this._importoLabel.Size = new System.Drawing.Size(109, 20);
             this._importoLabel.TabIndex = 1;
             this._importoLabel.Text = "Soldi";
             this._importoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -175,11 +175,11 @@ namespace Room8.View
             // 
             this._modificaButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this._modificaButton.AutoSize = true;
-            this._modificaButton.Location = new System.Drawing.Point(16, 180);
+            this._modificaButton.Location = new System.Drawing.Point(3, 180);
             this._modificaButton.Name = "_modificaButton";
-            this._modificaButton.Size = new System.Drawing.Size(75, 23);
+            this._modificaButton.Size = new System.Drawing.Size(109, 23);
             this._modificaButton.TabIndex = 15;
-            this._modificaButton.Text = "Modifica";
+            this._modificaButton.Text = "Modifica movimento";
             this._modificaButton.UseVisualStyleBackColor = true;
             // 
             // _dataGridView
@@ -198,7 +198,7 @@ namespace Room8.View
             this._dataGridView.Margin = new System.Windows.Forms.Padding(5);
             this._dataGridView.Name = "_dataGridView";
             this._dataGridView.ReadOnly = true;
-            this._dataGridView.Size = new System.Drawing.Size(445, 197);
+            this._dataGridView.Size = new System.Drawing.Size(437, 197);
             this._dataGridView.TabIndex = 1;
             // 
             // nomeSorgenteDataGridViewTextBoxColumn

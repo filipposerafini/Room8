@@ -67,9 +67,6 @@ namespace Room8
 
 		private void InitializeUI()
 		{
-			//Mails.Add(new TextBox());
-			//Controls.Add(new Button());
-			GruppoForm.MailLabel.Text = Utente.Mail;
 			if (Gruppo != null)
 			{
 				GruppoForm.NomeGruppoTextBox.Text = Gruppo.Nome;
