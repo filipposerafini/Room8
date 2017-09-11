@@ -60,5 +60,10 @@ namespace Room8.View
 		{
 			get { return _addUserTableLayoutPanel; }
 		}
+
+		public Button EliminaButton
+		{
+			get { return _eliminaButton; }
+		}
     }
 }

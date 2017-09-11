@@ -34,17 +34,6 @@ namespace Room8
 			_spese.Add(spesa);
 		}
 
-		public void ModificaSpesa(Spesa daModificare, Spesa nuova)
-		{
-			if (daModificare == null)
-				throw new ArgumentNullException("daModificare");
-			if (nuova == null)
-				throw new ArgumentNullException("nuova");
-
-			RimuoviSpesa(daModificare);
-			AggiungiSpesa(nuova);
-		}
-
 		public void RimuoviSpesa(Spesa spesa)
 		{
 			if (spesa == null)
@@ -54,6 +43,7 @@ namespace Room8
 			{
                 foreach (var movimento in spesa.Movimenti)
 					movimento.RimuoviMovimentoDiDenaro();
+				spesa.SvuotaMovimenti();
 			}
 			else
 				throw new ArgumentException("Spesa non trovata");

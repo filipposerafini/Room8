@@ -107,5 +107,15 @@ namespace Room8
 		{
 			get { return _creaGruppoLinkLabel; }
 		}
+
+		public Button ModificaSpesa
+		{
+			get { return _modificaSpesaButton; }
+		}
+
+		public Button ModificaSaldo
+		{
+			get { return _modificaSaldoButton; }
+		}
 	}
 }

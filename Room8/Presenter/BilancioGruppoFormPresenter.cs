@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 using Room8.View;
 
@@ -54,9 +55,9 @@ namespace Room8
 			BilancioGruppoForm.GruppoLabel.Text = Gruppo.Nome;
 			BilancioGruppoForm.PictureBox.Load(Gruppo.Foto);
 			BilancioGruppoForm.BilancioLabel.Text = Utente.CalcolaBilancio(Gruppo).ToString("€ 0.00");
-			BilancioGruppoForm.MembriListBox.DataSource = Gruppo.MembriGruppo;
+			BilancioGruppoForm.MembriListBox.DataSource = Gruppo.MembriGruppo.ToList();
 			BilancioGruppoForm.MembriListBox.DisplayMember = "Mail";
-			BilancioGruppoForm.DataGridView.DataSource = Gruppo.SpeseGruppo.Spese;
+			BilancioGruppoForm.DataGridView.DataSource = Gruppo.SpeseGruppo.Spese.ToList();
 			BilancioGruppoForm.ModificaButton.Enabled = BilancioGruppoForm.DataGridView.RowCount != 0;
 		}
 

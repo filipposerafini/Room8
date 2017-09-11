@@ -190,7 +190,7 @@ namespace Room8
 			foreach (var movimento in MovimentiDiDenaro.Where(
 				mov => mov.Destinazione.Equals(amico) || mov.Sorgente.Equals(amico)))
 			{
-                if (movimento is Movimento && (movimento as Movimento).Spesa.SpeseGruppo.Gruppo.Equals(gruppo))
+				if ((movimento is Movimento && (movimento as Movimento).Spesa.SpeseGruppo.Gruppo.Equals(gruppo)) || movimento is Saldo)
 				{
 					if (movimento.Sorgente.Equals(amico) && movimento.Destinazione.Equals(this))
 						result += movimento.Importo;

@@ -16,10 +16,9 @@ namespace Room8
         private readonly List<Movimento> _movimenti;
         private readonly List<Commento> _commenti;
 
-		public Spesa(Gruppo gruppo)
+		public Spesa()
 		{
 			_id = Guid.NewGuid().ToString();
-			Parti = new Parti(gruppo);
 			_movimenti = new List<Movimento>();
 			_commenti = new List<Commento>();
 		}
@@ -141,11 +140,16 @@ namespace Room8
 				{
 					if (item.Value == 0)
 						continue;
-                    Movimento movimento = new Movimento((Pagante as Utente), item.Key, item.Value, this);
+                    Movimento movimento = new Movimento(Pagante, item.Key, item.Value, this);
 					movimento.AggiungiMovimentoDiDenaro();
                     _movimenti.Add(movimento);
 				}
 			}
+		}
+
+		public void SvuotaMovimenti()
+		{
+			_movimenti.Clear();
 		}
 	}
 }

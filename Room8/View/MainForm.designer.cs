@@ -118,6 +118,8 @@ namespace Room8
             this._amiciListBox.ItemHeight = 15;
             this._amiciListBox.Location = new System.Drawing.Point(3, 3);
             this._amiciListBox.Name = "_amiciListBox";
+			this._amiciListBox.DisplayMember = "Mail";
+			this._amiciListBox.SelectionMode = System.Windows.Forms.SelectionMode.One;
             this._amiciListBox.ScrollAlwaysVisible = true;
             this._amiciListBox.Size = new System.Drawing.Size(182, 112);
             this._amiciListBox.TabIndex = 9;
@@ -143,6 +145,7 @@ namespace Room8
             this._gruppiListBox.ItemHeight = 15;
             this._gruppiListBox.Location = new System.Drawing.Point(3, 3);
             this._gruppiListBox.Name = "_gruppiListBox";
+			this._gruppiListBox.SelectionMode = System.Windows.Forms.SelectionMode.One;
             this._gruppiListBox.ScrollAlwaysVisible = true;
             this._gruppiListBox.Size = new System.Drawing.Size(182, 111);
             this._gruppiListBox.TabIndex = 6;

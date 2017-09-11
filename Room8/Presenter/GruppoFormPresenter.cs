@@ -63,12 +63,15 @@ namespace Room8
 			GruppoForm.FotoButton.Click += FotoButton_Click;
 			GruppoForm.AggiungiPersonaLinkLabel.Click += AggiungiPersonaLinkLabel_Click;
 			GruppoForm.ConfermaButton.Click += ConfermaButton_Click;
+			GruppoForm.EliminaButton.Click += EliminaButton_Click;
 		}
 
 		private void InitializeUI()
 		{
+			GruppoForm.EliminaButton.Hide();
 			if (Gruppo != null)
 			{
+				GruppoForm.EliminaButton.Show();
 				GruppoForm.NomeGruppoTextBox.Text = Gruppo.Nome;
 				GruppoForm.PictureBox.Load(Gruppo.Foto);
 				GruppoForm.FileLabel.Text = Gruppo.Foto.Substring(Gruppo.Foto.LastIndexOf('\\') + 1);
@@ -171,10 +174,34 @@ namespace Room8
 
 		private void RemoveButton_Click(object sender, EventArgs e)
 		{
+			GruppoForm.ErrorProvider.Clear();
 			int index = Controls.IndexOf((Button)sender);
-			RimuoviRiga(index);
-			Mails.RemoveAt(index);
-			Controls.RemoveAt(index);
+			if (Mails[index].Enabled == false &&
+				GestoreUtenti.Instance.GetUtente(Mails[index].Text).CalcolaBilancio(Gruppo) != 0)
+				GruppoForm.ErrorProvider.SetError(GruppoForm.AggiungiPersonaLinkLabel, "L'utente deve essere in pari con il gruppo");
+			else
+			{
+				RimuoviRiga(index);
+				Mails.RemoveAt(index);
+				Controls.RemoveAt(index);
+			}
+		}
+
+		void EliminaButton_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (Mails.Count > 0)
+					throw new ArgumentException("Devi prima rimuovere tutti i membri");
+				while (Gruppo.MembriGruppo.Count > 0)
+					Gruppo.RimuoviMembro(Gruppo.MembriGruppo[0].Mail);
+				Observer.AggiornaUI();
+				GruppoForm.DialogResult = DialogResult.OK;
+			}
+			catch (ArgumentException ae)
+			{
+				GruppoForm.ErrorProvider.SetError(GruppoForm.EliminaButton, ae.Message);
+			}
 		}
 
 		private void ConfermaButton_Click(object sender, EventArgs e)
@@ -183,10 +210,9 @@ namespace Room8
 			try
 			{
 				if (Mails.Count == 0)
-					throw new ArgumentException("Inserisci \talmeno un'altro utente", "membro");
+					throw new ArgumentException("Inserisci almeno un'altro utente", "membro");
 				Gruppo.Nome = GruppoForm.NomeGruppoTextBox.Text;
 				Gruppo.Foto = GruppoForm.PictureBox.ImageLocation;
-				GestoreUtenti gu = GestoreUtenti.Instance;
 				int i;
 				for (i = 0; i < Gruppo.MembriGruppo.Count; i++)
 				{
@@ -206,7 +232,7 @@ namespace Room8
 				{
 					if (Mails[j].Text.Equals(""))
 						throw new ArgumentException("Inserisci una mail", "membro");
-					Utente utente = gu.GetUtente(Mails[j].Text);
+					Utente utente = GestoreUtenti.Instance.GetUtente(Mails[j].Text);
 					if (utente == null)
 						throw new ArgumentException("Utente " + Mails[j].Text + " inesistente", "membro");
 					Gruppo.AggiungiMembro(utente);

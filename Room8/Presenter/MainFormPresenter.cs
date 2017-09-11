@@ -40,11 +40,11 @@ namespace Room8
 		{
 			MainForm.SpesaButton.Click += SpesaButton_Click;
 			MainForm.SaldaButton.Click += SaldaButton_Click;
+			MainForm.ModificaSpesa.Click += ModificaSpesa_Click;
+			MainForm.ModificaSaldo.Click += ModificaSaldo_Click;
 			MainForm.VisualizzaGruppo.Click += VisualizzaGruppo_Click;
 			MainForm.ModificaGruppo.Click += ModificaGruppo_Click;
 			MainForm.VisualizzaAmico.Click += VisualizzaAmico_Click;
-			//MainForm.SpeseDataGridView.Click += SpeseDataGridView_Click;
-			//MainForm.SaldiDataGridView.Click += SaldiDataGridView_Click;;
 			MainForm.AccountToolStrip.Click += AccountToolStrip_Click;
 			MainForm.CreaGruppoToolStrip.Click += CreaGruppo_Click;
 			MainForm.CreaGruppoLinkLabel.Click += CreaGruppo_Click;
@@ -57,16 +57,22 @@ namespace Room8
 			MainForm.UtenteToolStrip.Text = Utente.Nome;
 			MainForm.PictureBox.Load(Utente.Foto);
 
-			MainForm.GruppiListBox.DataSource = Utente.Gruppi;
+			MainForm.GruppiListBox.DataSource = Utente.Gruppi.ToList();
 			MainForm.GruppiListBox.DisplayMember = "Nome";
-			MainForm.SpesaButton.Enabled = Utente.Gruppi.Count != 0;
+			MainForm.SpesaButton.Enabled = MainForm.GruppiListBox.Items.Count != 0;
 			MainForm.SaldaButton.Enabled = Utente.Gruppi.Count != 0;
 			MainForm.ModificaGruppo.Enabled = Utente.Gruppi.Count != 0;
+			MainForm.VisualizzaGruppo.Enabled = Utente.Gruppi.Count != 0;
 
 			MainForm.AmiciListBox.DataSource = Utente.Amici();
 			MainForm.AmiciListBox.DisplayMember = "Mail";
-			MainForm.VisualizzaGruppo.Enabled = Utente.Gruppi.Count != 0;
-			MainForm.VisualizzaAmico.Enabled = Utente.Amici().Count != 0;
+			MainForm.VisualizzaAmico.Enabled = MainForm.AmiciListBox.Items.Count != 0;
+
+			MainForm.SpeseDataGridView.DataSource = Utente.GetSpese();
+			MainForm.ModificaSpesa.Enabled = MainForm.SpeseDataGridView.RowCount != 0;
+
+			MainForm.SaldiDataGridView.DataSource = Utente.GetSaldi();
+			MainForm.ModificaSaldo.Enabled = MainForm.SaldiDataGridView.RowCount != 0;
 
 			decimal bilancioTotale = Utente.CalcolaBilancioTotale();
 			MainForm.BilancioImportoLabel.Text = bilancioTotale.ToString("€ 0.00");
@@ -92,6 +98,22 @@ namespace Room8
 			saldoForm.ShowDialog();
 		}
 
+		void ModificaSpesa_Click(object sender, EventArgs e)
+		{
+			SpesaForm spesaForm = new SpesaForm();
+			Spesa spesa = (Spesa)MainForm.SpeseDataGridView.CurrentRow.DataBoundItem;
+			new SpesaFormPresenter(spesaForm, Utente, this, spesa);
+			spesaForm.ShowDialog();
+		}
+
+		void ModificaSaldo_Click(object sender, EventArgs e)
+		{
+			SaldoForm saldoForm = new SaldoForm();
+			Saldo saldo = (Saldo)MainForm.SpeseDataGridView.CurrentRow.DataBoundItem;
+			new SaldoFormPresenter(saldoForm, Utente, this, saldo);
+			saldoForm.ShowDialog();
+		}
+
 		private void VisualizzaGruppo_Click(object sender, EventArgs e)
 		{
 			BilancioGruppoForm bilancioGruppoForm = new BilancioGruppoForm();
@@ -112,22 +134,6 @@ namespace Room8
 			new AmicoFormPresenter(amicoForm, Utente, (Utente)MainForm.AmiciListBox.SelectedItem);
 			amicoForm.ShowDialog();
 		}
-
-		//private void SpeseDataGridView_Click(object sender, EventArgs e)
-		//{
-		//	SpesaForm spesaForm = new SpesaForm();
-		//	Spesa spesa = (Spesa)MainForm.SpeseDataGridView.CurrentRow.DataBoundItem;
-		//	new SpesaFormPresenter(spesaForm, Utente, this, spesa);
-		//	spesaForm.ShowDialog();
-		//}
-
-		//private void SaldiDataGridView_Click(object sender, EventArgs e)
-		//{
-		//	SaldoForm saldoForm = new SaldoForm();
-		//	Saldo saldo = (Saldo)MainForm.SaldiDataGridView.CurrentRow.DataBoundItem;
-		//	new SaldoFormPresenter(saldoForm, Utente, this, saldo);
-		//	saldoForm.ShowDialog();
-		//}
 
 		private void AccountToolStrip_Click(object sender, EventArgs e)
 		{
