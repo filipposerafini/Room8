@@ -54,5 +54,10 @@ namespace Room8.View
         {
             get { return _daPictureBox; }
         }
+
+		public Button EliminaButton
+		{
+			get { return _eliminaButton; }
+		}
     }
 }

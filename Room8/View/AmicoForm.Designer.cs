@@ -1,4 +1,6 @@
-﻿namespace Room8.View
+﻿using System.Globalization;
+
+namespace Room8.View
 {
     partial class AmicoForm
     {
@@ -230,7 +232,7 @@
             // 
             this.nomeSorgenteDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nomeSorgenteDataGridViewTextBoxColumn.DataPropertyName = "NomeSorgente";
-            this.nomeSorgenteDataGridViewTextBoxColumn.HeaderText = "NomeSorgente";
+            this.nomeSorgenteDataGridViewTextBoxColumn.HeaderText = "Sorgente";
             this.nomeSorgenteDataGridViewTextBoxColumn.Name = "nomeSorgenteDataGridViewTextBoxColumn";
             this.nomeSorgenteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -238,7 +240,7 @@
             // 
             this.nomeDestinazioneDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.nomeDestinazioneDataGridViewTextBoxColumn.DataPropertyName = "NomeDestinazione";
-            this.nomeDestinazioneDataGridViewTextBoxColumn.HeaderText = "NomeDestinazione";
+            this.nomeDestinazioneDataGridViewTextBoxColumn.HeaderText = "Destinazione";
             this.nomeDestinazioneDataGridViewTextBoxColumn.Name = "nomeDestinazioneDataGridViewTextBoxColumn";
             this.nomeDestinazioneDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -248,7 +250,9 @@
             this.importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
             this.importoDataGridViewTextBoxColumn.HeaderText = "Importo";
             this.importoDataGridViewTextBoxColumn.Name = "importoDataGridViewTextBoxColumn";
-            this.importoDataGridViewTextBoxColumn.ReadOnly = true;
+			this.importoDataGridViewTextBoxColumn.DefaultCellStyle.Format = "c2";
+			this.importoDataGridViewTextBoxColumn.DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("it-IT");
+			this.importoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // AmicoForm
             // 

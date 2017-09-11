@@ -1,4 +1,6 @@
-﻿namespace Room8.View
+﻿using System.Globalization;
+
+namespace Room8.View
 {
     partial class BilancioGruppoForm
     {
@@ -327,7 +329,9 @@
             this.importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
             this.importoDataGridViewTextBoxColumn.HeaderText = "Importo";
             this.importoDataGridViewTextBoxColumn.Name = "importoDataGridViewTextBoxColumn";
-            this.importoDataGridViewTextBoxColumn.ReadOnly = true;
+			this.importoDataGridViewTextBoxColumn.DefaultCellStyle.Format = "c2";
+			this.importoDataGridViewTextBoxColumn.DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("it-IT");
+			this.importoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // nomePaganteDataGridViewTextBoxColumn
             // 

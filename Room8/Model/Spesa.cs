@@ -19,7 +19,7 @@ namespace Room8
 		public Spesa(Gruppo gruppo)
 		{
 			_id = Guid.NewGuid().ToString();
-			_parti = new Parti(gruppo);
+			Parti = new Parti(gruppo);
 			_movimenti = new List<Movimento>();
 			_commenti = new List<Commento>();
 		}
@@ -139,12 +139,13 @@ namespace Room8
 					continue;
 				else
 				{
+					if (item.Value == 0)
+						continue;
                     Movimento movimento = new Movimento((Pagante as Utente), item.Key, item.Value, this);
 					movimento.AggiungiMovimentoDiDenaro();
                     _movimenti.Add(movimento);
 				}
 			}
-
 		}
 	}
 }

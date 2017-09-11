@@ -85,5 +85,10 @@ namespace Room8.View
 		{
 			get { return _commentoButton; }
 		}
+
+		public Button EliminaButton
+		{
+			get { return _eliminaButton; }
+		}
     }
 }

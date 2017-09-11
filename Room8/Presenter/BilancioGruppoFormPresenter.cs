@@ -45,17 +45,28 @@ namespace Room8
 		{
 			BilancioGruppoForm.ModificaButton.Click += ModificaButton_Click;
 			BilancioGruppoForm.ProdottiButton.Click += ProdottiButton_Click;
+			BilancioGruppoForm.DataGridView.Click += DataGridView_Click;
 			BilancioGruppoForm.MembriListBox.Click += MembriListBox_Click;
-			BilancioGruppoForm.FormClosing += BilancioGruppoForm_FormClosing;;
+			BilancioGruppoForm.FormClosing += BilancioGruppoForm_FormClosing;
 		}
 
 		public void AggiornaUI()
 		{
 			BilancioGruppoForm.GruppoLabel.Text = Gruppo.Nome;
 			BilancioGruppoForm.PictureBox.ImageLocation = Gruppo.Foto;
-			BilancioGruppoForm.BilancioLabel.Text = Utente.CalcolaBilancio(Gruppo).ToString("0.00 \u20AC");
+			BilancioGruppoForm.BilancioLabel.Text = Utente.CalcolaBilancio(Gruppo).ToString("€ 0.00");
 			BilancioGruppoForm.MembriListBox.DataSource = Gruppo.MembriGruppo;
 			BilancioGruppoForm.MembriListBox.DisplayMember = "Mail";
+			BilancioGruppoForm.DataGridView.DataSource = Gruppo.SpeseGruppo.Spese;
+			BilancioGruppoForm.DataGridView.Enabled = BilancioGruppoForm.DataGridView.RowCount != 0;
+		}
+
+		private void DataGridView_Click(object sender, EventArgs e)
+		{
+			SpesaForm spesaForm = new SpesaForm();
+			Spesa spesa = (Spesa)BilancioGruppoForm.DataGridView.CurrentRow.DataBoundItem;
+			new SpesaFormPresenter(spesaForm, Utente, this, spesa);
+			spesaForm.ShowDialog();
 		}
 
 		private void MembriListBox_Click(object sender, EventArgs e)

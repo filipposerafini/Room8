@@ -30,5 +30,10 @@ namespace Room8.View
 		{
 			get { return _pictureBox; }
 		}
+
+		public DataGridView DataGridView
+		{
+			get { return _dataGridView; }
+		}
     }
 }

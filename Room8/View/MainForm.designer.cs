@@ -1,4 +1,6 @@
-﻿namespace Room8
+﻿using System.Globalization;
+
+namespace Room8
 {
     partial class MainForm
     {
@@ -545,6 +547,8 @@
             this.importoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
             this.importoDataGridViewTextBoxColumn.HeaderText = "Importo";
+			this.importoDataGridViewTextBoxColumn.DefaultCellStyle.Format = "c2";
+			this.importoDataGridViewTextBoxColumn.DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("it-IT");
             this.importoDataGridViewTextBoxColumn.Name = "importoDataGridViewTextBoxColumn";
             this.importoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -583,6 +587,8 @@
             this.importoDataGridViewTextBoxColumn1.DataPropertyName = "Importo";
             this.importoDataGridViewTextBoxColumn1.HeaderText = "Importo";
             this.importoDataGridViewTextBoxColumn1.Name = "importoDataGridViewTextBoxColumn1";
+			this.importoDataGridViewTextBoxColumn1.DefaultCellStyle.Format = "c2";
+			this.importoDataGridViewTextBoxColumn1.DefaultCellStyle.FormatProvider = CultureInfo.GetCultureInfo("it-IT");
             this.importoDataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataDataGridViewTextBoxColumn1

@@ -47,12 +47,14 @@ namespace Room8
         private void InitializeEvents()
         {
             SaldoForm.ConfermaButton.Click += ConfermaButton_Click;
+			SaldoForm.EliminaButton.Click += EliminaButton_Click;
             SaldoForm.DaComboBox.SelectedIndexChanged += DaComboBox_SelectIndexChanged;
             SaldoForm.AComboBox.SelectedIndexChanged += AComboBox_SelectIndexChanged;
         }
 
 		private void InitalizeUI()
 		{
+			SaldoForm.EliminaButton.Hide();
 			List<Utente> utenti = Utente.Amici();
 			utenti.Add(Utente);
 			SaldoForm.DaComboBox.DataSource = utenti;
@@ -63,6 +65,7 @@ namespace Room8
 			SaldoForm.AComboBox.DisplayMember = "Nome";
 			if (Saldo != null)
 			{
+				SaldoForm.EliminaButton.Show();
 				SaldoForm.DaComboBox.SelectedItem = Saldo.Sorgente;
 				SaldoForm.AComboBox.SelectedItem = Saldo.Destinazione;
 				SaldoForm.NumericUpDown.Value = Saldo.Importo;
@@ -82,7 +85,14 @@ namespace Room8
             SaldoForm.APictureBox.ImageLocation = (SaldoForm.AComboBox.SelectedItem as Utente).Foto;
         }
 
-        private void ConfermaButton_Click(object sender, EventArgs e)
+		void EliminaButton_Click(object sender, EventArgs e)
+		{
+			Saldo.RimuoviMovimentoDiDenaro();
+			Observer.AggiornaUI();
+			SaldoForm.DialogResult = DialogResult.OK;
+		}
+
+		private void ConfermaButton_Click(object sender, EventArgs e)
         {
             SaldoForm.ErrorProvider.Clear();
             try
@@ -124,8 +134,9 @@ namespace Room8
                         control = SaldoForm.ConfermaButton;
                         break;
                 }
-                SaldoForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
-            }
+				SaldoForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
+				Saldo = null;
+			}
         }
     }
 }

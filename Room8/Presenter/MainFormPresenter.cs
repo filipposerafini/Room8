@@ -40,6 +40,8 @@ namespace Room8
 		{
 			MainForm.SpesaButton.Click += SpesaButton_Click;
 			MainForm.SaldaButton.Click += SaldaButton_Click;
+			MainForm.SpeseDataGridView.Click += SpeseDataGridView_Click;
+			MainForm.SaldiDataGridView.Click += SaldiDataGridView_Click;
 			MainForm.AmiciListBox.Click += AmiciListBox_Click;
 			MainForm.GruppiListBox.Click += GruppiListBox_Click;
 			MainForm.AccountToolStrip.Click += AccountToolStrip_Click;
@@ -58,16 +60,20 @@ namespace Room8
 			MainForm.AmiciListBox.DisplayMember = "Mail";
 
 			MainForm.SpeseDataGridView.DataSource = Utente.GetSpese();
+			MainForm.SpeseDataGridView.Enabled = MainForm.SpeseDataGridView.RowCount != 0;
 			MainForm.SaldiDataGridView.DataSource = Utente.GetSaldi();
+			MainForm.SaldiDataGridView.Enabled = MainForm.SaldiDataGridView.RowCount != 0;
 
 			decimal bilancioTotale = Utente.CalcolaBilancioTotale();
-			MainForm.BilancioImportoLabel.Text = bilancioTotale.ToString("0.00 \u20AC");
+			MainForm.BilancioImportoLabel.Text = bilancioTotale.ToString("€ 0.00");
 			if (bilancioTotale < 0)
 				MainForm.BilancioImportoLabel.ForeColor = Color.Red;
 			else
 				MainForm.BilancioImportoLabel.ForeColor = Color.Green;
-			MainForm.DeviImportoLabel.Text = Utente.TotaleDebiti().ToString("0.00 \u20AC");
-			MainForm.DovutoImportoLabel.Text = Utente.TotaleCrediti().ToString("0.00 \u20AC");
+			MainForm.DeviImportoLabel.Text = Utente.TotaleDebiti().ToString("€ 0.00");
+			MainForm.DeviImportoLabel.ForeColor = Color.Red;
+			MainForm.DovutoImportoLabel.Text = Utente.TotaleCrediti().ToString("€ 0.00");
+			MainForm.DovutoImportoLabel.ForeColor = Color.Green;
 		}
 
 		private void SpesaButton_Click(object sender, EventArgs e)
@@ -81,6 +87,22 @@ namespace Room8
 		{
 			SaldoForm saldoForm = new SaldoForm();
 			new SaldoFormPresenter(saldoForm, Utente, this, null);
+			saldoForm.ShowDialog();
+		}
+
+		void SpeseDataGridView_Click(object sender, EventArgs e)
+		{
+			SpesaForm spesaForm = new SpesaForm();
+			Spesa spesa = (Spesa)MainForm.SpeseDataGridView.CurrentRow.DataBoundItem;
+			new SpesaFormPresenter(spesaForm, Utente, this, spesa);
+			spesaForm.ShowDialog();
+		}
+
+		void SaldiDataGridView_Click(object sender, EventArgs e)
+		{
+			SaldoForm saldoForm = new SaldoForm();
+			Saldo saldo = (Saldo)MainForm.SaldiDataGridView.CurrentRow.DataBoundItem;
+			new SaldoFormPresenter(saldoForm, Utente, this, saldo);
 			saldoForm.ShowDialog();
 		}
 

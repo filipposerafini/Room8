@@ -51,14 +51,17 @@ namespace Room8
 			SpesaForm.ImportiPrecisiRadioButton.Click += RadioButton_Click;
 			SpesaForm.CommentoButton.Click += CommentoButton_Click;
 			SpesaForm.ConfermaButton.Click += ConfermaButton_Click;
+			SpesaForm.EliminaButton.Click += EliminaButton_Click;
 		}
 
 		private void InitializeUI()
 		{
+			SpesaForm.EliminaButton.Hide();
 			SpesaForm.GruppoComboBox.DataSource = Utente.Gruppi;
 			SpesaForm.GruppoComboBox.DisplayMember = "Nome";
 			if (Spesa != null)
 			{
+				SpesaForm.EliminaButton.Show();
 				SpesaForm.GruppoComboBox.SelectedItem = Spesa.SpeseGruppo.Gruppo;
 				SpesaForm.DescrizioneTextBox.Text = Spesa.Descrizione;
 				SpesaForm.NumericUpDown.Value = Spesa.Importo;
@@ -66,7 +69,7 @@ namespace Room8
 				SpesaForm.DateTimePicker.Value = Spesa.Data;
 			}
 			else
-				Spesa = new Spesa(SpesaForm.GruppoComboBox.SelectedItem as Gruppo);
+				Spesa = new Spesa((Gruppo)SpesaForm.GruppoComboBox.SelectedItem);
 		}
 
 		private void GruppoComboBox_SelectIndexChanged(object sender, EventArgs e)
@@ -81,6 +84,8 @@ namespace Room8
 			try
 			{
 				Spesa.SpeseGruppo = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).SpeseGruppo;
+				Spesa.Parti = new Parti(Spesa.SpeseGruppo.Gruppo);
+				Spesa.Pagante = (SpesaForm.PaganteComboBox.SelectedItem as Utente);
 				string nomeMetodo = SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked).Tag.ToString();
 				Spesa.MetodoDivisione = MetodoDiDivisioneFactory.GetMetodoDiDivisione(nomeMetodo);
 				Spesa.Importo = SpesaForm.NumericUpDown.Value;
@@ -109,13 +114,20 @@ namespace Room8
 			commentoForm.ShowDialog();
 		}
 
+		void EliminaButton_Click(object sender, EventArgs e)
+		{
+			Spesa.SpeseGruppo.RimuoviSpesa(Spesa);
+			Observer.AggiornaUI();
+			SpesaForm.DialogResult = DialogResult.OK;
+		}
+
 		private void ConfermaButton_Click(object sender, EventArgs e)
 		{
 			SpesaForm.ErrorProvider.Clear();
 			try
 			{
 				Spesa.SpeseGruppo = (SpesaForm.GruppoComboBox.SelectedItem as Gruppo).SpeseGruppo;
-				Spesa.Descrizione = SpesaForm.DescrizioneTextBox.Text;
+ 				Spesa.Descrizione = SpesaForm.DescrizioneTextBox.Text;
 				Spesa.Importo = SpesaForm.NumericUpDown.Value;
 				Spesa.Pagante = (Utente)SpesaForm.PaganteComboBox.SelectedItem;
 				string nomeMetodo = SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault(n => n.Checked).Tag.ToString();
@@ -123,7 +135,7 @@ namespace Room8
 				Spesa.Data = SpesaForm.DateTimePicker.Value;
 				Spesa.SpeseGruppo.Gruppo.SpeseGruppo.AggiungiSpesa(Spesa);
 				Observer.AggiornaUI();
-				SpesaForm.Close();
+				SpesaForm.DialogResult = DialogResult.OK;
 			}
 			catch (ArgumentException ae)
 			{
