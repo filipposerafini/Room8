@@ -21,7 +21,7 @@ namespace Room8.View
 			get { return _registratiLabel; }
 		}
 
-		public Label BilancioLabel
+		public Label ImportoLabel
 		{
 			get { return _importoLabel; }
 		}
@@ -49,6 +49,11 @@ namespace Room8.View
 		public Button ProdottiButton
 		{
 			get { return _prodottiButton; }
+		}
+
+		public Label BilancioLabel
+		{
+			get { return _bilancioLabel; }
 		}
     }
 }

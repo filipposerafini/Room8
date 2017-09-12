@@ -23,6 +23,11 @@ namespace Room8.View
 
 		public Label BilancioLabel
 		{
+			get { return _bilancioLabel; }
+		}
+
+		public Label ImportoLabel
+		{
 			get { return _importoLabel; }
 		}
 

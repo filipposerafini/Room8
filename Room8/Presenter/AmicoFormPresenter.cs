@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Room8.View;
 
@@ -38,33 +39,65 @@ namespace Room8
 		{
 			AmicoForm.NomeAmicoLabel.Text = Amico.Nome + " " + Amico.Cognome;
 			AmicoForm.PictureBox.Load(Amico.Foto);
-			AmicoForm.BilancioLabel.Text = Utente.CalcolaSituazione(Amico).ToString("€ 0.00");
+			decimal bilancio = Utente.CalcolaSituazione(Amico);
+			AmicoForm.ImportoLabel.Text = Math.Abs(bilancio).ToString("€ 0.00");
+			if (bilancio > 0)
+			{
+				AmicoForm.BilancioLabel.Text = "Devi dare";
+				AmicoForm.ImportoLabel.ForeColor = Color.Red;
+			}
+			else if (bilancio < 0)
+			{
+				AmicoForm.BilancioLabel.Text = "Devi ricevere";
+				AmicoForm.ImportoLabel.ForeColor = Color.Green;
+			}
+			else
+			{
+				AmicoForm.BilancioLabel.Text = "In pari";
+				AmicoForm.ImportoLabel.ForeColor = Color.Green;
+				AmicoForm.ImportoLabel.Text = ":D";
+			}
 			AmicoForm.DataGridView.DataSource = Utente.MovimentiDiDenaro.FindAll
 				(m => m.Sorgente.Equals(Amico) || m.Destinazione.Equals(Amico));
 			AmicoForm.ModificaButton.Enabled = AmicoForm.DataGridView.RowCount != 0;
 		}
 
+		private void AggiornaBilancio(decimal value)
+		{
+			if (value == 0)
+			{
+				AmicoForm.BilancioLabel.Text = "In pari";
+				AmicoForm.BilancioLabel.ForeColor = Color.Green;
+				AmicoForm.ImportoLabel.Text = "";
+			}
+			else if (value > 0)
+			{
+				AmicoForm.BilancioLabel.Text = "Devi dare:";
+				AmicoForm.ImportoLabel.Text = value.ToString();
+			}
+			else
+			{
+				AmicoForm.BilancioLabel.Text = "Devi ricevere:";
+				AmicoForm.BilancioLabel.ForeColor = Color.Green;
+				AmicoForm.ImportoLabel.Text = value.ToString("€ 0.00");
+			}
+		}
+		
 		void ModificaButton_Click(object sender, EventArgs e)
 		{
-			//MovimentoDiDenaro movimento = (MovimentoDiDenaro)AmicoForm.DataGridView.CurrentRow.DataBoundItem;
-			//if (movimento is Movimento)
-			//{
-			//	SpesaForm spesaForm = new SpesaForm();
-			//	new SpesaFormPresenter(spesaForm, Utente, this, (movimento as Movimento).Spesa);
-			//	spesaForm.ShowDialog();
-			//}
-			//else if (movimento is Saldo)
-			//{
-			//	SaldoForm saldoForm = new SaldoForm();
-			//	new SaldoFormPresenter(saldoForm, Utente, this, (movimento as Saldo));
-			//	saldoForm.ShowDialog();
-			//}
-			SaldoForm saldoForm = new SaldoForm();
-			Saldo saldo = new Saldo(Utente, Amico, 1, DateTime.Now);
-			new SaldoFormPresenter(saldoForm, Utente, this, null);
-			saldoForm.ShowDialog();
-
-			//TODO
+			MovimentoDiDenaro movimento = (MovimentoDiDenaro)AmicoForm.DataGridView.CurrentRow.DataBoundItem;
+			if (movimento is Movimento)
+			{
+				SpesaForm spesaForm = new SpesaForm();
+				new SpesaFormPresenter(spesaForm, Utente, this, (movimento as Movimento).Spesa);
+				spesaForm.ShowDialog();
+			}
+			else if (movimento is Saldo)
+			{
+				SaldoForm saldoForm = new SaldoForm();
+				new SaldoFormPresenter(saldoForm, Utente, this, (movimento as Saldo));
+				saldoForm.ShowDialog();
+			}
 		}
 	}
 }
