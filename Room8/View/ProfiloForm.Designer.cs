@@ -122,12 +122,13 @@
             // _confermaButton
             // 
             this._confermaButton.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this._confermaButton.AutoSize = true;
             this._errorProvider.SetIconAlignment(this._confermaButton, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
             this._confermaButton.Location = new System.Drawing.Point(356, 8);
             this._confermaButton.Name = "_confermaButton";
             this._confermaButton.Size = new System.Drawing.Size(75, 23);
             this._confermaButton.TabIndex = 13;
-            this._confermaButton.Text = "Conferma";
+            this._confermaButton.Text = "Salva";
             this._confermaButton.UseVisualStyleBackColor = true;
             // 
             // _centralTableLayoutPanel
@@ -366,6 +367,7 @@
             // 
             // _pictureBox
             // 
+            this._pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this._pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._pictureBox.Image = global::Room8.Properties.Resources._default;
             this._pictureBox.Location = new System.Drawing.Point(0, 0);
@@ -396,6 +398,7 @@
             this.Text = "Room8 - Profilo";
             this._tableLayoutPanel.ResumeLayout(false);
             this._confermaPanel.ResumeLayout(false);
+            this._confermaPanel.PerformLayout();
             this._centralTableLayoutPanel.ResumeLayout(false);
             this._formTableLayoutPanel.ResumeLayout(false);
             this._formTableLayoutPanel.PerformLayout();

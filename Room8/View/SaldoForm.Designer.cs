@@ -70,7 +70,7 @@
             this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.20455F));
             this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.79544F));
-            this._mainTableLayoutPanel.Size = new System.Drawing.Size(428, 273);
+            this._mainTableLayoutPanel.Size = new System.Drawing.Size(434, 273);
             this._mainTableLayoutPanel.TabIndex = 1;
             // 
             // _saldaLabel
@@ -81,7 +81,7 @@
             this._saldaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._saldaLabel.Location = new System.Drawing.Point(3, 0);
             this._saldaLabel.Name = "_saldaLabel";
-            this._saldaLabel.Size = new System.Drawing.Size(422, 34);
+            this._saldaLabel.Size = new System.Drawing.Size(428, 34);
             this._saldaLabel.TabIndex = 0;
             this._saldaLabel.Text = "Salda";
             this._saldaLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -95,7 +95,7 @@
             this._confirmPanel.Location = new System.Drawing.Point(0, 232);
             this._confirmPanel.Margin = new System.Windows.Forms.Padding(0);
             this._confirmPanel.Name = "_confirmPanel";
-            this._confirmPanel.Size = new System.Drawing.Size(428, 41);
+            this._confirmPanel.Size = new System.Drawing.Size(434, 41);
             this._confirmPanel.TabIndex = 1;
             // 
             // _eliminaButton
@@ -111,7 +111,7 @@
             // 
             this._confermaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._errorProvider.SetIconAlignment(this._confermaButton, System.Windows.Forms.ErrorIconAlignment.MiddleLeft);
-            this._confermaButton.Location = new System.Drawing.Point(260, 6);
+            this._confermaButton.Location = new System.Drawing.Point(266, 6);
             this._confermaButton.Name = "_confermaButton";
             this._confermaButton.Size = new System.Drawing.Size(75, 23);
             this._confermaButton.TabIndex = 1;
@@ -122,7 +122,7 @@
             // 
             this._annullaButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this._annullaButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this._annullaButton.Location = new System.Drawing.Point(341, 6);
+            this._annullaButton.Location = new System.Drawing.Point(347, 6);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
             this._annullaButton.TabIndex = 0;
@@ -148,51 +148,52 @@
             this._formTableLayoutPanel.Location = new System.Drawing.Point(3, 37);
             this._formTableLayoutPanel.Name = "_formTableLayoutPanel";
             this._formTableLayoutPanel.RowCount = 4;
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
-            this._formTableLayoutPanel.Size = new System.Drawing.Size(422, 192);
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this._formTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16F));
+            this._formTableLayoutPanel.Size = new System.Drawing.Size(428, 192);
             this._formTableLayoutPanel.TabIndex = 2;
             // 
             // _dateTimePicker
             // 
             this._dateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this._dateTimePicker.Location = new System.Drawing.Point(150, 163);
+            this._dateTimePicker.Location = new System.Drawing.Point(152, 166);
             this._dateTimePicker.Name = "_dateTimePicker";
-            this._dateTimePicker.Size = new System.Drawing.Size(120, 20);
+            this._dateTimePicker.Size = new System.Drawing.Size(122, 20);
             this._dateTimePicker.TabIndex = 17;
             // 
             // _numericUpDown
             // 
             this._numericUpDown.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this._numericUpDown.DecimalPlaces = 2;
-            this._numericUpDown.Location = new System.Drawing.Point(150, 128);
+            this._numericUpDown.Location = new System.Drawing.Point(152, 135);
             this._numericUpDown.Maximum = new decimal(new int[] {
             1000000,
             0,
             0,
             0});
             this._numericUpDown.Name = "_numericUpDown";
-            this._numericUpDown.Size = new System.Drawing.Size(120, 20);
+            this._numericUpDown.Size = new System.Drawing.Size(122, 20);
             this._numericUpDown.TabIndex = 15;
             // 
             // _aComboBox
             // 
             this._aComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._aComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._aComboBox.FormattingEnabled = true;
-            this._aComboBox.Location = new System.Drawing.Point(276, 93);
+            this._aComboBox.Location = new System.Drawing.Point(280, 102);
             this._aComboBox.Name = "_aComboBox";
-            this._aComboBox.Size = new System.Drawing.Size(143, 21);
+            this._aComboBox.Size = new System.Drawing.Size(145, 21);
             this._aComboBox.TabIndex = 16;
             // 
             // _pagatoLabel
             // 
             this._pagatoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._pagatoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._pagatoLabel.Location = new System.Drawing.Point(150, 87);
+            this._pagatoLabel.Location = new System.Drawing.Point(152, 96);
             this._pagatoLabel.Name = "_pagatoLabel";
-            this._pagatoLabel.Size = new System.Drawing.Size(120, 34);
+            this._pagatoLabel.Size = new System.Drawing.Size(122, 34);
             this._pagatoLabel.TabIndex = 0;
             this._pagatoLabel.Text = "rimborsa a";
             this._pagatoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -201,9 +202,9 @@
             // 
             this._dataLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._dataLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._dataLabel.Location = new System.Drawing.Point(3, 155);
+            this._dataLabel.Location = new System.Drawing.Point(3, 160);
             this._dataLabel.Name = "_dataLabel";
-            this._dataLabel.Size = new System.Drawing.Size(141, 37);
+            this._dataLabel.Size = new System.Drawing.Size(143, 32);
             this._dataLabel.TabIndex = 2;
             this._dataLabel.Text = "Data:";
             this._dataLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -212,9 +213,9 @@
             // 
             this._importoLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._importoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._importoLabel.Location = new System.Drawing.Point(3, 121);
+            this._importoLabel.Location = new System.Drawing.Point(3, 130);
             this._importoLabel.Name = "_importoLabel";
-            this._importoLabel.Size = new System.Drawing.Size(141, 34);
+            this._importoLabel.Size = new System.Drawing.Size(143, 30);
             this._importoLabel.TabIndex = 1;
             this._importoLabel.Text = "Importo:";
             this._importoLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -222,32 +223,35 @@
             // _daComboBox
             // 
             this._daComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._daComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._daComboBox.FormattingEnabled = true;
-            this._daComboBox.Location = new System.Drawing.Point(3, 93);
+            this._daComboBox.Location = new System.Drawing.Point(3, 102);
             this._daComboBox.Name = "_daComboBox";
-            this._daComboBox.Size = new System.Drawing.Size(141, 21);
+            this._daComboBox.Size = new System.Drawing.Size(143, 21);
             this._daComboBox.TabIndex = 4;
             // 
             // _daPictureBox
             // 
+            this._daPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this._daPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._daPictureBox.Image = global::Room8.Properties.Resources._default;
             this._daPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("_daPictureBox.InitialImage")));
             this._daPictureBox.Location = new System.Drawing.Point(3, 3);
             this._daPictureBox.Name = "_daPictureBox";
-            this._daPictureBox.Size = new System.Drawing.Size(141, 81);
+            this._daPictureBox.Size = new System.Drawing.Size(143, 90);
             this._daPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this._daPictureBox.TabIndex = 18;
             this._daPictureBox.TabStop = false;
             // 
             // _aPictureBox
             // 
+            this._aPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this._aPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._aPictureBox.Image = global::Room8.Properties.Resources._default;
             this._aPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("_aPictureBox.InitialImage")));
-            this._aPictureBox.Location = new System.Drawing.Point(276, 3);
+            this._aPictureBox.Location = new System.Drawing.Point(280, 3);
             this._aPictureBox.Name = "_aPictureBox";
-            this._aPictureBox.Size = new System.Drawing.Size(143, 81);
+            this._aPictureBox.Size = new System.Drawing.Size(145, 90);
             this._aPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this._aPictureBox.TabIndex = 19;
             this._aPictureBox.TabStop = false;
@@ -261,7 +265,7 @@
             this.AcceptButton = this._confermaButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(428, 273);
+            this.ClientSize = new System.Drawing.Size(434, 273);
             this.Controls.Add(this._mainTableLayoutPanel);
             this.MinimumSize = new System.Drawing.Size(444, 311);
             this.Name = "SaldoForm";

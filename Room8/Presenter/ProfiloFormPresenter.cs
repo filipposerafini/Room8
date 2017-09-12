@@ -53,12 +53,20 @@ namespace Room8
 		private void FotoButton_Click(object sender, System.EventArgs e)
 		{
 			ProfiloForm.ErrorProvider.Clear();
-			if (ProfiloForm.OpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-			{
-				string foto = ProfiloForm.OpenFileDialog.FileName;
-				ProfiloForm.FileLabel.Text = foto.Substring(foto.LastIndexOf('\\') + 1);
-				ProfiloForm.PictureBox.Load(foto);
-			}
+            try
+            {
+                if (ProfiloForm.OpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string foto = ProfiloForm.OpenFileDialog.FileName;
+                    ProfiloForm.FileLabel.Text = foto.Substring(foto.LastIndexOf('\\') + 1);
+                    ProfiloForm.PictureBox.Load(foto);
+                }
+            }
+            catch (ArgumentException)
+            {
+                ProfiloForm.ErrorProvider.SetIconAlignment(ProfiloForm.FotoButton, ErrorIconAlignment.MiddleLeft);
+                ProfiloForm.ErrorProvider.SetError(ProfiloForm.FotoButton, "Seleziona un'immagine valida");
+            }
 		}
 
 		private void ConfermaButton_Click(object sender, System.EventArgs e)
@@ -110,14 +118,16 @@ namespace Room8
 					case "telefono":
 						control = ProfiloForm.TelefonoTextBox;
 						break;
-					case "foto":
-						control = ProfiloForm.FileLabel;
-						break;
+                    case "file":
+                        control = ProfiloForm.FileLabel;
+                        break;
 					default:
+                        ProfiloForm.ErrorProvider.SetIconAlignment(ProfiloForm.ConfermaButton, ErrorIconAlignment.MiddleLeft);
 						control = ProfiloForm.ConfermaButton;
 						break;
 				}
-				ProfiloForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
+                ProfiloForm.ErrorProvider.SetError(control, string.IsNullOrEmpty(ae.ParamName) ?
+                    ae.Message : ae.Message.Substring(0, ae.Message.IndexOf('\n')));
 			}
 		}
 	}

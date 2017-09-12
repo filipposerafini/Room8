@@ -181,6 +181,7 @@
             // 
             // _pictureBox
             // 
+            this._pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this._pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._pictureBox.Image = global::Room8.Properties.Resources.defaultgroup;
             this._pictureBox.Location = new System.Drawing.Point(0, 40);

@@ -65,8 +65,11 @@ namespace Room8
 			SpesaForm.EliminaButton.Hide();
 			SpesaForm.GruppoComboBox.DataSource = Utente.Gruppi;
 			SpesaForm.GruppoComboBox.DisplayMember = "Nome";
+			if (Observer is MainFormPresenter)
+            	SpesaForm.GruppoComboBox.SelectedItem = (Observer as MainFormPresenter).MainForm.GruppiListBox.SelectedItem;
 			if (DaModificare != null)
 			{
+                SpesaForm.ConfermaButton.Text = "Salva";
 				SpesaForm.EliminaButton.Show();
 				SpesaForm.GruppoComboBox.SelectedItem = DaModificare.SpeseGruppo.Gruppo;
 				SpesaForm.DescrizioneTextBox.Text = DaModificare.Descrizione;
@@ -123,7 +126,7 @@ namespace Room8
 
 		void EliminaButton_Click(object sender, EventArgs e)
 		{
-			Spesa.SpeseGruppo.RimuoviSpesa(Spesa);
+			DaModificare.SpeseGruppo.RimuoviSpesa(DaModificare);
 			Observer.AggiornaUI();
 			SpesaForm.DialogResult = DialogResult.OK;
 		}
@@ -140,7 +143,7 @@ namespace Room8
 				Spesa.MetodoDivisione = MetodoDiDivisioneFactory.GetMetodoDiDivisione(nomeMetodo);
 				Spesa.Data = SpesaForm.DateTimePicker.Value;
 				if (DaModificare != null)
-					Spesa.SpeseGruppo.RimuoviSpesa(DaModificare);
+					DaModificare.SpeseGruppo.RimuoviSpesa(DaModificare);
 				Spesa.SpeseGruppo.AggiungiSpesa(Spesa);
 				Observer.AggiornaUI();
 				SpesaForm.DialogResult = DialogResult.OK;
@@ -167,7 +170,7 @@ namespace Room8
 						SpesaForm.ErrorProvider.SetIconAlignment(control, ErrorIconAlignment.MiddleLeft);
 						break;
 				}
-				SpesaForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
+				SpesaForm.ErrorProvider.SetError(control, string.IsNullOrEmpty(ae.ParamName) ? ae.Message : ae.Message.Substring(0, ae.Message.IndexOf('\n')));
 			}
 		}
 	}

@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Drawing;
+using System.IO;
 
 namespace Room8
 {
@@ -61,13 +63,16 @@ namespace Room8
 
 			set
 			{
-				if (string.IsNullOrEmpty(value))
-					_foto = FOTODEFAULT;
-				else if (!(value.EndsWith(".jpg") || value.EndsWith(".png")))
-					throw new ArgumentException("Inserisci una foto valida", "foto");
-				else
-					_foto = value;
-			}
+                if (string.IsNullOrEmpty(value))
+                    _foto = FOTODEFAULT;
+                else
+                {
+                    try { Image.FromFile(value); }
+                    catch (OutOfMemoryException) { throw new ArgumentException("Inserisci un'immagine valida", "foto"); }
+					catch (FileNotFoundException) { value = FOTODEFAULT; }
+                    _foto = value;
+                }
+            }
 		}
 
 		public void AggiungiMembro(Utente utente)
@@ -110,5 +115,5 @@ namespace Room8
 			if (!_daComprare.Remove(prodotto))
 				throw new ArgumentException("Prodotto non presente");
 		}
-	}
+    }
 }

@@ -53,16 +53,16 @@ namespace Room8
 			get { return Destinazione.Nome; }
 		}
 
-		public decimal Importo
-		{
-			get { return _importo; }
-            set 
+        public decimal Importo
+        {
+            get { return _importo; }
+            set
             {
                 if (value <= 0)
                     throw new ArgumentException("L'importo deve essere maggiore di 0", "importo");
                 _importo = value;
             }
-		}
+        }
 
 		public abstract void AggiungiMovimentoDiDenaro();
 

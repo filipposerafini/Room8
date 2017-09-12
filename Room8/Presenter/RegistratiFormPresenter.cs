@@ -2,6 +2,7 @@
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Room8.View;
+using System.Drawing;
 
 namespace Room8
 {
@@ -32,7 +33,10 @@ namespace Room8
 		public string Foto
 		{
 			get { return _foto; }
-			set { _foto = value; }
+			set
+            {
+                _foto = value; 
+            }
 		}
 
 		private void InitializeEvents()
@@ -46,11 +50,19 @@ namespace Room8
 		private void FotoButton_Click(object sender, EventArgs e)
 		{
 			RegistratiForm.ErrorProvider.Clear();
-			if (RegistratiForm.OpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-			{
-				Foto = RegistratiForm.OpenFileDialog.FileName;
-				RegistratiForm.FileLabel.Text = Foto.Substring(Foto.LastIndexOf('\\') + 1);
-			}
+            try
+            {
+                if (RegistratiForm.OpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    Foto = RegistratiForm.OpenFileDialog.FileName;
+                    Image.FromFile(Foto);
+                    RegistratiForm.FileLabel.Text = Foto.Substring(Foto.LastIndexOf('\\') + 1);
+                }
+            }
+            catch (OutOfMemoryException)
+            {
+                RegistratiForm.ErrorProvider.SetError(RegistratiForm.FileLabel, "Seleziona un'immagine valida");
+            }
 		}
 
 		private void ConfermaButton_Click(object sender, EventArgs e)
@@ -92,14 +104,16 @@ namespace Room8
 					case "telefono":
 						control = RegistratiForm.TelefonoTextBox;
 						break;
-					case "foto":
-						control = RegistratiForm.FileLabel;
-						break;
+                    case "foto":
+                        control = RegistratiForm.FileLabel;
+                        break;
 					default:
+                        RegistratiForm.ErrorProvider.SetIconAlignment(RegistratiForm.ConfermaButton, ErrorIconAlignment.MiddleLeft);
 						control = RegistratiForm.ConfermaButton;
 						break;
 				}
-				RegistratiForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
+                RegistratiForm.ErrorProvider.SetError(control, string.IsNullOrEmpty(ae.ParamName) ?
+                    ae.Message : ae.Message.Substring(0, ae.Message.IndexOf('\n')));
 			}
 		}
 

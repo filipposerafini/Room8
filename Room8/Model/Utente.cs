@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Xml;
+using System.Drawing;
+using System.IO;
 
 namespace Room8
 {
@@ -99,12 +101,15 @@ namespace Room8
 
 			set
 			{
-				if (string.IsNullOrEmpty(value))
-					_foto = FOTODEFAULT;
-				else if (!(value.EndsWith(".jpg") || value.EndsWith(".png")))
-					throw new ArgumentException("Inserisci una foto valida", "foto");
-				else
-					_foto = value;
+                if (string.IsNullOrEmpty(value))
+                    _foto = FOTODEFAULT;
+                else
+                {
+                    try { Image.FromFile(value); }
+                    catch (OutOfMemoryException) { throw new ArgumentException("Inserisci un'immagine valida", "foto"); }
+                    catch (FileNotFoundException) { value = FOTODEFAULT; }
+                    _foto = value;
+                }
 			}
 		}
 
@@ -152,9 +157,9 @@ namespace Room8
             return res;
         }
 
-		public List<MovimentoDiDenaro> GetSaldi()
+		public List<Saldo> GetSaldi()
 		{
-			return MovimentiDiDenaro.Where(m => m is Saldo).ToList();
+			return MovimentiDiDenaro.Where(m => m is Saldo).Cast<Saldo>().ToList();
 		}
 
         public decimal CalcolaSituazione(Utente amico)
@@ -232,5 +237,5 @@ namespace Room8
         {
             return MovimentiDiDenaro.Where(m => m.Sorgente.Equals(this)).Sum(mo => mo.Importo);
         }
-	}
+    }
 }

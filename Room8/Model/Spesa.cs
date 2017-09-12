@@ -39,6 +39,11 @@ namespace Room8
 			}
 		}
 
+		public string NomeGruppo
+		{
+			get { return SpeseGruppo.Gruppo.Nome; }
+		}
+
 		public string Descrizione
 		{
 			get { return _descrizione; }

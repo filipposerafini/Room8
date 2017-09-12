@@ -46,19 +46,25 @@ namespace Room8
 
 		void ModificaButton_Click(object sender, EventArgs e)
 		{
-			MovimentoDiDenaro movimento = (MovimentoDiDenaro)AmicoForm.DataGridView.CurrentRow.DataBoundItem;
-			if (movimento is Movimento)
-			{
-				SpesaForm spesaForm = new SpesaForm();
-				new SpesaFormPresenter(spesaForm, Utente, this, (movimento as Movimento).Spesa);
-				spesaForm.ShowDialog();
-			}
-			else if (movimento is Saldo)
-			{
-				SaldoForm saldoForm = new SaldoForm();
-				new SaldoFormPresenter(saldoForm, Utente, this, (movimento as Saldo));
-				saldoForm.ShowDialog();
-			}
+			//MovimentoDiDenaro movimento = (MovimentoDiDenaro)AmicoForm.DataGridView.CurrentRow.DataBoundItem;
+			//if (movimento is Movimento)
+			//{
+			//	SpesaForm spesaForm = new SpesaForm();
+			//	new SpesaFormPresenter(spesaForm, Utente, this, (movimento as Movimento).Spesa);
+			//	spesaForm.ShowDialog();
+			//}
+			//else if (movimento is Saldo)
+			//{
+			//	SaldoForm saldoForm = new SaldoForm();
+			//	new SaldoFormPresenter(saldoForm, Utente, this, (movimento as Saldo));
+			//	saldoForm.ShowDialog();
+			//}
+			SaldoForm saldoForm = new SaldoForm();
+			Saldo saldo = new Saldo(Utente, Amico, 1, DateTime.Now);
+			new SaldoFormPresenter(saldoForm, Utente, this, null);
+			saldoForm.ShowDialog();
+
+			//TODO
 		}
 	}
 }

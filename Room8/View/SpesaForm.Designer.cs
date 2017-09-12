@@ -222,6 +222,7 @@
             // _gruppoComboBox
             // 
             this._gruppoComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._gruppoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._gruppoComboBox.FormattingEnabled = true;
             this._gruppoComboBox.Location = new System.Drawing.Point(153, 14);
             this._gruppoComboBox.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
@@ -304,6 +305,7 @@
             // _paganteComboBox
             // 
             this._paganteComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this._paganteComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this._paganteComboBox.FormattingEnabled = true;
             this._paganteComboBox.Location = new System.Drawing.Point(153, 161);
             this._paganteComboBox.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);

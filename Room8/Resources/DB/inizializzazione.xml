@@ -9,7 +9,7 @@
 			<Email>filippo@mail.com</Email>
 			<Password>qwerqwerqwer</Password>
 			<Telefono>333333333</Telefono>
-			<Foto>../../Resources/Images/fillo.jpg</Foto>
+			<Foto>..\..\Resources\Images\fillo.jpg</Foto>
 		</Utente>
 		<Utente>
 			<Nome>Nicola</Nome>
@@ -17,7 +17,7 @@
 			<Email>nicola@mail.com</Email>
 			<Password>asdfasdfasdf</Password>
 			<Telefono>333333333</Telefono>
-			<Foto>../../Resources/Images/nico.jpg</Foto>
+			<Foto>..\..\Resources\Images\nico.jpg</Foto>
 		</Utente>
 		<Utente>
 			<Nome>Gloria</Nome>
@@ -25,7 +25,7 @@
 			<Email>gloria@mail.com</Email>
 			<Password>12345678</Password>
 			<Telefono>333333333</Telefono>
-			<Foto>../../Resources/Images/gloria.jpg</Foto>
+			<Foto>..\..\Resources\Images\gloria.jpg</Foto>
 		</Utente>
 	</Utenti>
 	</Gruppo>
@@ -39,7 +39,7 @@
 			<Email>filippo@mail.com</Email>
 			<Password>qwerqwerqwer</Password>
 			<Telefono>333333333</Telefono>
-			<Foto>../../Resources/Images/fillo.jpg</Foto>
+			<Foto>..\..\Resources\Images\fillo.jpg</Foto>
 		</Utente>
 		<Utente>
 			<Nome>utente1</Nome>
@@ -47,7 +47,7 @@
 			<Email>utente1@mail.com</Email>
 			<Password>password1</Password>
 			<Telefono>333333333</Telefono>
-			<Foto>../../Resources/Images/frank.jpg</Foto>
+			<Foto>..\..\Resources\Images\frank.jpg</Foto>
 		</Utente>
 	</Utenti>
 	</Gruppo>
@@ -61,7 +61,7 @@
 			<Email>nicola@mail.com</Email>
 			<Password>asdfasdfasdf</Password>
 			<Telefono>333333333</Telefono>
-			<Foto>../../Resources/Images/nico.jpg</Foto>
+			<Foto>..\..\Resources\Images\nico.jpg</Foto>
 		</Utente>
 		<Utente>
 			<Nome>Gloria</Nome>
@@ -69,7 +69,7 @@
 			<Email>gloria@mail.com</Email>
 			<Password>12345678</Password>
 			<Telefono>333333333</Telefono>
-			<Foto>../../Resources/Images/gloria.jpg</Foto>
+			<Foto>..\..\Resources\Images\gloria.jpg</Foto>
 		</Utente>
 		<Utente>
 			<Nome>utente</Nome>

@@ -149,12 +149,20 @@ namespace Room8
         private void FotoButton_Click(object sender, EventArgs e)
 		{
 			GruppoForm.ErrorProvider.Clear();
-			if (GruppoForm.OpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
-			{
-				string foto = GruppoForm.OpenFileDialog.FileName;
-				GruppoForm.FileLabel.Text = foto.Substring(foto.LastIndexOf('\\') + 1);
-				GruppoForm.PictureBox.Load(foto);
-			}
+            try
+            {
+                if (GruppoForm.OpenFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    string foto = GruppoForm.OpenFileDialog.FileName;
+                    GruppoForm.FileLabel.Text = foto.Substring(foto.LastIndexOf('\\') + 1);
+                    GruppoForm.PictureBox.Load(foto);
+                }
+            }
+            catch (ArgumentException)
+            {
+                GruppoForm.ErrorProvider.SetIconAlignment(GruppoForm.FotoButton, ErrorIconAlignment.MiddleLeft);
+                GruppoForm.ErrorProvider.SetError(GruppoForm.FotoButton, "Seleziona un'immagine valida");
+            }
 		}
 
 		private void AggiungiPersonaLinkLabel_Click(object sender, EventArgs e)
@@ -168,7 +176,8 @@ namespace Room8
 			}
 			catch (ArgumentException ae)
 			{
-				GruppoForm.ErrorProvider.SetError(GruppoForm.NomeGruppoTextBox, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
+				GruppoForm.ErrorProvider.SetError(GruppoForm.NomeGruppoTextBox, string.IsNullOrEmpty(ae.ParamName) ?
+                    ae.Message : ae.Message.Substring(0, ae.Message.IndexOf('\n')));
 			}
 		}
 
@@ -249,17 +258,19 @@ namespace Room8
 					case "nome" :
 						control = GruppoForm.NomeGruppoTextBox;
 						break;
-					case "foto":
-						control = GruppoForm.FileLabel;
-						break;
 					case "membro" :
 						control = GruppoForm.AggiungiPersonaLinkLabel;
 						break;
+                    case "file":
+                        control = GruppoForm.FileLabel;
+                        break;
 					default:
+                        GruppoForm.ErrorProvider.SetIconAlignment(GruppoForm.ConfermaButton, ErrorIconAlignment.MiddleLeft);
 						control = GruppoForm.ConfermaButton;
 						break;
 				}
-				GruppoForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
+                GruppoForm.ErrorProvider.SetError(control, string.IsNullOrEmpty(ae.ParamName) ? 
+                    ae.Message : ae.Message.Substring(0, ae.Message.IndexOf('\n')));
 			}
 		}
 	}
