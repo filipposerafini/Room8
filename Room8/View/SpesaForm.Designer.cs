@@ -119,7 +119,7 @@
             this._commentoButton.Location = new System.Drawing.Point(12, 15);
             this._commentoButton.Name = "_commentoButton";
             this._commentoButton.Size = new System.Drawing.Size(75, 23);
-            this._commentoButton.TabIndex = 4;
+            this._commentoButton.TabIndex = 6;
             this._commentoButton.Text = "Commenta";
             this._commentoButton.UseVisualStyleBackColor = true;
             // 
@@ -130,7 +130,7 @@
             this._confermaButton.Location = new System.Drawing.Point(229, 15);
             this._confermaButton.Name = "_confermaButton";
             this._confermaButton.Size = new System.Drawing.Size(75, 23);
-            this._confermaButton.TabIndex = 1;
+            this._confermaButton.TabIndex = 7;
             this._confermaButton.Text = "Conferma";
             this._confermaButton.UseVisualStyleBackColor = true;
             // 
@@ -141,7 +141,7 @@
             this._annullaButton.Location = new System.Drawing.Point(310, 15);
             this._annullaButton.Name = "_annullaButton";
             this._annullaButton.Size = new System.Drawing.Size(75, 23);
-            this._annullaButton.TabIndex = 0;
+            this._annullaButton.TabIndex = 8;
             this._annullaButton.Text = "Annulla";
             this._annullaButton.UseVisualStyleBackColor = true;
             // 
@@ -228,7 +228,7 @@
             this._gruppoComboBox.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this._gruppoComboBox.Name = "_gruppoComboBox";
             this._gruppoComboBox.Size = new System.Drawing.Size(219, 21);
-            this._gruppoComboBox.TabIndex = 4;
+            this._gruppoComboBox.TabIndex = 0;
             // 
             // _descrizioneTextBox
             // 
@@ -237,7 +237,7 @@
             this._descrizioneTextBox.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this._descrizioneTextBox.Name = "_descrizioneTextBox";
             this._descrizioneTextBox.Size = new System.Drawing.Size(219, 20);
-            this._descrizioneTextBox.TabIndex = 6;
+            this._descrizioneTextBox.TabIndex = 1;
             // 
             // _radioPanel
             // 
@@ -250,7 +250,7 @@
             this._radioPanel.Margin = new System.Windows.Forms.Padding(0);
             this._radioPanel.Name = "_radioPanel";
             this._radioPanel.Size = new System.Drawing.Size(242, 49);
-            this._radioPanel.TabIndex = 8;
+            this._radioPanel.TabIndex = 4 ;
             // 
             // _importiPrecisiRadioButton
             // 
@@ -311,7 +311,7 @@
             this._paganteComboBox.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this._paganteComboBox.Name = "_paganteComboBox";
             this._paganteComboBox.Size = new System.Drawing.Size(219, 21);
-            this._paganteComboBox.TabIndex = 9;
+            this._paganteComboBox.TabIndex = 3;
             // 
             // _divisioneLabel
             // 
@@ -342,7 +342,7 @@
             this._dateTimePicker.Margin = new System.Windows.Forms.Padding(3, 3, 20, 3);
             this._dateTimePicker.Name = "_dateTimePicker";
             this._dateTimePicker.Size = new System.Drawing.Size(219, 20);
-            this._dateTimePicker.TabIndex = 13;
+            this._dateTimePicker.TabIndex = 5;
             // 
             // _numericUpDown
             // 
@@ -357,7 +357,7 @@
             0});
             this._numericUpDown.Name = "_numericUpDown";
             this._numericUpDown.Size = new System.Drawing.Size(219, 20);
-            this._numericUpDown.TabIndex = 15;
+            this._numericUpDown.TabIndex = 2;
             this._numericUpDown.ThousandsSeparator = true;
             // 
             // _errorProvider

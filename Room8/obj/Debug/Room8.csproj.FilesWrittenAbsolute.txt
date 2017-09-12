@@ -42,3 +42,4 @@
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.View.GruppoForm.resources
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.View.BilancioGruppoForm.resources
 /home/filippo/Documents/University/Room8/Room8/obj/Debug/Room8.View.ProdottiForm.resources
+/home/gloria/Documenti/IngegneriaSoftware/Room8/Room8/obj/Debug/Room8.View.ProdottiForm.resources

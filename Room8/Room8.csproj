@@ -214,9 +214,6 @@
     <Compile Include="Presenter\CommentoFormPresenter.cs" />
     <Compile Include="Presenter\GruppoFormPresenter.cs" />
     <Compile Include="Presenter\ProdottiFormPresenter.cs" />
-    <None Include="Properties\DataSources\Saldo.datasource" />
-    <None Include="Properties\DataSources\Spesa.datasource" />
-    <None Include="Properties\DataSources\MovimentoDiDenaro.datasource" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
