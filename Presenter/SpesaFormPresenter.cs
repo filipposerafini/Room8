@@ -65,6 +65,7 @@ namespace Room8
 			SpesaForm.EliminaButton.Hide();
 			SpesaForm.GruppoComboBox.DataSource = Utente.Gruppi;
 			SpesaForm.GruppoComboBox.DisplayMember = "Nome";
+            SpesaForm.GruppoComboBox.SelectedItem = (Observer as MainFormPresenter).MainForm.GruppiListBox.SelectedItem;
 			if (DaModificare != null)
 			{
                 SpesaForm.ConfermaButton.Text = "Salva";

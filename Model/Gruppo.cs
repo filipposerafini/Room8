@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
+using System.IO;
 
 namespace Room8
 {
@@ -68,6 +69,7 @@ namespace Room8
                 {
                     try { Image.FromFile(value); }
                     catch (OutOfMemoryException) { throw new ArgumentException("Inserisci un'immagine valida", "foto"); }
+                    catch (FileNotFoundException) { _foto = value; }
                     _foto = value;
                 }
             }
@@ -113,5 +115,5 @@ namespace Room8
 			if (!_daComprare.Remove(prodotto))
 				throw new ArgumentException("Prodotto non presente");
 		}
-	}
+    }
 }

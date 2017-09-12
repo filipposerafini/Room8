@@ -59,6 +59,7 @@ namespace Room8
 			utenti.Add(Utente);
 			SaldoForm.DaComboBox.DataSource = utenti;
 			SaldoForm.DaComboBox.DisplayMember = "Nome";
+            SaldoForm.DaComboBox.SelectedItem = Utente;
 			utenti = Utente.Amici();
 			utenti.Add(Utente);
 			SaldoForm.AComboBox.DataSource = utenti;
@@ -79,11 +80,19 @@ namespace Room8
         private void DaComboBox_SelectIndexChanged(object sender, EventArgs e)
         {
 			SaldoForm.DaPictureBox.Load((SaldoForm.DaComboBox.SelectedItem as Utente).Foto);
+            if (SaldoForm.AComboBox.Items.Count != 0 && (SaldoForm.DaComboBox.SelectedItem as Utente).CalcolaSituazione((Utente)SaldoForm.AComboBox.SelectedItem) > 0)
+                SaldoForm.NumericUpDown.Value = (SaldoForm.DaComboBox.SelectedItem as Utente).CalcolaSituazione((Utente)SaldoForm.AComboBox.SelectedItem);
+            else
+                SaldoForm.NumericUpDown.Value = 0;
         }
 
         private void AComboBox_SelectIndexChanged(object sender, EventArgs e)
         {
 			SaldoForm.APictureBox.Load((SaldoForm.AComboBox.SelectedItem as Utente).Foto);
+            if ((SaldoForm.DaComboBox.SelectedItem as Utente).CalcolaSituazione((Utente)SaldoForm.AComboBox.SelectedItem) > 0)
+                SaldoForm.NumericUpDown.Value = (SaldoForm.DaComboBox.SelectedItem as Utente).CalcolaSituazione((Utente)SaldoForm.AComboBox.SelectedItem);
+            else
+                SaldoForm.NumericUpDown.Value = 0;
         }
 
 		void EliminaButton_Click(object sender, EventArgs e)

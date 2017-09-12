@@ -232,6 +232,7 @@
             // 
             // _daPictureBox
             // 
+            this._daPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this._daPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._daPictureBox.Image = global::Room8.Properties.Resources._default;
             this._daPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("_daPictureBox.InitialImage")));
@@ -244,6 +245,7 @@
             // 
             // _aPictureBox
             // 
+            this._aPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this._aPictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._aPictureBox.Image = global::Room8.Properties.Resources._default;
             this._aPictureBox.InitialImage = ((System.Drawing.Image)(resources.GetObject("_aPictureBox.InitialImage")));

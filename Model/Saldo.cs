@@ -3,7 +3,7 @@ namespace Room8
 {
 	public class Saldo : MovimentoDiDenaro
 	{
-		DateTime _data;
+		private DateTime _data;
 
 		public Saldo(Utente sorgente, Utente destinazione, decimal importo, DateTime data)
 			: base(sorgente, destinazione, importo)

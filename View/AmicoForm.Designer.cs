@@ -31,6 +31,7 @@ namespace Room8.View
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._nomeTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._nomeAmicoLabel = new System.Windows.Forms.Label();
@@ -102,6 +103,7 @@ namespace Room8.View
             // 
             // _pictureBox
             // 
+            this._pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this._pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._pictureBox.Image = global::Room8.Properties.Resources._default;
             this._pictureBox.Location = new System.Drawing.Point(1, 1);
@@ -221,10 +223,11 @@ namespace Room8.View
             // 
             this.importoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.importoDataGridViewTextBoxColumn.DataPropertyName = "Importo";
+            dataGridViewCellStyle1.Format = "c2";
+            dataGridViewCellStyle1.FormatProvider = new System.Globalization.CultureInfo("it-IT");
+            this.importoDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle1;
             this.importoDataGridViewTextBoxColumn.HeaderText = "Importo";
-            this.importoDataGridViewTextBoxColumn.DefaultCellStyle.Format = "c2";
-			this.importoDataGridViewTextBoxColumn.DefaultCellStyle.FormatProvider = new System.Globalization.CultureInfo("it-IT");
-			this.importoDataGridViewTextBoxColumn.Name = "importoDataGridViewTextBoxColumn";
+            this.importoDataGridViewTextBoxColumn.Name = "importoDataGridViewTextBoxColumn";
             this.importoDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // movimentoDiDenaroBindingSource
