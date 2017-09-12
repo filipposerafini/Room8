@@ -208,7 +208,7 @@ namespace Room8
             this._riepilogoBilancioLabel.Name = "_riepilogoBilancioLabel";
             this._riepilogoBilancioLabel.Size = new System.Drawing.Size(142, 27);
             this._riepilogoBilancioLabel.TabIndex = 0;
-            this._riepilogoBilancioLabel.Text = "Bilancio totale";
+            this._riepilogoBilancioLabel.Text = "Bilancio";
             this._riepilogoBilancioLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // _bilancioImportoLabel
@@ -247,7 +247,7 @@ namespace Room8
             this._riepilogoDeviLabel.Name = "_riepilogoDeviLabel";
             this._riepilogoDeviLabel.Size = new System.Drawing.Size(142, 27);
             this._riepilogoDeviLabel.TabIndex = 1;
-            this._riepilogoDeviLabel.Text = "Devi dare";
+            this._riepilogoDeviLabel.Text = "Totale debiti";
             this._riepilogoDeviLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // _deviImportoLabel
@@ -287,7 +287,7 @@ namespace Room8
             this._riepilogoDovutoLabel.Name = "_riepilogoDovutoLabel";
             this._riepilogoDovutoLabel.Size = new System.Drawing.Size(142, 27);
             this._riepilogoDovutoLabel.TabIndex = 2;
-            this._riepilogoDovutoLabel.Text = "Ti è dovuto";
+            this._riepilogoDovutoLabel.Text = "Totale crediti";
             this._riepilogoDovutoLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // _dovutoImportoLabel
