@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Gruppi>
+	<Gruppo>
+	<Nome>Via Della Secchia 2</Nome>
+	<Utenti>
+		<Utente>
+			<Nome>Filippo</Nome>
+			<Cognome>Serafini</Cognome>
+			<Email>filippo@mail.com</Email>
+			<Password>qwerqwerqwer</Password>
+			<Telefono>333333333</Telefono>
+			<Foto>..\..\Resources\Images\fillo.jpg</Foto>
+		</Utente>
+		<Utente>
+			<Nome>Nicola</Nome>
+			<Cognome>Sebastianelli</Cognome>
+			<Email>nicola@mail.com</Email>
+			<Password>asdfasdfasdf</Password>
+			<Telefono>333333333</Telefono>
+			<Foto>..\..\Resources\Images\nico.jpg</Foto>
+		</Utente>
+		<Utente>
+			<Nome>Gloria</Nome>
+			<Cognome>Sammaritani</Cognome>
+			<Email>gloria@mail.com</Email>
+			<Password>12345678</Password>
+			<Telefono>333333333</Telefono>
+			<Foto>..\..\Resources\Images\gloria.jpg</Foto>
+		</Utente>
+	</Utenti>
+	</Gruppo>
+
+	<Gruppo>
+	<Nome>Viaggio a Parigi</Nome>
+	<Utenti>
+		<Utente>
+			<Nome>Filippo</Nome>
+			<Cognome>Serafini</Cognome>
+			<Email>filippo@mail.com</Email>
+			<Password>qwerqwerqwer</Password>
+			<Telefono>333333333</Telefono>
+			<Foto>..\..\Resources\Images\fillo.jpg</Foto>
+		</Utente>
+		<Utente>
+			<Nome>utente1</Nome>
+			<Cognome>generico</Cognome>
+			<Email>utente1@mail.com</Email>
+			<Password>password1</Password>
+			<Telefono>333333333</Telefono>
+			<Foto>..\..\Resources\Images\frank.jpg</Foto>
+		</Utente>
+	</Utenti>
+	</Gruppo>
+
+	<Gruppo>
+	<Nome>Via Saffi 32</Nome>
+	<Utenti>
+		<Utente>
+			<Nome>Nicola</Nome>
+			<Cognome>Sebastianelli</Cognome>
+			<Email>nicola@mail.com</Email>
+			<Password>asdfasdfasdf</Password>
+			<Telefono>333333333</Telefono>
+			<Foto>..\..\Resources\Images\nico.jpg</Foto>
+		</Utente>
+		<Utente>
+			<Nome>Gloria</Nome>
+			<Cognome>Sammaritani</Cognome>
+			<Email>gloria@mail.com</Email>
+			<Password>12345678</Password>
+			<Telefono>333333333</Telefono>
+			<Foto>..\..\Resources\Images\gloria.jpg</Foto>
+		</Utente>
+		<Utente>
+			<Nome>utente</Nome>
+			<Cognome>generico2</Cognome>
+			<Email>utente2@mail.com</Email>
+			<Password>password2</Password>
+			<Telefono>333333333</Telefono>
+			<Foto></Foto>
+		</Utente>
+		<Utente>
+			<Nome>utente3</Nome>
+			<Cognome>generico3</Cognome>
+			<Email>utente3@mail.com</Email>
+			<Password>password3</Password>
+			<Telefono>333333333</Telefono>
+			<Foto></Foto>
+		</Utente>
+	</Utenti>
+	</Gruppo>
+</Gruppi>

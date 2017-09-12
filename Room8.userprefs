@@ -1,19 +1,8 @@
-﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Room8/Presenter/MainFormPresenter.cs">
-    <Files>
-      <File FileName="Room8/Presenter/MainFormPresenter.cs" Line="58" Column="24" />
-      <File FileName="Room8/Presenter/BilancioGruppoFormPresenter.cs" Line="80" Column="4" />
-      <File FileName="Room8/View/MainForm.cs" Line="108" Column="17" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.ItemProperties.Room8 PreferredExecutionTarget="MonoDevelop.Default" />
+﻿<Properties StartupItem="Room8.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MultiItemStartupConfigurations />
-  <DisabledProjects>
-    <String>Model/Model.csproj</String>
-  </DisabledProjects>
 </Properties>
