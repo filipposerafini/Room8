@@ -21,16 +21,17 @@ namespace Room8
             {
                 _document.Load(nomefile);
             }
-            catch(FileNotFoundException)
+            catch (FileNotFoundException)
             {
-                FileStream file = File.Create(nomefile);
-                file.Close();
-                XmlNode node = _document.CreateXmlDeclaration("1.0","","");
-                _document.AppendChild(node);
-                XmlNode root = _document.CreateElement("Gruppi");
-                _document.AppendChild(root);
-                _document.Save(nomefile);
-                caricato = true;
+                using (FileStream file = File.Create(nomefile))
+                {
+                    XmlNode node = _document.CreateXmlDeclaration("1.0", "", "");
+                    _document.AppendChild(node);
+                    XmlNode root = _document.CreateElement("Gruppi");
+                    _document.AppendChild(root);
+                    _document.Save(nomefile);
+                    caricato = true;
+                }
             }
         }
 

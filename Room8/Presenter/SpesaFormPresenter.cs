@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
-using System.Linq;
 using Room8.View;
 
 namespace Room8
@@ -78,9 +77,6 @@ namespace Room8
 				SpesaForm.NumericUpDown.Value = DaModificare.Importo;
 				SpesaForm.PaganteComboBox.SelectedItem = DaModificare.Pagante;
 				SpesaForm.DateTimePicker.Value = DaModificare.Data;
-				SpesaForm.RadioPanel.Controls.OfType<RadioButton>().FirstOrDefault
-				         (n => n.Tag.Equals(MetodoDiDivisioneFactory.GetNomeMetodo
-				                            (DaModificare.MetodoDivisione))).Checked = true;
 			}
 		}
 

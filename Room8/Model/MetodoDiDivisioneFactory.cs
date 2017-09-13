@@ -24,11 +24,6 @@ namespace Room8
 			return _dictionary[nome];
 		}
 
-		public static string GetNomeMetodo(IMetodoDiDivisione metodo)
-		{
-			return _dictionary.FirstOrDefault(x => x.Value.Equals(metodo)).Key;
-		}
-
 		private abstract class MetodoDiDivisione : IMetodoDiDivisione
 		{
 			public Dictionary<Utente, decimal> DividiSpesa(decimal totale, Parti parti)
