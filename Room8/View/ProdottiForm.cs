@@ -45,5 +45,6 @@ namespace Room8.View
 		{
 			get { return _numericUpDown; }
 		}
+
     }
 }

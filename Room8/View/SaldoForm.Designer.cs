@@ -47,6 +47,7 @@
             this._daPictureBox = new System.Windows.Forms.PictureBox();
             this._aPictureBox = new System.Windows.Forms.PictureBox();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             this._formTableLayoutPanel.SuspendLayout();
@@ -54,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this._daPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._aPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainTableLayoutPanel
@@ -144,6 +146,7 @@
             this._formTableLayoutPanel.Controls.Add(this._daComboBox, 0, 1);
             this._formTableLayoutPanel.Controls.Add(this._daPictureBox, 0, 0);
             this._formTableLayoutPanel.Controls.Add(this._aPictureBox, 2, 0);
+            this._formTableLayoutPanel.Controls.Add(this.pictureBox1, 1, 0);
             this._formTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._formTableLayoutPanel.Location = new System.Drawing.Point(3, 37);
             this._formTableLayoutPanel.Name = "_formTableLayoutPanel";
@@ -260,6 +263,17 @@
             // 
             this._errorProvider.ContainerControl = this;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(152, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(122, 90);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            // 
             // SaldoForm
             // 
             this.AcceptButton = this._confermaButton;
@@ -277,6 +291,7 @@
             ((System.ComponentModel.ISupportInitialize)(this._daPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._aPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -300,5 +315,6 @@
         private System.Windows.Forms.PictureBox _aPictureBox;
         private System.Windows.Forms.ErrorProvider _errorProvider;
         private System.Windows.Forms.Button _eliminaButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

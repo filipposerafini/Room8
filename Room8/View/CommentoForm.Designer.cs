@@ -29,16 +29,21 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CommentoForm));
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
             this._commentiListBox = new System.Windows.Forms.ListBox();
-            this._titoloLabel = new System.Windows.Forms.Label();
             this._confirmPanel = new System.Windows.Forms.Panel();
             this._commentoTextBox = new System.Windows.Forms.TextBox();
             this._commentaButton = new System.Windows.Forms.Button();
             this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this._titoloLabel = new System.Windows.Forms.Label();
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainTableLayoutPanel
@@ -46,8 +51,8 @@
             this._mainTableLayoutPanel.ColumnCount = 1;
             this._mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this._mainTableLayoutPanel.Controls.Add(this._commentiListBox, 0, 1);
-            this._mainTableLayoutPanel.Controls.Add(this._titoloLabel, 0, 0);
             this._mainTableLayoutPanel.Controls.Add(this._confirmPanel, 0, 2);
+            this._mainTableLayoutPanel.Controls.Add(this.tableLayoutPanel1, 0, 0);
             this._mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._mainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this._mainTableLayoutPanel.Name = "_mainTableLayoutPanel";
@@ -72,19 +77,6 @@
             this._commentiListBox.ScrollAlwaysVisible = true;
             this._commentiListBox.Size = new System.Drawing.Size(344, 202);
             this._commentiListBox.TabIndex = 8;
-            // 
-            // _titoloLabel
-            // 
-            this._titoloLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this._titoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._titoloLabel.Location = new System.Drawing.Point(3, 0);
-            this._titoloLabel.Name = "_titoloLabel";
-            this._titoloLabel.Size = new System.Drawing.Size(358, 40);
-            this._titoloLabel.TabIndex = 0;
-            this._titoloLabel.Text = "Commenti:";
-            this._titoloLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // _confirmPanel
             // 
@@ -122,6 +114,43 @@
             // 
             this._errorProvider.ContainerControl = this;
             // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 11.73184F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 88.26816F));
+            this.tableLayoutPanel1.Controls.Add(this._titoloLabel, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.pictureBox1, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(358, 34);
+            this.tableLayoutPanel1.TabIndex = 9;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(3, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(36, 28);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // _titoloLabel
+            // 
+            this._titoloLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._titoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._titoloLabel.Location = new System.Drawing.Point(45, 0);
+            this._titoloLabel.Name = "_titoloLabel";
+            this._titoloLabel.Size = new System.Drawing.Size(310, 34);
+            this._titoloLabel.TabIndex = 1;
+            this._titoloLabel.Text = "Commenti";
+            this._titoloLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // CommentoForm
             // 
             this.AcceptButton = this._commentaButton;
@@ -136,6 +165,8 @@
             this._confirmPanel.ResumeLayout(false);
             this._confirmPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -143,11 +174,13 @@
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel _mainTableLayoutPanel;
-        private System.Windows.Forms.Label _titoloLabel;
         private System.Windows.Forms.Panel _confirmPanel;
         private System.Windows.Forms.Button _commentaButton;
         private System.Windows.Forms.TextBox _commentoTextBox;
         private System.Windows.Forms.ErrorProvider _errorProvider;
         private System.Windows.Forms.ListBox _commentiListBox;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label _titoloLabel;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
