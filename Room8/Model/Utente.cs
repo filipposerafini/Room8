@@ -10,7 +10,7 @@ namespace Room8
 {
     public class Utente
 	{
-        private static readonly string FOTODEFAULT = "../../Resources/Images/defaultperson.png";
+        private static readonly string FOTODEFAULT = "..\\..\\Resources\\Images\\defaultperson.png";
 		private string _mail;
 		private string _password;
 		private string _nome;

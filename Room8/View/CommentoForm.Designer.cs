@@ -31,28 +31,34 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CommentoForm));
             this._mainTableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
-            this._commentiListBox = new System.Windows.Forms.ListBox();
             this._confirmPanel = new System.Windows.Forms.Panel();
             this._commentoTextBox = new System.Windows.Forms.TextBox();
             this._commentaButton = new System.Windows.Forms.Button();
-            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this._titoloLabel = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this._commentiDataGridView = new System.Windows.Forms.DataGridView();
+            this.commentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._errorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.autoreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.testoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this._mainTableLayoutPanel.SuspendLayout();
             this._confirmPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._commentiDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // _mainTableLayoutPanel
             // 
             this._mainTableLayoutPanel.ColumnCount = 1;
             this._mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this._mainTableLayoutPanel.Controls.Add(this._commentiListBox, 0, 1);
             this._mainTableLayoutPanel.Controls.Add(this._confirmPanel, 0, 2);
             this._mainTableLayoutPanel.Controls.Add(this.tableLayoutPanel1, 0, 0);
+            this._mainTableLayoutPanel.Controls.Add(this._commentiDataGridView, 0, 1);
             this._mainTableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._mainTableLayoutPanel.Location = new System.Drawing.Point(0, 0);
             this._mainTableLayoutPanel.Name = "_mainTableLayoutPanel";
@@ -62,21 +68,6 @@
             this._mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this._mainTableLayoutPanel.Size = new System.Drawing.Size(364, 302);
             this._mainTableLayoutPanel.TabIndex = 1;
-            // 
-            // _commentiListBox
-            // 
-            this._commentiListBox.BackColor = System.Drawing.SystemColors.Control;
-            this._commentiListBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._commentiListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._commentiListBox.FormattingEnabled = true;
-            this._commentiListBox.HorizontalScrollbar = true;
-            this._commentiListBox.ItemHeight = 20;
-            this._commentiListBox.Location = new System.Drawing.Point(10, 50);
-            this._commentiListBox.Margin = new System.Windows.Forms.Padding(10);
-            this._commentiListBox.Name = "_commentiListBox";
-            this._commentiListBox.ScrollAlwaysVisible = true;
-            this._commentiListBox.Size = new System.Drawing.Size(344, 202);
-            this._commentiListBox.TabIndex = 8;
             // 
             // _confirmPanel
             // 
@@ -110,10 +101,6 @@
             this._commentaButton.Text = "Commenta";
             this._commentaButton.UseVisualStyleBackColor = true;
             // 
-            // _errorProvider
-            // 
-            this._errorProvider.ContainerControl = this;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
@@ -129,27 +116,79 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(358, 34);
             this.tableLayoutPanel1.TabIndex = 9;
             // 
+            // _titoloLabel
+            // 
+            this._titoloLabel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._titoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this._titoloLabel.Location = new System.Drawing.Point(44, 0);
+            this._titoloLabel.Name = "_titoloLabel";
+            this._titoloLabel.Size = new System.Drawing.Size(311, 34);
+            this._titoloLabel.TabIndex = 1;
+            this._titoloLabel.Text = "Commenti";
+            this._titoloLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(3, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(36, 28);
+            this.pictureBox1.Size = new System.Drawing.Size(35, 28);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // _titoloLabel
+            // _commentiDataGridView
             // 
-            this._titoloLabel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._titoloLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this._titoloLabel.Location = new System.Drawing.Point(45, 0);
-            this._titoloLabel.Name = "_titoloLabel";
-            this._titoloLabel.Size = new System.Drawing.Size(310, 34);
-            this._titoloLabel.TabIndex = 1;
-            this._titoloLabel.Text = "Commenti";
-            this._titoloLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this._commentiDataGridView.AllowUserToAddRows = false;
+            this._commentiDataGridView.AllowUserToDeleteRows = false;
+            this._commentiDataGridView.AutoGenerateColumns = false;
+            this._commentiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this._commentiDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.autoreDataGridViewTextBoxColumn,
+            this.testoDataGridViewTextBoxColumn,
+            this.dataDataGridViewTextBoxColumn});
+            this._commentiDataGridView.DataSource = this.commentoBindingSource;
+            this._commentiDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._commentiDataGridView.Location = new System.Drawing.Point(3, 43);
+            this._commentiDataGridView.Name = "_commentiDataGridView";
+            this._commentiDataGridView.ReadOnly = true;
+            this._commentiDataGridView.Size = new System.Drawing.Size(358, 216);
+            this._commentiDataGridView.TabIndex = 10;
+            // 
+            // commentoBindingSource
+            // 
+            this.commentoBindingSource.DataSource = typeof(Room8.Commento);
+            // 
+            // _errorProvider
+            // 
+            this._errorProvider.ContainerControl = this;
+            // 
+            // autoreDataGridViewTextBoxColumn
+            // 
+            this.autoreDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.autoreDataGridViewTextBoxColumn.DataPropertyName = "NomeAutore";
+            this.autoreDataGridViewTextBoxColumn.HeaderText = "Autore";
+            this.autoreDataGridViewTextBoxColumn.Name = "autoreDataGridViewTextBoxColumn";
+            this.autoreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.autoreDataGridViewTextBoxColumn.Width = 63;
+            // 
+            // testoDataGridViewTextBoxColumn
+            // 
+            this.testoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.testoDataGridViewTextBoxColumn.DataPropertyName = "Testo";
+            this.testoDataGridViewTextBoxColumn.HeaderText = "Testo";
+            this.testoDataGridViewTextBoxColumn.Name = "testoDataGridViewTextBoxColumn";
+            this.testoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataDataGridViewTextBoxColumn
+            // 
+            this.dataDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            this.dataDataGridViewTextBoxColumn.DataPropertyName = "Data";
+            this.dataDataGridViewTextBoxColumn.HeaderText = "Data";
+            this.dataDataGridViewTextBoxColumn.Name = "dataDataGridViewTextBoxColumn";
+            this.dataDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataDataGridViewTextBoxColumn.Width = 55;
             // 
             // CommentoForm
             // 
@@ -164,9 +203,11 @@
             this._mainTableLayoutPanel.ResumeLayout(false);
             this._confirmPanel.ResumeLayout(false);
             this._confirmPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._commentiDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._errorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -178,9 +219,13 @@
         private System.Windows.Forms.Button _commentaButton;
         private System.Windows.Forms.TextBox _commentoTextBox;
         private System.Windows.Forms.ErrorProvider _errorProvider;
-        private System.Windows.Forms.ListBox _commentiListBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Label _titoloLabel;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.DataGridView _commentiDataGridView;
+        private System.Windows.Forms.BindingSource commentoBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn autoreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn testoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataDataGridViewTextBoxColumn;
     }
 }

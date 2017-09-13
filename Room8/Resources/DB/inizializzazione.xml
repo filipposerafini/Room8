@@ -8,7 +8,7 @@
 			<Cognome>Serafini</Cognome>
 			<Email>filippo@mail.com</Email>
 			<Password>qwerqwerqwer</Password>
-			<Telefono>333333333</Telefono>
+			<Telefono>3391935823</Telefono>
 			<Foto>..\..\Resources\Images\fillo.jpg</Foto>
 		</Utente>
 		<Utente>
@@ -16,7 +16,7 @@
 			<Cognome>Sebastianelli</Cognome>
 			<Email>nicola@mail.com</Email>
 			<Password>asdfasdfasdf</Password>
-			<Telefono>333333333</Telefono>
+			<Telefono>3385762154</Telefono>
 			<Foto>..\..\Resources\Images\nico.jpg</Foto>
 		</Utente>
 		<Utente>
@@ -24,7 +24,7 @@
 			<Cognome>Sammaritani</Cognome>
 			<Email>gloria@mail.com</Email>
 			<Password>12345678</Password>
-			<Telefono>333333333</Telefono>
+			<Telefono>3333098248</Telefono>
 			<Foto>..\..\Resources\Images\gloria.jpg</Foto>
 		</Utente>
 	</Utenti>
@@ -38,16 +38,16 @@
 			<Cognome>Serafini</Cognome>
 			<Email>filippo@mail.com</Email>
 			<Password>qwerqwerqwer</Password>
-			<Telefono>333333333</Telefono>
+			<Telefono>3391935823</Telefono>
 			<Foto>..\..\Resources\Images\fillo.jpg</Foto>
 		</Utente>
 		<Utente>
 			<Nome>utente1</Nome>
-			<Cognome>generico</Cognome>
+			<Cognome>generico1</Cognome>
 			<Email>utente1@mail.com</Email>
 			<Password>password1</Password>
-			<Telefono>333333333</Telefono>
-			<Foto>..\..\Resources\Images\frank.jpg</Foto>
+			<Telefono>3485925123</Telefono>
+			<Foto></Foto>
 		</Utente>
 	</Utenti>
 	</Gruppo>
@@ -60,7 +60,7 @@
 			<Cognome>Sebastianelli</Cognome>
 			<Email>nicola@mail.com</Email>
 			<Password>asdfasdfasdf</Password>
-			<Telefono>333333333</Telefono>
+			<Telefono>3385762154</Telefono>
 			<Foto>..\..\Resources\Images\nico.jpg</Foto>
 		</Utente>
 		<Utente>
@@ -68,15 +68,15 @@
 			<Cognome>Sammaritani</Cognome>
 			<Email>gloria@mail.com</Email>
 			<Password>12345678</Password>
-			<Telefono>333333333</Telefono>
+			<Telefono>3333098248</Telefono>
 			<Foto>..\..\Resources\Images\gloria.jpg</Foto>
 		</Utente>
 		<Utente>
-			<Nome>utente</Nome>
+			<Nome>utente2</Nome>
 			<Cognome>generico2</Cognome>
 			<Email>utente2@mail.com</Email>
 			<Password>password2</Password>
-			<Telefono>333333333</Telefono>
+			<Telefono>374576343</Telefono>
 			<Foto></Foto>
 		</Utente>
 		<Utente>
@@ -84,8 +84,8 @@
 			<Cognome>generico3</Cognome>
 			<Email>utente3@mail.com</Email>
 			<Password>password3</Password>
-			<Telefono>333333333</Telefono>
-			<Foto></Foto>
+			<Telefono>3457831234</Telefono>
+			<Foto>..\..\Resources\Images\frank.jpg</Foto>
 		</Utente>
 	</Utenti>
 	</Gruppo>

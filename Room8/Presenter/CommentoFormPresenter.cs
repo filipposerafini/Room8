@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Room8.View;
 
 namespace Room8
@@ -40,9 +41,7 @@ namespace Room8
 
 		private void AggiornaUI()
 		{
-			CommentoForm.CommentiListBox.Items.Clear();
-			foreach (var commento in Spesa.Commenti)
-				CommentoForm.CommentiListBox.Items.Add(commento.Autore.Nome + ": " + commento.Testo);
+            CommentoForm.CommentiDataGridView.DataSource = Spesa.Commenti.ToList();
 		}
 
 		private void CommentaButton_Click(object sender, EventArgs e)

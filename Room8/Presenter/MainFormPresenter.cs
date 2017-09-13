@@ -132,7 +132,7 @@ namespace Room8
 		private void VisualizzaAmico_Click(object sender, EventArgs e)
 		{
 			AmicoForm amicoForm = new AmicoForm();
-			new AmicoFormPresenter(amicoForm, Utente, (Utente)MainForm.AmiciListBox.SelectedItem);
+			new AmicoFormPresenter(amicoForm, Utente, (Utente)MainForm.AmiciListBox.SelectedItem, this);
 			amicoForm.ShowDialog();
 		}
 

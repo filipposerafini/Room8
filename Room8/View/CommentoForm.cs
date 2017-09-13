@@ -21,9 +21,9 @@ namespace Room8.View
 			get { return _commentoTextBox; }
 		}
 
-		public ListBox CommentiListBox
+		public DataGridView CommentiDataGridView
 		{
-			get { return _commentiListBox; }
+			get { return _commentiDataGridView; }
 		}
 
 		public Button CommentaButton

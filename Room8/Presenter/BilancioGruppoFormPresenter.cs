@@ -82,7 +82,7 @@ namespace Room8
 		private void MembriListBox_Click(object sender, EventArgs e)
 		{
 			AmicoForm amicoForm = new AmicoForm();
-			new AmicoFormPresenter(amicoForm, Utente, (Utente)BilancioGruppoForm.MembriListBox.SelectedItem);
+			new AmicoFormPresenter(amicoForm, Utente, (Utente)BilancioGruppoForm.MembriListBox.SelectedItem, this);
 			amicoForm.ShowDialog();
 		}
 
@@ -91,7 +91,8 @@ namespace Room8
 			SpesaForm spesaForm = new SpesaForm();
 			Spesa spesa = (Spesa)BilancioGruppoForm.DataGridView.CurrentRow.DataBoundItem;
 			new SpesaFormPresenter(spesaForm, Utente, this, spesa);
-			spesaForm.ShowDialog();
+			if (spesaForm.ShowDialog() == DialogResult.OK)
+                Observer.AggiornaUI();
 		}
 
 		private void ProdottiButton_Click(object sender, EventArgs e)

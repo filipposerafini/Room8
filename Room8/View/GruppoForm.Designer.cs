@@ -181,13 +181,13 @@
             // 
             // _pictureBox
             // 
+            this._pictureBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this._pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this._pictureBox.Dock = System.Windows.Forms.DockStyle.Fill;
             this._pictureBox.Image = global::Room8.Properties.Resources.defaultgroup;
-            this._pictureBox.Location = new System.Drawing.Point(0, 40);
+            this._pictureBox.Location = new System.Drawing.Point(54, 40);
             this._pictureBox.Margin = new System.Windows.Forms.Padding(0);
             this._pictureBox.Name = "_pictureBox";
-            this._pictureBox.Size = new System.Drawing.Size(165, 54);
+            this._pictureBox.Size = new System.Drawing.Size(57, 54);
             this._pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this._pictureBox.TabIndex = 6;
             this._pictureBox.TabStop = false;
@@ -277,10 +277,11 @@
             // 
             // _membriLabel
             // 
+            this._membriLabel.Dock = System.Windows.Forms.DockStyle.Fill;
             this._membriLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this._membriLabel.Location = new System.Drawing.Point(3, 130);
             this._membriLabel.Name = "_membriLabel";
-            this._membriLabel.Size = new System.Drawing.Size(410, 25);
+            this._membriLabel.Size = new System.Drawing.Size(412, 25);
             this._membriLabel.TabIndex = 1;
             this._membriLabel.Text = "Membri del gruppo:";
             this._membriLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

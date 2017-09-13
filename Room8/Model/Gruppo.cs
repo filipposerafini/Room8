@@ -8,7 +8,7 @@ namespace Room8
 {
 	public class Gruppo
 	{
-		private static string FOTODEFAULT = "../../Resources/Images/defaultgroup.jpg";
+		private static string FOTODEFAULT = "..\\..\\Resources\\Images\\defaultgroup.jpg";
 		private readonly string _id;
 		private string _nome;
 		private readonly List<Utente> _membriGruppo;

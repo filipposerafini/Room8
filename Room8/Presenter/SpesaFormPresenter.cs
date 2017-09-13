@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Windows.Forms;
+using System.Linq;
 using Room8.View;
 
 namespace Room8
@@ -69,6 +70,7 @@ namespace Room8
             	SpesaForm.GruppoComboBox.SelectedItem = (Observer as MainFormPresenter).MainForm.GruppiListBox.SelectedItem;
 			if (DaModificare != null)
 			{
+                DaModificare.Commenti.ToList().ForEach(c => Spesa.AggiungiCommento(c));
                 SpesaForm.ConfermaButton.Text = "Salva";
 				SpesaForm.EliminaButton.Show();
 				SpesaForm.GruppoComboBox.SelectedItem = DaModificare.SpeseGruppo.Gruppo;

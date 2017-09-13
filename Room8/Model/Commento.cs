@@ -29,6 +29,11 @@ namespace Room8
             get { return _autore; }
         }
 
+        public string NomeAutore
+        {
+            get { return Autore.Nome; }
+        }
+
         public DateTime Data
         {
             get { return _data; }
