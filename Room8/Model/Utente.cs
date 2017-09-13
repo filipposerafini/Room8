@@ -35,7 +35,7 @@ namespace Room8
 			get { return _mail; }
 			set
 			{
-				if (string.IsNullOrEmpty(value))
+				if (string.IsNullOrWhiteSpace(value))
 					throw new ArgumentException("Inserisci la mail", "mail");
 				if (!Regex.IsMatch(value, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$"))
 					throw new ArgumentException("Inserisci una mail valida", "mail");
@@ -48,7 +48,7 @@ namespace Room8
 			get { return _password; }
 			set
 			{
-				if (string.IsNullOrEmpty(value))
+				if (string.IsNullOrWhiteSpace(value))
 					throw new ArgumentException("Inserisci la password", "password");
 				if (!Regex.IsMatch(value, @".{8,}"))
 					throw new ArgumentException("La password deve avere almeno 8 caratteri", "password");
@@ -61,7 +61,7 @@ namespace Room8
 			get { return _nome; }
 			set
 			{
-				if (string.IsNullOrEmpty(value))
+				if (string.IsNullOrWhiteSpace(value))
 					throw new ArgumentException("Inserisci un nome", "nome");
 				if (!Regex.IsMatch(value, @"[A-z]{1,}"))
 					throw new ArgumentException("Inserisci un nome valido", "nome");
@@ -74,7 +74,7 @@ namespace Room8
 			get { return _cognome; }
 			set
 			{
-				if (string.IsNullOrEmpty(value))
+				if (string.IsNullOrWhiteSpace(value))
 					throw new ArgumentException("Inserisci un cognome", "cognome");
 				if (!Regex.IsMatch(value, @"[A-z]{1,}"))
 					throw new ArgumentException("Inserisci un cognome valido", "cognome");
@@ -87,7 +87,7 @@ namespace Room8
             get { return _telefono; }
 			set
 			{
-				if (string.IsNullOrEmpty(value))
+				if (string.IsNullOrWhiteSpace(value))
 					throw new ArgumentException("Inserisci un numero di telefono", "telefono");
 				if (!Regex.IsMatch(value, @"\+?[0-9]{8,}"))
 					throw new ArgumentException("Inserisci un numero di telefono valido", "telefono");

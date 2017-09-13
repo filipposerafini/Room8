@@ -96,9 +96,9 @@ namespace Room8
 
         public Utente VerificaPassword(string mail, string password)
         {
-            if (string.IsNullOrEmpty(mail))
+            if (string.IsNullOrWhiteSpace(mail))
                 throw new ArgumentException("Inserisci un indirizzo email", "mail");
-            if (string.IsNullOrEmpty(password))
+            if (string.IsNullOrWhiteSpace(password))
                 throw new ArgumentException("Inserisci la password", "password");
 			
             Utente utente = _utenti.Find(x => x.Mail.Equals(mail));

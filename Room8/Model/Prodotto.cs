@@ -8,7 +8,7 @@ namespace Room8
 
 		public Prodotto(string nome, int quantita)
 		{
-			if (string.IsNullOrEmpty(nome))
+			if (string.IsNullOrWhiteSpace(nome))
 				throw new ArgumentException("Inserisci un nome", "nome");
 			_nome = nome;
 			Quantita = quantita;

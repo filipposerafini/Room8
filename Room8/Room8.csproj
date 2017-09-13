@@ -200,7 +200,9 @@
     <Compile Include="Persistance\GestoreUtenti.cs" />
     <Compile Include="Persistance\IPersistenza.cs" />
     <Compile Include="Presenter\SaldoFormPresenter.cs" />
-    <None Include="Resources\DB\inizializzazione.xml" />
+    <None Include="Resources\DB\inizializzazione.xml">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Resources\Images\defaultgroup.jpg" />
     <None Include="Resources\Images\defaultperson.png" />
     <None Include="Resources\Images\fillo.jpg" />

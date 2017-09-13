@@ -10,7 +10,7 @@ namespace Room8
 
         public Commento(string testo, Utente autore)
         {
-            if (string.IsNullOrEmpty(testo))
+            if (string.IsNullOrWhiteSpace(testo))
                 throw new ArgumentException("Inserisci un testo");
             if (autore == null)
                 throw new ArgumentNullException("autore");

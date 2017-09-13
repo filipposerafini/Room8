@@ -49,7 +49,7 @@ namespace Room8
 			get { return _descrizione; }
 			set
 			{
-				if (string.IsNullOrEmpty(value))
+				if (string.IsNullOrWhiteSpace(value))
 					throw new ArgumentException("La descrizione non può essere vuota", "descrizione");
 				_descrizione = value;
 			}

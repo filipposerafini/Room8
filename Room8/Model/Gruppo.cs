@@ -36,7 +36,7 @@ namespace Room8
 			get { return _nome; }
 			set
 			{
-				if (string.IsNullOrEmpty(value))
+				if (string.IsNullOrWhiteSpace(value))
 					throw new ArgumentException("Inserisci un nome", "nome");
 				_nome = value;
 			}
