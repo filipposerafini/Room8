@@ -70,10 +70,10 @@ namespace Room8
 			MainForm.VisualizzaAmico.Enabled = MainForm.AmiciListBox.Items.Count != 0;
 
 			MainForm.SpeseDataGridView.DataSource = Utente.GetSpese();
-			MainForm.ModificaSpesa.Enabled = MainForm.SpeseDataGridView.RowCount != 0;
+			MainForm.ModificaSpesa.Enabled = (MainForm.SpeseDataGridView.RowCount != 0 && MainForm.GruppiListBox.Items.Count != 0);
 
 			MainForm.SaldiDataGridView.DataSource = Utente.GetSaldi();
-			MainForm.ModificaSaldo.Enabled = MainForm.SaldiDataGridView.RowCount != 0;
+			MainForm.ModificaSaldo.Enabled = (MainForm.SaldiDataGridView.RowCount != 0 && MainForm.AmiciListBox.Items.Count != 0);
 
 			decimal bilancioTotale = Utente.CalcolaBilancioTotale();
 			MainForm.BilancioImportoLabel.Text = bilancioTotale.ToString("€ 0.00");

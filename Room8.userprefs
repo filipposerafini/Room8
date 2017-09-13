@@ -1,9 +1,20 @@
 ﻿<Properties StartupConfiguration="{C1096A1F-7E72-4113-8870-399666CB2C51}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Room8/Presenter/AmicoFormPresenter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Room8/Presenter/GruppoFormPresenter.cs">
     <Files>
-      <File FileName="Room8/Presenter/BilancioGruppoFormPresenter.cs" Line="63" Column="53" />
-      <File FileName="Room8/View/BilancioGruppoForm.cs" Line="54" Column="29" />
-      <File FileName="Room8/Presenter/AmicoFormPresenter.cs" Line="48" Column="5" />
+      <File FileName="Room8/Presenter/SaldoFormPresenter.cs" Line="57" Column="26" />
+      <File FileName="Room8/Presenter/AmicoFormPresenter.cs" Line="61" Column="69" />
+      <File FileName="Room8/Model/MovimentoDiDenaro.cs" Line="72" Column="1" />
+      <File FileName="Room8/Model/Saldo.cs" Line="30" Column="56" />
+      <File FileName="Room8/Presenter/RegistratiFormPresenter.cs" Line="116" Column="83" />
+      <File FileName="Room8/Presenter/BilancioGruppoFormPresenter.cs" Line="14" Column="46" />
+      <File FileName="Room8/Presenter/CommentoFormPresenter.cs" Line="1" Column="1" />
+      <File FileName="Room8/Presenter/GruppoFormPresenter.cs" Line="1" Column="1" />
+      <File FileName="Room8/Presenter/IPresenterEvent.cs" Line="1" Column="1" />
+      <File FileName="Room8/Presenter/LoginFormPresenter.cs" Line="1" Column="1" />
+      <File FileName="Room8/Presenter/MainFormPresenter.cs" Line="76" Column="81" />
+      <File FileName="Room8/Presenter/PartiFormPresenter.cs" Line="1" Column="1" />
+      <File FileName="Room8/Presenter/ProdottiFormPresenter.cs" Line="74" Column="68" />
+      <File FileName="Room8/Presenter/ProfiloFormPresenter.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.Room8 PreferredExecutionTarget="MonoDevelop.Default" />

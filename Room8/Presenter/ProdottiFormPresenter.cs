@@ -70,7 +70,8 @@ namespace Room8
 						ProdottiForm.ErrorProvider.SetIconAlignment(control, ErrorIconAlignment.MiddleLeft);
 						break;
 				}
-				ProdottiForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
+				ProdottiForm.ErrorProvider.SetError(control, string.IsNullOrEmpty(ae.ParamName) ?
+					ae.Message : ae.Message.Substring(0, ae.Message.IndexOf('\n')));
 			}
 		}
 

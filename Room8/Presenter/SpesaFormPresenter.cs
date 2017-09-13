@@ -170,7 +170,8 @@ namespace Room8
 						SpesaForm.ErrorProvider.SetIconAlignment(control, ErrorIconAlignment.MiddleLeft);
 						break;
 				}
-				SpesaForm.ErrorProvider.SetError(control, string.IsNullOrEmpty(ae.ParamName) ? ae.Message : ae.Message.Substring(0, ae.Message.IndexOf('\n')));
+				SpesaForm.ErrorProvider.SetError(control, string.IsNullOrEmpty(ae.ParamName) ?
+					ae.Message : ae.Message.Substring(0, ae.Message.IndexOf('\n')));
 			}
 		}
 	}

@@ -10,7 +10,7 @@ namespace Room8
     {
         private readonly SaldoForm _saldoForm;
         private readonly Utente _utente;
-		private Saldo _saldo;
+		private readonly Saldo _daModificare;
         private readonly IPresenterEvent _observer;
 
         public SaldoFormPresenter(SaldoForm saldoForm, Utente utente, IPresenterEvent observer, Saldo saldo)
@@ -18,7 +18,7 @@ namespace Room8
             _saldoForm = saldoForm;
             _utente = utente;
             _observer = observer;
-			_saldo = saldo;
+			_daModificare = saldo;
 			InitializeEvents();
 			InitalizeUI();
 		}
@@ -33,10 +33,9 @@ namespace Room8
             get { return _utente; }
 	    }
 
-		public Saldo Saldo
+		public Saldo DaModificare
 		{
-			get { return _saldo; }
-			set { _saldo = value; }
+			get { return _daModificare; }
 		}
 
 		public IPresenterEvent Observer
@@ -64,14 +63,14 @@ namespace Room8
 			utenti.Add(Utente);
 			SaldoForm.AComboBox.DataSource = utenti;
 			SaldoForm.AComboBox.DisplayMember = "Nome";
-			if (Saldo != null)
+			if (DaModificare != null)
 			{
                 SaldoForm.ConfermaButton.Text = "Salva";
 				SaldoForm.EliminaButton.Show();
-				SaldoForm.DaComboBox.SelectedItem = Saldo.Sorgente;
-				SaldoForm.AComboBox.SelectedItem = Saldo.Destinazione;
-				SaldoForm.NumericUpDown.Value = Saldo.Importo;
-				SaldoForm.DateTimePicker.Value = Saldo.Data;
+				SaldoForm.DaComboBox.SelectedItem = DaModificare.Sorgente;
+				SaldoForm.AComboBox.SelectedItem = DaModificare.Destinazione;
+				SaldoForm.NumericUpDown.Value = DaModificare.Importo;
+				SaldoForm.DateTimePicker.Value = DaModificare.Data;
 			}
 			SaldoForm.APictureBox.Load((SaldoForm.AComboBox.SelectedItem as Utente).Foto);
 			SaldoForm.DaPictureBox.Load((SaldoForm.DaComboBox.SelectedItem as Utente).Foto);
@@ -97,7 +96,7 @@ namespace Room8
 
 		void EliminaButton_Click(object sender, EventArgs e)
 		{
-			Saldo.RimuoviMovimentoDiDenaro();
+			DaModificare.RimuoviMovimentoDiDenaro();
 			Observer.AggiornaUI();
 			SaldoForm.DialogResult = DialogResult.OK;
 		}
@@ -107,19 +106,11 @@ namespace Room8
             SaldoForm.ErrorProvider.Clear();
             try
             {
-				if (Saldo != null)
-				{
-					Saldo.Sorgente = (Utente)SaldoForm.DaComboBox.SelectedItem;
-					Saldo.Destinazione = (Utente)SaldoForm.AComboBox.SelectedItem;
-					Saldo.Importo = SaldoForm.NumericUpDown.Value;
-					Saldo.Data = SaldoForm.DateTimePicker.Value;
-				}
-				else
-				{
-					Saldo = new Saldo((Utente)SaldoForm.DaComboBox.SelectedItem, (Utente)SaldoForm.AComboBox.SelectedItem,
-									  SaldoForm.NumericUpDown.Value, SaldoForm.DateTimePicker.Value);
-					Saldo.AggiungiMovimentoDiDenaro();
-				}
+				Saldo saldo = new Saldo((Utente)SaldoForm.DaComboBox.SelectedItem, (Utente)SaldoForm.AComboBox.SelectedItem,
+				                  SaldoForm.NumericUpDown.Value, SaldoForm.DateTimePicker.Value);
+				saldo.AggiungiMovimentoDiDenaro();
+				if (DaModificare != null)
+					DaModificare.RimuoviMovimentoDiDenaro();
                 Observer.AggiornaUI();
                 SaldoForm.Close();
             }
@@ -139,8 +130,8 @@ namespace Room8
 						SaldoForm.ErrorProvider.SetIconAlignment(control, ErrorIconAlignment.MiddleLeft);
 						break;
                 }
-				SaldoForm.ErrorProvider.SetError(control, ae.Message.Substring(0, ae.Message.IndexOf('\n')));
-				Saldo = null;
+				SaldoForm.ErrorProvider.SetError(control, string.IsNullOrEmpty(ae.ParamName) ?
+					ae.Message : ae.Message.Substring(0, ae.Message.IndexOf('\n')));
 			}
         }
     }
