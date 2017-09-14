@@ -11,18 +11,22 @@ namespace Room8
 		private readonly Utente _utente;
 		private readonly Spesa _spesa;
 		private readonly Spesa _daModificare;
-		private readonly IPresenterEvent _observer;
+		private IPresenterEvent _observer;
 
-		public SpesaFormPresenter(SpesaForm spesaForm, Utente utente, IPresenterEvent observer, Spesa spesa)
+		public SpesaFormPresenter(SpesaForm spesaForm, Utente utente, Spesa spesa)
 		{
 			_spesaForm = spesaForm;
 			_utente = utente;
-			_observer = observer;
 			_spesa = new Spesa();
 			_daModificare = spesa;
 			InitializeEvents();
 			InitializeUI();
 		}
+
+        public void Attach(IPresenterEvent observer)
+        {
+            _observer = observer;
+        }
 
 		public SpesaForm SpesaForm
 		{

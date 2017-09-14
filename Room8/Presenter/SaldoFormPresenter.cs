@@ -11,17 +11,21 @@ namespace Room8
         private readonly SaldoForm _saldoForm;
         private readonly Utente _utente;
 		private readonly Saldo _daModificare;
-        private readonly IPresenterEvent _observer;
+        private IPresenterEvent _observer;
 
-        public SaldoFormPresenter(SaldoForm saldoForm, Utente utente, IPresenterEvent observer, Saldo saldo)
+        public SaldoFormPresenter(SaldoForm saldoForm, Utente utente, Saldo saldo)
         {
             _saldoForm = saldoForm;
             _utente = utente;
-            _observer = observer;
 			_daModificare = saldo;
 			InitializeEvents();
 			InitalizeUI();
 		}
+
+        public void Attach(IPresenterEvent observer)
+        {
+            _observer = observer;
+        }
 
         public SaldoForm SaldoForm
         {
@@ -112,7 +116,7 @@ namespace Room8
 				if (DaModificare != null)
 					DaModificare.RimuoviMovimentoDiDenaro();
                 Observer.AggiornaUI();
-                SaldoForm.Close();
+                SaldoForm.DialogResult = DialogResult.OK;
             }
             catch (ArgumentException ae)
             {

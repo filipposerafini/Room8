@@ -88,14 +88,16 @@ namespace Room8
 		private void SpesaButton_Click(object sender, EventArgs e)
 		{
 			SpesaForm spesaForm = new SpesaForm();
-			new SpesaFormPresenter(spesaForm, Utente, this, null);
+			SpesaFormPresenter spesaFormPresenter = new SpesaFormPresenter(spesaForm, Utente, null);
+            spesaFormPresenter.Attach(this);
 			spesaForm.ShowDialog();
 		}
 
 		private void SaldaButton_Click(object sender, EventArgs e)
 		{
 			SaldoForm saldoForm = new SaldoForm();
-			new SaldoFormPresenter(saldoForm, Utente, this, null);
+			SaldoFormPresenter saldoFormPresenter = new SaldoFormPresenter(saldoForm, Utente, null);
+            saldoFormPresenter.Attach(this);
 			saldoForm.ShowDialog();
 		}
 
@@ -103,7 +105,8 @@ namespace Room8
 		{
 			SpesaForm spesaForm = new SpesaForm();
 			Spesa spesa = (Spesa)MainForm.SpeseDataGridView.CurrentRow.DataBoundItem;
-			new SpesaFormPresenter(spesaForm, Utente, this, spesa);
+			SpesaFormPresenter spesaFormPresenter = new SpesaFormPresenter(spesaForm, Utente, spesa);
+            spesaFormPresenter.Attach(this);
 			spesaForm.ShowDialog();
 		}
 
@@ -111,42 +114,48 @@ namespace Room8
 		{
 			SaldoForm saldoForm = new SaldoForm();
 			Saldo saldo = (Saldo)MainForm.SaldiDataGridView.CurrentRow.DataBoundItem;
-			new SaldoFormPresenter(saldoForm, Utente, this, saldo);
+            SaldoFormPresenter saldoFormPresenter = new SaldoFormPresenter(saldoForm, Utente, saldo);
+            saldoFormPresenter.Attach(this);
 			saldoForm.ShowDialog();
 		}
 
 		private void VisualizzaGruppo_Click(object sender, EventArgs e)
 		{
 			BilancioGruppoForm bilancioGruppoForm = new BilancioGruppoForm();
-			new BilancioGruppoFormPresenter(bilancioGruppoForm, Utente, (Gruppo)MainForm.GruppiListBox.SelectedItem, this);
-			bilancioGruppoForm.ShowDialog();
+			BilancioGruppoFormPresenter bilancioGruppoFromPresenter = new BilancioGruppoFormPresenter(bilancioGruppoForm, Utente, (Gruppo)MainForm.GruppiListBox.SelectedItem);
+            bilancioGruppoFromPresenter.Attach(this);
+            bilancioGruppoForm.ShowDialog();
 		}
 
 		private void ModificaGruppo_Click(object sender, EventArgs e)
 		{
 			GruppoForm gruppoForm = new GruppoForm();
-			new GruppoFormPresenter(gruppoForm, Utente, (Gruppo)MainForm.GruppiListBox.SelectedItem, this);
+			GruppoFormPresenter gruppoFormPresenter = new GruppoFormPresenter(gruppoForm, Utente, (Gruppo)MainForm.GruppiListBox.SelectedItem);
+            gruppoFormPresenter.Attach(this);
 			gruppoForm.ShowDialog();
 		}
 
 		private void VisualizzaAmico_Click(object sender, EventArgs e)
 		{
 			AmicoForm amicoForm = new AmicoForm();
-			new AmicoFormPresenter(amicoForm, Utente, (Utente)MainForm.AmiciListBox.SelectedItem, this);
+			AmicoFormPresenter amicoFormPresenter = new AmicoFormPresenter(amicoForm, Utente, (Utente)MainForm.AmiciListBox.SelectedItem);
+            amicoFormPresenter.Attach(this);
 			amicoForm.ShowDialog();
 		}
 
 		private void AccountToolStrip_Click(object sender, EventArgs e)
 		{
 			ProfiloForm profiloForm = new ProfiloForm();
-			new ProfiloFormPresenter(profiloForm, Utente, this);
+			ProfiloFormPresenter profiloFormPresenter = new ProfiloFormPresenter(profiloForm, Utente);
+            profiloFormPresenter.Attach(this);
 			profiloForm.ShowDialog();
 		}
 
 		private void CreaGruppo_Click(object sender, EventArgs e)
 		{
 			GruppoForm gruppoForm = new GruppoForm();
-			new GruppoFormPresenter(gruppoForm, Utente, null, this);
+			GruppoFormPresenter gruppoFormPresenter = new GruppoFormPresenter(gruppoForm, Utente, null);
+            gruppoFormPresenter.Attach(this);
 			gruppoForm.ShowDialog();
 		}
 

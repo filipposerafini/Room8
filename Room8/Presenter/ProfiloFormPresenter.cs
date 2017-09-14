@@ -8,16 +8,20 @@ namespace Room8
 	{
 		private readonly ProfiloForm _profiloForm;
 		private readonly Utente _utente;
-		private readonly IPresenterEvent _observer;
+        private IPresenterEvent _observer;
 
-		public ProfiloFormPresenter(ProfiloForm profiloForm, Utente utente, IPresenterEvent observer)
+		public ProfiloFormPresenter(ProfiloForm profiloForm, Utente utente)
 		{
 			_profiloForm = profiloForm;
 			_utente = utente;
-			_observer = observer;
 			InitializeEvents();
 			InitializeUI();
 		}
+
+        public void Attach(IPresenterEvent observer)
+        {
+            _observer = observer;
+        }
 
 		public ProfiloForm ProfiloForm
 		{

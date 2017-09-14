@@ -10,17 +10,21 @@ namespace Room8
 		private readonly AmicoForm _amicoForm; 
 		private readonly Utente _utente;
 		private readonly Utente _amico;
-        private readonly IPresenterEvent _observer;
+        private IPresenterEvent _observer;
 
-		public AmicoFormPresenter(AmicoForm amicoForm, Utente utente, Utente amico, IPresenterEvent observer)
+		public AmicoFormPresenter(AmicoForm amicoForm, Utente utente, Utente amico)
 		{
 			_amicoForm = amicoForm;
 			_utente = utente;
 			_amico = amico;
-            _observer = observer;
 			AmicoForm.ModificaButton.Click += ModificaButton_Click;
 			AggiornaUI();
 		}
+
+        public void Attach(IPresenterEvent observer)
+        {
+            _observer = observer;
+        }
 
 		public AmicoForm AmicoForm
 		{
@@ -96,14 +100,16 @@ namespace Room8
 			if (movimento is Movimento)
 			{
 				SpesaForm spesaForm = new SpesaForm();
-				new SpesaFormPresenter(spesaForm, Utente, this, (movimento as Movimento).Spesa);
+				SpesaFormPresenter spesaFormPresenter = new SpesaFormPresenter(spesaForm, Utente, (movimento as Movimento).Spesa);
+                spesaFormPresenter.Attach(this);
                 if (spesaForm.ShowDialog() == DialogResult.OK)
                     Observer.AggiornaUI();
 			}
 			else if (movimento is Saldo)
 			{
 				SaldoForm saldoForm = new SaldoForm();
-				new SaldoFormPresenter(saldoForm, Utente, this, (movimento as Saldo));
+                SaldoFormPresenter saldoFormPresenter = new SaldoFormPresenter(saldoForm, Utente, (movimento as Saldo));
+                saldoFormPresenter.Attach(this);
                 if (saldoForm.ShowDialog() == DialogResult.OK)
                     Observer.AggiornaUI();
 			}

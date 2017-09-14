@@ -11,21 +11,25 @@ namespace Room8
 		private readonly GruppoForm _gruppoForm;
 		private readonly Utente _utente;
 		private Gruppo _gruppo;
-		private readonly IPresenterEvent _observer;
+		private IPresenterEvent _observer;
 		private List<Button> _controls;
 		private List<TextBox> _mails;
 
-		public GruppoFormPresenter(GruppoForm gruppoForm, Utente utente, Gruppo gruppo, IPresenterEvent observer)
+		public GruppoFormPresenter(GruppoForm gruppoForm, Utente utente, Gruppo gruppo)
 		{
 			_gruppoForm = gruppoForm;
 			_utente = utente;
 			_gruppo = gruppo;
-			_observer = observer;
 			_controls = new List<Button>();
 			_mails = new List<TextBox>();
 			InitializeEvents();
 			InitializeUI();
 		}
+
+        public void Attach(IPresenterEvent observer)
+        {
+            _observer = observer;
+        }
 
 		public GruppoForm GruppoForm
 		{

@@ -11,18 +11,21 @@ namespace Room8
 		private readonly BilancioGruppoForm _bilancioGruppoForm;
 		private readonly Utente _utente;
 		private readonly Gruppo _gruppo;
-		private readonly IPresenterEvent _observer;
+		private IPresenterEvent _observer;
 
-		public BilancioGruppoFormPresenter(BilancioGruppoForm bilancioGruppoForm, Utente utente, Gruppo gruppo, IPresenterEvent observer)
+		public BilancioGruppoFormPresenter(BilancioGruppoForm bilancioGruppoForm, Utente utente, Gruppo gruppo)
 		{
 			_bilancioGruppoForm = bilancioGruppoForm;
 			_utente = utente;
 			_gruppo = gruppo;
-			_observer = observer;
 			InitializeEvents();
 			AggiornaUI();
 		}
 
+        public void Attach(IPresenterEvent observer)
+        {
+            _observer = observer;
+        }
 		public BilancioGruppoForm BilancioGruppoForm
 		{
 			get { return _bilancioGruppoForm; }
@@ -82,7 +85,8 @@ namespace Room8
 		private void MembriListBox_Click(object sender, EventArgs e)
 		{
 			AmicoForm amicoForm = new AmicoForm();
-			new AmicoFormPresenter(amicoForm, Utente, (Utente)BilancioGruppoForm.MembriListBox.SelectedItem, this);
+			AmicoFormPresenter amicoFormPresenter = new AmicoFormPresenter(amicoForm, Utente, (Utente)BilancioGruppoForm.MembriListBox.SelectedItem);
+            amicoFormPresenter.Attach(this);
 			amicoForm.ShowDialog();
 		}
 
@@ -90,7 +94,8 @@ namespace Room8
 		{
 			SpesaForm spesaForm = new SpesaForm();
 			Spesa spesa = (Spesa)BilancioGruppoForm.DataGridView.CurrentRow.DataBoundItem;
-			new SpesaFormPresenter(spesaForm, Utente, this, spesa);
+			SpesaFormPresenter spesaFormPresenter = new SpesaFormPresenter(spesaForm, Utente, spesa);
+            spesaFormPresenter.Attach(this);
 			if (spesaForm.ShowDialog() == DialogResult.OK)
                 Observer.AggiornaUI();
 		}
